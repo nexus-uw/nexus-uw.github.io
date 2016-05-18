@@ -1,0 +1,17 @@
+---
+layout: post
+title: ngSubmit does not work on iOS (quickie tip)
+date: '2016-02-15T09:00:00.002-08:00'
+author: Simon
+tags:
+- ngForm
+- iOS
+- ngSubmit
+- safari
+- angular
+modified_time: '2016-02-15T09:00:38.411-08:00'
+blogger_id: tag:blogger.com,1999:blog-2267619345455483673.post-285082357919277850
+blogger_orig_url: http://nexus-rage-quit.blogspot.com/2016/02/ngsubmit-does-not-work-on-ios-quickie.html
+---
+
+If you have a &lt;form&gt; without a&nbsp; button or a clickable input[type="submit'] inside of it on iOS Safari, ngSubmit has never worked for me.<br /><br />I have been able to fix this issue by adding a input[type="submit'] with style="visibility: hidden;".
