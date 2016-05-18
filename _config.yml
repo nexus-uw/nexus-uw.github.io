@@ -9,8 +9,8 @@
 title: ramsay.xyz
 email: s3ramsay@riseup.net
 description: personal site of Simon Ramsay
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://ramsay.xyz" # the base hostname & protocol for your site
+baseurl: "/ramsay.xyz" # the subpath of your site, e.g. /blog
+url: "https://nexus-uw.github.io" # the base hostname & protocol for your site
 github_username:  "nexus-uw"
 gpg_key_finger_print: "F50F7E3612EA2B78"
 keybase_username: "nexusuw"
