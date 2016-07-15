@@ -17,3 +17,5 @@ keybase_username: "nexusuw"
 
 # Build settings
 markdown: kramdown
+
+exclude: [vendor]
