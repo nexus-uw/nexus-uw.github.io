@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>I wrote a blog post elsewhere: Learn How to Write Angular 2 Style Unit Tests with Angular 1.X Code</title>
-  <meta name="description" content="http://blog.rangle.io/unittests/">
+  <title>How to support &lt;picture&gt; elements created by Angular (or other similar JS Frameworks) in IE11</title>
+  <meta name="description" content="Sometimes  a project requires a very pretty content page filled with overlapping background images and floating text blocks that is not particularly easy to ...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://ramsay.xyz/2015/10/04/i-wrote-blog-post-elsewhere-learn-how.html">
+  <link rel="canonical" href="https://ramsay.xyz/2016/07/14/safari-picture-element-lies.html">
   <link rel="alternate" type="application/rss+xml" title="Simon Ramsay" href="https://ramsay.xyz/feed.xml">
 </head>
 
@@ -57,12 +57,28 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">I wrote a blog post elsewhere: Learn How to Write Angular 2 Style Unit Tests with Angular 1.X Code</h1>
-    <p class="post-meta"><time datetime="2015-10-04T08:29:00-07:00" itemprop="datePublished">Oct 4, 2015</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Simon</span></span></p>
+    <h1 class="post-title" itemprop="name headline">How to support <picture> elements created by Angular (or other similar JS Frameworks) in IE11</h1>
+    <p class="post-meta"><time datetime="2016-07-14T00:00:00-07:00" itemprop="datePublished">Jul 14, 2016</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Simon</span></span></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <h2></h2><a href="http://blog.rangle.io/unittests/">http://blog.rangle.io/unittests/</a><br /><br />
+    <p>Sometimes  a project requires a very pretty content page filled with overlapping background images and floating text blocks that is not particularly easy to implement responsively using HTML. The relatively new <picture> element is a great tool for this problem (having significantly taller mobile images so that the there is white space to for the content to go above the photo's subject) but it is not supported on all browsers (ref: 1,2,3).</picture></p>
+
+<p>Luckily there a great polyfill, <a href="https://scottjehl.github.io/picturefill/">picturefill</a> so there is no need for weird hacks.</p>
+
+<p>Including both <em>picturefill.min.js</em> <em>plugins/mutation/pf.mutation.min.js</em> on the page will allow last year’s browser to display your lovely mobile images.</p>
+
+<picture>
+  <source media="(min-width: 650px)" srcset="/assets/bread-doge.png" />
+  <source media="(min-width: 465px)" srcset="/assets/close-doge.jpeg" />
+  <img src="/assets/cool-doge.png" alt="doge pictures" width="465px" />
+</picture>
+
+<h3 id="references">References</h3>
+<p>1 <a href="">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture#Browser_compatibility</a><br />
+2 <a href="">https://responsiveimages.org/</a><br />
+3 <a href="">http://caniuse.com/#feat=picture</a></p>
+
   </div>
   <div style="display:none">
     Nobody will read this,<br/>
