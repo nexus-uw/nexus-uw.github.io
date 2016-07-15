@@ -6,10 +6,11 @@ rvm:
 
 # Assume bundler is being used, therefore
 # the `install` step will run `bundle install` by default.
-script: ./ci-build.sh
+script:
+  - bundle exec jekyll build
+  #- bundle exec htmlproofer 
+
 
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
-
-sudo: false
