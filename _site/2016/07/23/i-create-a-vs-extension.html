@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Dropbox Hack on Headless ARM Linux </title>
-  <meta name="description" content="Since Dropbox does not support ARM Linux (Android being another story) and having kept their daemon closed source, there is no direct way to take advantage o...">
+  <title>Created a VSCode extension</title>
+  <meta name="description" content="I just created a VSCode extension, vscode-gtm, that integrates Git Time Tracking (aka gtm) with VSCode.">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://ramsay.xyz/2013/01/05/dropbox-hack-on-headless-arm-linux.html">
+  <link rel="canonical" href="https://ramsay.xyz/2016/07/23/i-create-a-vs-extension.html">
   <link rel="alternate" type="application/rss+xml" title="Simon Ramsay" href="https://ramsay.xyz/feed.xml">
 </head>
 
@@ -144,12 +144,29 @@ fill="#000000" stroke="none">
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Dropbox Hack on Headless ARM Linux </h1>
-    <p class="post-meta"><time datetime="2013-01-05T13:40:00-05:00" itemprop="datePublished">Jan 5, 2013</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Simon</span></span></p>
+    <h1 class="post-title" itemprop="name headline">Created a VSCode extension</h1>
+    <p class="post-meta"><time datetime="2016-07-23T00:00:00-04:00" itemprop="datePublished">Jul 23, 2016</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Simon</span></span></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    Since Dropbox does not support ARM Linux (Android being another story) and having kept their daemon closed source, there is no direct way to take advantage of Dropbox's awesome-ness for ARM Linux servers. Luckily, Dropbox already provides something of a work around for this hidden away in its SDK.<br /><br /><h4>What I Used</h4><ul><li>Headless Ubuntu Server (with python 2.7) running on the Hackberry A10 (<a href="https://www.miniand.com/forums/forums/development--3/topics/headless-ubuntu-llmp-server-image-guide">https://www.miniand.com/forums/forums/development--3/topics/headless-ubuntu-llmp-server-image-guide</a>)</li><li>Linux Mint 14</li><li>Basic knowledge of the linux terminal &amp; python </li></ul><h4>What To Do</h4><ol><li>Go to <a href="http://pypi.python.org/pypi/setuptools#cygwin-mac-os-x-linux-other">http://pypi.python.org/pypi/setuptools#cygwin-mac-os-x-linux-other</a>, download, and then install the correct version of setup tools on the server (required by Dropbox). Then in the terminal<br /><i><br />scp <span style="white-space: nowrap;">setuptools-0.6c11-py2.7.egg USERNAME@SERVER:LOCATION<br />ssh USERNAME@SERVER<br />cd LOCATION<br />sudo sh </span></i><span style="white-space: nowrap;"><span style="white-space: nowrap;"><i>setuptools-0.6c11-py2.7.egg</i></span></span></li><li>Go to <a href="https://www.dropbox.com/developers/start/core">https://www.dropbox.com/developers/start/core.</a> Follow the steps outlined, picking a 'Full Dropbox' app type and the Python SDK. Save the app key and secret key for later.   Then in the terminal, again.<br /><br />scp dropbox-python-sdk-1.5.1.zip <i><span style="white-space: nowrap;">USERNAME@SERVER:LOCATION</span></i><i><span style="white-space: nowrap;">ssh USERNAME@SERVER<br />cd LOCATION</span>sudo python setup.py install<br /><br /></i></li><li>Now to update the required fields in (dropboxSDK)/examples/cli_client.py using your favorite text editor. From step 2, copy+paste the app key and secret key into their respective variables at the top of the file.<br /></li><li>Run the program from the terminal with<br /><br /><i>python cli_client.py</i><br /><i>&gt;login</i><br /><br />It will ask you to visit a link to authorize the app. Open the link your web browser and click 'Allow'. You should only have to do this once.</li></ol><br />This example app is a highly simplified command-line tool for working with your Dropbox folder. It is missing most of what makes Dropbox Dropbox but it forms a great stepping off point for a home-brewed hack.<br /><br /><br /><br /><br /><h4>Further reading:&nbsp;</h4><a href="http://fak3r.com/2009/09/14/howto-build-your-own-open-source-dropbox-clone/">http://fak3r.com/2009/09/14/howto-build-your-own-open-source-dropbox-clone/</a><br />
+    <p>I just created a VSCode extension, <em>vscode-gtm</em>, that integrates Git Time Tracking (aka gtm) with VSCode.</p>
+
+<p>Feel free to try it out (<a href="https://marketplace.visualstudio.com/items?itemName=s3ramsay.vscode-gtm">vs market place link</a>)</p>
+
+<p>(from <a href="https://github.com/git-time-metric/gtm">git-time-metric/gtm</a>)</p>
+
+<blockquote>
+  <p>Git Time Metrics (GTM) is a tool to automatically track time spent reading and working on code that you store in a Git repository. By installing GTM and using supported plug-ins for your favorite editors, you can immediately realize better insight into how you are spending your time and on what files.</p>
+</blockquote>
+
+<blockquote>
+  <p>GTM is automatic, seamless and lightweight. There is no need to remember to start and stop timers. It’s a process that only runs on occasion to capture edit events triggered by the editor. It does not require a background process or any file system monitoring.</p>
+</blockquote>
+
+<blockquote>
+  <p>Your time metrics are stored locally with the repository as Git notes. If you want to share your data, it can be pushed and fetched to and from the remote repository. Other GTM users on your team can do the same. This provides you the ability to see time metrics for the entire team.</p>
+</blockquote>
+
   </div>
   <div style="display:none">
     Nobody will read this,<br/>

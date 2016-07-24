@@ -5,9 +5,42 @@
     <description>&#39;dank memes&#39; happens to be a phrase that exists currently.</description>
     <link>https://ramsay.xyz/</link>
     <atom:link href="https://ramsay.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 15 Jul 2016 10:09:54 -0700</pubDate>
-    <lastBuildDate>Fri, 15 Jul 2016 10:09:54 -0700</lastBuildDate>
-    <generator>Jekyll v3.1.3</generator>
+    <pubDate>Sat, 23 Jul 2016 22:53:29 -0400</pubDate>
+    <lastBuildDate>Sat, 23 Jul 2016 22:53:29 -0400</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Created a VSCode extension</title>
+        <description>&lt;p&gt;I just created a VSCode extension, &lt;em&gt;vscode-gtm&lt;/em&gt;, that integrates Git Time Tracking (aka gtm) with VSCode.&lt;/p&gt;
+
+&lt;p&gt;Feel free to try it out (&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=s3ramsay.vscode-gtm&quot;&gt;vs market place link&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;(from &lt;a href=&quot;https://github.com/git-time-metric/gtm&quot;&gt;git-time-metric/gtm&lt;/a&gt;)&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Git Time Metrics (GTM) is a tool to automatically track time spent reading and working on code that you store in a Git repository. By installing GTM and using supported plug-ins for your favorite editors, you can immediately realize better insight into how you are spending your time and on what files.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;GTM is automatic, seamless and lightweight. There is no need to remember to start and stop timers. It’s a process that only runs on occasion to capture edit events triggered by the editor. It does not require a background process or any file system monitoring.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Your time metrics are stored locally with the repository as Git notes. If you want to share your data, it can be pushed and fetched to and from the remote repository. Other GTM users on your team can do the same. This provides you the ability to see time metrics for the entire team.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Sat, 23 Jul 2016 00:00:00 -0400</pubDate>
+        <link>https://ramsay.xyz/2016/07/23/i-create-a-vs-extension.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2016/07/23/i-create-a-vs-extension.html</guid>
+        
+        <category>vscode</category>
+        
+        <category>gtm</category>
+        
+        <category>git time tracking</category>
+        
+        
+      </item>
     
       <item>
         <title>How to support &lt;picture&gt; elements created by Angular (or other similar JS Frameworks) in IE11 or Safari browsers from before March 2016</title>
@@ -28,7 +61,7 @@
 2 &lt;a href=&quot;&quot;&gt;https://responsiveimages.org/&lt;/a&gt;&lt;br /&gt;
 3 &lt;a href=&quot;&quot;&gt;http://caniuse.com/#feat=picture&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Thu, 14 Jul 2016 00:00:00 -0700</pubDate>
+        <pubDate>Thu, 14 Jul 2016 00:00:00 -0400</pubDate>
         <link>https://ramsay.xyz/2016/07/14/picture-element-pollyfill.html</link>
         <guid isPermaLink="true">https://ramsay.xyz/2016/07/14/picture-element-pollyfill.html</guid>
         
@@ -45,7 +78,7 @@
         <title>ramsay.xyz now available as a hidden service</title>
         <description>&lt;p&gt;Here is a link to it: &lt;a href=&quot;http://eqac56hh4ppxzy27.onion&quot;&gt;eqac56hh4ppxzy27.onion&lt;/a&gt;.&lt;/p&gt;
 </description>
-        <pubDate>Thu, 02 Jun 2016 00:00:00 -0700</pubDate>
+        <pubDate>Thu, 02 Jun 2016 00:00:00 -0400</pubDate>
         <link>https://ramsay.xyz/2016/06/02/site-now-available-as-a-hidden-service.html</link>
         <guid isPermaLink="true">https://ramsay.xyz/2016/06/02/site-now-available-as-a-hidden-service.html</guid>
         
@@ -64,7 +97,7 @@
         <title>I made a thing</title>
         <description>&lt;p&gt;Here is a link to it: &lt;a href=&quot;https://github.com/nexus-uw/make-account-green&quot;&gt;nexus-uw/make-account-green&lt;/a&gt;.&lt;/p&gt;
 </description>
-        <pubDate>Sun, 22 May 2016 00:00:00 -0700</pubDate>
+        <pubDate>Sun, 22 May 2016 00:00:00 -0400</pubDate>
         <link>https://ramsay.xyz/2016/05/22/i-made-a-thing.html</link>
         <guid isPermaLink="true">https://ramsay.xyz/2016/05/22/i-made-a-thing.html</guid>
         
@@ -79,7 +112,7 @@
         <title>Moved Blog to Github</title>
         <description>&lt;p&gt;old site will no longer be “updated” https://nexus-rage-quit.blogspot.ca/&lt;/p&gt;
 </description>
-        <pubDate>Wed, 18 May 2016 11:02:37 -0700</pubDate>
+        <pubDate>Wed, 18 May 2016 14:02:37 -0400</pubDate>
         <link>https://ramsay.xyz/no/human/will/read/this/2016/05/18/moved-to-github.html</link>
         <guid isPermaLink="true">https://ramsay.xyz/no/human/will/read/this/2016/05/18/moved-to-github.html</guid>
         
@@ -99,7 +132,7 @@
       <item>
         <title>ngSubmit does not work on iOS (quickie tip)</title>
         <description>If you have a &amp;lt;form&amp;gt; without a&amp;nbsp; button or a clickable input[type=&quot;submit&#39;] inside of it on iOS Safari, ngSubmit has never worked for me.&lt;br /&gt;&lt;br /&gt;I have been able to fix this issue by adding a input[type=&quot;submit&#39;] with style=&quot;visibility: hidden;&quot;.</description>
-        <pubDate>Mon, 15 Feb 2016 09:00:00 -0800</pubDate>
+        <pubDate>Mon, 15 Feb 2016 12:00:00 -0500</pubDate>
         <link>https://ramsay.xyz/2016/02/15/ngsubmit-does-not-work-on-ios-quickie.html</link>
         <guid isPermaLink="true">https://ramsay.xyz/2016/02/15/ngsubmit-does-not-work-on-ios-quickie.html</guid>
         
@@ -119,7 +152,7 @@
       <item>
         <title>Why Scala is Not Very Good (a knee jerk reaction)</title>
         <description>Yesterday, I spent a great deal of time trying to get a simple script that hits one GET endpoint, does a quick filter on the results, and then sends a POST request to a different service. Both of these services have Scala libraries for their APIs but I could never manage to import and make a basic request.&lt;br /&gt;&lt;br /&gt;So after 6 hours of failing to do anything, I gave up, learned the basics of Go, and within 3 hours I implemented the basics my idea.&lt;br /&gt;&lt;br /&gt;From this experience, I have come up with the following guidelines for what makes a programing language accessible&lt;br /&gt;- can create a single file program that does something marginally useful&lt;br /&gt;- simple dependency management for 3rd party libs&lt;br /&gt;- basic install + run on the command line (I don&#39;t care to download some 400MB IDE to create a shell script)&lt;br /&gt;&lt;br /&gt;=&amp;gt; so Python, Node/JavaScript, and Go are the prime candidates for accessible programming languages (what a shocker...)</description>
-        <pubDate>Wed, 10 Feb 2016 15:44:00 -0800</pubDate>
+        <pubDate>Wed, 10 Feb 2016 18:44:00 -0500</pubDate>
         <link>https://ramsay.xyz/2016/02/10/why-scala-is-terrible-knee-jerk-reaction.html</link>
         <guid isPermaLink="true">https://ramsay.xyz/2016/02/10/why-scala-is-terrible-knee-jerk-reaction.html</guid>
         
@@ -129,7 +162,7 @@
       <item>
         <title>I wrote a blog post elsewhere: Learn How to Write Angular 2 Style Unit Tests with Angular 1.X Code</title>
         <description>&lt;h2&gt;&lt;/h2&gt;&lt;a href=&quot;http://blog.rangle.io/unittests/&quot;&gt;http://blog.rangle.io/unittests/&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;</description>
-        <pubDate>Sun, 04 Oct 2015 08:29:00 -0700</pubDate>
+        <pubDate>Sun, 04 Oct 2015 11:29:00 -0400</pubDate>
         <link>https://ramsay.xyz/2015/10/04/i-wrote-blog-post-elsewhere-learn-how.html</link>
         <guid isPermaLink="true">https://ramsay.xyz/2015/10/04/i-wrote-blog-post-elsewhere-learn-how.html</guid>
         
@@ -139,7 +172,7 @@
       <item>
         <title>How to setup pass on Windows</title>
         <description>&lt;h4&gt;&lt;/h4&gt;&lt;h3 style=&quot;font-weight: normal;&quot;&gt;Do love the Unix way of doing things? &lt;br /&gt;Do you want to securely store your passwords?&lt;br /&gt;Do you love&amp;nbsp;&lt;a href=&quot;http://www.passwordstore.org/&quot; target=&quot;_blank&quot;&gt;Pass&lt;/a&gt;?&lt;/h3&gt;&lt;div style=&quot;font-weight: normal;&quot;&gt;But are you stuck on Windows for some reason or another, then keep reading.&lt;/div&gt;&lt;div style=&quot;font-weight: normal;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&quot;font-weight: normal;&quot;&gt;Prefer a GUI, see :&amp;nbsp;&lt;a href=&quot;https://github.com/mbos/Pass4Win&quot;&gt;Pass4Win&lt;/a&gt;&amp;nbsp;or&amp;nbsp;&lt;a href=&quot;http://qtpass.org/&quot;&gt;qtpass&lt;/a&gt;&amp;nbsp;&lt;/div&gt;&lt;div style=&quot;font-weight: normal;&quot;&gt;&lt;br /&gt;&lt;/div&gt;&lt;h2 style=&quot;font-weight: normal;&quot;&gt;Steps&lt;/h2&gt;&lt;div style=&quot;font-weight: normal;&quot;&gt;&lt;/div&gt;&lt;ol&gt;&lt;li&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Download&amp;nbsp;&lt;a href=&quot;https://cygwin.com/&quot; target=&quot;_blank&quot;&gt;Cygwin&lt;/a&gt;&amp;nbsp;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Click through the installer&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;When prompted to select&amp;nbsp;packages&lt;/span&gt;&lt;/li&gt;&lt;ol&gt;&lt;li&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;&amp;nbsp;include utils -&amp;gt; &lt;/span&gt;gnupg&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;devel -&amp;gt; &lt;/span&gt;git&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;devel -&amp;gt; &lt;/span&gt;make&lt;/li&gt;&lt;li&gt;utils -&amp;gt; tree &lt;/li&gt;&lt;/ol&gt;&lt;li&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Launch cygwin as administrator (right click program icon -&amp;gt; run as administrator)&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;clone the pass repo &amp;nbsp;(&lt;i&gt;git clone http://git.zx2c4.com/password-store&lt;/i&gt;&lt;span style=&quot;color: #222222; font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, monospace;&quot;&gt;&lt;span style=&quot;background-color: white; font-size: 14px; line-height: 21px; white-space: pre;&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;cd to repo directory (&lt;i&gt;cd password-store&lt;/i&gt;)&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;install pass (&lt;i&gt;make install&lt;/i&gt;)&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;initialize pass (&lt;i&gt;pass init&lt;/i&gt;)&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;pass is now ready to use&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;&lt;br /&gt;&lt;div style=&quot;font-weight: normal;&quot;&gt;Recommended additional security precautions (this is very much an incomplete list)&lt;/div&gt;&lt;div style=&quot;font-weight: normal;&quot;&gt;- encrypt the drive where the pgp key and password files are stored&lt;/div&gt;&lt;div style=&quot;font-weight: normal;&quot;&gt;- make sure that your private key has a strong password&lt;/div&gt;&lt;div style=&quot;font-weight: normal;&quot;&gt;- restrict &lt;i&gt;.password-store &lt;/i&gt;&amp;nbsp;to only yourself and make it hidden&lt;br /&gt;&lt;br /&gt;&lt;i&gt;2015-10-02 Correction: forgot to include required tree package&lt;/i&gt; (causes &quot;tree: command not found&quot;)&lt;/div&gt;</description>
-        <pubDate>Mon, 21 Sep 2015 09:51:00 -0700</pubDate>
+        <pubDate>Mon, 21 Sep 2015 12:51:00 -0400</pubDate>
         <link>https://ramsay.xyz/2015/09/21/how-to-set-up-pass-on-windows.html</link>
         <guid isPermaLink="true">https://ramsay.xyz/2015/09/21/how-to-set-up-pass-on-windows.html</guid>
         
@@ -149,27 +182,9 @@
       <item>
         <title>How to Remove/Bypass Annoying ‘You Have x Free Articles Left This Month</title>
         <description>&lt;h3&gt;Quick and Dirty&lt;/h3&gt;&lt;div&gt;open the website in incognito/private browsing mode&lt;/div&gt;&lt;h3&gt;Permanent solution for Google Chrome&lt;/h3&gt;&lt;div&gt;menu -&amp;gt; settings -&amp;gt; show advanced settings -&amp;gt; content settings -&amp;gt; cookies -&amp;gt; manage exceptions&lt;/div&gt;&lt;div&gt;then add each url and set to &#39;block&#39;&lt;/div&gt;&lt;h3&gt;Why?&lt;/h3&gt;&lt;div&gt;&lt;span lang=&quot;EN-CA&quot;&gt;These sites are using cookies to track client page views so by ignoring/rejecting the cookies, the site cannot keep track of the number of articles read.&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;MsoNormal&quot; style=&quot;background-color: white; color: #222222; font-family: Calibri, sans-serif; font-size: 11pt; margin: 0in 0in 0.0001pt;&quot;&gt;&lt;span lang=&quot;EN-CA&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/div&gt;&lt;h3&gt;&lt;span lang=&quot;EN-CA&quot;&gt;Tested on&amp;nbsp;&lt;/span&gt;&lt;/h3&gt;&lt;div class=&quot;MsoNormal&quot; style=&quot;background-color: white; color: #222222; font-family: Calibri, sans-serif; font-size: 11pt; margin: 0in 0in 0.0001pt;&quot;&gt;&lt;/div&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt;&quot;&gt;theglobeandmail.com&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt;&quot;&gt;thestar.com&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt;&quot;&gt;nationalpost.com&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;br /&gt;&lt;/div&gt;&lt;div&gt;Solutions for other browsers and sites are welcomed &amp;nbsp;below.&lt;/div&gt;</description>
-        <pubDate>Mon, 07 Oct 2013 19:13:00 -0700</pubDate>
+        <pubDate>Mon, 07 Oct 2013 22:13:00 -0400</pubDate>
         <link>https://ramsay.xyz/2013/10/07/how-to-removebypass-annoying-you-have-x.html</link>
         <guid isPermaLink="true">https://ramsay.xyz/2013/10/07/how-to-removebypass-annoying-you-have-x.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Turn ARM Linux Headless Server Into Torrent Box</title>
-        <description>&lt;h4&gt;What?&amp;nbsp;&lt;/h4&gt;Setup a ARM server to automatically start downloading torrents from a Dropbox folder using Python, Cron, and Transmission.&lt;br /&gt;&lt;h4&gt;Why?&lt;/h4&gt;Simple, secure, and resilient setup that since no network configurations, nothing exposed to the web, and no need to deal with changing IP addresses. &lt;br /&gt;I find this setup great for finding torrents when away from home, adding the .torrent file to Dropbox,&amp;nbsp; coming home, and having the file(s) already downloaded.&lt;br /&gt;&lt;h3&gt;Setup&lt;/h3&gt;&lt;ol&gt;&lt;li&gt;Follow steps 1 &amp;amp; 2 from my previous post &lt;a href=&quot;http://nexus-rage-quit.blogspot.com/2013/01/dropbox-hack-on-headless-arm-linux.html&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;. This will get the server setup.&lt;/li&gt;&lt;br /&gt;&lt;li&gt;Download &lt;a href=&quot;https://github.com/nexus-uw/Python-Hax-Torrent-Dl/blob/master/GetAllTorrentsFromDropbox.py&quot; target=&quot;_blank&quot;&gt;this python script&lt;/a&gt; that will be used to fetch the torrent files from Dropbox&amp;nbsp;&lt;/li&gt;&lt;br /&gt;&lt;li&gt;Fill in the missing constant fields at the beginning of&amp;nbsp; GetAllTorrentsFromDropbox.py using fully resolved paths&lt;/li&gt;&lt;ol&gt;&lt;li&gt;APP_KEY and APP_SECRET : values from Dropbox when app is registered&lt;/li&gt;&lt;li&gt;ACCESS_TYPE: should be &#39;app_folder&#39;&lt;/li&gt;&lt;li&gt;TOKEN_FILE: {abs path to file}/file&lt;/li&gt;&lt;li&gt;TORRENT_FOLDER: {abs path to save .torrent files}&lt;/li&gt;&lt;br /&gt;&lt;/ol&gt;&lt;li&gt;Add the script to &lt;a href=&quot;http://www.google.ca/url?sa=t&amp;amp;rct=j&amp;amp;q=&amp;amp;esrc=s&amp;amp;source=web&amp;amp;cd=1&amp;amp;sqi=2&amp;amp;ved=0CDAQFjAA&amp;amp;url=http%3A%2F%2Fen.wikipedia.org%2Fwiki%2FCron&amp;amp;ei=qO7xUKz4A8ew0AHA7oDoCw&amp;amp;usg=AFQjCNFFJIlg-yvhmJjB9vc1tkJtgWkSCA&amp;amp;sig2=wP3piM9yRspJMnUt6i4ZPA&amp;amp;bvm=bv.1357700187,d.dmQ&amp;amp;cad=rjar&quot; target=&quot;_blank&quot;&gt;crontab&lt;/a&gt; in the terminal using &amp;nbsp; &lt;i&gt;crontab -e&lt;/i&gt; and adding the entry at the end of the file&lt;br /&gt;Example: to have the script run every 10 minutes, one would add &lt;br /&gt;*/10 * * * * python {Path to file}/GetAllTorrentsFromDropbox.py&lt;/li&gt;&lt;br /&gt;&lt;li&gt;Install and start the Transmission daemon&lt;br /&gt;&lt;i&gt;sudo apt-get install &lt;/i&gt;transmission-daemon&lt;br /&gt;&lt;i&gt;transmission-daemon&lt;/i&gt;&lt;/li&gt;&lt;br /&gt;&lt;li&gt;Configure transmission to automatically add torrents from where new ones are saved. In &lt;code&gt;/var/lib/transmission-daemon/info/settings.json&lt;/code&gt; , add/edit &quot;&lt;i&gt;watch-dir&quot;:{path to where torrents are saved from step 3} &lt;/i&gt;and &lt;i&gt;&quot;watch-dir-enabled&quot;&lt;/i&gt;:true&lt;/li&gt;&lt;br /&gt;&lt;li&gt;Do a hard restart of transmission&lt;br /&gt;&lt;i&gt;sudo service transmission-daemon stop&lt;br /&gt;sudo service transmission-daemon start&lt;/i&gt;&lt;/li&gt;&lt;/ol&gt;&lt;h3&gt;Note&lt;/h3&gt;&lt;br /&gt;&lt;br /&gt;&lt;li style=&quot;margin-left: 40px;&quot;&gt;Usually transmission has permission issues regrading watched, incomplete, and download folders not allowing the process access by default. This is nothing that a &lt;i&gt;chmod&lt;/i&gt; cannot resolve.&lt;/li&gt;&lt;li style=&quot;margin-left: 40px;&quot;&gt;Setting transmission to keep incomplete downloads of completed downloads is always a good idea. &lt;/li&gt;&lt;br /&gt;&lt;h3&gt;Links&lt;/h3&gt;&lt;br /&gt;&lt;li&gt;&lt;i&gt;&lt;a href=&quot;http://magnet2torrent.me/&quot; target=&quot;_blank&quot;&gt;Magnetic Link to Torrent conversion&lt;/a&gt;&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;http://1000umbrellas.com/2010/04/21/transmission-install-on-ubuntu-10-04-server-lucid&quot; target=&quot;_blank&quot;&gt;Further transmission-daemon configuration including web interface setup&lt;/a&gt;&lt;i&gt;&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://www.google.com/url?sa=t&amp;amp;rct=j&amp;amp;q=&amp;amp;esrc=s&amp;amp;source=web&amp;amp;cd=2&amp;amp;cad=rja&amp;amp;sqi=2&amp;amp;ved=0CDoQFjAB&amp;amp;url=https%3A%2F%2Fhelp.ubuntu.com%2F10.04%2Fserverguide%2Fsamba-fileserver.html&amp;amp;ei=1vnxUNPwEMT90gGO1IEo&amp;amp;usg=AFQjCNFf05ydoqbnraJR0CRsRCWom2FCHQ&amp;amp;sig2=m6KDPVIHv6hGqxWNWwj47Q&quot; target=&quot;_blank&quot;&gt;Samba configuration help &lt;/a&gt; very useful for accessing the completed download folder from a separate machine (even a windows one)&lt;/li&gt;</description>
-        <pubDate>Sat, 12 Jan 2013 18:19:00 -0800</pubDate>
-        <link>https://ramsay.xyz/2013/01/12/turn-arm-linux-headless-server-into.html</link>
-        <guid isPermaLink="true">https://ramsay.xyz/2013/01/12/turn-arm-linux-headless-server-into.html</guid>
-        
-        <category>transmission</category>
-        
-        <category>python</category>
-        
-        <category>Dropbox</category>
-        
-        <category>arm linux</category>
         
         
       </item>
