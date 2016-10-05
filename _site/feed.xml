@@ -5,9 +5,20 @@
     <description>&#39;dank memes&#39; happens to be a phrase that exists currently.</description>
     <link>https://ramsay.xyz/</link>
     <atom:link href="https://ramsay.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 12 Sep 2016 17:38:42 -0400</pubDate>
-    <lastBuildDate>Mon, 12 Sep 2016 17:38:42 -0400</lastBuildDate>
+    <pubDate>Wed, 05 Oct 2016 14:50:35 -0400</pubDate>
+    <lastBuildDate>Wed, 05 Oct 2016 14:50:35 -0400</lastBuildDate>
     <generator>Jekyll v3.1.3</generator>
+    
+      <item>
+        <title>Site of Real Programming</title>
+        <description>&lt;p&gt;GOTO &lt;a href=&quot;http://realprogramming.neocities.org/&quot;&gt;http://realprogramming.neocities.org/&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 05 Oct 2016 00:00:00 -0400</pubDate>
+        <link>https://ramsay.xyz/2016/10/05/realprogramming.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2016/10/05/realprogramming.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Something About Parsing JSON Using Go</title>
@@ -284,16 +295,6 @@ using &lt;code class=&quot;highlighter-rouge&quot;&gt;json.Unmarshal&lt;/code&gt
         <pubDate>Wed, 10 Feb 2016 18:44:00 -0500</pubDate>
         <link>https://ramsay.xyz/2016/02/10/why-scala-is-terrible-knee-jerk-reaction.html</link>
         <guid isPermaLink="true">https://ramsay.xyz/2016/02/10/why-scala-is-terrible-knee-jerk-reaction.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>I wrote a blog post elsewhere: Learn How to Write Angular 2 Style Unit Tests with Angular 1.X Code</title>
-        <description>&lt;h2&gt;&lt;/h2&gt;&lt;a href=&quot;http://blog.rangle.io/unittests/&quot;&gt;http://blog.rangle.io/unittests/&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;</description>
-        <pubDate>Sun, 04 Oct 2015 11:29:00 -0400</pubDate>
-        <link>https://ramsay.xyz/2015/10/04/i-wrote-blog-post-elsewhere-learn-how.html</link>
-        <guid isPermaLink="true">https://ramsay.xyz/2015/10/04/i-wrote-blog-post-elsewhere-learn-how.html</guid>
         
         
       </item>
