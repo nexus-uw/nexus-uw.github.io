@@ -77,3 +77,7 @@ function sendErrorToOpbeat(e) {
 
 
 now all that remains, is to add ```OpBeatErrorHandlerModule``` to the ```imports``` of the main module.
+
+
+# Update 1 ( sept 12 2016 )
+Since RC 6, ```ExceptionHandler``` was renamed to ```ErrorHandler```
