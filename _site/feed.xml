@@ -5,9 +5,38 @@
     <description>&#39;dank memes&#39; happens to be a phrase that exists currently.</description>
     <link>https://ramsay.xyz/</link>
     <atom:link href="https://ramsay.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 30 Oct 2016 03:27:19 -0400</pubDate>
-    <lastBuildDate>Sun, 30 Oct 2016 03:27:19 -0400</lastBuildDate>
-    <generator>Jekyll v3.1.6</generator>
+    <pubDate>Fri, 16 Dec 2016 15:55:26 -0500</pubDate>
+    <lastBuildDate>Fri, 16 Dec 2016 15:55:26 -0500</lastBuildDate>
+    <generator>Jekyll v3.1.3</generator>
+    
+      <item>
+        <title>Sample Compound Interest Calculator (part 1)</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/vue.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So I built a simple compound interest rate calculator using &lt;a href=&quot;https://vuejs.org&quot;&gt;vue.js&lt;/a&gt; this afternoon. Gotta say it is pretty nice after working with Angular 2 for the past 8 months.
+Vue.js brings me back to the good old days of Angular 1 with the ability to build an app in 60 LOC (all in index.html) without having to use webpack or some CLI.&lt;/p&gt;
+
+&lt;p&gt;Stay tuned for part 2, where I will reflect on polishing the app up to be more professional with components and unit tests.&lt;/p&gt;
+
+&lt;p&gt;Site is available at: &lt;a href=&quot;https://ramsay.xyz/vue-compound-interest-calculator/&quot;&gt;https://ramsay.xyz/vue-compound-interest-calculator/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Code is available at: &lt;a href=&quot;https://github.com/nexus-uw/vue-compound-interest-calculator&quot;&gt;https://github.com/nexus-uw/vue-compound-interest-calculator&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 16 Dec 2016 00:00:00 -0500</pubDate>
+        <link>https://ramsay.xyz/2016/12/16/vue-compond-interest-calculator-part-1.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2016/12/16/vue-compond-interest-calculator-part-1.html</guid>
+        
+        <category>vue.js</category>
+        
+        <category>compound</category>
+        
+        <category>interest</category>
+        
+        <category>calculator</category>
+        
+        
+      </item>
     
       <item>
         <title>Site of Real Programming</title>
@@ -285,16 +314,6 @@ using &lt;code class=&quot;highlighter-rouge&quot;&gt;json.Unmarshal&lt;/code&gt
         <category>safari</category>
         
         <category>angular</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Why Scala is Not Very Good (a knee jerk reaction)</title>
-        <description>Yesterday, I spent a great deal of time trying to get a simple script that hits one GET endpoint, does a quick filter on the results, and then sends a POST request to a different service. Both of these services have Scala libraries for their APIs but I could never manage to import and make a basic request.&lt;br /&gt;&lt;br /&gt;So after 6 hours of failing to do anything, I gave up, learned the basics of Go, and within 3 hours I implemented the basics my idea.&lt;br /&gt;&lt;br /&gt;From this experience, I have come up with the following guidelines for what makes a programing language accessible&lt;br /&gt;- can create a single file program that does something marginally useful&lt;br /&gt;- simple dependency management for 3rd party libs&lt;br /&gt;- basic install + run on the command line (I don&#39;t care to download some 400MB IDE to create a shell script)&lt;br /&gt;&lt;br /&gt;=&amp;gt; so Python, Node/JavaScript, and Go are the prime candidates for accessible programming languages (what a shocker...)</description>
-        <pubDate>Wed, 10 Feb 2016 18:44:00 -0500</pubDate>
-        <link>https://ramsay.xyz/2016/02/10/why-scala-is-terrible-knee-jerk-reaction.html</link>
-        <guid isPermaLink="true">https://ramsay.xyz/2016/02/10/why-scala-is-terrible-knee-jerk-reaction.html</guid>
         
         
       </item>
