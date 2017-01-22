@@ -2,12 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Simon Ramsay</title>
-    <description>&#39;dank memes&#39; happens to be a phrase that exists currently.</description>
+    <description>'dank memes' happens to be a phrase that exists currently.</description>
     <link>https://ramsay.xyz/</link>
     <atom:link href="https://ramsay.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 16 Dec 2016 16:11:44 -0500</pubDate>
-    <lastBuildDate>Fri, 16 Dec 2016 16:11:44 -0500</lastBuildDate>
-    <generator>Jekyll v3.1.3</generator>
+    <pubDate>Sun, 22 Jan 2017 17:38:05 +0000</pubDate>
+    <lastBuildDate>Sun, 22 Jan 2017 17:38:05 +0000</lastBuildDate>
+    <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>A List of Some Tor Hidden Service Mirros of Clearnet Sites</title>
+        <description>&lt;ul&gt;
+  &lt;li&gt;facebook.com &lt;a href=&quot;https://facebookcorewwwi.onion/&quot;&gt;https://facebookcorewwwi.onion/&lt;/a&gt; (&lt;a href=&quot;https://www.facebook.com/notes/protect-the-graph/making-connections-to-facebook-more-secure/1526085754298237&quot;&gt;src&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;duckduckgo.com &lt;a href=&quot;https://3g2upl4pq6kufc4m.onion/&quot;&gt;https://3g2upl4pq6kufc4m.onion/&lt;/a&gt; (&lt;a href=&quot;https://en.wikipedia.org/wiki/DuckDuckGo&quot;&gt;src&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;protonmail.com &lt;a href=&quot;https://protonirockerxow.onion&quot;&gt;https://protonirockerxow.onion&lt;/a&gt; (&lt;a href=&quot;https://protonmail.com/blog/tor-encrypted-email/&quot;&gt;src&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;thepiratebay.org &lt;a href=&quot;http://uj3wazyk5u4hnvtk.onion/&quot;&gt;http://uj3wazyk5u4hnvtk.onion/&lt;/a&gt; (&lt;a href=&quot;https://thepiratebay.org&quot;&gt;src&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;keybase.io &lt;a href=&quot;http://fncuwbiisyh6ak3i.onion&quot;&gt;http://fncuwbiisyh6ak3i.onion&lt;/a&gt; (&lt;a href=&quot;https://keybase.io&quot;&gt;src&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;ramsay.xyz &lt;a href=&quot;http://eqac56hh4ppxzy27.onion/&quot;&gt;http://eqac56hh4ppxzy27.onion/&lt;/a&gt; (&lt;a href=&quot;https://github.com/nexus-uw/nexus-uw.github.io/blob/master/_includes/footer.html#L5&quot;&gt;src&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;view history of this page at &lt;a href=&quot;https://github.com/nexus-uw/nexus-uw.github.io/blob/master/_posts/2017-01-22-list-of-tor-sites.md&quot;&gt;https://github.com/nexus-uw/nexus-uw.github.io/blob/master/_posts/2017-01-22-list-of-tor-sites.md&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 22 Jan 2017 00:00:00 +0000</pubDate>
+        <link>https://ramsay.xyz/2017/01/22/list-of-tor-sites.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2017/01/22/list-of-tor-sites.html</guid>
+        
+        <category>tor</category>
+        
+        <category>hidden</category>
+        
+        <category>service</category>
+        
+        <category>onion</category>
+        
+        
+      </item>
     
       <item>
         <title>Sample Compound Interest Calculator (part 1)</title>
@@ -23,7 +51,7 @@ Vue.js brings me back to the good old days of Angular 1 with the ability to buil
 &lt;p&gt;Code is available at: &lt;a href=&quot;https://github.com/nexus-uw/vue-compound-interest-calculator&quot;&gt;https://github.com/nexus-uw/vue-compound-interest-calculator&lt;/a&gt;&lt;/p&gt;
 
 </description>
-        <pubDate>Fri, 16 Dec 2016 00:00:00 -0500</pubDate>
+        <pubDate>Fri, 16 Dec 2016 00:00:00 +0000</pubDate>
         <link>https://ramsay.xyz/2016/12/16/vue-compond-interest-calculator-part-1.html</link>
         <guid isPermaLink="true">https://ramsay.xyz/2016/12/16/vue-compond-interest-calculator-part-1.html</guid>
         
@@ -42,7 +70,7 @@ Vue.js brings me back to the good old days of Angular 1 with the ability to buil
         <title>Site of Real Programming</title>
         <description>&lt;p&gt;GOTO &lt;a href=&quot;http://realprogramming.neocities.org/&quot;&gt;http://realprogramming.neocities.org/&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Wed, 05 Oct 2016 00:00:00 -0400</pubDate>
+        <pubDate>Wed, 05 Oct 2016 00:00:00 +0000</pubDate>
         <link>https://ramsay.xyz/2016/10/05/realprogramming.html</link>
         <guid isPermaLink="true">https://ramsay.xyz/2016/10/05/realprogramming.html</guid>
         
@@ -79,7 +107,7 @@ using &lt;code class=&quot;highlighter-rouge&quot;&gt;json.Unmarshal&lt;/code&gt
 &lt;h3 id=&quot;better-solution&quot;&gt;Better Solution&lt;/h3&gt;
 &lt;p&gt;goto &lt;a href=&quot;https://gobyexample.com/json&quot;&gt;https://gobyexample.com/json&lt;/a&gt; instead….&lt;/p&gt;
 </description>
-        <pubDate>Mon, 05 Sep 2016 00:00:00 -0400</pubDate>
+        <pubDate>Mon, 05 Sep 2016 00:00:00 +0000</pubDate>
         <link>https://ramsay.xyz/2016/09/05/something-about-parsing-json-using-golang.html</link>
         <guid isPermaLink="true">https://ramsay.xyz/2016/09/05/something-about-parsing-json-using-golang.html</guid>
         
@@ -101,7 +129,7 @@ using &lt;code class=&quot;highlighter-rouge&quot;&gt;json.Unmarshal&lt;/code&gt
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;ExceptionHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;Injectable&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;@angular/core&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'@angular/core'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;// cant import the source  directly using webpack, so we have to&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;// include the built source file on the page to expose _opbeat&lt;/span&gt;
@@ -126,12 +154,12 @@ using &lt;code class=&quot;highlighter-rouge&quot;&gt;json.Unmarshal&lt;/code&gt
       &lt;span class=&quot;nx&quot;&gt;OpBeatErrorHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;opBeatStarted&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;sendErrorToOpbeat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;ERROR&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'ERROR'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stackTrace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;STACK TRACE&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;stackTrace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'STACK TRACE'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;stackTrace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reason&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;REASON&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;stackTrace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'REASON'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;stackTrace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -148,14 +176,14 @@ using &lt;code class=&quot;highlighter-rouge&quot;&gt;json.Unmarshal&lt;/code&gt
  */&lt;/span&gt;
 
 &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;startOpbeat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;_opbeat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;config&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;orgId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;your orgId&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;appId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;your appId&#39;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;_opbeat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'config'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;orgId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'your orgId'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;appId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'your appId'&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
 &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sendErrorToOpbeat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;_opbeat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;captureException&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;_opbeat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'captureException'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -165,7 +193,7 @@ using &lt;code class=&quot;highlighter-rouge&quot;&gt;json.Unmarshal&lt;/code&gt
 &lt;h1 id=&quot;update-1--sept-12-2016-&quot;&gt;Update 1 ( sept 12 2016 )&lt;/h1&gt;
 &lt;p&gt;Since RC 6, &lt;code class=&quot;highlighter-rouge&quot;&gt;ExceptionHandler&lt;/code&gt; was renamed to &lt;code class=&quot;highlighter-rouge&quot;&gt;ErrorHandler&lt;/code&gt;&lt;/p&gt;
 </description>
-        <pubDate>Mon, 05 Sep 2016 00:00:00 -0400</pubDate>
+        <pubDate>Mon, 05 Sep 2016 00:00:00 +0000</pubDate>
         <link>https://ramsay.xyz/2016/09/05/opbeat-angular-2-integration.html</link>
         <guid isPermaLink="true">https://ramsay.xyz/2016/09/05/opbeat-angular-2-integration.html</guid>
         
@@ -198,7 +226,7 @@ using &lt;code class=&quot;highlighter-rouge&quot;&gt;json.Unmarshal&lt;/code&gt
   &lt;p&gt;Your time metrics are stored locally with the repository as Git notes. If you want to share your data, it can be pushed and fetched to and from the remote repository. Other GTM users on your team can do the same. This provides you the ability to see time metrics for the entire team.&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
-        <pubDate>Sat, 23 Jul 2016 00:00:00 -0400</pubDate>
+        <pubDate>Sat, 23 Jul 2016 00:00:00 +0000</pubDate>
         <link>https://ramsay.xyz/2016/07/23/i-create-a-vs-extension.html</link>
         <guid isPermaLink="true">https://ramsay.xyz/2016/07/23/i-create-a-vs-extension.html</guid>
         
@@ -213,7 +241,7 @@ using &lt;code class=&quot;highlighter-rouge&quot;&gt;json.Unmarshal&lt;/code&gt
     
       <item>
         <title>How to support &lt;picture&gt; elements created by Angular (or other similar JS Frameworks) in IE11 or Safari browsers from before March 2016</title>
-        <description>&lt;p&gt;Sometimes  a project requires a very pretty content page filled with overlapping background images and floating text blocks that is not particularly easy to implement responsively using HTML. The relatively new &lt;picture&gt; element is a great tool for this problem (having significantly taller mobile images so that the there is white space to for the content to go above the photo&#39;s subject) but it is not supported on all browsers (ref: 1,2,3).&lt;/picture&gt;&lt;/p&gt;
+        <description>&lt;p&gt;Sometimes  a project requires a very pretty content page filled with overlapping background images and floating text blocks that is not particularly easy to implement responsively using HTML. The relatively new &lt;picture&gt; element is a great tool for this problem (having significantly taller mobile images so that the there is white space to for the content to go above the photo's subject) but it is not supported on all browsers (ref: 1,2,3).&lt;/picture&gt;&lt;/p&gt;
 
 &lt;p&gt;Luckily there a great polyfill, &lt;a href=&quot;https://scottjehl.github.io/picturefill/&quot;&gt;picturefill&lt;/a&gt; so there is no need for weird hacks.&lt;/p&gt;
 
@@ -230,7 +258,7 @@ using &lt;code class=&quot;highlighter-rouge&quot;&gt;json.Unmarshal&lt;/code&gt
 2 &lt;a href=&quot;&quot;&gt;https://responsiveimages.org/&lt;/a&gt;&lt;br /&gt;
 3 &lt;a href=&quot;&quot;&gt;http://caniuse.com/#feat=picture&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Thu, 14 Jul 2016 00:00:00 -0400</pubDate>
+        <pubDate>Thu, 14 Jul 2016 00:00:00 +0000</pubDate>
         <link>https://ramsay.xyz/2016/07/14/picture-element-pollyfill.html</link>
         <guid isPermaLink="true">https://ramsay.xyz/2016/07/14/picture-element-pollyfill.html</guid>
         
@@ -247,7 +275,7 @@ using &lt;code class=&quot;highlighter-rouge&quot;&gt;json.Unmarshal&lt;/code&gt
         <title>ramsay.xyz now available as a hidden service</title>
         <description>&lt;p&gt;Here is a link to it: &lt;a href=&quot;http://eqac56hh4ppxzy27.onion&quot;&gt;eqac56hh4ppxzy27.onion&lt;/a&gt;.&lt;/p&gt;
 </description>
-        <pubDate>Thu, 02 Jun 2016 00:00:00 -0400</pubDate>
+        <pubDate>Thu, 02 Jun 2016 00:00:00 +0000</pubDate>
         <link>https://ramsay.xyz/2016/06/02/site-now-available-as-a-hidden-service.html</link>
         <guid isPermaLink="true">https://ramsay.xyz/2016/06/02/site-now-available-as-a-hidden-service.html</guid>
         
@@ -266,7 +294,7 @@ using &lt;code class=&quot;highlighter-rouge&quot;&gt;json.Unmarshal&lt;/code&gt
         <title>I made a thing</title>
         <description>&lt;p&gt;Here is a link to it: &lt;a href=&quot;https://github.com/nexus-uw/make-account-green&quot;&gt;nexus-uw/make-account-green&lt;/a&gt;.&lt;/p&gt;
 </description>
-        <pubDate>Sun, 22 May 2016 00:00:00 -0400</pubDate>
+        <pubDate>Sun, 22 May 2016 00:00:00 +0000</pubDate>
         <link>https://ramsay.xyz/2016/05/22/i-made-a-thing.html</link>
         <guid isPermaLink="true">https://ramsay.xyz/2016/05/22/i-made-a-thing.html</guid>
         
@@ -281,7 +309,7 @@ using &lt;code class=&quot;highlighter-rouge&quot;&gt;json.Unmarshal&lt;/code&gt
         <title>Moved Blog to Github</title>
         <description>&lt;p&gt;old site will no longer be “updated” https://nexus-rage-quit.blogspot.ca/&lt;/p&gt;
 </description>
-        <pubDate>Wed, 18 May 2016 14:02:37 -0400</pubDate>
+        <pubDate>Wed, 18 May 2016 18:02:37 +0000</pubDate>
         <link>https://ramsay.xyz/no/human/will/read/this/2016/05/18/moved-to-github.html</link>
         <guid isPermaLink="true">https://ramsay.xyz/no/human/will/read/this/2016/05/18/moved-to-github.html</guid>
         
@@ -295,26 +323,6 @@ using &lt;code class=&quot;highlighter-rouge&quot;&gt;json.Unmarshal&lt;/code&gt
         <category>read</category>
         
         <category>this</category>
-        
-      </item>
-    
-      <item>
-        <title>ngSubmit does not work on iOS (quickie tip)</title>
-        <description>If you have a &amp;lt;form&amp;gt; without a&amp;nbsp; button or a clickable input[type=&quot;submit&#39;] inside of it on iOS Safari, ngSubmit has never worked for me.&lt;br /&gt;&lt;br /&gt;I have been able to fix this issue by adding a input[type=&quot;submit&#39;] with style=&quot;visibility: hidden;&quot;.</description>
-        <pubDate>Mon, 15 Feb 2016 12:00:00 -0500</pubDate>
-        <link>https://ramsay.xyz/2016/02/15/ngsubmit-does-not-work-on-ios-quickie.html</link>
-        <guid isPermaLink="true">https://ramsay.xyz/2016/02/15/ngsubmit-does-not-work-on-ios-quickie.html</guid>
-        
-        <category>ngForm</category>
-        
-        <category>iOS</category>
-        
-        <category>ngSubmit</category>
-        
-        <category>safari</category>
-        
-        <category>angular</category>
-        
         
       </item>
     
