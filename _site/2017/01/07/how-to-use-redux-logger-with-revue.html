@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>How to use redux logger with revue</title>
+  <title>How to Use Redux Logger with Revue</title>
   <meta name="description" content="When using revue to connect an app’s redux state to the internals of vuejs change detection, the state is transformed from plain objects, to Vue’s observe ob...">
 
   <link rel="stylesheet" href="/css/main.css">
@@ -145,7 +145,7 @@ fill="#000000" stroke="none">
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">How to use redux logger with revue</h1>
+    <h1 class="post-title" itemprop="name headline">How to Use Redux Logger with Revue</h1>
     <p class="post-meta"><time datetime="2017-01-07T00:00:00+00:00" itemprop="datePublished">Jan 7, 2017</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Simon</span></span></p>
   </header>
 
@@ -198,7 +198,7 @@ fill="#000000" stroke="none">
 
 <span class="kd">const</span> <span class="nx">reduxStore</span> <span class="o">=</span> <span class="nx">createStore</span><span class="p">(</span>
   <span class="nx">combineReducers</span><span class="p">({</span> <span class="nx">requests</span><span class="p">,</span> <span class="nx">elements</span> <span class="p">})</span>
-  <span class="p">,</span> <span class="nx">applyMiddleware</span><span class="p">(</span><span class="nx">logger</span><span class="p">)</span> 
+  <span class="p">,</span> <span class="nx">applyMiddleware</span><span class="p">(</span><span class="nx">logger</span><span class="p">)</span>
 <span class="p">);</span>
 
 <span class="k">export</span> <span class="kd">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Revue</span><span class="p">(</span><span class="nx">Vue</span><span class="p">,</span> <span class="nx">reduxStore</span><span class="p">);</span>

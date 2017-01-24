@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'How to use redux logger with revue'
+title: 'How to Use Redux Logger with Revue'
 date: '2017-01-07'
 author: Simon
 tags:
@@ -60,7 +60,7 @@ const logger = createLogger({
 
 const reduxStore = createStore(
   combineReducers({ requests, elements })
-  , applyMiddleware(logger) 
+  , applyMiddleware(logger)
 );
 
 export const store = new Revue(Vue, reduxStore);
