@@ -5,12 +5,12 @@
     <description>'dank memes' happens to be a phrase that exists currently.</description>
     <link>https://ramsay.xyz/</link>
     <atom:link href="https://ramsay.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 24 Jan 2017 19:08:35 +0000</pubDate>
-    <lastBuildDate>Tue, 24 Jan 2017 19:08:35 +0000</lastBuildDate>
+    <pubDate>Tue, 24 Jan 2017 19:31:30 +0000</pubDate>
+    <lastBuildDate>Tue, 24 Jan 2017 19:31:30 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
-        <title>A List of Some Tor Hidden Service Mirros of Clearnet Sites</title>
+        <title>A List of Some Tor Hidden Service Mirrors of Clearnet Sites</title>
         <description>&lt;ul&gt;
   &lt;li&gt;facebook.com &lt;a href=&quot;https://facebookcorewwwi.onion/&quot;&gt;https://facebookcorewwwi.onion/&lt;/a&gt; (&lt;a href=&quot;https://www.facebook.com/notes/protect-the-graph/making-connections-to-facebook-more-secure/1526085754298237&quot;&gt;src&lt;/a&gt;)&lt;/li&gt;
   &lt;li&gt;duckduckgo.com &lt;a href=&quot;https://3g2upl4pq6kufc4m.onion/&quot;&gt;https://3g2upl4pq6kufc4m.onion/&lt;/a&gt; (&lt;a href=&quot;https://en.wikipedia.org/wiki/DuckDuckGo&quot;&gt;src&lt;/a&gt;)&lt;/li&gt;
@@ -38,7 +38,7 @@
       </item>
     
       <item>
-        <title>How to use redux logger with revue</title>
+        <title>How to Use Redux Logger with Revue</title>
         <description>&lt;p&gt;When using revue to connect an app’s redux state to the internals of vuejs change detection, the state is transformed from plain objects, to Vue’s observe objects. This is great, since it gets everything working transparently, but leaves a lot to be desired when logging changes to the redux state (using redux-logger).&lt;/p&gt;
 
 &lt;p&gt;This leaves our chrome console looking like:&lt;/p&gt;
@@ -87,7 +87,7 @@
 
 &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;reduxStore&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;createStore&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;combineReducers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;elements&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;applyMiddleware&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+  &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;applyMiddleware&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;store&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Revue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;reduxStore&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
@@ -348,7 +348,7 @@ using &lt;code class=&quot;highlighter-rouge&quot;&gt;json.Unmarshal&lt;/code&gt
       </item>
     
       <item>
-        <title>ramsay.xyz now available as a hidden service</title>
+        <title>ramsay.xyz Now Available as a Tor Hidden Service</title>
         <description>&lt;p&gt;Here is a link to it: &lt;a href=&quot;http://eqac56hh4ppxzy27.onion&quot;&gt;eqac56hh4ppxzy27.onion&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Thu, 02 Jun 2016 00:00:00 +0000</pubDate>

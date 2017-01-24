@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'A List of Some Tor Hidden Service Mirros of Clearnet Sites'
+title: 'A List of Some Tor Hidden Service Mirrors of Clearnet Sites'
 date: '2017-01-22'
 author: Simon
 tags:

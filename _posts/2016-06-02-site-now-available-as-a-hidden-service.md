@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'ramsay.xyz now available as a hidden service'
+title: 'ramsay.xyz Now Available as a Tor Hidden Service'
 date: '2016-06-02'
 author: Simon
 tags:
