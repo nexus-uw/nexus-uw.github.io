@@ -14,6 +14,7 @@ tags:
 - protonmail.com [https://protonirockerxow.onion](https://protonirockerxow.onion) ([src](https://protonmail.com/blog/tor-encrypted-email/))
 - thepiratebay.org [http://uj3wazyk5u4hnvtk.onion/](http://uj3wazyk5u4hnvtk.onion/) ([src](https://thepiratebay.org))
 - keybase.io [http://fncuwbiisyh6ak3i.onion](http://fncuwbiisyh6ak3i.onion) ([src](https://keybase.io))
+- onions.debian.org [http://5nca3wxl33tzlzj5.onion/](http://5nca3wxl33tzlzj5.onion/)([src](https://onion.debian.org/))
 - ramsay.xyz [http://eqac56hh4ppxzy27.onion/](http://eqac56hh4ppxzy27.onion/) ([src](https://github.com/nexus-uw/nexus-uw.github.io/blob/master/_includes/footer.html#L5))
 
 
