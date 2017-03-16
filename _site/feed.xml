@@ -5,9 +5,53 @@
     <description>'dank memes' happens to be a phrase that exists currently.</description>
     <link>https://ramsay.xyz/</link>
     <atom:link href="https://ramsay.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 15 Mar 2017 19:57:47 +0000</pubDate>
-    <lastBuildDate>Wed, 15 Mar 2017 19:57:47 +0000</lastBuildDate>
+    <pubDate>Thu, 16 Mar 2017 19:22:17 +0000</pubDate>
+    <lastBuildDate>Thu, 16 Mar 2017 19:22:17 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>Notes About Unearthed Toronto 2017</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/unearthed-logo-300.png&quot; alt=&quot;&quot; /&gt; &lt;img src=&quot;/assets/snapfix-logo.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Two weeks ago I participated in the &lt;a href=&quot;https://unearthed.solutions/hackathons/unearthed-toronto-2017/&quot;&gt;Unearthed Toronto hackathon&lt;/a&gt;. It was sponsored by Barick Gold who also provided the problems and data sets.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/letaylor622&quot;&gt;letaylor622&lt;/a&gt;, &lt;a href=&quot;https://github.com/Cameron2920&quot;&gt;Cameron2920&lt;/a&gt;, and I where able to put together a working prototype of an pre-emptive inventory system for a haul truck mechanic shop. We were able to take a service history of truck, and calculate the average up time between service visits each ‘component’ of the truck would require (&lt;a href=&quot;https://github.com/nexus-uw/report-history-analysis&quot;&gt;nexus-uw/report-history-analysis&lt;/a&gt;). Taking these results, the system was able to tell the mechanics/inventory mangers how much parts inventory they required to service the trucks when they were expected to require work. The expected inventory demand was then displayed alongside the actual inventory levels so that they could see how well they would be able to meet demand. Our solution had a responsive &lt;a href=&quot;https://github.com/nexus-uw/uneathed-webapp&quot;&gt;web app&lt;/a&gt; built with vue.js, &lt;a href=&quot;https://github.com/Cameron2920/unearthed-pepperoni&quot;&gt;rails backend&lt;/a&gt;, and a Postgres DB (everything is deployed using docker and live at &lt;a href=&quot;https://snapfix.io&quot;&gt;https://snapfix.io&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;In the end, we did not win.&lt;/p&gt;
+
+&lt;h3 id=&quot;lessons-learned&quot;&gt;Lessons Learned&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;You dont have to actually build something, vaporware is acceptable if the idea is bold and exciting. (Some of the teams comprised of data scientists had much bolder solutions to the problems presented).&lt;/li&gt;
+  &lt;li&gt;A concise and focused pitch is key.&lt;/li&gt;
+  &lt;li&gt;Nobody cares about the tools you used, only how it looks on the projector.&lt;/li&gt;
+  &lt;li&gt;If you already have a team, avoid accepting randos. Best to keep things simple.&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Thu, 16 Mar 2017 00:00:00 +0000</pubDate>
+        <link>https://ramsay.xyz/2017/03/16/notes-about-unearthed-toronto-2017.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2017/03/16/notes-about-unearthed-toronto-2017.html</guid>
+        
+        <category>hackathon</category>
+        
+        <category>barrick</category>
+        
+        <category>unearthed</category>
+        
+        <category>toronto</category>
+        
+        <category>hackathon</category>
+        
+        <category>snapfix.io</category>
+        
+        <category>vue.js</category>
+        
+        <category>rails</category>
+        
+        <category>docker</category>
+        
+        
+      </item>
     
       <item>
         <title>A List of Some Tor Hidden Service Mirrors of Clearnet Sites</title>
@@ -363,21 +407,6 @@ using &lt;code class=&quot;highlighter-rouge&quot;&gt;json.Unmarshal&lt;/code&gt
         <category>hidden service</category>
         
         <category>darknet</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>I made a thing</title>
-        <description>&lt;p&gt;Here is a link to it: &lt;a href=&quot;https://github.com/nexus-uw/make-account-green&quot;&gt;nexus-uw/make-account-green&lt;/a&gt;.&lt;/p&gt;
-</description>
-        <pubDate>Sun, 22 May 2016 00:00:00 +0000</pubDate>
-        <link>https://ramsay.xyz/2016/05/22/i-made-a-thing.html</link>
-        <guid isPermaLink="true">https://ramsay.xyz/2016/05/22/i-made-a-thing.html</guid>
-        
-        <category>a thing</category>
-        
-        <category>git</category>
         
         
       </item>
