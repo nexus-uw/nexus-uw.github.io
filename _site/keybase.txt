@@ -1,0 +1,54 @@
+==================================================================
+https://keybase.io/nexusuw
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://ramsay.xyz
+  * I am nexusuw (https://keybase.io/nexusuw) on keybase.
+  * I have a public key ASAHb4662qcgHBiJrCqyealeFL13omBFVwc01UNvdqW7Kwo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0120feb3eb89a0c59d1a13681ee6c57a58260371429f06d82aed70304b18d54514c00a",
+            "host": "keybase.io",
+            "kid": "0120076f8ebadaa7201c1889ac2ab279a95e14bd77a26045570734d5436f76a5bb2b0a",
+            "uid": "bc97354d2260eebc5a7b5e4a5de10f19",
+            "username": "nexusuw"
+        },
+        "service": {
+            "hostname": "ramsay.xyz",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.20"
+    },
+    "ctime": 1489946619,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1489946599,
+        "hash": "b2a702f197b250e4420b8e6c925ce263686f70f23595d131699cab5ef23d26c004b933fe180853260f7c8c695573ccdb6493bacc60aa1923954d40939c911229",
+        "seqno": 967308
+    },
+    "prev": "38455063dfff3b21e060e043a543f20de7bfa0bb6dad0fcabcc583adbcdc2a7e",
+    "seqno": 15,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgB2+OutqnIBwYiawqsnmpXhS9d6JgRVcHNNVDb3aluysKp3BheWxvYWTFAvJ7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwZmViM2ViODlhMGM1OWQxYTEzNjgxZWU2YzU3YTU4MjYwMzcxNDI5ZjA2ZDgyYWVkNzAzMDRiMThkNTQ1MTRjMDBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwMDc2ZjhlYmFkYWE3MjAxYzE4ODlhYzJhYjI3OWE5NWUxNGJkNzdhMjYwNDU1NzA3MzRkNTQzNmY3NmE1YmIyYjBhIiwidWlkIjoiYmM5NzM1NGQyMjYwZWViYzVhN2I1ZTRhNWRlMTBmMTkiLCJ1c2VybmFtZSI6Im5leHVzdXcifSwic2VydmljZSI6eyJob3N0bmFtZSI6InJhbXNheS54eXoiLCJwcm90b2NvbCI6Imh0dHBzOiJ9LCJ0eXBlIjoid2ViX3NlcnZpY2VfYmluZGluZyIsInZlcnNpb24iOjF9LCJjbGllbnQiOnsibmFtZSI6ImtleWJhc2UuaW8gZ28gY2xpZW50IiwidmVyc2lvbiI6IjEuMC4yMCJ9LCJjdGltZSI6MTQ4OTk0NjYxOSwiZXhwaXJlX2luIjo1MDQ1NzYwMDAsIm1lcmtsZV9yb290Ijp7ImN0aW1lIjoxNDg5OTQ2NTk5LCJoYXNoIjoiYjJhNzAyZjE5N2IyNTBlNDQyMGI4ZTZjOTI1Y2UyNjM2ODZmNzBmMjM1OTVkMTMxNjk5Y2FiNWVmMjNkMjZjMDA0YjkzM2ZlMTgwODUzMjYwZjdjOGM2OTU1NzNjY2RiNjQ5M2JhY2M2MGFhMTkyMzk1NGQ0MDkzOWM5MTEyMjkiLCJzZXFubyI6OTY3MzA4fSwicHJldiI6IjM4NDU1MDYzZGZmZjNiMjFlMDYwZTA0M2E1NDNmMjBkZTdiZmEwYmI2ZGFkMGZjYWJjYzU4M2FkYmNkYzJhN2UiLCJzZXFubyI6MTUsInRhZyI6InNpZ25hdHVyZSJ9o3NpZ8RAcnURNttO6GrGmOx7wE8ipZqVisyinxUqNZcCrY1s0zq7w2/ODYbkZ2Ft+sSAYF9dNwLlqGHxIjME7A7Iar5GAKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIHJ/R5BDEPxgspEuzsvqfpdIPzt3XCM02tuo3vfW2zTbo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/nexusuw
+
+==================================================================
