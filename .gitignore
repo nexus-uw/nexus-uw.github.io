@@ -2,3 +2,4 @@
 .bundle
 .gtm/
 /.gtm/
+Gemfile.lock

@@ -3,19 +3,19 @@
   <channel>
     <title>Simon Ramsay</title>
     <description>'dank memes' happens to be a phrase that exists currently.</description>
-    <link>http://0.0.0.0:4000/</link>
-    <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 30 Mar 2017 01:21:28 +0000</pubDate>
-    <lastBuildDate>Thu, 30 Mar 2017 01:21:28 +0000</lastBuildDate>
-    <generator>Jekyll v3.4.3</generator>
+    <link>https://ramsay.xyz/</link>
+    <atom:link href="https://ramsay.xyz/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 30 Mar 2017 21:29:28 +0000</pubDate>
+    <lastBuildDate>Thu, 30 Mar 2017 21:29:28 +0000</lastBuildDate>
+    <generator>Jekyll v3.2.1</generator>
     
       <item>
         <title>ramsay.xyz Now Available as an Eepsite (I2P)</title>
         <description>&lt;p&gt;Here is a link to it: &lt;a href=&quot;http://ramsay.i2p&quot;&gt;ramsay.i2p&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Tue, 28 Mar 2017 00:00:00 +0000</pubDate>
-        <link>http://0.0.0.0:4000/2017/03/28/site-also-available-as-an-eep-site.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2017/03/28/site-also-available-as-an-eep-site.html</guid>
+        <link>https://ramsay.xyz/2017/03/28/site-also-available-as-an-eep-site.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2017/03/28/site-also-available-as-an-eep-site.html</guid>
         
         <category>i2p</category>
         
@@ -46,8 +46,8 @@
 
 </description>
         <pubDate>Thu, 16 Mar 2017 00:00:00 +0000</pubDate>
-        <link>http://0.0.0.0:4000/2017/03/16/notes-about-unearthed-toronto-2017.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2017/03/16/notes-about-unearthed-toronto-2017.html</guid>
+        <link>https://ramsay.xyz/2017/03/16/notes-about-unearthed-toronto-2017.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2017/03/16/notes-about-unearthed-toronto-2017.html</guid>
         
         <category>hackathon</category>
         
@@ -85,8 +85,8 @@
 &lt;p&gt;view history of this page at &lt;a href=&quot;https://github.com/nexus-uw/nexus-uw.github.io/blob/master/_posts/2017-01-22-list-of-tor-sites.md&quot;&gt;https://github.com/nexus-uw/nexus-uw.github.io/blob/master/_posts/2017-01-22-list-of-tor-sites.md&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 22 Jan 2017 00:00:00 +0000</pubDate>
-        <link>http://0.0.0.0:4000/2017/01/22/list-of-tor-sites.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2017/01/22/list-of-tor-sites.html</guid>
+        <link>https://ramsay.xyz/2017/01/22/list-of-tor-sites.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2017/01/22/list-of-tor-sites.html</guid>
         
         <category>tor</category>
         
@@ -161,8 +161,8 @@
 &lt;p&gt;&lt;img src=&quot;/assets/after.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Sat, 07 Jan 2017 00:00:00 +0000</pubDate>
-        <link>http://0.0.0.0:4000/2017/01/07/how-to-use-redux-logger-with-revue.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2017/01/07/how-to-use-redux-logger-with-revue.html</guid>
+        <link>https://ramsay.xyz/2017/01/07/how-to-use-redux-logger-with-revue.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2017/01/07/how-to-use-redux-logger-with-revue.html</guid>
         
         <category>vue.js</category>
         
@@ -190,8 +190,8 @@ Vue.js brings me back to the good old days of Angular 1 with the ability to buil
 
 </description>
         <pubDate>Fri, 16 Dec 2016 00:00:00 +0000</pubDate>
-        <link>http://0.0.0.0:4000/2016/12/16/vue-compond-interest-calculator-part-1.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2016/12/16/vue-compond-interest-calculator-part-1.html</guid>
+        <link>https://ramsay.xyz/2016/12/16/vue-compond-interest-calculator-part-1.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2016/12/16/vue-compond-interest-calculator-part-1.html</guid>
         
         <category>vue.js</category>
         
@@ -209,8 +209,8 @@ Vue.js brings me back to the good old days of Angular 1 with the ability to buil
         <description>&lt;p&gt;GOTO &lt;a href=&quot;http://realprogramming.neocities.org/&quot;&gt;http://realprogramming.neocities.org/&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 05 Oct 2016 00:00:00 +0000</pubDate>
-        <link>http://0.0.0.0:4000/2016/10/05/realprogramming.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2016/10/05/realprogramming.html</guid>
+        <link>https://ramsay.xyz/2016/10/05/realprogramming.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2016/10/05/realprogramming.html</guid>
         
         
       </item>
@@ -246,8 +246,8 @@ using &lt;code class=&quot;highlighter-rouge&quot;&gt;json.Unmarshal&lt;/code&gt
 &lt;p&gt;goto &lt;a href=&quot;https://gobyexample.com/json&quot;&gt;https://gobyexample.com/json&lt;/a&gt; instead….&lt;/p&gt;
 </description>
         <pubDate>Mon, 05 Sep 2016 00:00:00 +0000</pubDate>
-        <link>http://0.0.0.0:4000/2016/09/05/something-about-parsing-json-using-golang.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2016/09/05/something-about-parsing-json-using-golang.html</guid>
+        <link>https://ramsay.xyz/2016/09/05/something-about-parsing-json-using-golang.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2016/09/05/something-about-parsing-json-using-golang.html</guid>
         
         <category>JSON</category>
         
@@ -332,8 +332,8 @@ using &lt;code class=&quot;highlighter-rouge&quot;&gt;json.Unmarshal&lt;/code&gt
 &lt;p&gt;Since RC 6, &lt;code class=&quot;highlighter-rouge&quot;&gt;ExceptionHandler&lt;/code&gt; was renamed to &lt;code class=&quot;highlighter-rouge&quot;&gt;ErrorHandler&lt;/code&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 05 Sep 2016 00:00:00 +0000</pubDate>
-        <link>http://0.0.0.0:4000/2016/09/05/opbeat-angular-2-integration.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2016/09/05/opbeat-angular-2-integration.html</guid>
+        <link>https://ramsay.xyz/2016/09/05/opbeat-angular-2-integration.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2016/09/05/opbeat-angular-2-integration.html</guid>
         
         <category>opbeat</category>
         
@@ -365,8 +365,8 @@ using &lt;code class=&quot;highlighter-rouge&quot;&gt;json.Unmarshal&lt;/code&gt
 &lt;/blockquote&gt;
 </description>
         <pubDate>Sat, 23 Jul 2016 00:00:00 +0000</pubDate>
-        <link>http://0.0.0.0:4000/2016/07/23/i-create-a-vs-extension.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2016/07/23/i-create-a-vs-extension.html</guid>
+        <link>https://ramsay.xyz/2016/07/23/i-create-a-vs-extension.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2016/07/23/i-create-a-vs-extension.html</guid>
         
         <category>vscode</category>
         
@@ -397,8 +397,8 @@ using &lt;code class=&quot;highlighter-rouge&quot;&gt;json.Unmarshal&lt;/code&gt
 3 &lt;a href=&quot;&quot;&gt;http://caniuse.com/#feat=picture&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 14 Jul 2016 00:00:00 +0000</pubDate>
-        <link>http://0.0.0.0:4000/2016/07/14/picture-element-pollyfill.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2016/07/14/picture-element-pollyfill.html</guid>
+        <link>https://ramsay.xyz/2016/07/14/picture-element-pollyfill.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2016/07/14/picture-element-pollyfill.html</guid>
         
         <category>IE11</category>
         
