@@ -2,27 +2,25 @@
 
   <div class="wrapper">
 
-    <h2 class="footer-heading">{{ site.title }}<a href="http://eqac56hh4ppxzy27.onion">(TOR)</a></h2>
+    <h2 class="footer-heading">
+      {{ site.title }}
+      <a href="http://eqac56hh4ppxzy27.onion">(TOR)</a>
+      <a href=" http://ramsay.i2p/">(I2P)</a>
+    </h2>
 
     <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
+      <div class="footer-col footer-col-6">
         <ul class="contact-list">
           <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
           <li><a href="https://keybase.io/{{site.keybase_username}}/key.asc">{{site.gpg_key_finger_print}}</a></li>
         </ul>
       </div>
 
-      <div class="footer-col footer-col-2">
+      <div class="footer-col footer-col-6">
         <ul class="social-media-list">
           {% if site.github_username %}
           <li>
             {% include icon-github.html username=site.github_username %}
-          </li>
-          {% endif %}
-
-          {% if site.twitter_username %}
-          <li>
-            {% include icon-twitter.html username=site.twitter_username %}
           </li>
           {% endif %}
 
@@ -31,10 +29,6 @@
           </li>
 
         </ul>
-      </div>
-
-      <div class="footer-col footer-col-3">
-        <p>{{ site.description }}</p>
       </div>
     </div>
 
