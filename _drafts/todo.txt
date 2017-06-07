@@ -1,1 +1,3 @@
-make post about https://github.com/nexus-uw/Hidden-Docker-Limesurvey
+make post about:
+- https://github.com/nexus-uw/Hidden-Docker-Limesurvey
+- how much faster (redisClient.multi(...sets).exec()).then is than Promise.all(sets).then
