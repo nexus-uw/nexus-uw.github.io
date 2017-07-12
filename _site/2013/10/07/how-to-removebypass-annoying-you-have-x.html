@@ -6,13 +6,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Turn ARM Linux Headless Server Into Torrent Box</title>
-  <meta name="description" content="What?&nbsp;Setup a ARM server to automatically start downloading torrents from a Dropbox folder using Python, Cron, and Transmission.Why?Simple, secure, and ...">
+  <title>How to Remove/Bypass Annoying ‘You Have x Free Articles Left This Month</title>
+  <meta name="description" content="Quick and Dirtyopen the website in incognito/private browsing modePermanent solution for Google Chromemenu -&gt; settings -&gt; show advanced settings -&gt; ...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://ramsay.xyz/2013/01/13/turn-arm-linux-headless-server-into.html">
+  <link rel="canonical" href="https://ramsay.xyz/2013/10/07/how-to-removebypass-annoying-you-have-x.html">
   <link rel="alternate" type="application/rss+xml" title="Simon Ramsay" href="https://ramsay.xyz/feed.xml">
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#b91d47">
+  <meta name="theme-color" content="#b91d47">
 </head>
 
 
@@ -145,12 +150,12 @@ fill="#000000" stroke="none">
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Turn ARM Linux Headless Server Into Torrent Box</h1>
-    <p class="post-meta"><time datetime="2013-01-13T02:19:00+00:00" itemprop="datePublished">Jan 13, 2013</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Simon</span></span></p>
+    <h1 class="post-title" itemprop="name headline">How to Remove/Bypass Annoying ‘You Have x Free Articles Left This Month</h1>
+    <p class="post-meta"><time datetime="2013-10-07T21:13:00-05:00" itemprop="datePublished">Oct 7, 2013</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Simon</span></span></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <h4>What?&nbsp;</h4>Setup a ARM server to automatically start downloading torrents from a Dropbox folder using Python, Cron, and Transmission.<br /><h4>Why?</h4>Simple, secure, and resilient setup that since no network configurations, nothing exposed to the web, and no need to deal with changing IP addresses. <br />I find this setup great for finding torrents when away from home, adding the .torrent file to Dropbox,&nbsp; coming home, and having the file(s) already downloaded.<br /><h3>Setup</h3><ol><li>Follow steps 1 &amp; 2 from my previous post <a href="http://nexus-rage-quit.blogspot.com/2013/01/dropbox-hack-on-headless-arm-linux.html" target="_blank">here</a>. This will get the server setup.</li><br /><li>Download <a href="https://github.com/nexus-uw/Python-Hax-Torrent-Dl/blob/master/GetAllTorrentsFromDropbox.py" target="_blank">this python script</a> that will be used to fetch the torrent files from Dropbox&nbsp;</li><br /><li>Fill in the missing constant fields at the beginning of&nbsp; GetAllTorrentsFromDropbox.py using fully resolved paths</li><ol><li>APP_KEY and APP_SECRET : values from Dropbox when app is registered</li><li>ACCESS_TYPE: should be 'app_folder'</li><li>TOKEN_FILE: {abs path to file}/file</li><li>TORRENT_FOLDER: {abs path to save .torrent files}</li><br /></ol><li>Add the script to <a href="http://www.google.ca/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;sqi=2&amp;ved=0CDAQFjAA&amp;url=http%3A%2F%2Fen.wikipedia.org%2Fwiki%2FCron&amp;ei=qO7xUKz4A8ew0AHA7oDoCw&amp;usg=AFQjCNFFJIlg-yvhmJjB9vc1tkJtgWkSCA&amp;sig2=wP3piM9yRspJMnUt6i4ZPA&amp;bvm=bv.1357700187,d.dmQ&amp;cad=rjar" target="_blank">crontab</a> in the terminal using &nbsp; <i>crontab -e</i> and adding the entry at the end of the file<br />Example: to have the script run every 10 minutes, one would add <br />*/10 * * * * python {Path to file}/GetAllTorrentsFromDropbox.py</li><br /><li>Install and start the Transmission daemon<br /><i>sudo apt-get install </i>transmission-daemon<br /><i>transmission-daemon</i></li><br /><li>Configure transmission to automatically add torrents from where new ones are saved. In <code>/var/lib/transmission-daemon/info/settings.json</code> , add/edit "<i>watch-dir":{path to where torrents are saved from step 3} </i>and <i>"watch-dir-enabled"</i>:true</li><br /><li>Do a hard restart of transmission<br /><i>sudo service transmission-daemon stop<br />sudo service transmission-daemon start</i></li></ol><h3>Note</h3><br /><br /><li style="margin-left: 40px;">Usually transmission has permission issues regrading watched, incomplete, and download folders not allowing the process access by default. This is nothing that a <i>chmod</i> cannot resolve.</li><li style="margin-left: 40px;">Setting transmission to keep incomplete downloads of completed downloads is always a good idea. </li><br /><h3>Links</h3><br /><li><i><a href="http://magnet2torrent.me/" target="_blank">Magnetic Link to Torrent conversion</a></i></li><li><a href="http://1000umbrellas.com/2010/04/21/transmission-install-on-ubuntu-10-04-server-lucid" target="_blank">Further transmission-daemon configuration including web interface setup</a><i></i></li><li><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=2&amp;cad=rja&amp;sqi=2&amp;ved=0CDoQFjAB&amp;url=https%3A%2F%2Fhelp.ubuntu.com%2F10.04%2Fserverguide%2Fsamba-fileserver.html&amp;ei=1vnxUNPwEMT90gGO1IEo&amp;usg=AFQjCNFf05ydoqbnraJR0CRsRCWom2FCHQ&amp;sig2=m6KDPVIHv6hGqxWNWwj47Q" target="_blank">Samba configuration help </a> very useful for accessing the completed download folder from a separate machine (even a windows one)</li>
+    <h3>Quick and Dirty</h3><div>open the website in incognito/private browsing mode</div><h3>Permanent solution for Google Chrome</h3><div>menu -&gt; settings -&gt; show advanced settings -&gt; content settings -&gt; cookies -&gt; manage exceptions</div><div>then add each url and set to 'block'</div><h3>Why?</h3><div><span lang="EN-CA">These sites are using cookies to track client page views so by ignoring/rejecting the cookies, the site cannot keep track of the number of articles read.</span></div><div class="MsoNormal" style="background-color: white; color: #222222; font-family: Calibri, sans-serif; font-size: 11pt; margin: 0in 0in 0.0001pt;"><span lang="EN-CA"><br /></span></div><h3><span lang="EN-CA">Tested on&nbsp;</span></h3><div class="MsoNormal" style="background-color: white; color: #222222; font-family: Calibri, sans-serif; font-size: 11pt; margin: 0in 0in 0.0001pt;"></div><ul><li><span style="font-size: 11pt;">theglobeandmail.com</span></li><li><span style="font-size: 11pt;">thestar.com</span></li><li><span style="font-size: 11pt;">nationalpost.com</span></li></ul><div><br /></div><div>Solutions for other browsers and sites are welcomed &nbsp;below.</div>
   </div>
   <div style="display:none">
     Nobody will read this,<br/>
@@ -163,46 +168,34 @@ fill="#000000" stroke="none">
     </div>
 
     <footer class="site-footer">
-
   <div class="wrapper">
-
-    <h2 class="footer-heading">
-      Simon Ramsay
-      <a href="http://eqac56hh4ppxzy27.onion">(TOR)</a>
-      <a href=" http://ramsay.i2p/">(I2P)</a>
-    </h2>
-
+    <h2 class="footer-heading">Simon Ramsay 
+    <a href="http://eqac56hh4ppxzy27.onion">(TOR)</a>
+    <a href="http://ramsay.i2p/">(I2P)</a></h2>
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-6">
         <ul class="contact-list">
-          <li><a href="mailto:s3ramsay@riseup.net">s3ramsay@riseup.net</a></li>
-          <li><a href="https://keybase.io/nexusuw/key.asc">F50F7E3612EA2B78</a></li>
+          <li>
+            <a href="mailto:s3ramsay@riseup.net">s3ramsay@riseup.net</a>
+          </li>
+          <li>
+            <a href="https://keybase.io/nexusuw/key.asc">F50F7E3612EA2B78</a>
+          </li>
         </ul>
       </div>
-
       <div class="footer-col footer-col-6">
-        <ul class="social-media-list">
-          
-          <li>
-            <a href="https://github.com/nexus-uw"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+        <ul class="social-media-list"> 
+        <li><a href="https://github.com/nexus-uw"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
 </span><span class="username">nexus-uw</span></a>
-
-          </li>
-          
-
-          <li>
-            <a href="https://keybase.io/nexusuw"><span class="username">Keybase: nexusuw</span></a> <a href="http://fncuwbiisyh6ak3i.onion/nexusuw">(TOR)</a>
-
-          </li>
-
-        </ul>
+</li> 
+        <li><a href="https://keybase.io/nexusuw"><span class="username">Keybase: nexusuw</span></a> <a href="http://fncuwbiisyh6ak3i.onion/nexusuw">(TOR)</a>
+</li></ul>
       </div>
     </div>
-
   </div>
-
 </footer>
-    <img src="https://tor-hceck.herokuapp.com/98e61a80-8c71-4794-af4f-b8a7fda264ed?page=https://ramsay.xyz/2013/01/13/turn-arm-linux-headless-server-into.html" alt="tor-user-check"/>
+
+    <img src="https://tor-hceck.herokuapp.com/98e61a80-8c71-4794-af4f-b8a7fda264ed?page=https://ramsay.xyz/2013/10/07/how-to-removebypass-annoying-you-have-x.html" alt="tor-user-check"/>
   </body>
 
 </html>
