@@ -5,9 +5,44 @@
     <description>'dank memes' happens to be a phrase that exists currently.</description>
     <link>https://ramsay.xyz/</link>
     <atom:link href="https://ramsay.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 12 Jul 2017 12:31:42 -0500</pubDate>
-    <lastBuildDate>Wed, 12 Jul 2017 12:31:42 -0500</lastBuildDate>
-    <generator>Jekyll v3.5.0</generator>
+    <pubDate>Sun, 23 Jul 2017 03:27:47 +0000</pubDate>
+    <lastBuildDate>Sun, 23 Jul 2017 03:27:47 +0000</lastBuildDate>
+    <generator>Jekyll v3.5.1</generator>
+    
+      <item>
+        <title>I Have Mastered Elm By Making Yet Another Calculator (For AWS ElasticCache), And So Can You</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/elastic-cache-elm.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As a &lt;em&gt;fun&lt;/em&gt; task, I relearned first year pure functional programming using &lt;a href=&quot;http://elm-lang.org/&quot;&gt;Elm&lt;/a&gt;.  To generate something more useful and exciting than YATA (&lt;strong&gt;Y&lt;/strong&gt;et &lt;strong&gt;A&lt;/strong&gt;nother &lt;strong&gt;T&lt;/strong&gt;odo &lt;strong&gt;A&lt;/strong&gt;pp), I decided to come up with a simple calculator for figuring out much it will cost per day to operate a Redis Cluster on AWS Elastic Cache for a given size + network speed.&lt;/p&gt;
+
+&lt;p&gt;Take Aways&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Its amazing how much one can forget from 1st year CS&lt;/li&gt;
+  &lt;li&gt;Even coming from writing functional-ish all day at work, pure functional programing is hard (really wished for an optional index param when iterating through a list)&lt;/li&gt;
+  &lt;li&gt;Elm’s documentation code really be fleshed out to cover more than how to get things started and how the language compares to JS&lt;/li&gt;
+  &lt;li&gt;Elm’s compilation errors were really clear and useful (especially in VS Code)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Feel free to check it out at:
+&lt;a href=&quot;https://ramsay.xyz/elastic-cache-calculator/&quot;&gt;https://ramsay.xyz/elastic-cache-calculator/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Source code is available at:
+&lt;a href=&quot;https://github.com/nexus-uw/elastic-cache-calculator&quot;&gt;https://github.com/nexus-uw/elastic-cache-calculator&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
+        <link>https://ramsay.xyz/2017/06/01/im-an-elm-master.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2017/06/01/im-an-elm-master.html</guid>
+        
+        <category>elm</category>
+        
+        <category>elastic cache</category>
+        
+        <category>calculator</category>
+        
+        <category>Jake Paul</category>
+        
+        
+      </item>
     
       <item>
         <title>just released ammobin.ca</title>
@@ -18,7 +53,7 @@
 &lt;p&gt;&lt;img src=&quot;/assets/ammobin.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 </description>
-        <pubDate>Thu, 01 Jun 2017 00:00:00 -0500</pubDate>
+        <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
         <link>https://ramsay.xyz/2017/06/01/ammobinca.html</link>
         <guid isPermaLink="true">https://ramsay.xyz/2017/06/01/ammobinca.html</guid>
         
@@ -37,7 +72,7 @@
         <title>ramsay.xyz Now Available as an Eepsite (I2P)</title>
         <description>&lt;p&gt;Here is a link to it: &lt;a href=&quot;http://ramsay.i2p&quot;&gt;ramsay.i2p&lt;/a&gt;.&lt;/p&gt;
 </description>
-        <pubDate>Tue, 28 Mar 2017 00:00:00 -0500</pubDate>
+        <pubDate>Tue, 28 Mar 2017 00:00:00 +0000</pubDate>
         <link>https://ramsay.xyz/2017/03/28/site-also-available-as-an-eep-site.html</link>
         <guid isPermaLink="true">https://ramsay.xyz/2017/03/28/site-also-available-as-an-eep-site.html</guid>
         
@@ -69,7 +104,7 @@
 &lt;/ul&gt;
 
 </description>
-        <pubDate>Thu, 16 Mar 2017 00:00:00 -0500</pubDate>
+        <pubDate>Thu, 16 Mar 2017 00:00:00 +0000</pubDate>
         <link>https://ramsay.xyz/2017/03/16/notes-about-unearthed-toronto-2017.html</link>
         <guid isPermaLink="true">https://ramsay.xyz/2017/03/16/notes-about-unearthed-toronto-2017.html</guid>
         
@@ -108,7 +143,7 @@
 
 &lt;p&gt;view history of this page at &lt;a href=&quot;https://github.com/nexus-uw/nexus-uw.github.io/blob/master/_posts/2017-01-22-list-of-tor-sites.md&quot;&gt;https://github.com/nexus-uw/nexus-uw.github.io/blob/master/_posts/2017-01-22-list-of-tor-sites.md&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Sun, 22 Jan 2017 00:00:00 -0600</pubDate>
+        <pubDate>Sun, 22 Jan 2017 00:00:00 +0000</pubDate>
         <link>https://ramsay.xyz/2017/01/22/list-of-tor-sites.html</link>
         <guid isPermaLink="true">https://ramsay.xyz/2017/01/22/list-of-tor-sites.html</guid>
         
@@ -184,7 +219,7 @@
 
 &lt;p&gt;&lt;img src=&quot;/assets/after.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 </description>
-        <pubDate>Sat, 07 Jan 2017 00:00:00 -0600</pubDate>
+        <pubDate>Sat, 07 Jan 2017 00:00:00 +0000</pubDate>
         <link>https://ramsay.xyz/2017/01/07/how-to-use-redux-logger-with-revue.html</link>
         <guid isPermaLink="true">https://ramsay.xyz/2017/01/07/how-to-use-redux-logger-with-revue.html</guid>
         
@@ -213,7 +248,7 @@ Vue.js brings me back to the good old days of Angular 1 with the ability to buil
 &lt;p&gt;Code is available at: &lt;a href=&quot;https://github.com/nexus-uw/vue-compound-interest-calculator&quot;&gt;https://github.com/nexus-uw/vue-compound-interest-calculator&lt;/a&gt;&lt;/p&gt;
 
 </description>
-        <pubDate>Fri, 16 Dec 2016 00:00:00 -0600</pubDate>
+        <pubDate>Fri, 16 Dec 2016 00:00:00 +0000</pubDate>
         <link>https://ramsay.xyz/2016/12/16/vue-compond-interest-calculator-part-1.html</link>
         <guid isPermaLink="true">https://ramsay.xyz/2016/12/16/vue-compond-interest-calculator-part-1.html</guid>
         
@@ -232,7 +267,7 @@ Vue.js brings me back to the good old days of Angular 1 with the ability to buil
         <title>Site of Real Programming</title>
         <description>&lt;p&gt;GOTO &lt;a href=&quot;http://realprogramming.neocities.org/&quot;&gt;http://realprogramming.neocities.org/&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Wed, 05 Oct 2016 00:00:00 -0500</pubDate>
+        <pubDate>Wed, 05 Oct 2016 00:00:00 +0000</pubDate>
         <link>https://ramsay.xyz/2016/10/05/realprogramming.html</link>
         <guid isPermaLink="true">https://ramsay.xyz/2016/10/05/realprogramming.html</guid>
         
@@ -269,7 +304,7 @@ using &lt;code class=&quot;highlighter-rouge&quot;&gt;json.Unmarshal&lt;/code&gt
 &lt;h3 id=&quot;better-solution&quot;&gt;Better Solution&lt;/h3&gt;
 &lt;p&gt;goto &lt;a href=&quot;https://gobyexample.com/json&quot;&gt;https://gobyexample.com/json&lt;/a&gt; instead….&lt;/p&gt;
 </description>
-        <pubDate>Mon, 05 Sep 2016 00:00:00 -0500</pubDate>
+        <pubDate>Mon, 05 Sep 2016 00:00:00 +0000</pubDate>
         <link>https://ramsay.xyz/2016/09/05/something-about-parsing-json-using-golang.html</link>
         <guid isPermaLink="true">https://ramsay.xyz/2016/09/05/something-about-parsing-json-using-golang.html</guid>
         
@@ -355,7 +390,7 @@ using &lt;code class=&quot;highlighter-rouge&quot;&gt;json.Unmarshal&lt;/code&gt
 &lt;h1 id=&quot;update-1--sept-12-2016-&quot;&gt;Update 1 ( sept 12 2016 )&lt;/h1&gt;
 &lt;p&gt;Since RC 6, &lt;code class=&quot;highlighter-rouge&quot;&gt;ExceptionHandler&lt;/code&gt; was renamed to &lt;code class=&quot;highlighter-rouge&quot;&gt;ErrorHandler&lt;/code&gt;&lt;/p&gt;
 </description>
-        <pubDate>Mon, 05 Sep 2016 00:00:00 -0500</pubDate>
+        <pubDate>Mon, 05 Sep 2016 00:00:00 +0000</pubDate>
         <link>https://ramsay.xyz/2016/09/05/opbeat-angular-2-integration.html</link>
         <guid isPermaLink="true">https://ramsay.xyz/2016/09/05/opbeat-angular-2-integration.html</guid>
         
@@ -364,39 +399,6 @@ using &lt;code class=&quot;highlighter-rouge&quot;&gt;json.Unmarshal&lt;/code&gt
         <category>angular 2</category>
         
         <category>error reporting</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Created a VSCode extension</title>
-        <description>&lt;p&gt;I just created a VSCode extension, &lt;em&gt;vscode-gtm&lt;/em&gt;, that integrates Git Time Tracking (aka gtm) with VSCode.&lt;/p&gt;
-
-&lt;p&gt;Feel free to try it out (&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=s3ramsay.vscode-gtm&quot;&gt;vs market place link&lt;/a&gt;)&lt;/p&gt;
-
-&lt;p&gt;(from &lt;a href=&quot;https://github.com/git-time-metric/gtm&quot;&gt;git-time-metric/gtm&lt;/a&gt;)&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Git Time Metrics (GTM) is a tool to automatically track time spent reading and working on code that you store in a Git repository. By installing GTM and using supported plug-ins for your favorite editors, you can immediately realize better insight into how you are spending your time and on what files.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;GTM is automatic, seamless and lightweight. There is no need to remember to start and stop timers. It’s a process that only runs on occasion to capture edit events triggered by the editor. It does not require a background process or any file system monitoring.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Your time metrics are stored locally with the repository as Git notes. If you want to share your data, it can be pushed and fetched to and from the remote repository. Other GTM users on your team can do the same. This provides you the ability to see time metrics for the entire team.&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-        <pubDate>Sat, 23 Jul 2016 00:00:00 -0500</pubDate>
-        <link>https://ramsay.xyz/2016/07/23/i-create-a-vs-extension.html</link>
-        <guid isPermaLink="true">https://ramsay.xyz/2016/07/23/i-create-a-vs-extension.html</guid>
-        
-        <category>vscode</category>
-        
-        <category>gtm</category>
-        
-        <category>git time tracking</category>
         
         
       </item>

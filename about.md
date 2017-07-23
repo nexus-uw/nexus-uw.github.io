@@ -31,9 +31,11 @@ _.._ :`4MM$!YYYYYYYYYii,.__.diii$$YYYYYYYYYYY
 ```
 
 ## Projects
+- [ammobin.ca](https://ammobin.ca/?utm_source=ramsay.xyz): Meta search site for ammo prices across Canada
 - [nqh](https://github.com/nexus-uw/nqh): An implementation of Angular's $http service for node
 - [vscode-gtm](https://github.com/nexus-uw/vscode-gtm): gtm (git time metric) extension for Visual Studio
 - [vue-compound-interest-calculator](https://ramsay.xyz/vue-compound-interest-calculator/): simple compound interest calculator using vue.js
+- [elastic-cache-calculator](https://ramsay.xyz/elastic-cache-calculator/): figure out the minimal number of nodes required to have in order to build an AWS Elastic Cache Redis cluster for a given size + network using Elm
 
 
 

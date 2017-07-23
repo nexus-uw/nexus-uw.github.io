@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Turn ARM Linux Headless Server Into Torrent Box</title>
-  <meta name="description" content="What?&nbsp;Setup a ARM server to automatically start downloading torrents from a Dropbox folder using Python, Cron, and Transmission.Why?Simple, secure, and ...">
+  <title>I Have Mastered Elm By Making Yet Another Calculator (For AWS ElasticCache), And So Can You</title>
+  <meta name="description" content="">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://ramsay.xyz/2013/01/12/turn-arm-linux-headless-server-into.html">
+  <link rel="canonical" href="https://ramsay.xyz/2017/06/01/im-an-elm-master.html">
   <link rel="alternate" type="application/rss+xml" title="Simon Ramsay" href="https://ramsay.xyz/feed.xml">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -150,12 +150,29 @@ fill="#000000" stroke="none">
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Turn ARM Linux Headless Server Into Torrent Box</h1>
-    <p class="post-meta"><time datetime="2013-01-12T20:19:00-06:00" itemprop="datePublished">Jan 12, 2013</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Simon</span></span></p>
+    <h1 class="post-title" itemprop="name headline">I Have Mastered Elm By Making Yet Another Calculator (For AWS ElasticCache), And So Can You</h1>
+    <p class="post-meta"><time datetime="2017-06-01T00:00:00+00:00" itemprop="datePublished">Jun 1, 2017</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Simon</span></span></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <h4>What?&nbsp;</h4>Setup a ARM server to automatically start downloading torrents from a Dropbox folder using Python, Cron, and Transmission.<br /><h4>Why?</h4>Simple, secure, and resilient setup that since no network configurations, nothing exposed to the web, and no need to deal with changing IP addresses. <br />I find this setup great for finding torrents when away from home, adding the .torrent file to Dropbox,&nbsp; coming home, and having the file(s) already downloaded.<br /><h3>Setup</h3><ol><li>Follow steps 1 &amp; 2 from my previous post <a href="http://nexus-rage-quit.blogspot.com/2013/01/dropbox-hack-on-headless-arm-linux.html" target="_blank">here</a>. This will get the server setup.</li><br /><li>Download <a href="https://github.com/nexus-uw/Python-Hax-Torrent-Dl/blob/master/GetAllTorrentsFromDropbox.py" target="_blank">this python script</a> that will be used to fetch the torrent files from Dropbox&nbsp;</li><br /><li>Fill in the missing constant fields at the beginning of&nbsp; GetAllTorrentsFromDropbox.py using fully resolved paths</li><ol><li>APP_KEY and APP_SECRET : values from Dropbox when app is registered</li><li>ACCESS_TYPE: should be 'app_folder'</li><li>TOKEN_FILE: {abs path to file}/file</li><li>TORRENT_FOLDER: {abs path to save .torrent files}</li><br /></ol><li>Add the script to <a href="http://www.google.ca/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;sqi=2&amp;ved=0CDAQFjAA&amp;url=http%3A%2F%2Fen.wikipedia.org%2Fwiki%2FCron&amp;ei=qO7xUKz4A8ew0AHA7oDoCw&amp;usg=AFQjCNFFJIlg-yvhmJjB9vc1tkJtgWkSCA&amp;sig2=wP3piM9yRspJMnUt6i4ZPA&amp;bvm=bv.1357700187,d.dmQ&amp;cad=rjar" target="_blank">crontab</a> in the terminal using &nbsp; <i>crontab -e</i> and adding the entry at the end of the file<br />Example: to have the script run every 10 minutes, one would add <br />*/10 * * * * python {Path to file}/GetAllTorrentsFromDropbox.py</li><br /><li>Install and start the Transmission daemon<br /><i>sudo apt-get install </i>transmission-daemon<br /><i>transmission-daemon</i></li><br /><li>Configure transmission to automatically add torrents from where new ones are saved. In <code>/var/lib/transmission-daemon/info/settings.json</code> , add/edit "<i>watch-dir":{path to where torrents are saved from step 3} </i>and <i>"watch-dir-enabled"</i>:true</li><br /><li>Do a hard restart of transmission<br /><i>sudo service transmission-daemon stop<br />sudo service transmission-daemon start</i></li></ol><h3>Note</h3><br /><br /><li style="margin-left: 40px;">Usually transmission has permission issues regrading watched, incomplete, and download folders not allowing the process access by default. This is nothing that a <i>chmod</i> cannot resolve.</li><li style="margin-left: 40px;">Setting transmission to keep incomplete downloads of completed downloads is always a good idea. </li><br /><h3>Links</h3><br /><li><i><a href="http://magnet2torrent.me/" target="_blank">Magnetic Link to Torrent conversion</a></i></li><li><a href="http://1000umbrellas.com/2010/04/21/transmission-install-on-ubuntu-10-04-server-lucid" target="_blank">Further transmission-daemon configuration including web interface setup</a><i></i></li><li><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=2&amp;cad=rja&amp;sqi=2&amp;ved=0CDoQFjAB&amp;url=https%3A%2F%2Fhelp.ubuntu.com%2F10.04%2Fserverguide%2Fsamba-fileserver.html&amp;ei=1vnxUNPwEMT90gGO1IEo&amp;usg=AFQjCNFf05ydoqbnraJR0CRsRCWom2FCHQ&amp;sig2=m6KDPVIHv6hGqxWNWwj47Q" target="_blank">Samba configuration help </a> very useful for accessing the completed download folder from a separate machine (even a windows one)</li>
+    <p><img src="/assets/elastic-cache-elm.png" alt="" /></p>
+
+<p>As a <em>fun</em> task, I relearned first year pure functional programming using <a href="http://elm-lang.org/">Elm</a>.  To generate something more useful and exciting than YATA (<strong>Y</strong>et <strong>A</strong>nother <strong>T</strong>odo <strong>A</strong>pp), I decided to come up with a simple calculator for figuring out much it will cost per day to operate a Redis Cluster on AWS Elastic Cache for a given size + network speed.</p>
+
+<p>Take Aways</p>
+<ul>
+  <li>Its amazing how much one can forget from 1st year CS</li>
+  <li>Even coming from writing functional-ish all day at work, pure functional programing is hard (really wished for an optional index param when iterating through a list)</li>
+  <li>Elm’s documentation code really be fleshed out to cover more than how to get things started and how the language compares to JS</li>
+  <li>Elm’s compilation errors were really clear and useful (especially in VS Code)</li>
+</ul>
+
+<p>Feel free to check it out at:
+<a href="https://ramsay.xyz/elastic-cache-calculator/">https://ramsay.xyz/elastic-cache-calculator/</a></p>
+
+<p>Source code is available at:
+<a href="https://github.com/nexus-uw/elastic-cache-calculator">https://github.com/nexus-uw/elastic-cache-calculator</a></p>
+
   </div>
   <div style="display:none">
     Nobody will read this,<br/>
@@ -195,7 +212,7 @@ fill="#000000" stroke="none">
   </div>
 </footer>
 
-    <img src="https://tor-hceck.herokuapp.com/98e61a80-8c71-4794-af4f-b8a7fda264ed?page=https://ramsay.xyz/2013/01/12/turn-arm-linux-headless-server-into.html" alt="tor-user-check"/>
+    <img src="https://tor-hceck.herokuapp.com/98e61a80-8c71-4794-af4f-b8a7fda264ed?page=https://ramsay.xyz/2017/06/01/im-an-elm-master.html" alt="tor-user-check"/>
   </body>
 
 </html>
