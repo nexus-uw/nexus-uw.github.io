@@ -2,3 +2,5 @@ make post about:
 - https://github.com/nexus-uw/Hidden-Docker-Limesurvey
 - how much faster (redisClient.multi(...sets).exec()).then is than Promise.all(sets).then
 - how to change aws sdk api call timeout (required for long running lambdas)
+- switching from nginx to caddy (inside docker)
+- how to view caddy log files using goaccess
