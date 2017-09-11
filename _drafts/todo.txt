@@ -4,3 +4,4 @@ make post about:
 - how to change aws sdk api call timeout (required for long running lambdas)
 - switching from nginx to caddy (inside docker)
 - how to view caddy log files using goaccess
+- spell checker as additional check const a = Object.assign({}, base, { flightNumber: 1 }); const a = Object.assign({}, base, { flighNumber: 1 }); wont be caught by typescript
