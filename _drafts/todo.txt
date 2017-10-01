@@ -5,3 +5,4 @@ make post about:
 - switching from nginx to caddy (inside docker)
 - how to view caddy log files using goaccess
 - spell checker as additional check const a = Object.assign({}, base, { flightNumber: 1 }); const a = Object.assign({}, base, { flighNumber: 1 }); wont be caught by typescript
+- https://github.com/nexus-uw/delay-server
