@@ -163,7 +163,7 @@ fill="#000000" stroke="none">
 
 <p>By creating custom action + state transformers for redux-logger, the observe objects can be converted back into plain objects. These plain objects reflect what the developer expects to be in the state and are much easier to read in the console.</p>
 
-<div class="language-typescript highlighter-rouge"><pre class="highlight"><code>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">requests</span><span class="p">,</span> <span class="nx">elements</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'../reducers'</span><span class="p">;</span>
 <span class="k">import</span> <span class="nx">Vue</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'vue'</span><span class="p">);</span>
 
@@ -207,8 +207,7 @@ fill="#000000" stroke="none">
 <span class="p">);</span>
 
 <span class="k">export</span> <span class="kd">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Revue</span><span class="p">(</span><span class="nx">Vue</span><span class="p">,</span> <span class="nx">reduxStore</span><span class="p">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>By using the above typescript snippet, the console logging appears like this:</p>
 
