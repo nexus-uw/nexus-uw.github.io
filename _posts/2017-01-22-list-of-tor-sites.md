@@ -16,6 +16,6 @@ tags:
 - keybase.io [http://fncuwbiisyh6ak3i.onion](http://fncuwbiisyh6ak3i.onion) ([src](https://keybase.io))
 - onions.debian.org [http://5nca3wxl33tzlzj5.onion/](http://5nca3wxl33tzlzj5.onion/)([src](https://onion.debian.org/))
 - ramsay.xyz [http://eqac56hh4ppxzy27.onion/](http://eqac56hh4ppxzy27.onion/) ([src](https://github.com/nexus-uw/nexus-uw.github.io/blob/master/_includes/footer.html#L5))
-
+-  nytimes.com [https://www.nytimes3xbfgragh.onion/](https://www.nytimes3xbfgragh.onion/)([src](https://open.nytimes.com/https-open-nytimes-com-the-new-york-times-as-a-tor-onion-service-e0d0b67b7482))
 
 view history of this page at [https://github.com/nexus-uw/nexus-uw.github.io/blob/master/_posts/2017-01-22-list-of-tor-sites.md](https://github.com/nexus-uw/nexus-uw.github.io/blob/master/_posts/2017-01-22-list-of-tor-sites.md)

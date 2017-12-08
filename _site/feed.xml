@@ -5,8 +5,8 @@
     <description>'dank memes' happens to be a phrase that exists currently.</description>
     <link>http://0.0.0.0:4000/</link>
     <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 08 Nov 2017 10:12:25 -0600</pubDate>
-    <lastBuildDate>Wed, 08 Nov 2017 10:12:25 -0600</lastBuildDate>
+    <pubDate>Fri, 08 Dec 2017 16:24:55 -0600</pubDate>
+    <lastBuildDate>Fri, 08 Dec 2017 16:24:55 -0600</lastBuildDate>
     <generator>Jekyll v3.5.0</generator>
     
       <item>
@@ -46,7 +46,7 @@
 &lt;/ul&gt;
 
 &lt;p&gt;Feel free to check it out at:
-&lt;a href=&quot;https://ramsay.xyz/elastic-cache-calculator/&quot;&gt;https://ramsay.xyz/elastic-cache-calculator/&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;https://nexus-uw.github.io/elastic-cache-calculator/&quot;&gt;https://nexus-uw.github.io/elastic-cache-calculator/&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Source code is available at:
 &lt;a href=&quot;https://github.com/nexus-uw/elastic-cache-calculator&quot;&gt;https://github.com/nexus-uw/elastic-cache-calculator&lt;/a&gt;&lt;/p&gt;
@@ -161,6 +161,7 @@
   &lt;li&gt;keybase.io &lt;a href=&quot;http://fncuwbiisyh6ak3i.onion&quot;&gt;http://fncuwbiisyh6ak3i.onion&lt;/a&gt; (&lt;a href=&quot;https://keybase.io&quot;&gt;src&lt;/a&gt;)&lt;/li&gt;
   &lt;li&gt;onions.debian.org &lt;a href=&quot;http://5nca3wxl33tzlzj5.onion/&quot;&gt;http://5nca3wxl33tzlzj5.onion/&lt;/a&gt;(&lt;a href=&quot;https://onion.debian.org/&quot;&gt;src&lt;/a&gt;)&lt;/li&gt;
   &lt;li&gt;ramsay.xyz &lt;a href=&quot;http://eqac56hh4ppxzy27.onion/&quot;&gt;http://eqac56hh4ppxzy27.onion/&lt;/a&gt; (&lt;a href=&quot;https://github.com/nexus-uw/nexus-uw.github.io/blob/master/_includes/footer.html#L5&quot;&gt;src&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;nytimes.com &lt;a href=&quot;https://www.nytimes3xbfgragh.onion/&quot;&gt;https://www.nytimes3xbfgragh.onion/&lt;/a&gt;(&lt;a href=&quot;https://open.nytimes.com/https-open-nytimes-com-the-new-york-times-as-a-tor-onion-service-e0d0b67b7482&quot;&gt;src&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;view history of this page at &lt;a href=&quot;https://github.com/nexus-uw/nexus-uw.github.io/blob/master/_posts/2017-01-22-list-of-tor-sites.md&quot;&gt;https://github.com/nexus-uw/nexus-uw.github.io/blob/master/_posts/2017-01-22-list-of-tor-sites.md&lt;/a&gt;&lt;/p&gt;
