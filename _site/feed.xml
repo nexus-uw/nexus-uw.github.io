@@ -5,10 +5,8 @@
     <description>'dank memes' happens to be a phrase that exists currently.</description>
     <link>http://0.0.0.0:4000/</link>
     <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml"/>
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <pubDate>Wed, 08 Nov 2017 10:12:25 -0600</pubDate>
-    <lastBuildDate>Wed, 08 Nov 2017 10:12:25 -0600</lastBuildDate>
+    <pubDate>Fri, 08 Dec 2017 16:24:55 -0600</pubDate>
+    <lastBuildDate>Fri, 08 Dec 2017 16:24:55 -0600</lastBuildDate>
     <generator>Jekyll v3.5.0</generator>
     
       <item>
@@ -32,16 +30,6 @@
         
         
       </item>
-=======
-    <pubDate>Sat, 28 Oct 2017 16:55:02 +0000</pubDate>
-    <lastBuildDate>Sat, 28 Oct 2017 16:55:02 +0000</lastBuildDate>
-    <generator>Jekyll v3.6.2</generator>
->>>>>>> added nytimes to tor list
-=======
-    <pubDate>Fri, 08 Dec 2017 16:23:08 -0600</pubDate>
-    <lastBuildDate>Fri, 08 Dec 2017 16:23:08 -0600</lastBuildDate>
-    <generator>Jekyll v3.5.0</generator>
->>>>>>> l;
     
       <item>
         <title>I Have Mastered Elm By Making Yet Another Calculator (For AWS ElasticCache), And So Can You</title>
@@ -58,20 +46,12 @@
 &lt;/ul&gt;
 
 &lt;p&gt;Feel free to check it out at:
-&lt;a href=&quot;https://ramsay.xyz/elastic-cache-calculator/&quot;&gt;https://ramsay.xyz/elastic-cache-calculator/&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;https://nexus-uw.github.io/elastic-cache-calculator/&quot;&gt;https://nexus-uw.github.io/elastic-cache-calculator/&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Source code is available at:
 &lt;a href=&quot;https://github.com/nexus-uw/elastic-cache-calculator&quot;&gt;https://github.com/nexus-uw/elastic-cache-calculator&lt;/a&gt;&lt;/p&gt;
 </description>
-<<<<<<< HEAD
-<<<<<<< HEAD
         <pubDate>Thu, 01 Jun 2017 00:00:00 -0500</pubDate>
-=======
-        <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
->>>>>>> added nytimes to tor list
-=======
-        <pubDate>Thu, 01 Jun 2017 00:00:00 -0500</pubDate>
->>>>>>> l;
         <link>http://0.0.0.0:4000/2017/06/01/im-an-elm-master.html</link>
         <guid isPermaLink="true">http://0.0.0.0:4000/2017/06/01/im-an-elm-master.html</guid>
         
@@ -95,15 +75,7 @@
 &lt;p&gt;&lt;img src=&quot;/assets/ammobin.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 </description>
-<<<<<<< HEAD
-<<<<<<< HEAD
         <pubDate>Thu, 01 Jun 2017 00:00:00 -0500</pubDate>
-=======
-        <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
->>>>>>> added nytimes to tor list
-=======
-        <pubDate>Thu, 01 Jun 2017 00:00:00 -0500</pubDate>
->>>>>>> l;
         <link>http://0.0.0.0:4000/2017/06/01/ammobinca.html</link>
         <guid isPermaLink="true">http://0.0.0.0:4000/2017/06/01/ammobinca.html</guid>
         
@@ -122,15 +94,7 @@
         <title>ramsay.xyz Now Available as an Eepsite (I2P)</title>
         <description>&lt;p&gt;Here is a link to it: &lt;a href=&quot;http://ramsay.i2p&quot;&gt;ramsay.i2p&lt;/a&gt;.&lt;/p&gt;
 </description>
-<<<<<<< HEAD
-<<<<<<< HEAD
         <pubDate>Tue, 28 Mar 2017 00:00:00 -0500</pubDate>
-=======
-        <pubDate>Tue, 28 Mar 2017 00:00:00 +0000</pubDate>
->>>>>>> added nytimes to tor list
-=======
-        <pubDate>Tue, 28 Mar 2017 00:00:00 -0500</pubDate>
->>>>>>> l;
         <link>http://0.0.0.0:4000/2017/03/28/site-also-available-as-an-eep-site.html</link>
         <guid isPermaLink="true">http://0.0.0.0:4000/2017/03/28/site-also-available-as-an-eep-site.html</guid>
         
@@ -162,15 +126,7 @@
 &lt;/ul&gt;
 
 </description>
-<<<<<<< HEAD
-<<<<<<< HEAD
         <pubDate>Thu, 16 Mar 2017 00:00:00 -0500</pubDate>
-=======
-        <pubDate>Thu, 16 Mar 2017 00:00:00 +0000</pubDate>
->>>>>>> added nytimes to tor list
-=======
-        <pubDate>Thu, 16 Mar 2017 00:00:00 -0500</pubDate>
->>>>>>> l;
         <link>http://0.0.0.0:4000/2017/03/16/notes-about-unearthed-toronto-2017.html</link>
         <guid isPermaLink="true">http://0.0.0.0:4000/2017/03/16/notes-about-unearthed-toronto-2017.html</guid>
         
@@ -210,15 +166,7 @@
 
 &lt;p&gt;view history of this page at &lt;a href=&quot;https://github.com/nexus-uw/nexus-uw.github.io/blob/master/_posts/2017-01-22-list-of-tor-sites.md&quot;&gt;https://github.com/nexus-uw/nexus-uw.github.io/blob/master/_posts/2017-01-22-list-of-tor-sites.md&lt;/a&gt;&lt;/p&gt;
 </description>
-<<<<<<< HEAD
-<<<<<<< HEAD
         <pubDate>Sun, 22 Jan 2017 00:00:00 -0600</pubDate>
-=======
-        <pubDate>Sun, 22 Jan 2017 00:00:00 +0000</pubDate>
->>>>>>> added nytimes to tor list
-=======
-        <pubDate>Sun, 22 Jan 2017 00:00:00 -0600</pubDate>
->>>>>>> l;
         <link>http://0.0.0.0:4000/2017/01/22/list-of-tor-sites.html</link>
         <guid isPermaLink="true">http://0.0.0.0:4000/2017/01/22/list-of-tor-sites.html</guid>
         
@@ -294,15 +242,7 @@
 
 &lt;p&gt;&lt;img src=&quot;/assets/after.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 </description>
-<<<<<<< HEAD
-<<<<<<< HEAD
         <pubDate>Sat, 07 Jan 2017 00:00:00 -0600</pubDate>
-=======
-        <pubDate>Sat, 07 Jan 2017 00:00:00 +0000</pubDate>
->>>>>>> added nytimes to tor list
-=======
-        <pubDate>Sat, 07 Jan 2017 00:00:00 -0600</pubDate>
->>>>>>> l;
         <link>http://0.0.0.0:4000/2017/01/07/how-to-use-redux-logger-with-revue.html</link>
         <guid isPermaLink="true">http://0.0.0.0:4000/2017/01/07/how-to-use-redux-logger-with-revue.html</guid>
         
@@ -331,15 +271,7 @@ Vue.js brings me back to the good old days of Angular 1 with the ability to buil
 &lt;p&gt;Code is available at: &lt;a href=&quot;https://github.com/nexus-uw/vue-compound-interest-calculator&quot;&gt;https://github.com/nexus-uw/vue-compound-interest-calculator&lt;/a&gt;&lt;/p&gt;
 
 </description>
-<<<<<<< HEAD
-<<<<<<< HEAD
         <pubDate>Fri, 16 Dec 2016 00:00:00 -0600</pubDate>
-=======
-        <pubDate>Fri, 16 Dec 2016 00:00:00 +0000</pubDate>
->>>>>>> added nytimes to tor list
-=======
-        <pubDate>Fri, 16 Dec 2016 00:00:00 -0600</pubDate>
->>>>>>> l;
         <link>http://0.0.0.0:4000/2016/12/16/vue-compond-interest-calculator-part-1.html</link>
         <guid isPermaLink="true">http://0.0.0.0:4000/2016/12/16/vue-compond-interest-calculator-part-1.html</guid>
         
@@ -358,15 +290,7 @@ Vue.js brings me back to the good old days of Angular 1 with the ability to buil
         <title>Site of Real Programming</title>
         <description>&lt;p&gt;GOTO &lt;a href=&quot;http://realprogramming.neocities.org/&quot;&gt;http://realprogramming.neocities.org/&lt;/a&gt;&lt;/p&gt;
 </description>
-<<<<<<< HEAD
-<<<<<<< HEAD
         <pubDate>Wed, 05 Oct 2016 00:00:00 -0500</pubDate>
-=======
-        <pubDate>Wed, 05 Oct 2016 00:00:00 +0000</pubDate>
->>>>>>> added nytimes to tor list
-=======
-        <pubDate>Wed, 05 Oct 2016 00:00:00 -0500</pubDate>
->>>>>>> l;
         <link>http://0.0.0.0:4000/2016/10/05/realprogramming.html</link>
         <guid isPermaLink="true">http://0.0.0.0:4000/2016/10/05/realprogramming.html</guid>
         
@@ -403,15 +327,7 @@ using &lt;code class=&quot;highlighter-rouge&quot;&gt;json.Unmarshal&lt;/code&gt
 &lt;h3 id=&quot;better-solution&quot;&gt;Better Solution&lt;/h3&gt;
 &lt;p&gt;goto &lt;a href=&quot;https://gobyexample.com/json&quot;&gt;https://gobyexample.com/json&lt;/a&gt; instead….&lt;/p&gt;
 </description>
-<<<<<<< HEAD
-<<<<<<< HEAD
         <pubDate>Mon, 05 Sep 2016 00:00:00 -0500</pubDate>
-=======
-        <pubDate>Mon, 05 Sep 2016 00:00:00 +0000</pubDate>
->>>>>>> added nytimes to tor list
-=======
-        <pubDate>Mon, 05 Sep 2016 00:00:00 -0500</pubDate>
->>>>>>> l;
         <link>http://0.0.0.0:4000/2016/09/05/something-about-parsing-json-using-golang.html</link>
         <guid isPermaLink="true">http://0.0.0.0:4000/2016/09/05/something-about-parsing-json-using-golang.html</guid>
         
@@ -424,94 +340,5 @@ using &lt;code class=&quot;highlighter-rouge&quot;&gt;json.Unmarshal&lt;/code&gt
         
       </item>
     
-<<<<<<< HEAD
-=======
-      <item>
-        <title>How to Integrate Opbeat Into an Angular 2 App</title>
-        <description>&lt;p&gt;&lt;a href=&quot;https://opbeat.com/&quot;&gt;Opbeat&lt;/a&gt; is a paid service for select performance monitoring and reporting runtime errors in Javascript applications. While they do support an Angular 1 integration, Angular 2 will not be supported until its API stabilizes (&lt;a href=&quot;https://github.com/opbeat/opbeat-js/issues/30#issuecomment-230262392&quot;&gt;ref&lt;/a&gt;).&lt;/p&gt;
-
-&lt;p&gt;Until that magical day occurs, a hard coded solution is available (as shown below).&lt;/p&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;ExceptionHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;Injectable&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'@angular/core'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// cant import the source  directly using webpack, so we have to&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// include the built source file on the page to expose _opbeat&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// on the window&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;declare&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_opbeat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// Firefox tracking protection will block the opbeat script from loading,&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// so sub it out&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_opbeat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_opbeat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;noop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;cm&quot;&gt;/**
- * maintain default error logging BUT also send errors off to opbeat
- */&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Injectable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;kr&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;OpBeatErrorHandler&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ExceptionHandler&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kr&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;opBeatStarted&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;stackTrace&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;reason&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;OpBeatErrorHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;opBeatStarted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;startOpbeat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;OpBeatErrorHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;opBeatStarted&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;sendErrorToOpbeat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'ERROR'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stackTrace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'STACK TRACE'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;stackTrace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reason&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'REASON'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;stackTrace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;NgModule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;providers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;provide&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ExceptionHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;useClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;OpBeatErrorHandler&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-&lt;span class=&quot;kr&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;OpBeatErrorHandlerModule&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;cm&quot;&gt;/**
- * internal helper functions
- */&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;startOpbeat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;_opbeat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'config'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;orgId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'your orgId'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;appId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'your appId'&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sendErrorToOpbeat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;_opbeat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'captureException'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;now all that remains, is to add &lt;code class=&quot;highlighter-rouge&quot;&gt;OpBeatErrorHandlerModule&lt;/code&gt; to the &lt;code class=&quot;highlighter-rouge&quot;&gt;imports&lt;/code&gt; of the main module.&lt;/p&gt;
-
-&lt;h1 id=&quot;update-1--sept-12-2016-&quot;&gt;Update 1 ( sept 12 2016 )&lt;/h1&gt;
-&lt;p&gt;Since RC 6, &lt;code class=&quot;highlighter-rouge&quot;&gt;ExceptionHandler&lt;/code&gt; was renamed to &lt;code class=&quot;highlighter-rouge&quot;&gt;ErrorHandler&lt;/code&gt;&lt;/p&gt;
-</description>
-        <pubDate>Mon, 05 Sep 2016 00:00:00 -0500</pubDate>
-        <link>http://0.0.0.0:4000/2016/09/05/opbeat-angular-2-integration.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2016/09/05/opbeat-angular-2-integration.html</guid>
-        
-        <category>opbeat</category>
-        
-        <category>angular 2</category>
-        
-        <category>error reporting</category>
-        
-        
-      </item>
-    
->>>>>>> added nytimes to tor list
   </channel>
 </rss>
