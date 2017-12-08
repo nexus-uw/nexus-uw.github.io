@@ -21,7 +21,7 @@ Take Aways
 - Elm's compilation errors were really clear and useful (especially in VS Code)
 
 Feel free to check it out at:
-[https://ramsay.xyz/elastic-cache-calculator/](https://ramsay.xyz/elastic-cache-calculator/)
+[https://nexus-uw.github.io/elastic-cache-calculator/](https://nexus-uw.github.io/elastic-cache-calculator/)
 
 Source code is available at:
 [https://github.com/nexus-uw/elastic-cache-calculator](https://github.com/nexus-uw/elastic-cache-calculator)
