@@ -6,6 +6,7 @@
     <link>http://0.0.0.0:4000/</link>
     <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <pubDate>Wed, 08 Nov 2017 10:12:25 -0600</pubDate>
     <lastBuildDate>Wed, 08 Nov 2017 10:12:25 -0600</lastBuildDate>
     <generator>Jekyll v3.5.0</generator>
@@ -36,6 +37,11 @@
     <lastBuildDate>Sat, 28 Oct 2017 16:55:02 +0000</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
 >>>>>>> added nytimes to tor list
+=======
+    <pubDate>Fri, 08 Dec 2017 16:23:08 -0600</pubDate>
+    <lastBuildDate>Fri, 08 Dec 2017 16:23:08 -0600</lastBuildDate>
+    <generator>Jekyll v3.5.0</generator>
+>>>>>>> l;
     
       <item>
         <title>I Have Mastered Elm By Making Yet Another Calculator (For AWS ElasticCache), And So Can You</title>
@@ -58,10 +64,14 @@
 &lt;a href=&quot;https://github.com/nexus-uw/elastic-cache-calculator&quot;&gt;https://github.com/nexus-uw/elastic-cache-calculator&lt;/a&gt;&lt;/p&gt;
 </description>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <pubDate>Thu, 01 Jun 2017 00:00:00 -0500</pubDate>
 =======
         <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
 >>>>>>> added nytimes to tor list
+=======
+        <pubDate>Thu, 01 Jun 2017 00:00:00 -0500</pubDate>
+>>>>>>> l;
         <link>http://0.0.0.0:4000/2017/06/01/im-an-elm-master.html</link>
         <guid isPermaLink="true">http://0.0.0.0:4000/2017/06/01/im-an-elm-master.html</guid>
         
@@ -86,10 +96,14 @@
 
 </description>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <pubDate>Thu, 01 Jun 2017 00:00:00 -0500</pubDate>
 =======
         <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
 >>>>>>> added nytimes to tor list
+=======
+        <pubDate>Thu, 01 Jun 2017 00:00:00 -0500</pubDate>
+>>>>>>> l;
         <link>http://0.0.0.0:4000/2017/06/01/ammobinca.html</link>
         <guid isPermaLink="true">http://0.0.0.0:4000/2017/06/01/ammobinca.html</guid>
         
@@ -109,10 +123,14 @@
         <description>&lt;p&gt;Here is a link to it: &lt;a href=&quot;http://ramsay.i2p&quot;&gt;ramsay.i2p&lt;/a&gt;.&lt;/p&gt;
 </description>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <pubDate>Tue, 28 Mar 2017 00:00:00 -0500</pubDate>
 =======
         <pubDate>Tue, 28 Mar 2017 00:00:00 +0000</pubDate>
 >>>>>>> added nytimes to tor list
+=======
+        <pubDate>Tue, 28 Mar 2017 00:00:00 -0500</pubDate>
+>>>>>>> l;
         <link>http://0.0.0.0:4000/2017/03/28/site-also-available-as-an-eep-site.html</link>
         <guid isPermaLink="true">http://0.0.0.0:4000/2017/03/28/site-also-available-as-an-eep-site.html</guid>
         
@@ -145,10 +163,14 @@
 
 </description>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <pubDate>Thu, 16 Mar 2017 00:00:00 -0500</pubDate>
 =======
         <pubDate>Thu, 16 Mar 2017 00:00:00 +0000</pubDate>
 >>>>>>> added nytimes to tor list
+=======
+        <pubDate>Thu, 16 Mar 2017 00:00:00 -0500</pubDate>
+>>>>>>> l;
         <link>http://0.0.0.0:4000/2017/03/16/notes-about-unearthed-toronto-2017.html</link>
         <guid isPermaLink="true">http://0.0.0.0:4000/2017/03/16/notes-about-unearthed-toronto-2017.html</guid>
         
@@ -189,10 +211,14 @@
 &lt;p&gt;view history of this page at &lt;a href=&quot;https://github.com/nexus-uw/nexus-uw.github.io/blob/master/_posts/2017-01-22-list-of-tor-sites.md&quot;&gt;https://github.com/nexus-uw/nexus-uw.github.io/blob/master/_posts/2017-01-22-list-of-tor-sites.md&lt;/a&gt;&lt;/p&gt;
 </description>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <pubDate>Sun, 22 Jan 2017 00:00:00 -0600</pubDate>
 =======
         <pubDate>Sun, 22 Jan 2017 00:00:00 +0000</pubDate>
 >>>>>>> added nytimes to tor list
+=======
+        <pubDate>Sun, 22 Jan 2017 00:00:00 -0600</pubDate>
+>>>>>>> l;
         <link>http://0.0.0.0:4000/2017/01/22/list-of-tor-sites.html</link>
         <guid isPermaLink="true">http://0.0.0.0:4000/2017/01/22/list-of-tor-sites.html</guid>
         
@@ -217,7 +243,7 @@
 
 &lt;p&gt;By creating custom action + state transformers for redux-logger, the observe objects can be converted back into plain objects. These plain objects reflect what the developer expects to be in the state and are much easier to read in the console.&lt;/p&gt;
 
-&lt;div class=&quot;language-typescript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;div class=&quot;language-typescript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;elements&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'../reducers'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'vue'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 
@@ -261,17 +287,22 @@
 &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;store&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Revue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;reduxStore&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;By using the above typescript snippet, the console logging appears like this:&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/after.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 </description>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <pubDate>Sat, 07 Jan 2017 00:00:00 -0600</pubDate>
 =======
         <pubDate>Sat, 07 Jan 2017 00:00:00 +0000</pubDate>
 >>>>>>> added nytimes to tor list
+=======
+        <pubDate>Sat, 07 Jan 2017 00:00:00 -0600</pubDate>
+>>>>>>> l;
         <link>http://0.0.0.0:4000/2017/01/07/how-to-use-redux-logger-with-revue.html</link>
         <guid isPermaLink="true">http://0.0.0.0:4000/2017/01/07/how-to-use-redux-logger-with-revue.html</guid>
         
@@ -301,10 +332,14 @@ Vue.js brings me back to the good old days of Angular 1 with the ability to buil
 
 </description>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <pubDate>Fri, 16 Dec 2016 00:00:00 -0600</pubDate>
 =======
         <pubDate>Fri, 16 Dec 2016 00:00:00 +0000</pubDate>
 >>>>>>> added nytimes to tor list
+=======
+        <pubDate>Fri, 16 Dec 2016 00:00:00 -0600</pubDate>
+>>>>>>> l;
         <link>http://0.0.0.0:4000/2016/12/16/vue-compond-interest-calculator-part-1.html</link>
         <guid isPermaLink="true">http://0.0.0.0:4000/2016/12/16/vue-compond-interest-calculator-part-1.html</guid>
         
@@ -324,10 +359,14 @@ Vue.js brings me back to the good old days of Angular 1 with the ability to buil
         <description>&lt;p&gt;GOTO &lt;a href=&quot;http://realprogramming.neocities.org/&quot;&gt;http://realprogramming.neocities.org/&lt;/a&gt;&lt;/p&gt;
 </description>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <pubDate>Wed, 05 Oct 2016 00:00:00 -0500</pubDate>
 =======
         <pubDate>Wed, 05 Oct 2016 00:00:00 +0000</pubDate>
 >>>>>>> added nytimes to tor list
+=======
+        <pubDate>Wed, 05 Oct 2016 00:00:00 -0500</pubDate>
+>>>>>>> l;
         <link>http://0.0.0.0:4000/2016/10/05/realprogramming.html</link>
         <guid isPermaLink="true">http://0.0.0.0:4000/2016/10/05/realprogramming.html</guid>
         
@@ -341,21 +380,23 @@ Vue.js brings me back to the good old days of Angular 1 with the ability to buil
 &lt;p&gt;Go requires exported properties to start with a capital letter but most APIs use JSON that is all in cammelCase so
 using &lt;code class=&quot;highlighter-rouge&quot;&gt;json.Unmarshal&lt;/code&gt; will always result in all empty properties. ie&lt;/p&gt;
 
-&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  
-  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;some name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  
-  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;age&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;some name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;age&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  
 &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;h3 id=&quot;solution&quot;&gt;Solution&lt;/h3&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;json:&quot;cammelCasePropertyName&quot;&lt;/code&gt; adding a clause to the type’s property. ie:&lt;/p&gt;
 
-&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Sample&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;  
+&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Sample&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;  
     &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;`json:&quot;name&quot;`&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;  
     &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Age&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;`json:&quot;age&quot;`&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;  
 &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;  
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;will create the correct mapping of JSON property to  Struct property&lt;/p&gt;
 
@@ -363,10 +404,14 @@ using &lt;code class=&quot;highlighter-rouge&quot;&gt;json.Unmarshal&lt;/code&gt
 &lt;p&gt;goto &lt;a href=&quot;https://gobyexample.com/json&quot;&gt;https://gobyexample.com/json&lt;/a&gt; instead….&lt;/p&gt;
 </description>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <pubDate>Mon, 05 Sep 2016 00:00:00 -0500</pubDate>
 =======
         <pubDate>Mon, 05 Sep 2016 00:00:00 +0000</pubDate>
 >>>>>>> added nytimes to tor list
+=======
+        <pubDate>Mon, 05 Sep 2016 00:00:00 -0500</pubDate>
+>>>>>>> l;
         <link>http://0.0.0.0:4000/2016/09/05/something-about-parsing-json-using-golang.html</link>
         <guid isPermaLink="true">http://0.0.0.0:4000/2016/09/05/something-about-parsing-json-using-golang.html</guid>
         
@@ -387,10 +432,10 @@ using &lt;code class=&quot;highlighter-rouge&quot;&gt;json.Unmarshal&lt;/code&gt
 
 &lt;p&gt;Until that magical day occurs, a hard coded solution is available (as shown below).&lt;/p&gt;
 
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;ExceptionHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;Injectable&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'@angular/core'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'@angular/core'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;// cant import the source  directly using webpack, so we have to&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;// include the built source file on the page to expose _opbeat&lt;/span&gt;
@@ -406,8 +451,8 @@ using &lt;code class=&quot;highlighter-rouge&quot;&gt;json.Unmarshal&lt;/code&gt
 &lt;span class=&quot;cm&quot;&gt;/**
  * maintain default error logging BUT also send errors off to opbeat
  */&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;Injectable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;OpBeatErrorHandler&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ExceptionHandler&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Injectable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;OpBeatErrorHandler&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ExceptionHandler&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;kr&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;opBeatStarted&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;stackTrace&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;reason&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;OpBeatErrorHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;opBeatStarted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -425,12 +470,12 @@ using &lt;code class=&quot;highlighter-rouge&quot;&gt;json.Unmarshal&lt;/code&gt
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-&lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;NgModule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;NgModule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
   &lt;span class=&quot;na&quot;&gt;providers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;provide&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ExceptionHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;useClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;OpBeatErrorHandler&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;OpBeatErrorHandlerModule&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;OpBeatErrorHandlerModule&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
 &lt;span class=&quot;cm&quot;&gt;/**
  * internal helper functions
@@ -446,14 +491,15 @@ using &lt;code class=&quot;highlighter-rouge&quot;&gt;json.Unmarshal&lt;/code&gt
 &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sendErrorToOpbeat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;_opbeat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'captureException'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;now all that remains, is to add &lt;code class=&quot;highlighter-rouge&quot;&gt;OpBeatErrorHandlerModule&lt;/code&gt; to the &lt;code class=&quot;highlighter-rouge&quot;&gt;imports&lt;/code&gt; of the main module.&lt;/p&gt;
 
 &lt;h1 id=&quot;update-1--sept-12-2016-&quot;&gt;Update 1 ( sept 12 2016 )&lt;/h1&gt;
 &lt;p&gt;Since RC 6, &lt;code class=&quot;highlighter-rouge&quot;&gt;ExceptionHandler&lt;/code&gt; was renamed to &lt;code class=&quot;highlighter-rouge&quot;&gt;ErrorHandler&lt;/code&gt;&lt;/p&gt;
 </description>
-        <pubDate>Mon, 05 Sep 2016 00:00:00 +0000</pubDate>
+        <pubDate>Mon, 05 Sep 2016 00:00:00 -0500</pubDate>
         <link>http://0.0.0.0:4000/2016/09/05/opbeat-angular-2-integration.html</link>
         <guid isPermaLink="true">http://0.0.0.0:4000/2016/09/05/opbeat-angular-2-integration.html</guid>
         

@@ -159,10 +159,10 @@ fill="#000000" stroke="none">
 
 <p>Until that magical day occurs, a hard coded solution is available (as shown below).</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="p">{</span>
   <span class="nx">ExceptionHandler</span><span class="p">,</span>
   <span class="nx">Injectable</span>
-<span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
 
 <span class="c1">// cant import the source  directly using webpack, so we have to</span>
 <span class="c1">// include the built source file on the page to expose _opbeat</span>
@@ -178,8 +178,8 @@ fill="#000000" stroke="none">
 <span class="cm">/**
  * maintain default error logging BUT also send errors off to opbeat
  */</span>
-<span class="p">@</span><span class="nd">Injectable</span><span class="p">()</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">OpBeatErrorHandler</span> <span class="kd">extends</span> <span class="nx">ExceptionHandler</span> <span class="p">{</span>
+<span class="err">@</span><span class="nx">Injectable</span><span class="p">()</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">OpBeatErrorHandler</span> <span class="kr">extends</span> <span class="nx">ExceptionHandler</span> <span class="p">{</span>
   <span class="kr">private</span> <span class="kr">static</span> <span class="nx">opBeatStarted</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
   <span class="nx">call</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">stackTrace</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">reason</span> <span class="o">=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">OpBeatErrorHandler</span><span class="p">.</span><span class="nx">opBeatStarted</span><span class="p">)</span> <span class="p">{</span>
@@ -197,12 +197,12 @@ fill="#000000" stroke="none">
   <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="p">@</span><span class="nd">NgModule</span><span class="p">({</span>
+<span class="err">@</span><span class="nx">NgModule</span><span class="p">({</span>
   <span class="na">providers</span><span class="p">:</span> <span class="p">[</span>
     <span class="p">{</span> <span class="na">provide</span><span class="p">:</span> <span class="nx">ExceptionHandler</span><span class="p">,</span> <span class="na">useClass</span><span class="p">:</span> <span class="nx">OpBeatErrorHandler</span> <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">})</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">OpBeatErrorHandlerModule</span> <span class="p">{</span> <span class="p">}</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">OpBeatErrorHandlerModule</span> <span class="p">{</span> <span class="p">}</span>
 
 <span class="cm">/**
  * internal helper functions
@@ -218,7 +218,8 @@ fill="#000000" stroke="none">
 <span class="kd">function</span> <span class="nx">sendErrorToOpbeat</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">_opbeat</span><span class="p">(</span><span class="s1">'captureException'</span><span class="p">,</span> <span class="nx">e</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>now all that remains, is to add <code class="highlighter-rouge">OpBeatErrorHandlerModule</code> to the <code class="highlighter-rouge">imports</code> of the main module.</p>
 

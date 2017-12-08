@@ -160,21 +160,23 @@ fill="#000000" stroke="none">
 <p>Go requires exported properties to start with a capital letter but most APIs use JSON that is all in cammelCase so
 using <code class="highlighter-rouge">json.Unmarshal</code> will always result in all empty properties. ie</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">  
-  </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"some name"</span><span class="p">,</span><span class="w">  
-  </span><span class="s2">"age"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">  
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">  
+  </span><span class="nt">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"some name"</span><span class="p">,</span><span class="w">  
+  </span><span class="nt">"age"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">  
 </span><span class="p">}</span><span class="w">  
-</span></code></pre></div></div>
+</span></code></pre>
+</div>
 
 <h3 id="solution">Solution</h3>
 
 <p><code class="highlighter-rouge">json:"cammelCasePropertyName"</code> adding a clause to the type’s property. ie:</p>
 
-<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">type</span><span class="x"> </span><span class="n">Sample</span><span class="x"> </span><span class="k">struct</span><span class="x"> </span><span class="p">{</span><span class="x">  
+<div class="language-go highlighter-rouge"><pre class="highlight"><code><span class="k">type</span><span class="x"> </span><span class="n">Sample</span><span class="x"> </span><span class="k">struct</span><span class="x"> </span><span class="p">{</span><span class="x">  
     </span><span class="n">Name</span><span class="x"> </span><span class="kt">string</span><span class="x"> </span><span class="s">`json:"name"`</span><span class="x">  
     </span><span class="n">Age</span><span class="x">  </span><span class="kt">int</span><span class="x">    </span><span class="s">`json:"age"`</span><span class="x">  
 </span><span class="p">}</span><span class="x">  
-</span></code></pre></div></div>
+</span></code></pre>
+</div>
 
 <p>will create the correct mapping of JSON property to  Struct property</p>
 
