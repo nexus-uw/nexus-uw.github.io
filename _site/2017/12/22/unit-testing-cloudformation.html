@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Simon Ramsay</title>
-  <meta name="description" content="'dank memes' happens to be a phrase that exists currently.">
+  <title>Unit Testing CloudFormation Templates</title>
+  <meta name="description" content="Below is a quick mocha/jasmine test suite for validating all CloudFormation templates in a directory">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://0.0.0.0:4000/">
+  <link rel="canonical" href="http://0.0.0.0:4000/2017/12/22/unit-testing-cloudformation.html">
   <link rel="alternate" type="application/rss+xml" title="Simon Ramsay" href="http://0.0.0.0:4000/feed.xml">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -147,209 +147,39 @@ fill="#000000" stroke="none">
 
     <div class="page-content">
       <div class="wrapper">
-        <div class="home">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <h1 class="page-heading">Posts</h1>
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Unit Testing CloudFormation Templates</h1>
+    <p class="post-meta"><time datetime="2017-12-22T00:00:00-06:00" itemprop="datePublished">Dec 22, 2017</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Simon</span></span></p>
+  </header>
 
-  <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Dec 22, 2017</span>
+  <div class="post-content" itemprop="articleBody">
+    <p>Below is a quick mocha/jasmine test suite for validating all CloudFormation templates in a directory</p>
 
-        <h2>
-          <a class="post-link" href="/2017/12/22/unit-testing-cloudformation.html">Unit Testing CloudFormation Templates</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 8, 2017</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'fs'</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">cf</span> <span class="o">=</span> <span class="k">new</span> <span class="p">(</span><span class="nx">require</span><span class="p">(</span><span class="s1">'aws-sdk'</span><span class="p">).</span><span class="nx">CloudFormation</span><span class="p">)({</span> <span class="na">region</span><span class="p">:</span> <span class="s1">'us-east-1'</span> <span class="p">})</span>
+<span class="kr">const</span> <span class="nx">PATH</span> <span class="o">=</span> <span class="s1">'./Path/to/folder/containing/templates'</span>
 
-        <h2>
-          <a class="post-link" href="/2017/11/08/easy-ecs-login.html">Easy ECS Login</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jun 1, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/2017/06/01/im-an-elm-master.html">I Have Mastered Elm By Making Yet Another Calculator (For AWS ElasticCache), And So Can You</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jun 1, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/2017/06/01/ammobinca.html">just released ammobin.ca</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Mar 28, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/2017/03/28/site-also-available-as-an-eep-site.html">ramsay.xyz Now Available as an Eepsite (I2P)</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Mar 16, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/2017/03/16/notes-about-unearthed-toronto-2017.html">Notes About Unearthed Toronto 2017</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 22, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/2017/01/22/list-of-tor-sites.html">A List of Some Tor Hidden Service Mirrors of Clearnet Sites</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 7, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/2017/01/07/how-to-use-redux-logger-with-revue.html">How to Use Redux Logger with Revue</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Dec 16, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/12/16/vue-compond-interest-calculator-part-1.html">Sample Compound Interest Calculator (part 1)</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 5, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/10/05/realprogramming.html">Site of Real Programming</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 5, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/09/05/something-about-parsing-json-using-golang.html">Something About Parsing JSON Using Go</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 5, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/09/05/opbeat-angular-2-integration.html">How to Integrate Opbeat Into an Angular 2 App</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jul 23, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/07/23/i-create-a-vs-extension.html">Created a VSCode extension</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jul 14, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/07/14/picture-element-pollyfill.html">How to support <picture> elements created by Angular (or other similar JS Frameworks) in IE11 or Safari browsers from before March 2016</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jun 2, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/06/02/site-now-available-as-a-hidden-service.html">ramsay.xyz Now Available as a Tor Hidden Service</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">May 22, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/05/22/i-made-a-thing.html">I made a thing</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">May 18, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/no/human/will/read/this/2016/05/18/moved-to-github.html">Moved Blog to Github</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Feb 15, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/02/15/ngsubmit-does-not-work-on-ios-quickie.html">ngSubmit Does Not Work on iOS (Quickie Tip)</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Feb 10, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/02/10/why-scala-is-terrible-knee-jerk-reaction.html">Why Scala is Not Very Good (a knee jerk reaction)</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 4, 2015</span>
-
-        <h2>
-          <a class="post-link" href="/2015/10/04/i-wrote-blog-post-elsewhere-learn-how.html">I Wrote a Blog Post Elsewhere: Learn How to Write Angular 2 Style Unit Tests with Angular 1.X Code</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 21, 2015</span>
-
-        <h2>
-          <a class="post-link" href="/2015/09/21/how-to-set-up-pass-on-windows.html">How to Setup Pass on Windows</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 7, 2013</span>
-
-        <h2>
-          <a class="post-link" href="/2013/10/07/how-to-removebypass-annoying-you-have-x.html">How to Remove/Bypass Annoying ‘You Have x Free Articles Left This Month</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 12, 2013</span>
-
-        <h2>
-          <a class="post-link" href="/2013/01/12/turn-arm-linux-headless-server-into.html">Turn ARM Linux Headless Server Into Torrent Box</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 5, 2013</span>
-
-        <h2>
-          <a class="post-link" href="/2013/01/05/dropbox-hack-on-headless-arm-linux.html">Dropbox Hack on Headless ARM Linux </a>
-        </h2>
-      </li>
-    
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
-
+<span class="nx">describe</span><span class="p">(</span><span class="s1">'CloudFormation Templates'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">fs</span><span class="p">.</span><span class="nx">readdirSync</span><span class="p">(</span><span class="nx">PATH</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">filename</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">it</span><span class="p">(</span><span class="err">`</span><span class="nx">should</span> <span class="nx">validate</span> <span class="nx">$</span><span class="p">{</span><span class="nx">filename</span><span class="p">}</span><span class="err">`</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">cf</span><span class="p">.</span><span class="nx">validateTemplate</span><span class="p">({</span>
+      <span class="na">TemplateBody</span><span class="p">:</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="nx">PATH</span> <span class="o">+</span> <span class="s1">'/'</span> <span class="o">+</span> <span class="nx">filename</span><span class="p">).</span><span class="nx">toString</span><span class="p">()</span>
+    <span class="p">}).</span><span class="nx">promise</span><span class="p">())</span>
+  <span class="p">})</span>
+<span class="p">})</span>
+</code></pre>
 </div>
+
+<p>This can be helpful in quickly failing a CI/CD pipeline before trying to deploy an invalid* template.</p>
+
+  </div>
+  <div style="display:none">
+    Nobody will read this,<br/>
+    Simon
+  </div>
+
+</article>
 
       </div>
     </div>
@@ -382,7 +212,7 @@ fill="#000000" stroke="none">
   </div>
 </footer>
 
-    <img src="https://tor-hceck.herokuapp.com/98e61a80-8c71-4794-af4f-b8a7fda264ed?page=http://0.0.0.0:4000/" alt="tor-user-check"/>
+    <img src="https://tor-hceck.herokuapp.com/98e61a80-8c71-4794-af4f-b8a7fda264ed?page=http://0.0.0.0:4000/2017/12/22/unit-testing-cloudformation.html" alt="tor-user-check"/>
   </body>
 
 </html>
