@@ -8,7 +8,7 @@
 # Site settings
 title: Simon Ramsay
 email: s3ramsay@riseup.net
-description: "'dank memes' happens to be a phrase that exists currently."
+description: "A personal blog about shitty infrequent random programing tips"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://ramsay.xyz" # the base hostname & protocol for your site
 github_username:  "nexus-uw"
