@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Simon Ramsay</title>
-    <description>'dank memes' happens to be a phrase that exists currently.</description>
+    <description>A personal blog about shitty infrequent random programing tips</description>
     <link>http://0.0.0.0:4000/</link>
     <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 23 Dec 2017 12:06:38 -0600</pubDate>
-    <lastBuildDate>Sat, 23 Dec 2017 12:06:38 -0600</lastBuildDate>
+    <pubDate>Tue, 20 Feb 2018 14:50:31 -0600</pubDate>
+    <lastBuildDate>Tue, 20 Feb 2018 14:50:31 -0600</lastBuildDate>
     <generator>Jekyll v3.5.0</generator>
     
       <item>
