@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>I Wrote a Blog Post Elsewhere: Learn How to Write Angular 2 Style Unit Tests with Angular 1.X Code</title>
-  <meta name="description" content="http://blog.rangle.io/unittests/">
+  <title>How to enable syntax highlighting in VSCode for Mason files</title>
+  <meta name="description" content="By default VSCode does not detect that Mason files are perl files. Adding the following to your user preferences will do a pretty good job of adding some col...">
   <meta name="image" content="/favicon-32x32.png">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://ramsay.xyz/2015/10/04/i-wrote-blog-post-elsewhere-learn-how.html">
+  <link rel="canonical" href="https://ramsay.xyz/2018/04/14/vscode-mason-syntax-highlighting.html">
   <link rel="alternate" type="application/rss+xml" title="Simon Ramsay" href="https://ramsay.xyz/feed.xml">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -43,12 +43,21 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">I Wrote a Blog Post Elsewhere: Learn How to Write Angular 2 Style Unit Tests with Angular 1.X Code</h1>
-    <p class="post-meta"><time datetime="2015-10-04T10:29:00-05:00" itemprop="datePublished">Oct 4, 2015</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Simon</span></span></p>
+    <h1 class="post-title" itemprop="name headline">How to enable syntax highlighting in VSCode for Mason files</h1>
+    <p class="post-meta"><time datetime="2018-04-14T00:00:00-05:00" itemprop="datePublished">Apr 14, 2018</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Simon</span></span></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <h2></h2><a href="http://blog.rangle.io/unittests/">http://blog.rangle.io/unittests/</a><br /><br />
+    <p>By default <a href="https://code.visualstudio.com/">VSCode</a> does not detect that <a href="http://www.masonhq.com/">Mason</a> files are perl files. Adding the following to your user preferences will do a pretty good job of adding some colour to your Mason development:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="s2">"files.associations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"*.mas"</span><span class="p">:</span><span class="w"> </span><span class="s2">"html"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"autohandler"</span><span class="p">:</span><span class="w"> </span><span class="s2">"perl"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"*.mi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"perl"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+
   </div>
   <div style="display:none">
     Nobody will read this,<br/>
@@ -89,7 +98,7 @@
       </div>
   </div>
 </footer>
-    <img src="https://tor-hceck.herokuapp.com/98e61a80-8c71-4794-af4f-b8a7fda264ed?page=https://ramsay.xyz/2015/10/04/i-wrote-blog-post-elsewhere-learn-how.html" alt="tor-user-check"/>
+    <img src="https://tor-hceck.herokuapp.com/98e61a80-8c71-4794-af4f-b8a7fda264ed?page=https://ramsay.xyz/2018/04/14/vscode-mason-syntax-highlighting.html" alt="tor-user-check"/>
   </body>
 
 </html>

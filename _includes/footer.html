@@ -1,24 +1,26 @@
 <footer class="site-footer">
   <div class="wrapper">
-    <h2 class="footer-heading">{{ site.title }} 
-    <a href="http://eqac56hh4ppxzy27.onion">(TOR)</a>
-    <a href="http://ramsay.i2p/">(I2P)</a></h2>
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-6">
-        <ul class="contact-list">
-          <li>
-            <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-          </li>
-          <li>
-            <a href="https://keybase.io/{{site.keybase_username}}/key.asc">{{site.gpg_key_finger_print}}</a>
-          </li>
-        </ul>
+    <h2 class="footer-heading">{{ site.title }}
+      <a href="http://eqac56hh4ppxzy27.onion">(TOR)</a>
+      <!-- not active at the moment -->
+      <!-- <a href="http://ramsay.i2p/">(I2P)</a></h2> -->
+      <div class="footer-col-wrapper">
+        <div class="footer-col footer-col-6">
+          <ul class="contact-list">
+            <li>
+              <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+            </li>
+            <li>
+              <a href="https://keybase.io/{{site.keybase_username}}/key.asc">{{site.gpg_key_finger_print}}</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col footer-col-6">
+          <ul class="social-media-list">{% if site.github_username %}
+            <li>{% include icon-github.html username=site.github_username %}</li>{% endif %}
+            <li>{% include icon-keybase.html username=site.keybase_username %}</li>
+          </ul>
+        </div>
       </div>
-      <div class="footer-col footer-col-6">
-        <ul class="social-media-list">{% if site.github_username %} 
-        <li>{% include icon-github.html username=site.github_username %}</li>{% endif %} 
-        <li>{% include icon-keybase.html username=site.keybase_username %}</li></ul>
-      </div>
-    </div>
   </div>
 </footer>

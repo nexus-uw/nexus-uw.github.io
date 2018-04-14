@@ -1,22 +1,13 @@
-<header class="site-header">
+<header class="">
 
-  <div class="wrapper">
+  <div class="header-links">
 
-    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+    <a class="" href="{{ site.baseurl }}/">{{ site.title }}</a>
 
-    <nav class="site-nav">
-      <a href="#" class="menu-icon">
-        {% include mcd-doublecheese.svg %}
-      </a>
-
-      <div class="trigger">
-        {% for my_page in site.pages %}
-          {% if my_page.title %}
-          <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
-          {% endif %}
-        {% endfor %}
-      </div>
-    </nav>
+    <div class="about-link">
+      |
+      <a class="" href="{{ site.baseurl }}/about">about</a>
+    </div>
 
   </div>
 
