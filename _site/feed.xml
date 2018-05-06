@@ -5,9 +5,75 @@
     <description>A personal blog about shitty infrequent random programing tips</description>
     <link>https://ramsay.xyz/</link>
     <atom:link href="https://ramsay.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 14 Apr 2018 16:48:38 -0500</pubDate>
-    <lastBuildDate>Sat, 14 Apr 2018 16:48:38 -0500</lastBuildDate>
+    <pubDate>Sat, 05 May 2018 19:39:48 -0500</pubDate>
+    <lastBuildDate>Sat, 05 May 2018 19:39:48 -0500</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>How to (kinda) install pihole on a pine64-jessie using docker</title>
+        <description>&lt;p&gt;More of half thoughts and documentation of what I did to get pihole running in docker on my pine64 at home. This is not intended to be a complete or through guide. Please google or duckduckgo for the full process of setting this up. Note: as of May 5, 2018, the docker image does not have dns logging enabled and I have been unable to turn it on manually.&lt;/p&gt;
+
+&lt;h1 id=&quot;some-defs&quot;&gt;some defs&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.pine64.org/?product=pine-a64-lts&quot;&gt;Pine64&lt;/a&gt;: “The Pine A64 is an index card sized 64-bit single board computer. It can perform like your desktop or portable PC with browsing the Internet, playing games, watching video, and execute programs like spreadsheets and word-processing. The Pine A64 board can also play ultra high definition 4Kx2K video.”&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.docker.com/&quot;&gt;Docker&lt;/a&gt;: “Docker provides a way to run applications securely isolated in a container, packaged with all its dependencies and libraries.”&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://pi-hole.net/&quot;&gt;pihole&lt;/a&gt;: “A black hole for Internet advertisements”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;install-docker&quot;&gt;install docker&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;add some pre-reqs
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+  apt-transport-https &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+  ca-certificates &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+  curl &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+  gnupg2 &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+  software-properties-common
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;add docker signing key &lt;code class=&quot;highlighter-rouge&quot;&gt;curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -&lt;/code&gt;  (&lt;a href=&quot;https://docs.docker.com/install/linux/docker-ce/debian/#set-up-the-repository&quot;&gt;src&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;add &lt;em&gt;deb https://download.docker.com/linux/debian jessie stable&lt;/em&gt; to &lt;em&gt;/etc/apt/sources.list.d/docker.list&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;actually install docker &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get update &amp;amp;&amp;amp; sudo apt-get install docker-ce&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;pull-image--run&quot;&gt;pull image + run&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;create some configs&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;create docker service to run in background with name = pihole and configs located in current directory
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nv&quot;&gt;IP_LOOKUP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;ip route get 8.8.8.8 | &lt;span class=&quot;nb&quot;&gt;awk&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{ print $NF; exit }'&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# May not work for VPN / tun0&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;IP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;IP&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:-&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$IP_LOOKUP&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# use $IP, if set, otherwise IP_LOOKUP&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;DOCKER_CONFIGS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# Default of directory you run this from, update to where ever.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  docker run &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+ &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; pihole &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+ &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 53:53/tcp &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 53:53/udp &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 80:80 &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+ &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;DOCKER_CONFIGS&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/pihole/:/etc/pihole/&quot;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+ &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;DOCKER_CONFIGS&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/dnsmasq.d/:/etc/dnsmasq.d/&quot;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+ &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;ServerIP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;IP&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:-$(&lt;/span&gt;ip route get 8.8.8.8 | &lt;span class=&quot;nb&quot;&gt;awk&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{ print $NF; exit }'&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+ &lt;span class=&quot;nt&quot;&gt;--restart&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;always &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+ diginc/pi-hole-multiarch:debian_aarch64
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;note: must use &lt;strong&gt;diginc/pi-hole-multiarch:debian_aarch64&lt;/strong&gt;, other ones will not run on the pine64&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;to have pihole start on boot, run &lt;code class=&quot;highlighter-rouge&quot;&gt;crontab -e&lt;/code&gt; and add the line &lt;em&gt;@reboot docker start pihole&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Sat, 05 May 2018 00:00:00 -0500</pubDate>
+        <link>https://ramsay.xyz/2018/05/05/pihole-pine64-docker.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2018/05/05/pihole-pine64-docker.html</guid>
+        
+        <category>pihole</category>
+        
+        <category>pine64</category>
+        
+        <category>docker</category>
+        
+        <category>add blockers</category>
+        
+        
+      </item>
     
       <item>
         <title>How to enable syntax highlighting in VSCode for Mason files</title>
@@ -253,36 +319,6 @@
         <category>rails</category>
         
         <category>docker</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>A List of Some Tor Hidden Service Mirrors of Clearnet Sites</title>
-        <description>&lt;ul&gt;
-  &lt;li&gt;facebook.com &lt;a href=&quot;https://facebookcorewwwi.onion/&quot;&gt;https://facebookcorewwwi.onion/&lt;/a&gt; (&lt;a href=&quot;https://www.facebook.com/notes/protect-the-graph/making-connections-to-facebook-more-secure/1526085754298237&quot;&gt;src&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;duckduckgo.com &lt;a href=&quot;https://3g2upl4pq6kufc4m.onion/&quot;&gt;https://3g2upl4pq6kufc4m.onion/&lt;/a&gt; (&lt;a href=&quot;https://en.wikipedia.org/wiki/DuckDuckGo&quot;&gt;src&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;protonmail.com &lt;a href=&quot;https://protonirockerxow.onion&quot;&gt;https://protonirockerxow.onion&lt;/a&gt; (&lt;a href=&quot;https://protonmail.com/blog/tor-encrypted-email/&quot;&gt;src&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;thepiratebay.org &lt;a href=&quot;http://uj3wazyk5u4hnvtk.onion/&quot;&gt;http://uj3wazyk5u4hnvtk.onion/&lt;/a&gt; (&lt;a href=&quot;https://thepiratebay.org&quot;&gt;src&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;keybase.io &lt;a href=&quot;http://fncuwbiisyh6ak3i.onion&quot;&gt;http://fncuwbiisyh6ak3i.onion&lt;/a&gt; (&lt;a href=&quot;https://keybase.io&quot;&gt;src&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;onions.debian.org &lt;a href=&quot;http://5nca3wxl33tzlzj5.onion/&quot;&gt;http://5nca3wxl33tzlzj5.onion/&lt;/a&gt;(&lt;a href=&quot;https://onion.debian.org/&quot;&gt;src&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;ramsay.xyz &lt;a href=&quot;http://eqac56hh4ppxzy27.onion/&quot;&gt;http://eqac56hh4ppxzy27.onion/&lt;/a&gt; (&lt;a href=&quot;https://github.com/nexus-uw/nexus-uw.github.io/blob/master/_includes/footer.html#L5&quot;&gt;src&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;nytimes.com &lt;a href=&quot;https://www.nytimes3xbfgragh.onion/&quot;&gt;https://www.nytimes3xbfgragh.onion/&lt;/a&gt;(&lt;a href=&quot;https://open.nytimes.com/https-open-nytimes-com-the-new-york-times-as-a-tor-onion-service-e0d0b67b7482&quot;&gt;src&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;view history of this page at &lt;a href=&quot;https://github.com/nexus-uw/nexus-uw.github.io/blob/master/_posts/2017-01-22-list-of-tor-sites.md&quot;&gt;https://github.com/nexus-uw/nexus-uw.github.io/blob/master/_posts/2017-01-22-list-of-tor-sites.md&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sun, 22 Jan 2017 00:00:00 -0600</pubDate>
-        <link>https://ramsay.xyz/2017/01/22/list-of-tor-sites.html</link>
-        <guid isPermaLink="true">https://ramsay.xyz/2017/01/22/list-of-tor-sites.html</guid>
-        
-        <category>tor</category>
-        
-        <category>hidden</category>
-        
-        <category>service</category>
-        
-        <category>onion</category>
         
         
       </item>
