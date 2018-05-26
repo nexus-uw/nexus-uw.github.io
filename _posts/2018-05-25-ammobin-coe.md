@@ -7,6 +7,7 @@ tags:
 - COE
 - correction of error
 - downtime
+- ammobin.ca
 ---
 # Correction Of Error (COE) for ammobin.ca downtime
 site was down for most of friday
