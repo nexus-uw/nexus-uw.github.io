@@ -29,6 +29,7 @@ new droplet starts getting traffic immediately
 - external + automated backups are a good thing (lost dashboards + stats + cron jobs)
 - dont wait around on support people to fix things if able to just recreate
 - some cloud init scripts to set up machine for me (oh-my-zsh, docker, docker-compose) would be nice
+- publicly exposed status page at [](https://status.ammobin.ca)
 
 note: COE is an amazon thing that is well described here: [](https://blog.mischel.com/2018/01/24/responding-to-errors-at-amazon/)
 

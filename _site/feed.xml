@@ -5,9 +5,89 @@
     <description>A personal blog about shitty infrequent random programing tips</description>
     <link>https://ramsay.xyz/</link>
     <atom:link href="https://ramsay.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 25 May 2018 21:10:46 -0500</pubDate>
-    <lastBuildDate>Fri, 25 May 2018 21:10:46 -0500</lastBuildDate>
+    <pubDate>Sat, 02 Jun 2018 21:51:26 -0500</pubDate>
+    <lastBuildDate>Sat, 02 Jun 2018 21:51:26 -0500</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>How I set up real-time Caddy log monitoring using GoAccess, all within docker-compose</title>
+        <description>&lt;p&gt;After running &lt;a href=&quot;https://goaccess.io/&quot;&gt;goaccess&lt;/a&gt; through a cron job to generate the report every 15mins, I decided it was time to live in future and take advantage of goaccess realtime log processing. Since I prefer to reduce the number of install steps + configuration tasks, I went with adding goaccess to my &lt;a href=&quot;https://docs.docker.com/compose/overview/&quot;&gt;docker compose&lt;/a&gt; config.&lt;/p&gt;
+
+&lt;h2 id=&quot;code&quot;&gt;Code&lt;/h2&gt;
+
+&lt;p&gt;Using this &lt;a href=&quot;https://github.com/ammobinDOTca/ammobin-compose/blob/master/goaccess/data/goaccess.conf&quot;&gt;goaccess config&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;log-format COMBINED
+addr 0.0.0.0
+origin https://stats.ammobin.ca
+exclude-ip 172.16.0.0-172.31.255.255 #docker ips
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;With the following &lt;a href=&quot;https://github.com/ammobinDOTca/ammobin-compose/blob/master/Caddyfile&quot;&gt;caddy snippet&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;...
+
+stats.ammobin.ca {
+  tls some@email.com
+  root  /www/goaccess
+  gzip
+  push
+  basicauth / USER PASSWORD
+  log
+}
+
+stats.ammobin.ca:7890 {
+ log
+ tls some@email.com
+ proxy / goaccess:7890 {
+   websocket
+ }
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;connected the 2 using this &lt;a href=&quot;https://github.com/ammobinDOTca/ammobin-compose/blob/master/docker-compose.yml&quot;&gt;docker-compose&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;3'&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;services&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;caddy&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;abiosoft/caddy&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;./.caddy:/root/.caddy&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;./Caddyfile:/etc/Caddyfile&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;./caddy-logs:/var/log/caddy&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;./goaccess/html:/www/goaccess&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;./caddy-srv/:/srv&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;ports&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;80:80&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;443:443&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;7890:7890&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;command&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;--agree --conf  &quot;/etc/Caddyfile&quot;&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;...&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;goaccess&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;allinurl/goaccess&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;./goaccess/data:/srv/data&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;./goaccess/html:/srv/report&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;./caddy-logs:/srv/logs&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;entrypoint&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;goaccess --no-global-config --config-file=/srv/data/goaccess.conf --ws-url=wss://stats.ammobin.ca --output=/srv/report/index.html --log-file=/srv/logs/ammobin.log --real-time-html&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;now-real-time-log-reporting-is-enabled&quot;&gt;now real time log reporting is enabled…&lt;/h1&gt;
+</description>
+        <pubDate>Tue, 29 May 2018 00:00:00 -0500</pubDate>
+        <link>https://ramsay.xyz/2018/05/29/realtime-goaccess-caddy-server-docker.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2018/05/29/realtime-goaccess-caddy-server-docker.html</guid>
+        
+        <category>docker</category>
+        
+        <category>Caddy server</category>
+        
+        <category>GoAccess real-time</category>
+        
+        <category>docker-compose</category>
+        
+        
+      </item>
     
       <item>
         <title>Correction Of Error (COE) for ammobin.ca downtime</title>
@@ -36,6 +116,7 @@ new droplet starts getting traffic immediately&lt;/li&gt;
   &lt;li&gt;external + automated backups are a good thing (lost dashboards + stats + cron jobs)&lt;/li&gt;
   &lt;li&gt;dont wait around on support people to fix things if able to just recreate&lt;/li&gt;
   &lt;li&gt;some cloud init scripts to set up machine for me (oh-my-zsh, docker, docker-compose) would be nice&lt;/li&gt;
+  &lt;li&gt;publicly exposed status page at &lt;a href=&quot;https://status.ammobin.ca&quot;&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;note: COE is an amazon thing that is well described here: &lt;a href=&quot;https://blog.mischel.com/2018/01/24/responding-to-errors-at-amazon/&quot;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -303,25 +384,6 @@ new droplet starts getting traffic immediately&lt;/li&gt;
         <category>nuxt.js</category>
         
         <category>vue.js</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>ramsay.xyz Now Available as an Eepsite (I2P)</title>
-        <description>&lt;p&gt;Here is a link to it: &lt;a href=&quot;http://ramsay.i2p&quot;&gt;ramsay.i2p&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Note April 14 2018: currently offline while buggering around with things on host machine&lt;/p&gt;
-</description>
-        <pubDate>Tue, 28 Mar 2017 00:00:00 -0500</pubDate>
-        <link>https://ramsay.xyz/2017/03/28/site-also-available-as-an-eep-site.html</link>
-        <guid isPermaLink="true">https://ramsay.xyz/2017/03/28/site-also-available-as-an-eep-site.html</guid>
-        
-        <category>i2p</category>
-        
-        <category>eepsite</category>
-        
-        <category>darknet</category>
         
         
       </item>
