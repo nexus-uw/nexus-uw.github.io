@@ -5,9 +5,47 @@
     <description>A personal blog about shitty infrequent random programing tips</description>
     <link>https://ramsay.xyz/</link>
     <atom:link href="https://ramsay.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 02 Jun 2018 21:51:26 -0500</pubDate>
-    <lastBuildDate>Sat, 02 Jun 2018 21:51:26 -0500</lastBuildDate>
+    <pubDate>Mon, 09 Jul 2018 23:54:46 -0500</pubDate>
+    <lastBuildDate>Mon, 09 Jul 2018 23:54:46 -0500</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>How to open multi instances of secure shell app in Chrome OS</title>
+        <description>&lt;p&gt;Chrome OS is a pretty neat operating system that imposes some interesting restrictions on the user (next to no local storage, mostly webapps, limited chrome apps, software must be installed through the Chrome Web Store). Luckily Google has
+developed a &lt;a href=&quot;https://chrome.google.com/webstore/detail/secure-shell-app/pnhechapfaindjhompbnflcldabbghjo?utm_source=chrome-app-launcher-search&quot;&gt;nice ssh
+client&lt;/a&gt;
+which I have become accustomed to while bumping around my local network.&lt;/p&gt;
+
+&lt;p&gt;But Chrome OS likes to keep one instance of apps running at a time. When a user already has a session open and clicks the
+app icon, Chrome takes the user to open session. While this is handy for most apps, most people want to open multiple
+sessions.&lt;/p&gt;
+
+&lt;p&gt;Luckily, I discovered (no way the first person, but trying to put this all in one place) a couple of ways to get around
+this.&lt;/p&gt;
+
+&lt;p&gt;open new tab type “ssh” in navbar + tab + enter new instance of chrome “secure shell app”&lt;/p&gt;
+
+&lt;p&gt;OR&lt;/p&gt;
+
+&lt;p&gt;duplicate an existing ssh tab&lt;/p&gt;
+
+&lt;p&gt;OR&lt;/p&gt;
+
+&lt;p&gt;paste “chrome-extension://pnhechapfaindjhompbnflcldabbghjo/html/nassh.html” into a new tab&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 09 Jul 2018 00:00:00 -0500</pubDate>
+        <link>https://ramsay.xyz/2018/07/09/multi-chromeos-terminal-windows.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2018/07/09/multi-chromeos-terminal-windows.html</guid>
+        
+        <category>Chrome OS</category>
+        
+        <category>ssh</category>
+        
+        <category>secure shell app</category>
+        
+        
+      </item>
     
       <item>
         <title>How I set up real-time Caddy log monitoring using GoAccess, all within docker-compose</title>
@@ -360,30 +398,6 @@ new droplet starts getting traffic immediately&lt;/li&gt;
         <category>calculator</category>
         
         <category>Jake Paul</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>just released ammobin.ca</title>
-        <description>&lt;p&gt;For the past month, I have been putting together &lt;a href=&quot;https://ammobin.ca/?src=ramsay.xyz&quot;&gt;ammobin.ca&lt;/a&gt; using &lt;a href=&quot;https://nuxtjs.org/&quot;&gt;nuxt.js&lt;/a&gt; (server-side vue.js) + &lt;a href=&quot;https://github.com/NaturalNode/natural&quot;&gt;natural&lt;/a&gt; (natural language classification).&lt;/p&gt;
-
-&lt;p&gt;Feel free to check it out.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/ammobin.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 01 Jun 2017 00:00:00 -0500</pubDate>
-        <link>https://ramsay.xyz/2017/06/01/ammobinca.html</link>
-        <guid isPermaLink="true">https://ramsay.xyz/2017/06/01/ammobinca.html</guid>
-        
-        <category>canada</category>
-        
-        <category>ammobin.ca</category>
-        
-        <category>nuxt.js</category>
-        
-        <category>vue.js</category>
         
         
       </item>
