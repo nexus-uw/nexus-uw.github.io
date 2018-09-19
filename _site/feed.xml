@@ -5,9 +5,33 @@
     <description>A personal blog about shitty infrequent random programing tips</description>
     <link>https://ramsay.xyz/</link>
     <atom:link href="https://ramsay.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 09 Jul 2018 23:54:46 -0500</pubDate>
-    <lastBuildDate>Mon, 09 Jul 2018 23:54:46 -0500</lastBuildDate>
+    <pubDate>Tue, 18 Sep 2018 23:40:56 -0500</pubDate>
+    <lastBuildDate>Tue, 18 Sep 2018 23:40:56 -0500</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>Cheap VPS Hot Tip</title>
+        <description>&lt;p&gt;While &lt;a href=&quot;https://lowendbox.com/&quot;&gt;&lt;/a&gt; has lots of great deals, especially if you are willing and able to pay up front (ie: $39 per year for 4cpu + 6GB RAM &lt;a href=&quot;https://lowendbox.com/blog/sparkvps-4-offers-pure-ssd-vps-from-1-95-month-in-dallas-new-york/&quot;&gt;src&lt;/a&gt; compared to $5 per month for 1cpu + 1GB of RAM with &lt;a href=&quot;https://www.digitalocean.com/pricing/&quot;&gt;Digital Ocean&lt;/a&gt; )&lt;/p&gt;
+
+&lt;p&gt;It should be noted that these cheaper hosts usually use OpenVZ vps (as opposed to KVM). Docker will not run in such an environment since it requires 
+(&lt;a href=&quot;https://stackoverflow.com/a/29221590&quot;&gt;src&lt;/a&gt; and &lt;a href=&quot;https://stackoverflow.com/a/35951482&quot;&gt;src2&lt;/a&gt;)
+Ubuntu will allow you to install docker, but it will fail to start due to:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Your Linux kernel version 2.6.32-xxx is not supported for running docker. Please upgrade your kernel to 3.10.0 or newer.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+</description>
+        <pubDate>Tue, 18 Sep 2018 00:00:00 -0500</pubDate>
+        <link>https://ramsay.xyz/2018/09/18/cheap-vps-hot-tip.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2018/09/18/cheap-vps-hot-tip.html</guid>
+        
+        <category>vps</category>
+        
+        <category>docker</category>
+        
+        
+      </item>
     
       <item>
         <title>How to open multi instances of secure shell app in Chrome OS</title>
@@ -363,41 +387,6 @@ new droplet starts getting traffic immediately&lt;/li&gt;
         <category>zsh</category>
         
         <category>ecs</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>I Have Mastered Elm By Making Yet Another Calculator (For AWS ElasticCache), And So Can You</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/elastic-cache-elm.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;As a &lt;em&gt;fun&lt;/em&gt; task, I relearned first year pure functional programming using &lt;a href=&quot;http://elm-lang.org/&quot;&gt;Elm&lt;/a&gt;.  To generate something more useful and exciting than YATA (&lt;strong&gt;Y&lt;/strong&gt;et &lt;strong&gt;A&lt;/strong&gt;nother &lt;strong&gt;T&lt;/strong&gt;odo &lt;strong&gt;A&lt;/strong&gt;pp), I decided to come up with a simple calculator for figuring out much it will cost per day to operate a Redis Cluster on AWS Elastic Cache for a given size + network speed.&lt;/p&gt;
-
-&lt;p&gt;Take Aways&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Its amazing how much one can forget from 1st year CS&lt;/li&gt;
-  &lt;li&gt;Even coming from writing functional-ish all day at work, pure functional programing is hard (really wished for an optional index param when iterating through a list)&lt;/li&gt;
-  &lt;li&gt;Elm’s documentation code really be fleshed out to cover more than how to get things started and how the language compares to JS&lt;/li&gt;
-  &lt;li&gt;Elm’s compilation errors were really clear and useful (especially in VS Code)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Feel free to check it out at:
-&lt;a href=&quot;https://nexus-uw.github.io/elastic-cache-calculator/&quot;&gt;https://nexus-uw.github.io/elastic-cache-calculator/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Source code is available at:
-&lt;a href=&quot;https://github.com/nexus-uw/elastic-cache-calculator&quot;&gt;https://github.com/nexus-uw/elastic-cache-calculator&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Thu, 01 Jun 2017 00:00:00 -0500</pubDate>
-        <link>https://ramsay.xyz/2017/06/01/im-an-elm-master.html</link>
-        <guid isPermaLink="true">https://ramsay.xyz/2017/06/01/im-an-elm-master.html</guid>
-        
-        <category>elm</category>
-        
-        <category>elastic cache</category>
-        
-        <category>calculator</category>
-        
-        <category>Jake Paul</category>
         
         
       </item>
