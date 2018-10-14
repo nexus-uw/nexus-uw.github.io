@@ -19,3 +19,5 @@ keybase_username: "nexusuw"
 markdown: kramdown
 
 exclude: [vendor]
+plugins: [jekyll-paginate]
+paginate: 15

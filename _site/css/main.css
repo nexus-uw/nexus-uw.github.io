@@ -150,6 +150,9 @@ pre {
 .header-links {
   text-transform: uppercase; }
 
+.pagination {
+  font-size: large; }
+
 /**
  * Site header
  */
