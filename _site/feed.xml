@@ -5,9 +5,114 @@
     <description>A personal blog about shitty infrequent random programing tips</description>
     <link>https://ramsay.xyz/</link>
     <atom:link href="https://ramsay.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 18 Sep 2018 23:40:56 -0500</pubDate>
-    <lastBuildDate>Tue, 18 Sep 2018 23:40:56 -0500</lastBuildDate>
+    <pubDate>Sat, 13 Oct 2018 19:46:40 -0500</pubDate>
+    <lastBuildDate>Sat, 13 Oct 2018 19:46:40 -0500</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>How to Secure Elasticsearch With Caddyserver</title>
+        <description>&lt;p&gt;By default, Elasticsearch does not supprot authentication since user management and such are part of the propertairy X-pack addon (gotta find some cash to cover that IPO).&lt;/p&gt;
+
+&lt;p&gt;BUT we can work around this with Caddyserver. For this exmaple, docker-compose can set up our Elasticsearch box:&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;3.2'&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;services&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;  
+  &lt;span class=&quot;na&quot;&gt;caddy&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;abiosoft/caddy&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;links&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;elasticsearch&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;./Caddyfile:/etc/Caddyfile&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;ports&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;80:80&lt;/span&gt;
+        &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;443:443&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;command&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;--agree --conf  &quot;/etc/Caddyfile&quot;&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;elasticsearch&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;docker.elastic.co/elasticsearch/elasticsearch:6.4.0&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The caddy file will provide basic HTTP Auth and HTTPS to protect our elasticsearch container with the following caddyfile&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;https://somepublicurl.com {
+  tls some@email.com
+  proxy / elasticsearch:9200
+  basicauth / the_sun_god_emporer wow_this_would_make_a_great_password_dont_tell_anyone
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then to send some data from a remote machine, the sample fluentd config file shows the config needed:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&amp;lt;match something.**&amp;gt;
+  @type elasticsearch
+  host somepublicurl.com
+  port 443
+  user the_sun_god_emporer
+  password wow_this_would_make_a_great_password_dont_tell_anyone
+  scheme https
+  ssl_version TLSv1_2
+  include_timestamp true
+  index_name some_index_name
+&amp;lt;/match&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;note: the following fluentd log message&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; [warn]: #0 Could not connect Elasticsearch. Assuming Elasticsearch 5.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;is an understatment. This should be considered a &lt;strong&gt;fatal&lt;/strong&gt;. It means your config is crap.
+Adding with_transporter_log true to your &amp;lt; match &amp;gt; section will explain why it is not working.&lt;/p&gt;
+
+&lt;p&gt;This setup can be pretty handy for self hosting Elasticsearch at home b/c Elasticsearch wants some heavy (for personal + seflhosted use) requirements for RAM + disk. by keeping this stuff at home, you dont have to spent ~$40 per month for an equalivent VPS.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 13 Oct 2018 00:00:00 -0500</pubDate>
+        <link>https://ramsay.xyz/2018/10/13/how-to-secure-elasticsearch-with-caddy.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2018/10/13/how-to-secure-elasticsearch-with-caddy.html</guid>
+        
+        <category>elasticsearch</category>
+        
+        <category>caddyserver</category>
+        
+        <category>docker</category>
+        
+        <category>fluentd</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Elasticsearch 400 Error When Upgrading Fluent Winston Log Message Format</title>
+        <description>&lt;p&gt;Since it is now 2018, its time to upgrade nodejs logging from console logging to selfhosted&lt;/p&gt;
+
+&lt;p&gt;My current choice is Elasticsearch + fluent + &lt;a href=&quot;https://github.com/fluent/fluent-logger-node&quot;&gt;fluent-logger-node&lt;/a&gt; + &lt;a href=&quot;https://github.com/winstonjs/winston&quot;&gt;winston&lt;/a&gt;.
+When you are ready to implement something more complex to support custom kibana/grafana dashboards, you’ll need to upgrade from&lt;/p&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'currently have 1 active user'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;to&lt;/p&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'active-users'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You’ll probably see the following in your fluentd log:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;2018-10-12 02:17:57 -0400 [warn]: #0 dump an error event: error_class=Fluent::Plugin::ElasticsearchErrorHandler::ElasticsearchError error=&quot;400 - Rejected by Elasticsearch&quot; location=nil tag=&quot;memestream.club.8chan-worker&quot; time=1539325072 record={&quot;message&quot;=&amp;gt;{&quot;type&quot;=&amp;gt;&quot;active-users&quot;, &quot;count&quot;=&amp;gt;1}, &quot;level&quot;=&amp;gt;&quot;info&quot;}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;To fix this, you will have to re-create the index so that Elasticsearch will pick up on that the message field is a complex object rather that a string.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 13 Oct 2018 00:00:00 -0500</pubDate>
+        <link>https://ramsay.xyz/2018/10/13/elasticsearch-400-error-when-upgrading-fluent-winston-log-message-format.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2018/10/13/elasticsearch-400-error-when-upgrading-fluent-winston-log-message-format.html</guid>
+        
+        <category>elasticsearch</category>
+        
+        <category>caddyserver</category>
+        
+        <category>node</category>
+        
+        <category>js</category>
+        
+        <category>fluentd</category>
+        
+        
+      </item>
     
       <item>
         <title>Cheap VPS Hot Tip</title>
@@ -334,59 +439,6 @@ new droplet starts getting traffic immediately&lt;/li&gt;
         <category>fargate</category>
         
         <category>aws</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Unit Testing CloudFormation Templates</title>
-        <description>&lt;p&gt;Below is a quick mocha/jasmine test suite for validating all CloudFormation templates in a directory&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'fs'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cf&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'aws-sdk'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;CloudFormation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)({&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;region&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'us-east-1'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;PATH&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'./Path/to/folder/containing/templates'&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;describe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'CloudFormation Templates'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;fs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;readdirSync&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;filename&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;it&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`should validate &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;validateTemplate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;TemplateBody&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;readFileSync&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PATH&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'/'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;promise&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;This can be helpful in quickly failing a CI/CD pipeline before trying to deploy an invalid* template.&lt;/p&gt;
-</description>
-        <pubDate>Fri, 22 Dec 2017 00:00:00 -0600</pubDate>
-        <link>https://ramsay.xyz/2017/12/22/unit-testing-cloudformation.html</link>
-        <guid isPermaLink="true">https://ramsay.xyz/2017/12/22/unit-testing-cloudformation.html</guid>
-        
-        <category>CloudFormation</category>
-        
-        <category>unit testing</category>
-        
-        <category>nodejs</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Easy ECS Login</title>
-        <description>&lt;p&gt;just run&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$(aws ecr get-login --no-include-email)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;which will have the aws cli generate the docker login command and then zsh will run that command&lt;/p&gt;
-</description>
-        <pubDate>Wed, 08 Nov 2017 00:00:00 -0600</pubDate>
-        <link>https://ramsay.xyz/2017/11/08/easy-ecs-login.html</link>
-        <guid isPermaLink="true">https://ramsay.xyz/2017/11/08/easy-ecs-login.html</guid>
-        
-        <category>docker</category>
-        
-        <category>zsh</category>
-        
-        <category>ecs</category>
         
         
       </item>
