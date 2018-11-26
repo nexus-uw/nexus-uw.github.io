@@ -5,9 +5,31 @@
     <description>A personal blog about shitty infrequent random programing tips</description>
     <link>https://ramsay.xyz/</link>
     <atom:link href="https://ramsay.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 22 Oct 2018 01:37:20 -0500</pubDate>
-    <lastBuildDate>Mon, 22 Oct 2018 01:37:20 -0500</lastBuildDate>
-    <generator>Jekyll v3.7.3</generator>
+    <pubDate>Mon, 26 Nov 2018 02:20:15 -0600</pubDate>
+    <lastBuildDate>Mon, 26 Nov 2018 02:20:15 -0600</lastBuildDate>
+    <generator>Jekyll v3.8.4</generator>
+    
+      <item>
+        <title>An Implementation of Set (Card Game) in Typescript</title>
+        <description>&lt;p&gt;Published my code over at &lt;a href=&quot;https://github.com/nexus-uw/set&quot;&gt;nexus-uw/set&lt;/a&gt; with a README explaining what this is and how to run it.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/8/8f/Set-game-cards.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 25 Nov 2018 00:00:00 -0600</pubDate>
+        <link>https://ramsay.xyz/2018/11/25/created-set-in-typescript.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2018/11/25/created-set-in-typescript.html</guid>
+        
+        <category>typescript</category>
+        
+        <category>game</category>
+        
+        <category>set</category>
+        
+        <category>peter is way too good at this game</category>
+        
+        
+      </item>
     
       <item>
         <title>How to Secure Elasticsearch With Caddyserver</title>
@@ -416,29 +438,6 @@ new droplet starts getting traffic immediately&lt;/li&gt;
         <category>redesign</category>
         
         <category>brutalism</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Made a crummy aws cost calculator for Fargate using Preact</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/ecs.png&quot; alt=&quot;&quot; /&gt;&lt;img src=&quot;/assets/preact.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Last month, Amazon released AWS Fargate for ECS which removed the need to manage the underling EC2s of an ECS cluster. Amazon carges by the second for this service based on vCPU + Memory, but I wanted to know the total hourly cost for this. So I made a cost calculator for it using &lt;a href=&quot;https://preactjs.com/&quot;&gt;Preact&lt;/a&gt; (“Fast 3kB alternative to React with the same ES6 API.”). After selecting some ec2 configurations, it was clear to me that this costs more than the ec2 based solution (even ignoring spot instance pricing) BUT it is easier and has fewer things to worry about.&lt;/p&gt;
-
-&lt;p&gt;site: &lt;a href=&quot;https://nexus-uw.github.io/crappy-preact-fargate-calculator/&quot;&gt;https://nexus-uw.github.io/crappy-preact-fargate-calculator/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;source: &lt;a href=&quot;https://github.com/nexus-uw/crappy-preact-fargate-calculator&quot;&gt;https://github.com/nexus-uw/crappy-preact-fargate-calculator&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sat, 23 Dec 2017 00:00:00 -0600</pubDate>
-        <link>https://ramsay.xyz/2017/12/23/crummy-fargate-calc.html</link>
-        <guid isPermaLink="true">https://ramsay.xyz/2017/12/23/crummy-fargate-calc.html</guid>
-        
-        <category>preact</category>
-        
-        <category>fargate</category>
-        
-        <category>aws</category>
         
         
       </item>
