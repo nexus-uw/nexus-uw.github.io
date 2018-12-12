@@ -4,6 +4,8 @@ title: About
 permalink: /about/
 ---
 
+Fullstack web software enginer dealing with nodejs + docker + raspberry pi stuff
+
 ```
                 Y.                      _
                 YiL                   .```.
@@ -36,6 +38,7 @@ _.._ :`4MM$!YYYYYYYYYii,.__.diii$$YYYYYYYYYYY
 - [vscode-gtm](https://github.com/nexus-uw/vscode-gtm): gtm (git time metric) extension for Visual Studio
 - [vue-compound-interest-calculator](https://nexus-uw.github.io/vue-compound-interest-calculator/): simple compound interest calculator using vue.js
 - [elastic-cache-calculator](https://nexus-uw.github.io/elastic-cache-calculator/): figure out the minimal number of nodes required to have in order to build an AWS Elastic Cache Redis cluster for a given size + network using Elm
+- [delay-server](https://github.com/nexus-uw/delay-server): very basic tiny mock http server in a docker container to generate some network requests of some expected response time range + failure rate 
 - [crappy-preact-fargate-calculator](https://nexus-uw.github.io/crappy-preact-fargate-calculator/): worst project to date. given vcpu + ram, get the hourly cost of a single service. built using preact
 
 
