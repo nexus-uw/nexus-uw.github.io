@@ -7,7 +7,7 @@
 
 # Site settings
 title: Simon Ramsay
-email: s3ramsay@riseup.net
+email: simon@ramsay.xyz
 description: "A personal blog about shitty infrequent random programing tips"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://ramsay.xyz" # the base hostname & protocol for your site
