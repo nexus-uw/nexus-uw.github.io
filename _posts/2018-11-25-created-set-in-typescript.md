@@ -12,5 +12,5 @@ tags:
 
 Published my code over at [nexus-uw/set](https://github.com/nexus-uw/set) with a README explaining what this is and how to run it.
 
-![](https://upload.wikimedia.org/wikipedia/commons/8/8f/Set-game-cards.png)
+![](/assets/set-game-cards.png)
 
