@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>ramsay.xyz Now Available as a Tor Hidden Service</title>
-  <meta name="description" content="Here is a link to it: eqac56hh4ppxzy27.onion.">
+  <title>ramsay.xyz is now fully free of Javascript</title>
+  <meta name="description" content="">
   <meta name="image" content="/favicon-32x32.png">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://ramsay.xyz/2016/06/02/site-now-available-as-a-hidden-service.html">
+  <link rel="canonical" href="https://ramsay.xyz/2019/09/02/ramsay.xyz-new-csp.html">
   <link rel="alternate" type="application/rss+xml" title="Simon Ramsay" href="https://ramsay.xyz/feed.xml">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -44,12 +44,20 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">ramsay.xyz Now Available as a Tor Hidden Service</h1>
-    <p class="post-meta"><time datetime="2016-06-02T00:00:00-05:00" itemprop="datePublished">Jun 2, 2016</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Simon</span></span></p>
+    <h1 class="post-title" itemprop="name headline">ramsay.xyz is now fully free of Javascript</h1>
+    <p class="post-meta"><time datetime="2019-09-02T00:00:00-05:00" itemprop="datePublished">Sep 2, 2019</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Simon</span></span></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>Here is a link to it: <a href="http://eqac56hh4ppxzy27.onion">eqac56hh4ppxzy27.onion</a>.</p>
+    <p><img src="/assets/no-more-js.jpg" alt="" /></p>
+
+<p>To further strengthen the non-javascript nature of this website, I have turned on a strict <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP">content security policy</a> for this site.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Content-Security-Policy "default-src 'none'; img-src 'self'; style-src 'self'; report-uri https://csp.ramsay.xyz/report"
+
+</code></pre></div></div>
+<p>This security policy blocks all scripts on this site. ramsay.xyz has never directly used javascript (it had a ton of blogger scripts when it was hosted on Google’s blogger, and later a small Cloudflare script to protect emails when it was on github pages) and I have never wanted it to.</p>
+
 
   </div>
 
@@ -90,7 +98,7 @@
   </div>
 </footer>
 
-    <!-- <img src="https://tor-hceck.herokuapp.com/98e61a80-8c71-4794-af4f-b8a7fda264ed?page=https://ramsay.xyz/2016/06/02/site-now-available-as-a-hidden-service.html" alt="tor-user-check"/> -->
+    <!-- <img src="https://tor-hceck.herokuapp.com/98e61a80-8c71-4794-af4f-b8a7fda264ed?page=https://ramsay.xyz/2019/09/02/ramsay.xyz-new-csp.html" alt="tor-user-check"/> -->
   </body>
 
 </html>

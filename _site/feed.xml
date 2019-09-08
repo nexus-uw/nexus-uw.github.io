@@ -5,9 +5,34 @@
     <description>A personal blog about shitty infrequent random programing tips</description>
     <link>https://ramsay.xyz/</link>
     <atom:link href="https://ramsay.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 29 Aug 2019 00:25:59 -0500</pubDate>
-    <lastBuildDate>Thu, 29 Aug 2019 00:25:59 -0500</lastBuildDate>
+    <pubDate>Sat, 07 Sep 2019 19:58:35 -0500</pubDate>
+    <lastBuildDate>Sat, 07 Sep 2019 19:58:35 -0500</lastBuildDate>
     <generator>Jekyll v3.8.4</generator>
+    
+      <item>
+        <title>ramsay.xyz is now fully free of Javascript</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/no-more-js.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To further strengthen the non-javascript nature of this website, I have turned on a strict &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP&quot;&gt;content security policy&lt;/a&gt; for this site.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Content-Security-Policy &quot;default-src 'none'; img-src 'self'; style-src 'self'; report-uri https://csp.ramsay.xyz/report&quot;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;This security policy blocks all scripts on this site. ramsay.xyz has never directly used javascript (it had a ton of blogger scripts when it was hosted on Google’s blogger, and later a small Cloudflare script to protect emails when it was on github pages) and I have never wanted it to.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 02 Sep 2019 00:00:00 -0500</pubDate>
+        <link>https://ramsay.xyz/2019/09/02/ramsay.xyz-new-csp.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2019/09/02/ramsay.xyz-new-csp.html</guid>
+        
+        <category>javascript</category>
+        
+        <category>csp</category>
+        
+        <category>ramsay.xyz</category>
+        
+        
+      </item>
     
       <item>
         <title>An Implementation of Set (Card Game) in Typescript</title>
@@ -25,6 +50,8 @@
         <category>game</category>
         
         <category>set</category>
+        
+        <category>peter is way too good at this game</category>
         
         
       </item>
@@ -411,31 +438,6 @@ new droplet starts getting traffic immediately&lt;/li&gt;
         <category>perl</category>
         
         <category>vscode</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Redesigned ramsay.xyz</title>
-        <description>&lt;p&gt;Gave ramsay.xyz a little css refresh. Moved from generic dev blog jekyll template to &lt;a href=&quot;http://brutalistwebsites.com/&quot;&gt;web brutalism&lt;/a&gt; (based on &lt;a href=&quot;https://en.wikipedia.org/wiki/Brutalist_architecture&quot;&gt;brutalist architecture&lt;/a&gt;).&lt;/p&gt;
-
-&lt;h3 id=&quot;before&quot;&gt;Before:&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/before-main.png&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/before-article.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;after&quot;&gt;After:&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/after-main.png&quot; alt=&quot;&quot; /&gt;
-&lt;img src=&quot;/assets/after-article.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sat, 14 Apr 2018 00:00:00 -0500</pubDate>
-        <link>https://ramsay.xyz/2018/04/14/redesigned-ramsay.xyz.html</link>
-        <guid isPermaLink="true">https://ramsay.xyz/2018/04/14/redesigned-ramsay.xyz.html</guid>
-        
-        <category>ramsay.xyz</category>
-        
-        <category>redesign</category>
-        
-        <category>brutalism</category>
         
         
       </item>
