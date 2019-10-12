@@ -5,9 +5,97 @@
     <description>A personal blog about shitty infrequent random programing tips</description>
     <link>https://ramsay.xyz/</link>
     <atom:link href="https://ramsay.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 02 Oct 2019 00:11:39 -0500</pubDate>
-    <lastBuildDate>Wed, 02 Oct 2019 00:11:39 -0500</lastBuildDate>
+    <pubDate>Fri, 11 Oct 2019 23:57:23 -0500</pubDate>
+    <lastBuildDate>Fri, 11 Oct 2019 23:57:23 -0500</lastBuildDate>
     <generator>Jekyll v3.8.4</generator>
+    
+      <item>
+        <title>How ammobin.ca reduced its Nuxt docker container image size by 60% using multi stage builds</title>
+        <description>&lt;h2 id=&quot;background&quot;&gt;Background&lt;/h2&gt;
+&lt;p&gt;To run a &lt;a href=&quot;&quot;&gt;nuxt.js&lt;/a&gt; server in production mode, one needs to ‘build’ it first using &lt;code class=&quot;highlighter-rouge&quot;&gt;nuxt build&lt;/code&gt;.  This generates a node server to host the app and serve the assets as well as generating a ‘production’ build of the clientside assets.&lt;/p&gt;
+
+&lt;p&gt;These build time dependencies are not needed for running the server in production and contribute a lot to the final docker image size.&lt;/p&gt;
+
+&lt;p&gt;In order to both build and run the nuxt server within the same Dockerfile, the below sample will make use of Docker’s &lt;a href=&quot;https://docs.docker.com/develop/develop-images/multistage-build/&quot;&gt;multi stage build feature&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;changes&quot;&gt;changes&lt;/h2&gt;
+&lt;p&gt;In the below case, the nuxt client for &lt;a href=&quot;https://ammobin.ca&quot;&gt;ammobin.ca&lt;/a&gt; will used.&lt;/p&gt;
+
+&lt;h3 id=&quot;old-dockerfile-src&quot;&gt;Old dockerfile (&lt;a href=&quot;https://github.com/ammobinDOTca/ammobin-client/blob/97a7d5b2964cf8b4760309be47d3e32657f8507d/Dockerfile&quot;&gt;src&lt;/a&gt;)&lt;/h3&gt;
+&lt;div class=&quot;language-docker highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; node:12-alpine&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;apk &lt;span class=&quot;nt&quot;&gt;--no-cache&lt;/span&gt; add wget git g++ make python
+
+&lt;span class=&quot;k&quot;&gt;WORKDIR&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; /build&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;COPY&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; package*.json /build/&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#--production&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;apk &lt;span class=&quot;nt&quot;&gt;--no-cache&lt;/span&gt; del git g++ make python
+&lt;span class=&quot;k&quot;&gt;COPY&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; . /build&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;EXPOSE&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; 3000&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;npm run build
+&lt;span class=&quot;k&quot;&gt;HEALTHCHECK&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; --interval=30s --timeout=1s CMD wget localhost:3000/ping -q  -O/dev/null || exit 1&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;CMD&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; npm start&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;build-size-732mb-304mb-compressed&quot;&gt;build size 732MB (304MB compressed)&lt;/h4&gt;
+
+&lt;h3 id=&quot;new-dockerfile-src&quot;&gt;New dockerfile (&lt;a href=&quot;https://github.com/ammobinDOTca/ammobin-client/blob/b9a0c3b0a1bf7010885f1ba32da43bbc7a05de83/Dockerfile&quot;&gt;src&lt;/a&gt;)&lt;/h3&gt;
+&lt;div class=&quot;language-docker highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;####&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# build: pull in + install everything to run nuxt build&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;####&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; node:12-alpine as build&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;apk &lt;span class=&quot;nt&quot;&gt;--no-cache&lt;/span&gt; add wget git g++ make python
+
+&lt;span class=&quot;k&quot;&gt;WORKDIR&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; /build&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;COPY&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; package*.json /build/&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;apk &lt;span class=&quot;nt&quot;&gt;--no-cache&lt;/span&gt; del git g++ make python
+&lt;span class=&quot;k&quot;&gt;COPY&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; . /build&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;npm run build
+
+
+&lt;span class=&quot;c&quot;&gt;########&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# run: do production install + copy build output of build container and run the node server&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;########&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; node:12-alpine as main&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;WORKDIR&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; /build&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;COPY&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; --from=build /build/package*.json /build/&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--production&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# copy min needed to run (built) app&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;COPY&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; --from=build /build/nuxt.config.ts /build&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;COPY&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; --from=build /build/.nuxt /build/.nuxt&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;COPY&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; --from=build /build/static /build/static&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;apk &lt;span class=&quot;nt&quot;&gt;--no-cache&lt;/span&gt; add wget
+
+&lt;span class=&quot;k&quot;&gt;EXPOSE&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; 3000&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;HEALTHCHECK&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; --interval=30s --timeout=1s CMD wget localhost:3000/ping -q  -O/dev/null || exit 1&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;USER&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; node&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;CMD&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; npm start&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;build-size-295mb-110mb-compressed&quot;&gt;build size 295MB (110MB compressed)&lt;/h4&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;conclusion&lt;/h2&gt;
+&lt;p&gt;By isolating the build dependencies from the server dependencies, the final image size was reduced by 60% (64% compressed). While the old build size was not a blocking issue, the reduced size speeds up updates, reduces downtime, and saves some disk space (ammobin.ca runs on a single 20GB VPS using docker-compose).&lt;/p&gt;
+</description>
+        <pubDate>Fri, 11 Oct 2019 00:00:00 -0500</pubDate>
+        <link>https://ramsay.xyz/2019/10/11/how-i-reduced-nuxt-container-size-by-60-percent.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2019/10/11/how-i-reduced-nuxt-container-size-by-60-percent.html</guid>
+        
+        <category>nuxt</category>
+        
+        <category>docker</category>
+        
+        <category>ammobin.ca</category>
+        
+        
+      </item>
     
       <item>
         <title>ramsay.xyz is now fully free of Javascript</title>
@@ -413,31 +501,6 @@ new droplet starts getting traffic immediately&lt;/li&gt;
         <category>docker</category>
         
         <category>add blockers</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>How to enable syntax highlighting in VSCode for Mason files</title>
-        <description>&lt;p&gt;By default &lt;a href=&quot;https://code.visualstudio.com/&quot;&gt;VSCode&lt;/a&gt; does not detect that &lt;a href=&quot;http://www.masonhq.com/&quot;&gt;Mason&lt;/a&gt; files are perl files. Adding the following to your user preferences will do a pretty good job of adding some colour to your Mason development:&lt;/p&gt;
-
-&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;files.associations&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;*.mas&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;html&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;autohandler&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;perl&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;*.mi&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;perl&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Sat, 14 Apr 2018 00:00:00 -0500</pubDate>
-        <link>https://ramsay.xyz/2018/04/14/vscode-mason-syntax-highlighting.html</link>
-        <guid isPermaLink="true">https://ramsay.xyz/2018/04/14/vscode-mason-syntax-highlighting.html</guid>
-        
-        <category>mason</category>
-        
-        <category>perl</category>
-        
-        <category>vscode</category>
         
         
       </item>
