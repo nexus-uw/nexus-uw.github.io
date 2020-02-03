@@ -5,9 +5,149 @@
     <description>A personal blog about shitty infrequent random programing tips</description>
     <link>https://ramsay.xyz/</link>
     <atom:link href="https://ramsay.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 11 Oct 2019 23:57:23 -0500</pubDate>
-    <lastBuildDate>Fri, 11 Oct 2019 23:57:23 -0500</lastBuildDate>
+    <pubDate>Mon, 03 Feb 2020 00:33:00 -0600</pubDate>
+    <lastBuildDate>Mon, 03 Feb 2020 00:33:00 -0600</lastBuildDate>
     <generator>Jekyll v3.8.4</generator>
+    
+      <item>
+        <title>Ammobin now runs on AWS using only severless technology thanks to AWS-CDK</title>
+        <description>&lt;h1 id=&quot;background&quot;&gt;Background&lt;/h1&gt;
+&lt;p&gt;Since it’s launch in 2017, &lt;a href=&quot;https://ammobin.ca&quot;&gt;ammobin.ca&lt;/a&gt; has been successfully running on a single Digital Ocean machine (2 GB +	2 vCPUs) using docker compose (&lt;a href=&quot;https://github.com/ammobinDOTca/ammobin-compose&quot;&gt;ammobinDOTca/ammobin-compose&lt;/a&gt;) + crontab. It currently costs about ~$17 USD per month. There have been very few issues with this setup outside of infrequent space issues + os updates bricking the server (requiring manual restarts)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/digital ocean docker setup.png&quot; alt=&quot;digital ocean architecture as of december 2019&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;what-is-aws-cdk-and-why-should-one-migrate-to-it&quot;&gt;What is AWS CDK and why should one migrate to it?&lt;/h1&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;The AWS Cloud Development Kit (AWS CDK) is an open source software development framework to model and provision your cloud application resources using familiar programming languages.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Provisioning cloud applications can be a challenging process that requires you to perform manual actions, write custom scripts, maintain templates, or learn domain-specific languages. AWS CDK uses the familiarity and expressive power of programming languages for modeling your applications. It provides you with high-level components that preconfigure cloud resources with proven defaults, so you can build cloud applications without needing to be an expert. AWS CDK provisions your resources in a safe, repeatable manner through AWS CloudFormation. It also enables you to compose and share your own custom components that incorporate your organization’s requirements, helping you start new projects faster.
+&lt;a href=&quot;https://aws.amazon.com/cdk/&quot;&gt;src&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I chose to use CDK over plain CloudFormation because it a new and novel alternative to static YAML templates and manually zip + uploading assets. From my previous experiences with CloudFormation, I found that the templates were difficult to debug as well as discover what the structure of the documents were (especially around object references). To add to this, many of the restrictions and validations can only be checked when the stack tries to create/update resources. This can add significant time to the deploy/debug cycle especially around resources dependant on CloudFront distributions.&lt;/p&gt;
+
+&lt;p&gt;My past few months of developing with CDK have been pretty great. Using VS Code as my IDE greatly helps with auto completing, automatic imports, and clicking through to the source JSDOCs. Additionally the static type-checking is able to continuously run in the background allowing for errors to be surfaced before manually building + deploying. Even then, transpiling + running the typescript stacks will provide additional run time checks + validations before uploading the resulting CloudFormation template(s) to AWS to perform their changes.&lt;/p&gt;
+
+&lt;h1 id=&quot;repo&quot;&gt;Repo&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/ammobinDOTca/ammobin-cdk&quot;&gt;https://github.com/ammobinDOTca/ammobin-cdk&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;aws-diagram&quot;&gt;AWS diagram&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/aws ammobin.ca cdk.png&quot; alt=&quot;aws ammobin stack&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/aws regions and stages.png&quot; alt=&quot;aws ammobin pipeline&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;not pictured: &lt;a href=&quot;https://github.com/ammobinDOTca/s3-bucket/blob/master/.github/workflows/main.yml&quot;&gt;github actions re-generating the static assets every day&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;cost-numbers&quot;&gt;cost numbers&lt;/h1&gt;
+&lt;p&gt;ammobin.ca has been running on AWS since January 2020. During this time it has been able to mostly stay within the free tier. The majority of the bill is related to DynamoDB write requests (&lt;a href=&quot;https://github.com/ammobinDOTca/ammobin-api/commit/79e762dd766cb04f55b68cdf8915a35fbd27ffed&quot;&gt;did adjust refresh frequency in mid January&lt;/a&gt; ), Code Build time (partially due to figuring out Pipelines + IAM) ,and KMS for storing the elastic search password.&lt;/p&gt;
+
+&lt;p&gt;All in, January cost $15.07 USD (after taxes). February is forecasted by AWS to cost $14.82, but I expect it to come a bit under that.&lt;/p&gt;
+
+&lt;h1 id=&quot;issueschallenges-discovered&quot;&gt;issues/challenges discovered&lt;/h1&gt;
+
+&lt;h2 id=&quot;ca-central-1&quot;&gt;ca-central-1&lt;/h2&gt;
+&lt;p&gt;ca-central-1 does not appear to be a tier 1 region since a lot of the shiniest services have not been deployed there.&lt;/p&gt;
+
+&lt;p&gt;Somethings I discovered not available (at time of writing) in ca-central-1&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;http gateway (cheaper + simpler version of api gateway. have not breached the free tier yet, but still want to use it)&lt;/li&gt;
+  &lt;li&gt;CloudWatch canaries (every service needs lots of canary traffic)
+(not relevant to the current stack but would be considered for an ecs/eks alternative)&lt;/li&gt;
+  &lt;li&gt;a1 ec2 (ARM)&lt;/li&gt;
+  &lt;li&gt;spot instances for Fargate (why not, this sounds super cool)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;cloudfront-us-east-1-restrictions&quot;&gt;CloudFront us-east-1 restrictions&lt;/h2&gt;
+
+&lt;p&gt;CloudFront is a global AWS service and can be created from any region but everything it uses (ie: acm certs, lambdas) have to be us-east-1. I fail to understand why CloudFront/CloudFormation lets people create their distributions outside of us-east-1. It only serves to complicate things when developers want to extend their distribution from a stack outside of us-east-1 and they must either create static references in code or use a bunch of custom resources (with lots of custom logic) to handle the deployment.&lt;/p&gt;
+
+&lt;p&gt;I found it much easier to only create the distribution in us-east-1 so that all of its related resources can cleanly exist in the same stack. As for how to connect it back to the rest of ammobin in ca-central-1, custom (internal) CNAMES was really handy since they could be easily shared between the stacks using a common constants typescript file.&lt;/p&gt;
+
+&lt;h2 id=&quot;s3-costs&quot;&gt;s3 costs&lt;/h2&gt;
+&lt;p&gt;It was easy to blow through the PUT request free tier with a daily re-upload of &lt;code class=&quot;highlighter-rouge&quot;&gt;nuxt generate&lt;/code&gt; within a few days. This forced a re-archecting of the stack to make use of the free tier of github pages + actions.&lt;/p&gt;
+
+&lt;p&gt;cdk has an easy asset zip + upload process for lambda code. By not optimizing the asset packages being uploaded, the 5GB free storage limit was easily reached after a month of development. Reducing the lambda bundle size + removing old zips solved this issue.&lt;/p&gt;
+
+&lt;p&gt;A clean up lambda or a s3 bucket policy will have to be developed later to remove the old assets.&lt;/p&gt;
+
+&lt;h2 id=&quot;lambda-size-constraints&quot;&gt;lambda size constraints&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.aws.amazon.com/lambda/latest/dg/limits.html&quot;&gt;ref&lt;/a&gt;
+As easy as CDK makes it, one cannot blindly zip up an entire repo with all of its node_modules, raw typescript files,  dev dependencies, and multiple built js files.
+Webpack is the best build tool for solving this. By compressing all of the actual dependencies of a lambda into a single file (and not forgetting to exclude aws-sdk),
+the deployment package can be reduced to a single file (measured in KB). This has the additional benefit of helping with the dreaded cold boot time (was able to save 800ms on the graphql lambda&lt;/p&gt;
+
+&lt;h2 id=&quot;log-costs-and-exporting&quot;&gt;log costs and exporting&lt;/h2&gt;
+
+&lt;p&gt;I found the AWS documentation around log exporting difficult to understand and it was not directed at my use case. Kinesis is sold as the tool for analyzing + exporting logs but it does not scale low enough ammobin. As it currently stands, Kinesis has a base cost of 25$ per month (ie: does not scale to 0) which is way higher than the current digital ocean budget.&lt;/p&gt;
+
+&lt;p&gt;While lambdas could export their logs directly to my elasticsearch, I chose to forgo this option in order to let the lambda complete and respond quicker.&lt;/p&gt;
+
+&lt;p&gt;In the end I went with having a separate lambda be triggered by CloudWatch log events. It appears that AWS does not suggest this option because manually configuring this through the CloudWatch console displays a warning about run away costs
+&lt;img src=&quot;/assets/lambda subscription cost warning message.png&quot; alt=&quot;lambda subscription cost warning message&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Additionally, I was unable to find clear documentation regarding how the lambda is invoked. From the above warning, I interpreted it to mean that a lambda would be invoked &lt;strong&gt;per log line&lt;/strong&gt;. This was not the case. CloudWatch performs some sort of batching (unsure how the batch size is determined) and delivers the log lines to the lambda as an encoded string. decoding these and sending them to elasticsearch was rather easy.
+&lt;a href=&quot;https://github.com/ammobinDOTca/ammobin-cdk/blob/master/lambdas/log-exporter/elasticsearch.ts&quot;&gt;log exporter code&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;But still required (simple) custom CDK construct (&lt;a href=&quot;https://github.com/ammobinDOTca/ammobin-cdk/blob/master/lib/CloudWatchScheduleEvent.ts&quot;&gt;ref&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;(side note: I am very happy that CDK has native support for setting the log expiry of Lambda logs directly within the lambda construct)&lt;/p&gt;
+
+&lt;h2 id=&quot;ec2-or-lightsail&quot;&gt;ec2 (or lightsail)&lt;/h2&gt;
+&lt;p&gt;While this is not an issue with AWS, I chose to not use ec2 (or LightSail). Ammobin could have been &lt;em&gt;trivially&lt;/em&gt; migrated to a single host (reserved instance…), this would have skipped the more interesting world of serverless tech. Additionally Ammobin is too small to make use of auto scaling or justify the cost of a load balancer (and thus unable to use spot instances)&lt;/p&gt;
+
+&lt;h1 id=&quot;open-issues&quot;&gt;Open Issues&lt;/h1&gt;
+&lt;h2 id=&quot;cold-starts--lambda-response-times&quot;&gt;cold starts + lambda response times&lt;/h2&gt;
+&lt;p&gt;After all of the above, cold starts are still a noticeable thing. This is partially due to low traffic. Partially due to absence of caching (dex + reserved capacity is too expensive) cold starts are still a thing.&lt;/p&gt;
+
+&lt;p&gt;CloudFront is not designed to cache POST requests (aka getItemsListing).
+alternatives&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;put the lambda in a VPC + spin up a tiny Elastic Cache instance (todo cost). haven’t investigated tradeoff between vpc cold start and dynamo&lt;/li&gt;
+  &lt;li&gt;dex caching  (todo: cost)&lt;/li&gt;
+  &lt;li&gt;migrated graphql POST requests to GET -&amp;gt; implemented this in late January (&lt;a href=&quot;https://github.com/ammobinDOTca/ammobin-client/commit/70779298dfd430476b2a26960f116375ea3ac388&quot;&gt;code&lt;/a&gt;)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;serverside-rendering&quot;&gt;serverside rendering&lt;/h2&gt;
+&lt;p&gt;While nuxt is really great for local development and production servers, I have found it lacking in lambda support. following the default set up + &lt;nuxt serverless=&quot;&quot; pkg=&quot;&quot;&gt; did not scale to ammobin's use. typescript + apollo added significant bloat that blew through the 250MB code size. Creating a custom build step that pre-build the server/client and included only the required production dependencies, did get past this blocker but the performance and resource requirements was unacceptable (1GB ram and 2.5s response time).&lt;/nuxt&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nextjs.org/blog/next-8#serverless-nextjs&quot;&gt;next.js serverless build&lt;/a&gt; -&amp;gt; It would be great to see something similar to nuxt…&lt;/p&gt;
+
+&lt;h2 id=&quot;ecs-costs&quot;&gt;ecs costs&lt;/h2&gt;
+&lt;p&gt;hidden cost -&amp;gt; %25 per month for application load balancer (less for simpler load balancers). Would be nice if AWS included monthly costs on their price sheets (maybe just an estimate…)
+did consider new spot instance for Fargate, but they are not available yet for ca-central-1&lt;/p&gt;
+
+&lt;h2 id=&quot;api-gateway-vs-http-gateway&quot;&gt;API Gateway vs HTTP Gateway&lt;/h2&gt;
+&lt;p&gt;HTTP gateway still in preview and not in ca-central-1, so ammobin has to continue to use apigateway with next to no configuration (3 paths total, with the basic lambda integration). luckily they are still within the free tier so no issue&lt;/p&gt;
+
+&lt;h1 id=&quot;remaining-work&quot;&gt;remaining work&lt;/h1&gt;
+
+&lt;h2 id=&quot;user-agent&quot;&gt;User-Agent&lt;/h2&gt;
+&lt;p&gt;CloudFront will only pass client’s Headers to the origin if they are configured to be used in caching. &amp;lt;todo: ref aws doc&amp;gt;. This is ok for the GET api requests, it would be nice to include it in the POST requests. StackOverflow’s top suggestion is to configure two edge lambdas to move the headers around,&lt;/p&gt;
+
+&lt;p&gt;Might work around this by only referring to the manually inserted user-agent in sendBeacon requests as a proxy for user agent -&amp;gt; has the advantage of only caring about people who &lt;em&gt;use&lt;/em&gt; the site&lt;/p&gt;
+
+&lt;h1 id=&quot;conclusions&quot;&gt;Conclusions&lt;/h1&gt;
+&lt;p&gt;Working with aws + cdk was a great experience but Digital Ocean is still way easier and less stressful. Not having to worry about hidden and unexpected costs when there is clear upfront monthly cost (billed hourly but prices are also displayed by the month) . able to closely mirror real production env&lt;/p&gt;
+
+&lt;p&gt;All this being said, Ammobin will continue to be run on AWS for increased stability and a slight cost saving.&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 02 Feb 2020 00:00:00 -0600</pubDate>
+        <link>https://ramsay.xyz/2020/02/02/ammobin-now-runs-on-aws-withou-any-servers.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2020/02/02/ammobin-now-runs-on-aws-withou-any-servers.html</guid>
+        
+        <category>ammobin.ca</category>
+        
+        <category>aws</category>
+        
+        <category>aws-cdk</category>
+        
+        <category>serverless</category>
+        
+        
+      </item>
     
       <item>
         <title>How ammobin.ca reduced its Nuxt docker container image size by 60% using multi stage builds</title>
@@ -435,72 +575,6 @@ new droplet starts getting traffic immediately&lt;/li&gt;
         <category>downtime</category>
         
         <category>ammobin.ca</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>How to (kinda) install pihole on a pine64-jessie using docker</title>
-        <description>&lt;p&gt;More of half thoughts and documentation of what I did to get pihole running in docker on my pine64 at home. This is not intended to be a complete or through guide. Please google or duckduckgo for the full process of setting this up. Note: as of May 5, 2018, the docker image does not have dns logging enabled and I have been unable to turn it on manually.&lt;/p&gt;
-
-&lt;h1 id=&quot;some-defs&quot;&gt;some defs&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.pine64.org/?product=pine-a64-lts&quot;&gt;Pine64&lt;/a&gt;: “The Pine A64 is an index card sized 64-bit single board computer. It can perform like your desktop or portable PC with browsing the Internet, playing games, watching video, and execute programs like spreadsheets and word-processing. The Pine A64 board can also play ultra high definition 4Kx2K video.”&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://docs.docker.com/&quot;&gt;Docker&lt;/a&gt;: “Docker provides a way to run applications securely isolated in a container, packaged with all its dependencies and libraries.”&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://pi-hole.net/&quot;&gt;pihole&lt;/a&gt;: “A black hole for Internet advertisements”&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;install-docker&quot;&gt;install docker&lt;/h3&gt;
-&lt;ol&gt;
-  &lt;li&gt;add some pre-reqs
-    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-  apt-transport-https &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-  ca-certificates &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-  curl &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-  gnupg2 &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
-  software-properties-common
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;add docker signing key &lt;code class=&quot;highlighter-rouge&quot;&gt;curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -&lt;/code&gt;  (&lt;a href=&quot;https://docs.docker.com/install/linux/docker-ce/debian/#set-up-the-repository&quot;&gt;src&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;add &lt;em&gt;deb https://download.docker.com/linux/debian jessie stable&lt;/em&gt; to &lt;em&gt;/etc/apt/sources.list.d/docker.list&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;actually install docker &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo apt-get update &amp;amp;&amp;amp; sudo apt-get install docker-ce&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;pull-image--run&quot;&gt;pull image + run&lt;/h3&gt;
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;create some configs&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;create docker service to run in background with name = pihole and configs located in current directory
-    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nv&quot;&gt;IP_LOOKUP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;ip route get 8.8.8.8 | &lt;span class=&quot;nb&quot;&gt;awk&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{ print $NF; exit }'&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# May not work for VPN / tun0&lt;/span&gt;
-  &lt;span class=&quot;nv&quot;&gt;IP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;IP&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:-&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$IP_LOOKUP&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# use $IP, if set, otherwise IP_LOOKUP&lt;/span&gt;
-  &lt;span class=&quot;nv&quot;&gt;DOCKER_CONFIGS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# Default of directory you run this from, update to where ever.&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  docker run &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
- &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; pihole &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
- &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 53:53/tcp &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 53:53/udp &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 80:80 &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
- &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;DOCKER_CONFIGS&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/pihole/:/etc/pihole/&quot;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
- &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;DOCKER_CONFIGS&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/dnsmasq.d/:/etc/dnsmasq.d/&quot;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
- &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;ServerIP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;IP&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:-$(&lt;/span&gt;ip route get 8.8.8.8 | &lt;span class=&quot;nb&quot;&gt;awk&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{ print $NF; exit }'&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
- &lt;span class=&quot;nt&quot;&gt;--restart&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;always &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
- diginc/pi-hole-multiarch:debian_aarch64
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-    &lt;p&gt;note: must use &lt;strong&gt;diginc/pi-hole-multiarch:debian_aarch64&lt;/strong&gt;, other ones will not run on the pine64&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;to have pihole start on boot, run &lt;code class=&quot;highlighter-rouge&quot;&gt;crontab -e&lt;/code&gt; and add the line &lt;em&gt;@reboot docker start pihole&lt;/em&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Sat, 05 May 2018 00:00:00 -0500</pubDate>
-        <link>https://ramsay.xyz/2018/05/05/pihole-pine64-docker.html</link>
-        <guid isPermaLink="true">https://ramsay.xyz/2018/05/05/pihole-pine64-docker.html</guid>
-        
-        <category>pihole</category>
-        
-        <category>pine64</category>
-        
-        <category>docker</category>
-        
-        <category>add blockers</category>
         
         
       </item>
