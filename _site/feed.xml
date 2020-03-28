@@ -5,9 +5,40 @@
     <description>A personal blog about shitty infrequent random programing tips</description>
     <link>https://ramsay.xyz/</link>
     <atom:link href="https://ramsay.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 03 Feb 2020 00:33:00 -0600</pubDate>
-    <lastBuildDate>Mon, 03 Feb 2020 00:33:00 -0600</lastBuildDate>
+    <pubDate>Sat, 28 Mar 2020 00:06:14 -0500</pubDate>
+    <lastBuildDate>Sat, 28 Mar 2020 00:06:14 -0500</lastBuildDate>
     <generator>Jekyll v3.8.4</generator>
+    
+      <item>
+        <title>Mokintoken Released: 57 years ahead of the great normalization</title>
+        <description>&lt;h1 id=&quot;what&quot;&gt;what&lt;/h1&gt;
+&lt;p&gt;a clientside encrypted note sharing webapp. built with php7, Lumen, sqlite, rollup, and docker.&lt;/p&gt;
+
+&lt;h1 id=&quot;why&quot;&gt;why&lt;/h1&gt;
+&lt;p&gt;I wanted a selfhosted secure note sharing site for myself to send text between my computers. Existing sites either wanted too much infrastructure or did not provide a docker container. Some additional people had created docker containers for the projects, but they were not being updated with the latest application code.&lt;/p&gt;
+
+&lt;p&gt;Also i wanted something to do at this time after the big &lt;a href=&quot;https://ramsay.xyz/2020/02/02/ammobin-now-runs-on-aws-withou-any-servers.html&quot;&gt;ammobin AWS migration&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;where&quot;&gt;where&lt;/h1&gt;
+&lt;p&gt;it is currently hosted over at &lt;a href=&quot;https://mokintoken.ramsay.xyz/?ref=release_post&quot;&gt;https://mokintoken.ramsay.xyz&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;the code is available under the UNLICENSE at https://github.com/nexus-uw/mokintoken&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 27 Mar 2020 00:00:00 -0500</pubDate>
+        <link>https://ramsay.xyz/2020/03/27/mokintoken-released.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2020/03/27/mokintoken-released.html</guid>
+        
+        <category>php7</category>
+        
+        <category>docker</category>
+        
+        <category>e2e encryption</category>
+        
+        <category>selfhosted</category>
+        
+        
+      </item>
     
       <item>
         <title>Ammobin now runs on AWS using only severless technology thanks to AWS-CDK</title>
@@ -527,54 +558,6 @@ stats.ammobin.ca:7890 {
         <category>GoAccess real-time</category>
         
         <category>docker-compose</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Correction Of Error (COE) for ammobin.ca downtime</title>
-        <description>&lt;h1 id=&quot;correction-of-error-coe-for-ammobinca-downtime&quot;&gt;Correction Of Error (COE) for ammobin.ca downtime&lt;/h1&gt;
-&lt;p&gt;site was down for most of friday&lt;/p&gt;
-
-&lt;h2 id=&quot;cause-droplet-disconnects-from-public-ip&quot;&gt;Cause: droplet disconnects from public ip&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;not able to ssh or ping&lt;/li&gt;
-  &lt;li&gt;going through digital ocean console, able to access terminal, no ethX visible at all, even after many restarts&lt;/li&gt;
-  &lt;li&gt;reach out to support at 9am pst. receive response 5pm pst. did not fix issue&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;fix-created-new-droplet&quot;&gt;Fix: created new droplet&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;git clone ammobin-compose&lt;/li&gt;
-  &lt;li&gt;filled out secrets (.env file)&lt;/li&gt;
-  &lt;li&gt;docker-compose up -d&lt;/li&gt;
-  &lt;li&gt;switch over dns record
-new droplet starts getting traffic immediately&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;lessons-learned&quot;&gt;Lessons Learned:&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;ability to quickly spin up fresh machine is easy with docker compose (able to bring site back with 10mins of work)&lt;/li&gt;
-  &lt;li&gt;external + automated backups are a good thing (lost dashboards + stats + cron jobs)&lt;/li&gt;
-  &lt;li&gt;dont wait around on support people to fix things if able to just recreate&lt;/li&gt;
-  &lt;li&gt;some cloud init scripts to set up machine for me (oh-my-zsh, docker, docker-compose) would be nice&lt;/li&gt;
-  &lt;li&gt;publicly exposed status page at &lt;a href=&quot;https://status.ammobin.ca&quot;&gt;https://status.ammobin.ca&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;note: COE is an amazon thing that is well described here: &lt;a href=&quot;https://blog.mischel.com/2018/01/24/responding-to-errors-at-amazon/&quot;&gt;https://blog.mischel.com/2018/01/24/responding-to-errors-at-amazon/&lt;/a&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 25 May 2018 00:00:00 -0500</pubDate>
-        <link>https://ramsay.xyz/2018/05/25/ammobin-coe.html</link>
-        <guid isPermaLink="true">https://ramsay.xyz/2018/05/25/ammobin-coe.html</guid>
-        
-        <category>COE</category>
-        
-        <category>correction of error</category>
-        
-        <category>downtime</category>
-        
-        <category>ammobin.ca</category>
         
         
       </item>
