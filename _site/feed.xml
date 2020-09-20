@@ -5,9 +5,83 @@
     <description>A personal blog about shitty infrequent random programing tips</description>
     <link>https://ramsay.xyz/</link>
     <atom:link href="https://ramsay.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 28 Mar 2020 00:06:14 -0500</pubDate>
-    <lastBuildDate>Sat, 28 Mar 2020 00:06:14 -0500</lastBuildDate>
+    <pubDate>Sun, 20 Sep 2020 15:07:30 -0500</pubDate>
+    <lastBuildDate>Sun, 20 Sep 2020 15:07:30 -0500</lastBuildDate>
     <generator>Jekyll v3.8.4</generator>
+    
+      <item>
+        <title>Comparison of AWS API Gateway Endpoint Types When Behind a CloudFront Distribution</title>
+        <description>&lt;h1 id=&quot;background&quot;&gt;background&lt;/h1&gt;
+&lt;p&gt;The &lt;a href=&quot;https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-endpoint-types.html&quot;&gt;official AWS documentation&lt;/a&gt; does not provide guidance around which endpoint type to use. This becomes relevant when once wants to run their entire website behind Cloudfront.&lt;/p&gt;
+
+&lt;p&gt;http://blog.ryangreen.ca/2017/11/03/api-gateway-regional-vs-edge-optimized-endpoints/ does suggest using a REGIONAL endpoint if you also have a Cloudfront distribution, but is lacking further detail in the area.&lt;/p&gt;
+
+&lt;h1 id=&quot;setup&quot;&gt;setup&lt;/h1&gt;
+&lt;p&gt;For this test, &lt;a href=&quot;https://aws.amazon.com/cdk/&quot;&gt;AWS CDK&lt;/a&gt; was used to setup all of the infrastructure. It makes it trivial to iterate over a list of options + regions to easy generate everything very quickly (and to update it all when there was a bug). &lt;a href=&quot;https://docs.aws.amazon.com/cdk/latest/guide/work-with-cdk-csharp.html&quot;&gt;C#&lt;/a&gt; was selected as the language only as a change of pace from the Java + Typescript used at work but to preserve static typing.&lt;/p&gt;
+
+&lt;p&gt;The all the infrastructure under test was created in us-east-1. Four identical Cloudfront distributions were created with no caching and response compression enabled. Each distribution had one origin pointing to an API Gateway. Each API Gateway was generated with a combination of EDGE/REGIONAL endpoint type and response compression enabled/disabled so as to test all the different combinations. The api had a single lambda integration pointing to the same lambda. The lambda was written in javascript using nodejs 12 and configured with 125MB of ram. The lambda would immediately respond with 256KB of random text (so as to reflect real world non-cachable responses).&lt;/p&gt;
+
+&lt;p&gt;For collecting the test data, a lambda was deployed to every AWS commercial region. The test lambda was again written in javascript, using the nodejs 12 runtime with 125MB of memory configured. For the test, it would make GET requests to the given distribution and wait for the request to finish downloading the response. The clientside measured load time was emitted to cloudwatch as a custom metric.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/edgy-regions-basic-aws-diagram.png&quot; alt=&quot;aws architecture diagram&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;execution&quot;&gt;execution&lt;/h1&gt;
+&lt;p&gt;All tests where run async’ly at the same time using the lambda cli on 2020 09 20 21:00:00 UTC. Each test lambda was run for 15mins, and no errors were reported at this time.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/nexus-uw/edgy-regions/blob/master/loadtest.bash&quot;&gt;test script used&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;results&quot;&gt;results&lt;/h1&gt;
+
+&lt;h3 id=&quot;clientside-response-time-metrics&quot;&gt;clientside response time metrics&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/edgy-regions-p50-response-time-by-region-distribution.svg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/edgy-regions-p90-response-time-by-region-distribution.svg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/nexus-uw/edgy-regions/blob/master/20200919_results/20200919%20Regional%20Edge%20Load%20Testing%20-%20Sheet1.csv&quot;&gt;source dataset csv&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;additional-cloudfront-distribution-metrics&quot;&gt;additional Cloudfront distribution metrics&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Origin latency
+The total time spent from when CloudFront receives a request to when it starts providing a response to the network (not the viewer), for requests that are served from the origin, not the CloudFront cache. This is also known as first byte latency, or time-to-first-byte. &lt;a href=&quot;https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/viewing-cloudfront-metrics.html#monitoring-console.distributions-additional&quot;&gt;src&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/edgy-regions-p50-cloudfront-origin-latency.png&quot; alt=&quot;p50 origin latency&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/edgy-regions-p90-cloudfront-origin-latency.png&quot; alt=&quot;p90 origin latency&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;conclusions&quot;&gt;conclusions&lt;/h1&gt;
+
+&lt;h3 id=&quot;regional-is-the-preferred-api-gateway-endpoint-type-when-behind-a-custom-cloudfront-distribution&quot;&gt;REGIONAL is the preferred API Gateway endpoint type when behind a custom Cloudfront distribution&lt;/h3&gt;
+
+&lt;p&gt;The response times for all regions were lower when the endpoint type was REGIONAL. This is expected because REGIONAL endpoints have one fewer ‘hops’ (no built in Cloudfront distribution) to go through to get to the lambda integration.
+A ~10% response time improvement was observed during the test when using a REGIONAL endpoint.&lt;/p&gt;
+
+&lt;h3 id=&quot;api-gateway-compression-is-only-suggested-for-far-away-users&quot;&gt;API Gateway compression is only suggested for far away users&lt;/h3&gt;
+&lt;p&gt;Nearby users will see a small performance hit, but far away users will see a larger performance gain. Ideally, one would place another API gateway closer to their faraway users if there was enough of them to justify the cost + complexity.&lt;/p&gt;
+
+&lt;p&gt;Additionally, compression only added to the response time of EDGE endpoints.&lt;/p&gt;
+
+&lt;h1 id=&quot;sources&quot;&gt;sources&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/nexus-uw/edgy-regions&quot;&gt;github repo with all related code + results dataset&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 19 Sep 2020 00:00:00 -0500</pubDate>
+        <link>https://ramsay.xyz/2020/09/19/regional-vs-edge-aws-api-gateway-endpoint-type-comparison.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2020/09/19/regional-vs-edge-aws-api-gateway-endpoint-type-comparison.html</guid>
+        
+        <category>api gateway</category>
+        
+        <category>cloudfront</category>
+        
+        <category>cdk</category>
+        
+        <category>c#</category>
+        
+        <category>lambda</category>
+        
+        
+      </item>
     
       <item>
         <title>Mokintoken Released: 57 years ahead of the great normalization</title>
@@ -270,7 +344,7 @@ did consider new spot instance for Fargate, but they are not available yet for c
     
       <item>
         <title>ramsay.xyz is now fully free of Javascript</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/no-more-js.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/no-more-js.jpg&quot; alt=&quot;no more js&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;To further strengthen the non-javascript nature of this website, I have turned on a strict &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP&quot;&gt;content security policy&lt;/a&gt; for this site.&lt;/p&gt;
 
@@ -478,86 +552,6 @@ this.&lt;/p&gt;
         <category>ssh</category>
         
         <category>secure shell app</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>How I set up real-time Caddy log monitoring using GoAccess, all within docker-compose</title>
-        <description>&lt;p&gt;After running &lt;a href=&quot;https://goaccess.io/&quot;&gt;goaccess&lt;/a&gt; through a cron job to generate the report every 15mins, I decided it was time to live in future and take advantage of goaccess realtime log processing. Since I prefer to reduce the number of install steps + configuration tasks, I went with adding goaccess to my &lt;a href=&quot;https://docs.docker.com/compose/overview/&quot;&gt;docker compose&lt;/a&gt; config.&lt;/p&gt;
-
-&lt;h2 id=&quot;code&quot;&gt;Code&lt;/h2&gt;
-
-&lt;p&gt;Using this &lt;a href=&quot;https://github.com/ammobinDOTca/ammobin-compose/blob/master/goaccess/data/goaccess.conf&quot;&gt;goaccess config&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;log-format COMBINED
-addr 0.0.0.0
-origin https://stats.ammobin.ca
-exclude-ip 172.16.0.0-172.31.255.255 #docker ips
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;With the following &lt;a href=&quot;https://github.com/ammobinDOTca/ammobin-compose/blob/master/Caddyfile&quot;&gt;caddy snippet&lt;/a&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;...
-
-stats.ammobin.ca {
-  tls some@email.com
-  root  /www/goaccess
-  gzip
-  push
-  basicauth / USER PASSWORD
-  log
-}
-
-stats.ammobin.ca:7890 {
- log
- tls some@email.com
- proxy / goaccess:7890 {
-   websocket
- }
-}
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;connected the 2 using this &lt;a href=&quot;https://github.com/ammobinDOTca/ammobin-compose/blob/master/docker-compose.yml&quot;&gt;docker-compose&lt;/a&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;3'&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;services&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;caddy&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;abiosoft/caddy&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;./.caddy:/root/.caddy&lt;/span&gt;
-      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;./Caddyfile:/etc/Caddyfile&lt;/span&gt;
-      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;./caddy-logs:/var/log/caddy&lt;/span&gt;
-      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;./goaccess/html:/www/goaccess&lt;/span&gt;
-      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;./caddy-srv/:/srv&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;ports&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;80:80&lt;/span&gt;
-      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;443:443&lt;/span&gt;
-      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;7890:7890&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;command&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;--agree --conf  &quot;/etc/Caddyfile&quot;&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;...&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;goaccess&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;allinurl/goaccess&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;./goaccess/data:/srv/data&lt;/span&gt;
-      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;./goaccess/html:/srv/report&lt;/span&gt;
-      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;./caddy-logs:/srv/logs&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;entrypoint&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;goaccess --no-global-config --config-file=/srv/data/goaccess.conf --ws-url=wss://stats.ammobin.ca --output=/srv/report/index.html --log-file=/srv/logs/ammobin.log --real-time-html&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;now-real-time-log-reporting-is-enabled&quot;&gt;now real time log reporting is enabled…&lt;/h1&gt;
-</description>
-        <pubDate>Tue, 29 May 2018 00:00:00 -0500</pubDate>
-        <link>https://ramsay.xyz/2018/05/29/realtime-goaccess-caddy-server-docker.html</link>
-        <guid isPermaLink="true">https://ramsay.xyz/2018/05/29/realtime-goaccess-caddy-server-docker.html</guid>
-        
-        <category>docker</category>
-        
-        <category>Caddy server</category>
-        
-        <category>GoAccess real-time</category>
-        
-        <category>docker-compose</category>
         
         
       </item>
