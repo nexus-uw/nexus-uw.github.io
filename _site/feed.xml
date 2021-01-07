@@ -5,9 +5,25 @@
     <description>A personal blog about shitty infrequent random programing tips</description>
     <link>https://ramsay.xyz/</link>
     <atom:link href="https://ramsay.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 26 Sep 2020 12:16:57 -0500</pubDate>
-    <lastBuildDate>Sat, 26 Sep 2020 12:16:57 -0500</lastBuildDate>
+    <pubDate>Wed, 06 Jan 2021 21:02:21 -0600</pubDate>
+    <lastBuildDate>Wed, 06 Jan 2021 21:02:21 -0600</lastBuildDate>
     <generator>Jekyll v3.8.4</generator>
+    
+      <item>
+        <title>new v3 onion address</title>
+        <description>&lt;p&gt;ramsay.xyz is now available at http://ramsayswljlwqo7yvw3ovxhyzavllyduxkgh4rbobzkc263jyro6cjyd.onion/&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 06 Jan 2021 00:00:00 -0600</pubDate>
+        <link>https://ramsay.xyz/2021/01/06/new-v3-onion-address.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2021/01/06/new-v3-onion-address.html</guid>
+        
+        <category>tor</category>
+        
+        <category>onion</category>
+        
+        
+      </item>
     
       <item>
         <title>Comparison of AWS API Gateway Endpoint Types When Behind a CloudFront Distribution</title>
@@ -514,44 +530,6 @@ Ubuntu will allow you to install docker, but it will fail to start due to:&lt;/p
         <category>vps</category>
         
         <category>docker</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>How to open multi instances of secure shell app in Chrome OS</title>
-        <description>&lt;p&gt;Chrome OS is a pretty neat operating system that imposes some interesting restrictions on the user (next to no local storage, mostly webapps, limited chrome apps, software must be installed through the Chrome Web Store). Luckily Google has
-developed a &lt;a href=&quot;https://chrome.google.com/webstore/detail/secure-shell-app/pnhechapfaindjhompbnflcldabbghjo?utm_source=chrome-app-launcher-search&quot;&gt;nice ssh
-client&lt;/a&gt;
-which I have become accustomed to while bumping around my local network.&lt;/p&gt;
-
-&lt;p&gt;But Chrome OS likes to keep one instance of apps running at a time. When a user already has a session open and clicks the
-app icon, Chrome takes the user to open session. While this is handy for most apps, most people want to open multiple
-sessions.&lt;/p&gt;
-
-&lt;p&gt;Luckily, I discovered (no way the first person, but trying to put this all in one place) a couple of ways to get around
-this.&lt;/p&gt;
-
-&lt;p&gt;open new tab type “ssh” in navbar + tab + enter new instance of chrome “secure shell app”&lt;/p&gt;
-
-&lt;p&gt;OR&lt;/p&gt;
-
-&lt;p&gt;duplicate an existing ssh tab&lt;/p&gt;
-
-&lt;p&gt;OR&lt;/p&gt;
-
-&lt;p&gt;paste “chrome-extension://pnhechapfaindjhompbnflcldabbghjo/html/nassh.html” into a new tab&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 09 Jul 2018 00:00:00 -0500</pubDate>
-        <link>https://ramsay.xyz/2018/07/09/multi-chromeos-terminal-windows.html</link>
-        <guid isPermaLink="true">https://ramsay.xyz/2018/07/09/multi-chromeos-terminal-windows.html</guid>
-        
-        <category>Chrome OS</category>
-        
-        <category>ssh</category>
-        
-        <category>secure shell app</category>
         
         
       </item>

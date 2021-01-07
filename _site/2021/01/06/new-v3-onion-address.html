@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Elasticsearch 400 Error When Upgrading Fluent Winston Log Message Format</title>
-  <meta name="description" content="Since it is now 2018, its time to upgrade nodejs logging from console logging to selfhosted">
+  <title>new v3 onion address</title>
+  <meta name="description" content="ramsay.xyz is now available at http://ramsayswljlwqo7yvw3ovxhyzavllyduxkgh4rbobzkc263jyro6cjyd.onion/">
   <meta name="image" content="/favicon-32x32.png">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://ramsay.xyz/2018/10/13/elasticsearch-400-error-when-upgrading-fluent-winston-log-message-format.html">
+  <link rel="canonical" href="https://ramsay.xyz/2021/01/06/new-v3-onion-address.html">
   <link rel="alternate" type="application/rss+xml" title="Simon Ramsay" href="https://ramsay.xyz/feed.xml">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -19,7 +19,7 @@
   <link rel="manifest" href="/manifest.json">
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#b91d47">
   <meta name="theme-color" content="#b91d47">
-  <meta http-equiv="onion-location" content="http://ramsayswljlwqo7yvw3ovxhyzavllyduxkgh4rbobzkc263jyro6cjyd.onion//2018/10/13/elasticsearch-400-error-when-upgrading-fluent-winston-log-message-format.html" />
+  <meta http-equiv="onion-location" content="http://ramsayswljlwqo7yvw3ovxhyzavllyduxkgh4rbobzkc263jyro6cjyd.onion//2021/01/06/new-v3-onion-address.html" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; manifest-src 'self';">
 </head>
 
@@ -46,26 +46,13 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Elasticsearch 400 Error When Upgrading Fluent Winston Log Message Format</h1>
-    <p class="post-meta"><time datetime="2018-10-13T00:00:00-05:00" itemprop="datePublished">Oct 13, 2018</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Simon</span></span></p>
+    <h1 class="post-title" itemprop="name headline">new v3 onion address</h1>
+    <p class="post-meta"><time datetime="2021-01-06T00:00:00-06:00" itemprop="datePublished">Jan 6, 2021</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Simon</span></span></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>Since it is now 2018, its time to upgrade nodejs logging from console logging to selfhosted</p>
+    <p>ramsay.xyz is now available at http://ramsayswljlwqo7yvw3ovxhyzavllyduxkgh4rbobzkc263jyro6cjyd.onion/</p>
 
-<p>My current choice is Elasticsearch + fluent + <a href="https://github.com/fluent/fluent-logger-node">fluent-logger-node</a> + <a href="https://github.com/winstonjs/winston">winston</a>.
-When you are ready to implement something more complex to support custom kibana/grafana dashboards, you’ll need to upgrade from</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">logger</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s1">'currently have 1 active user'</span><span class="p">)</span>
-</code></pre></div></div>
-<p>to</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">logger</span><span class="p">.</span><span class="nx">info</span><span class="p">({</span><span class="na">type</span><span class="p">:</span><span class="s1">'active-users'</span><span class="p">,</span><span class="na">count</span><span class="p">:</span><span class="mi">1</span><span class="p">})</span>
-</code></pre></div></div>
-
-<p>You’ll probably see the following in your fluentd log:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2018-10-12 02:17:57 -0400 [warn]: #0 dump an error event: error_class=Fluent::Plugin::ElasticsearchErrorHandler::ElasticsearchError error="400 - Rejected by Elasticsearch" location=nil tag="memestream.club.8chan-worker" time=1539325072 record={"message"=&gt;{"type"=&gt;"active-users", "count"=&gt;1}, "level"=&gt;"info"}
-</code></pre></div></div>
-
-<p>To fix this, you will have to re-create the index so that Elasticsearch will pick up on that the message field is a complex object rather that a string.</p>
 
   </div>
 
@@ -106,7 +93,7 @@ When you are ready to implement something more complex to support custom kibana/
   </div>
 </footer>
 
-    <!-- <img src="https://tor-hceck.herokuapp.com/98e61a80-8c71-4794-af4f-b8a7fda264ed?page=https://ramsay.xyz/2018/10/13/elasticsearch-400-error-when-upgrading-fluent-winston-log-message-format.html" alt="tor-user-check"/> -->
+    <!-- <img src="https://tor-hceck.herokuapp.com/98e61a80-8c71-4794-af4f-b8a7fda264ed?page=https://ramsay.xyz/2021/01/06/new-v3-onion-address.html" alt="tor-user-check"/> -->
   </body>
 
 </html>
