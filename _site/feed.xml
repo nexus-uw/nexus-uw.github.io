@@ -5,13 +5,13 @@
     <description>A personal blog about shitty infrequent random programing tips</description>
     <link>https://ramsay.xyz/</link>
     <atom:link href="https://ramsay.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 06 Jan 2021 21:02:21 -0600</pubDate>
-    <lastBuildDate>Wed, 06 Jan 2021 21:02:21 -0600</lastBuildDate>
+    <pubDate>Tue, 19 Jan 2021 22:19:18 -0600</pubDate>
+    <lastBuildDate>Tue, 19 Jan 2021 22:19:18 -0600</lastBuildDate>
     <generator>Jekyll v3.8.4</generator>
     
       <item>
         <title>new v3 onion address</title>
-        <description>&lt;p&gt;ramsay.xyz is now available at http://ramsayswljlwqo7yvw3ovxhyzavllyduxkgh4rbobzkc263jyro6cjyd.onion/&lt;/p&gt;
+        <description>&lt;p&gt;ramsay.xyz is now available at &lt;a href=&quot;http://ramsayswljlwqo7yvw3ovxhyzavllyduxkgh4rbobzkc263jyro6cjyd.onion/&quot;&gt;ramsayswljlwqo7yvw3ovxhyzavllyduxkgh4rbobzkc263jyro6cjyd.onion/&lt;/a&gt;&lt;/p&gt;
 
 </description>
         <pubDate>Wed, 06 Jan 2021 00:00:00 -0600</pubDate>
