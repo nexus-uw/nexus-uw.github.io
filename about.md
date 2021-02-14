@@ -34,7 +34,7 @@ _.._ :`4MM$!YYYYYYYYYii,.__.diii$$YYYYYYYYYYY
 
 ## Projects
 - [ammobin.ca](https://ammobin.ca/?utm_source=ramsay.xyz): Meta search site for ammo prices across Canada
-- [mokintoken.ramsay.xyz](https://mokintoken.ramsay.xyz): selfhosted e2e encrypted note sharing site
+- [mokintoken.ramsay.xyz](https://mokintoken.ramsay.xyz) ([TOR](http://mokinan4qvxi4ragyzgkewrmnnqslkcdglk6v5zruknwnnuvv2lu5uad.onion)): selfhosted e2e encrypted note sharing site
 - [vscode-gtm](https://github.com/nexus-uw/vscode-gtm): gtm (git time metric) extension for Visual Studio
 - [vue-compound-interest-calculator](https://nexus-uw.github.io/vue-compound-interest-calculator/): simple compound interest calculator using vue.js
 - [elastic-cache-calculator](https://nexus-uw.github.io/elastic-cache-calculator/): figure out the minimal number of nodes required to have in order to build an AWS Elastic Cache Redis cluster for a given size + network using Elm

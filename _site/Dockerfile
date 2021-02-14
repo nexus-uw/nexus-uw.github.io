@@ -5,7 +5,7 @@ VOLUME /usr/local/bundle
 RUN jekyll build .
 
 
-FROM node:10-alpine
+FROM nginx:alpine
 WORKDIR /site
 COPY --from=BUILD /srv/jekyll/_site /site
 RUN npm install -g serve

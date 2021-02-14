@@ -5,9 +5,5 @@ VOLUME /usr/local/bundle
 RUN jekyll build .
 
 
-FROM node:10-alpine
-WORKDIR /site
-COPY --from=BUILD /srv/jekyll/_site /site
-RUN npm install -g serve
-EXPOSE 5000
-CMD serve
+FROM nginx:alpine
+COPY --from=BUILD /srv/jekyll/_site  /usr/share/nginx/html
