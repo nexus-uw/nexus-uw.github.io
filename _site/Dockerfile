@@ -6,8 +6,4 @@ RUN jekyll build .
 
 
 FROM nginx:alpine
-WORKDIR /site
-COPY --from=BUILD /srv/jekyll/_site /site
-RUN npm install -g serve
-EXPOSE 5000
-CMD serve
+COPY --from=BUILD /srv/jekyll/_site  /usr/share/nginx/html

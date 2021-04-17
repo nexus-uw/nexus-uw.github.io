@@ -11,8 +11,8 @@
   <meta name="image" content="/favicon-32x32.png">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://ramsay.xyz/2018/10/13/elasticsearch-400-error-when-upgrading-fluent-winston-log-message-format.html">
-  <link rel="alternate" type="application/rss+xml" title="Simon Ramsay" href="https://ramsay.xyz/feed.xml">
+  <link rel="canonical" href="http://0.0.0.0:4000/2018/10/13/elasticsearch-400-error-when-upgrading-fluent-winston-log-message-format.html">
+  <link rel="alternate" type="application/rss+xml" title="Simon Ramsay" href="http://0.0.0.0:4000/feed.xml">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -55,14 +55,14 @@
 
 <p>My current choice is Elasticsearch + fluent + <a href="https://github.com/fluent/fluent-logger-node">fluent-logger-node</a> + <a href="https://github.com/winstonjs/winston">winston</a>.
 When you are ready to implement something more complex to support custom kibana/grafana dashboards, you’ll need to upgrade from</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">logger</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s1">'currently have 1 active user'</span><span class="p">)</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">logger</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="dl">'</span><span class="s1">currently have 1 active user</span><span class="dl">'</span><span class="p">)</span>
 </code></pre></div></div>
 <p>to</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">logger</span><span class="p">.</span><span class="nx">info</span><span class="p">({</span><span class="na">type</span><span class="p">:</span><span class="s1">'active-users'</span><span class="p">,</span><span class="na">count</span><span class="p">:</span><span class="mi">1</span><span class="p">})</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">logger</span><span class="p">.</span><span class="nx">info</span><span class="p">({</span><span class="na">type</span><span class="p">:</span><span class="dl">'</span><span class="s1">active-users</span><span class="dl">'</span><span class="p">,</span><span class="na">count</span><span class="p">:</span><span class="mi">1</span><span class="p">})</span>
 </code></pre></div></div>
 
 <p>You’ll probably see the following in your fluentd log:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2018-10-12 02:17:57 -0400 [warn]: #0 dump an error event: error_class=Fluent::Plugin::ElasticsearchErrorHandler::ElasticsearchError error="400 - Rejected by Elasticsearch" location=nil tag="memestream.club.8chan-worker" time=1539325072 record={"message"=&gt;{"type"=&gt;"active-users", "count"=&gt;1}, "level"=&gt;"info"}
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2018-10-12 02:17:57 -0400 [warn]: #0 dump an error event: error_class=Fluent::Plugin::ElasticsearchErrorHandler::ElasticsearchError error="400 - Rejected by Elasticsearch" location=nil tag="memestream.club.8chan-worker" time=1539325072 record={"message"=&gt;{"type"=&gt;"active-users", "count"=&gt;1}, "level"=&gt;"info"}
 </code></pre></div></div>
 
 <p>To fix this, you will have to re-create the index so that Elasticsearch will pick up on that the message field is a complex object rather that a string.</p>
@@ -106,7 +106,7 @@ When you are ready to implement something more complex to support custom kibana/
   </div>
 </footer>
 
-    <!-- <img src="https://tor-hceck.herokuapp.com/98e61a80-8c71-4794-af4f-b8a7fda264ed?page=https://ramsay.xyz/2018/10/13/elasticsearch-400-error-when-upgrading-fluent-winston-log-message-format.html" alt="tor-user-check"/> -->
+    <!-- <img src="https://tor-hceck.herokuapp.com/98e61a80-8c71-4794-af4f-b8a7fda264ed?page=http://0.0.0.0:4000/2018/10/13/elasticsearch-400-error-when-upgrading-fluent-winston-log-message-format.html" alt="tor-user-check"/> -->
   </body>
 
 </html>

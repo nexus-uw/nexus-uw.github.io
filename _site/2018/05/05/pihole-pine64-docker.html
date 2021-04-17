@@ -11,8 +11,8 @@
   <meta name="image" content="/favicon-32x32.png">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://ramsay.xyz/2018/05/05/pihole-pine64-docker.html">
-  <link rel="alternate" type="application/rss+xml" title="Simon Ramsay" href="https://ramsay.xyz/feed.xml">
+  <link rel="canonical" href="http://0.0.0.0:4000/2018/05/05/pihole-pine64-docker.html">
+  <link rel="alternate" type="application/rss+xml" title="Simon Ramsay" href="http://0.0.0.0:4000/feed.xml">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -71,9 +71,9 @@
   software-properties-common
 </code></pre></div>    </div>
   </li>
-  <li>add docker signing key <code class="highlighter-rouge">curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -</code>  (<a href="https://docs.docker.com/install/linux/docker-ce/debian/#set-up-the-repository">src</a>)</li>
+  <li>add docker signing key <code class="language-plaintext highlighter-rouge">curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -</code>  (<a href="https://docs.docker.com/install/linux/docker-ce/debian/#set-up-the-repository">src</a>)</li>
   <li>add <em>deb https://download.docker.com/linux/debian jessie stable</em> to <em>/etc/apt/sources.list.d/docker.list</em></li>
-  <li>actually install docker <code class="highlighter-rouge">sudo apt-get update &amp;&amp; sudo apt-get install docker-ce</code></li>
+  <li>actually install docker <code class="language-plaintext highlighter-rouge">sudo apt-get update &amp;&amp; sudo apt-get install docker-ce</code></li>
 </ol>
 
 <h3 id="pull-image--run">pull image + run</h3>
@@ -82,22 +82,22 @@
     <p>create some configs</p>
   </li>
   <li>create docker service to run in background with name = pihole and configs located in current directory
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">IP_LOOKUP</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span>ip route get 8.8.8.8 | <span class="nb">awk</span> <span class="s1">'{ print $NF; exit }'</span><span class="k">)</span><span class="s2">"</span>  <span class="c"># May not work for VPN / tun0</span>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">IP_LOOKUP</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span>ip route get 8.8.8.8 | <span class="nb">awk</span> <span class="s1">'{ print $NF; exit }'</span><span class="si">)</span><span class="s2">"</span>  <span class="c"># May not work for VPN / tun0</span>
   <span class="nv">IP</span><span class="o">=</span><span class="s2">"</span><span class="k">${</span><span class="nv">IP</span><span class="k">:-</span><span class="nv">$IP_LOOKUP</span><span class="k">}</span><span class="s2">"</span>  <span class="c"># use $IP, if set, otherwise IP_LOOKUP</span>
-  <span class="nv">DOCKER_CONFIGS</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">"</span>  <span class="c"># Default of directory you run this from, update to where ever.</span>
+  <span class="nv">DOCKER_CONFIGS</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span><span class="s2">"</span>  <span class="c"># Default of directory you run this from, update to where ever.</span>
 </code></pre></div>    </div>
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  docker run <span class="nt">-d</span> <span class="se">\</span>
  <span class="nt">--name</span> pihole <span class="se">\</span>
  <span class="nt">-p</span> 53:53/tcp <span class="nt">-p</span> 53:53/udp <span class="nt">-p</span> 80:80 <span class="se">\</span>
  <span class="nt">-v</span> <span class="s2">"</span><span class="k">${</span><span class="nv">DOCKER_CONFIGS</span><span class="k">}</span><span class="s2">/pihole/:/etc/pihole/"</span> <span class="se">\</span>
  <span class="nt">-v</span> <span class="s2">"</span><span class="k">${</span><span class="nv">DOCKER_CONFIGS</span><span class="k">}</span><span class="s2">/dnsmasq.d/:/etc/dnsmasq.d/"</span> <span class="se">\</span>
- <span class="nt">-e</span> <span class="nv">ServerIP</span><span class="o">=</span><span class="s2">"</span><span class="k">${</span><span class="nv">IP</span><span class="k">:-$(</span>ip route get 8.8.8.8 | <span class="nb">awk</span> <span class="s1">'{ print $NF; exit }'</span><span class="k">)}</span><span class="s2">"</span> <span class="se">\</span>
+ <span class="nt">-e</span> <span class="nv">ServerIP</span><span class="o">=</span><span class="s2">"</span><span class="k">${</span><span class="nv">IP</span><span class="k">:-</span><span class="si">$(</span>ip route get 8.8.8.8 | <span class="nb">awk</span> <span class="s1">'{ print $NF; exit }'</span><span class="si">)</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
  <span class="nt">--restart</span><span class="o">=</span>always <span class="se">\</span>
  diginc/pi-hole-multiarch:debian_aarch64
 </code></pre></div>    </div>
     <p>note: must use <strong>diginc/pi-hole-multiarch:debian_aarch64</strong>, other ones will not run on the pine64</p>
   </li>
-  <li>to have pihole start on boot, run <code class="highlighter-rouge">crontab -e</code> and add the line <em>@reboot docker start pihole</em></li>
+  <li>to have pihole start on boot, run <code class="language-plaintext highlighter-rouge">crontab -e</code> and add the line <em>@reboot docker start pihole</em></li>
 </ol>
 
   </div>
@@ -139,7 +139,7 @@
   </div>
 </footer>
 
-    <!-- <img src="https://tor-hceck.herokuapp.com/98e61a80-8c71-4794-af4f-b8a7fda264ed?page=https://ramsay.xyz/2018/05/05/pihole-pine64-docker.html" alt="tor-user-check"/> -->
+    <!-- <img src="https://tor-hceck.herokuapp.com/98e61a80-8c71-4794-af4f-b8a7fda264ed?page=http://0.0.0.0:4000/2018/05/05/pihole-pine64-docker.html" alt="tor-user-check"/> -->
   </body>
 
 </html>

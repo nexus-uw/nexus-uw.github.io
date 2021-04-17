@@ -11,8 +11,8 @@
   <meta name="image" content="/favicon-32x32.png">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://ramsay.xyz/2016/09/05/opbeat-angular-2-integration.html">
-  <link rel="alternate" type="application/rss+xml" title="Simon Ramsay" href="https://ramsay.xyz/feed.xml">
+  <link rel="canonical" href="http://0.0.0.0:4000/2016/09/05/opbeat-angular-2-integration.html">
+  <link rel="alternate" type="application/rss+xml" title="Simon Ramsay" href="http://0.0.0.0:4000/feed.xml">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -58,7 +58,7 @@
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span>
   <span class="nx">ExceptionHandler</span><span class="p">,</span>
   <span class="nx">Injectable</span>
-<span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="c1">// cant import the source  directly using webpack, so we have to</span>
 <span class="c1">// include the built source file on the page to expose _opbeat</span>
@@ -76,19 +76,19 @@
  */</span>
 <span class="p">@</span><span class="nd">Injectable</span><span class="p">()</span>
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">OpBeatErrorHandler</span> <span class="kd">extends</span> <span class="nx">ExceptionHandler</span> <span class="p">{</span>
-  <span class="kr">private</span> <span class="kr">static</span> <span class="nx">opBeatStarted</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="kr">private</span> <span class="kd">static</span> <span class="nx">opBeatStarted</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
   <span class="nx">call</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">stackTrace</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">reason</span> <span class="o">=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">OpBeatErrorHandler</span><span class="p">.</span><span class="nx">opBeatStarted</span><span class="p">)</span> <span class="p">{</span>
       <span class="nx">startOpbeat</span><span class="p">();</span>
       <span class="nx">OpBeatErrorHandler</span><span class="p">.</span><span class="nx">opBeatStarted</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="nx">sendErrorToOpbeat</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">'ERROR'</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">ERROR</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">stackTrace</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">'STACK TRACE'</span><span class="p">,</span> <span class="nx">stackTrace</span><span class="p">);</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">STACK TRACE</span><span class="dl">'</span><span class="p">,</span> <span class="nx">stackTrace</span><span class="p">);</span>
     <span class="p">}</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">reason</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">'REASON'</span><span class="p">,</span> <span class="nx">stackTrace</span><span class="p">);</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">REASON</span><span class="dl">'</span><span class="p">,</span> <span class="nx">stackTrace</span><span class="p">);</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span>
@@ -105,21 +105,21 @@
  */</span>
 
 <span class="kd">function</span> <span class="nx">startOpbeat</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">_opbeat</span><span class="p">(</span><span class="s1">'config'</span><span class="p">,</span> <span class="p">{</span>
-    <span class="na">orgId</span><span class="p">:</span> <span class="s1">'your orgId'</span><span class="p">,</span>
-    <span class="na">appId</span><span class="p">:</span> <span class="s1">'your appId'</span>
+  <span class="nx">_opbeat</span><span class="p">(</span><span class="dl">'</span><span class="s1">config</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">orgId</span><span class="p">:</span> <span class="dl">'</span><span class="s1">your orgId</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">appId</span><span class="p">:</span> <span class="dl">'</span><span class="s1">your appId</span><span class="dl">'</span>
   <span class="p">});</span>
 <span class="p">}</span>
 
 <span class="kd">function</span> <span class="nx">sendErrorToOpbeat</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">_opbeat</span><span class="p">(</span><span class="s1">'captureException'</span><span class="p">,</span> <span class="nx">e</span><span class="p">);</span>
+  <span class="nx">_opbeat</span><span class="p">(</span><span class="dl">'</span><span class="s1">captureException</span><span class="dl">'</span><span class="p">,</span> <span class="nx">e</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>now all that remains, is to add <code class="highlighter-rouge">OpBeatErrorHandlerModule</code> to the <code class="highlighter-rouge">imports</code> of the main module.</p>
+<p>now all that remains, is to add <code class="language-plaintext highlighter-rouge">OpBeatErrorHandlerModule</code> to the <code class="language-plaintext highlighter-rouge">imports</code> of the main module.</p>
 
 <h1 id="update-1--sept-12-2016-">Update 1 ( sept 12 2016 )</h1>
-<p>Since RC 6, <code class="highlighter-rouge">ExceptionHandler</code> was renamed to <code class="highlighter-rouge">ErrorHandler</code></p>
+<p>Since RC 6, <code class="language-plaintext highlighter-rouge">ExceptionHandler</code> was renamed to <code class="language-plaintext highlighter-rouge">ErrorHandler</code></p>
 
   </div>
 
@@ -160,7 +160,7 @@
   </div>
 </footer>
 
-    <!-- <img src="https://tor-hceck.herokuapp.com/98e61a80-8c71-4794-af4f-b8a7fda264ed?page=https://ramsay.xyz/2016/09/05/opbeat-angular-2-integration.html" alt="tor-user-check"/> -->
+    <!-- <img src="https://tor-hceck.herokuapp.com/98e61a80-8c71-4794-af4f-b8a7fda264ed?page=http://0.0.0.0:4000/2016/09/05/opbeat-angular-2-integration.html" alt="tor-user-check"/> -->
   </body>
 
 </html>

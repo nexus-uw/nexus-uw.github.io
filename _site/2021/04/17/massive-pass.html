@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>How to open multi instances of secure shell app in Chrome OS</title>
-  <meta name="description" content="Chrome OS is a pretty neat operating system that imposes some interesting restrictions on the user (next to no local storage, mostly webapps, limited chrome ...">
+  <title>MASSIVE PASS: an unspecial password generator</title>
+  <meta name="description" content="created a selfhostable password generator, massive pass">
   <meta name="image" content="/favicon-32x32.png">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://0.0.0.0:4000/2018/07/09/multi-chromeos-terminal-windows.html">
+  <link rel="canonical" href="http://0.0.0.0:4000/2021/04/17/massive-pass.html">
   <link rel="alternate" type="application/rss+xml" title="Simon Ramsay" href="http://0.0.0.0:4000/feed.xml">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -19,7 +19,7 @@
   <link rel="manifest" href="/manifest.json">
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#b91d47">
   <meta name="theme-color" content="#b91d47">
-  <meta http-equiv="onion-location" content="http://ramsayswljlwqo7yvw3ovxhyzavllyduxkgh4rbobzkc263jyro6cjyd.onion/2018/07/09/multi-chromeos-terminal-windows.html" />
+  <meta http-equiv="onion-location" content="http://ramsayswljlwqo7yvw3ovxhyzavllyduxkgh4rbobzkc263jyro6cjyd.onion/2021/04/17/massive-pass.html" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; manifest-src 'self';">
 </head>
 
@@ -46,33 +46,32 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">How to open multi instances of secure shell app in Chrome OS</h1>
-    <p class="post-meta"><time datetime="2018-07-09T00:00:00-05:00" itemprop="datePublished">Jul 9, 2018</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Simon</span></span></p>
+    <h1 class="post-title" itemprop="name headline">MASSIVE PASS: an unspecial password generator</h1>
+    <p class="post-meta"><time datetime="2021-04-17T00:00:00-05:00" itemprop="datePublished">Apr 17, 2021</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Simon</span></span></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>Chrome OS is a pretty neat operating system that imposes some interesting restrictions on the user (next to no local storage, mostly webapps, limited chrome apps, software must be installed through the Chrome Web Store). Luckily Google has
-developed a <a href="https://chrome.google.com/webstore/detail/secure-shell-app/pnhechapfaindjhompbnflcldabbghjo?utm_source=chrome-app-launcher-search">nice ssh
-client</a>
-which I have become accustomed to while bumping around my local network.</p>
+    <p>created a selfhostable password generator, massive pass</p>
 
-<p>But Chrome OS likes to keep one instance of apps running at a time. When a user already has a session open and clicks the
-app icon, Chrome takes the user to open session. While this is handy for most apps, most people want to open multiple
-sessions.</p>
+<p><a href="https://github.com/nexus-uw/massive-pass">CODE</a></p>
 
-<p>Luckily, I discovered (no way the first person, but trying to put this all in one place) a couple of ways to get around
-this.</p>
+<p><a href="https://massive-pass.ramsay.xyz/">live version</a></p>
 
-<p>open new tab type “ssh” in navbar + tab + enter new instance of chrome “secure shell app”</p>
+<p>TODO TOR</p>
 
-<p>OR</p>
+<h3 id="things-that-make-is-special">things that make is special</h3>
+<ol>
+  <li>selfhostable (see docker container in README)</li>
+  <li>enforces + displays the <a href="https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity">script integrity SHA</a> which allows anyone to verify that script being served is the same script as committed to the github repo (note: this requires a production npm install to ensure that only the exact npm packages are installed). think of it as something of a reproducible build</li>
+</ol>
 
-<p>duplicate an existing ssh tab</p>
-
-<p>OR</p>
-
-<p>paste “chrome-extension://pnhechapfaindjhompbnflcldabbghjo/html/nassh.html” into a new tab</p>
-
+<h3 id="why">why</h3>
+<ul>
+  <li>strong passwords are good</li>
+  <li>simplified site is easier to audit its resources (ie no ad networks)</li>
+  <li>selfhostable so that one can run it themselves</li>
+  <li>OSS so that the code can be reviewed</li>
+</ul>
 
   </div>
 
@@ -113,7 +112,7 @@ this.</p>
   </div>
 </footer>
 
-    <!-- <img src="https://tor-hceck.herokuapp.com/98e61a80-8c71-4794-af4f-b8a7fda264ed?page=http://0.0.0.0:4000/2018/07/09/multi-chromeos-terminal-windows.html" alt="tor-user-check"/> -->
+    <!-- <img src="https://tor-hceck.herokuapp.com/98e61a80-8c71-4794-af4f-b8a7fda264ed?page=http://0.0.0.0:4000/2021/04/17/massive-pass.html" alt="tor-user-check"/> -->
   </body>
 
 </html>

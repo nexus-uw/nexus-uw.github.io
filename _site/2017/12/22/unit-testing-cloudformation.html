@@ -11,8 +11,8 @@
   <meta name="image" content="/favicon-32x32.png">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://ramsay.xyz/2017/12/22/unit-testing-cloudformation.html">
-  <link rel="alternate" type="application/rss+xml" title="Simon Ramsay" href="https://ramsay.xyz/feed.xml">
+  <link rel="canonical" href="http://0.0.0.0:4000/2017/12/22/unit-testing-cloudformation.html">
+  <link rel="alternate" type="application/rss+xml" title="Simon Ramsay" href="http://0.0.0.0:4000/feed.xml">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -53,14 +53,14 @@
   <div class="post-content" itemprop="articleBody">
     <p>Below is a quick mocha/jasmine test suite for validating all CloudFormation templates in a directory</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'fs'</span><span class="p">)</span>
-<span class="kd">const</span> <span class="nx">cf</span> <span class="o">=</span> <span class="k">new</span> <span class="p">(</span><span class="nx">require</span><span class="p">(</span><span class="s1">'aws-sdk'</span><span class="p">).</span><span class="nx">CloudFormation</span><span class="p">)({</span> <span class="na">region</span><span class="p">:</span> <span class="s1">'us-east-1'</span> <span class="p">})</span>
-<span class="kd">const</span> <span class="nx">PATH</span> <span class="o">=</span> <span class="s1">'./Path/to/folder/containing/templates'</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">fs</span><span class="dl">'</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">cf</span> <span class="o">=</span> <span class="k">new</span> <span class="p">(</span><span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">aws-sdk</span><span class="dl">'</span><span class="p">).</span><span class="nx">CloudFormation</span><span class="p">)({</span> <span class="na">region</span><span class="p">:</span> <span class="dl">'</span><span class="s1">us-east-1</span><span class="dl">'</span> <span class="p">})</span>
+<span class="kd">const</span> <span class="nx">PATH</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">./Path/to/folder/containing/templates</span><span class="dl">'</span>
 
-<span class="nx">describe</span><span class="p">(</span><span class="s1">'CloudFormation Templates'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<span class="nx">describe</span><span class="p">(</span><span class="dl">'</span><span class="s1">CloudFormation Templates</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="nx">fs</span><span class="p">.</span><span class="nx">readdirSync</span><span class="p">(</span><span class="nx">PATH</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">filename</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="nx">it</span><span class="p">(</span><span class="s2">`should validate </span><span class="p">${</span><span class="nx">filename</span><span class="p">}</span><span class="s2">`</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">cf</span><span class="p">.</span><span class="nx">validateTemplate</span><span class="p">({</span>
-      <span class="na">TemplateBody</span><span class="p">:</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="nx">PATH</span> <span class="o">+</span> <span class="s1">'/'</span> <span class="o">+</span> <span class="nx">filename</span><span class="p">).</span><span class="nx">toString</span><span class="p">()</span>
+      <span class="na">TemplateBody</span><span class="p">:</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="nx">PATH</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">/</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">filename</span><span class="p">).</span><span class="nx">toString</span><span class="p">()</span>
     <span class="p">}).</span><span class="nx">promise</span><span class="p">())</span>
   <span class="p">})</span>
 <span class="p">})</span>
@@ -107,7 +107,7 @@
   </div>
 </footer>
 
-    <!-- <img src="https://tor-hceck.herokuapp.com/98e61a80-8c71-4794-af4f-b8a7fda264ed?page=https://ramsay.xyz/2017/12/22/unit-testing-cloudformation.html" alt="tor-user-check"/> -->
+    <!-- <img src="https://tor-hceck.herokuapp.com/98e61a80-8c71-4794-af4f-b8a7fda264ed?page=http://0.0.0.0:4000/2017/12/22/unit-testing-cloudformation.html" alt="tor-user-check"/> -->
   </body>
 
 </html>

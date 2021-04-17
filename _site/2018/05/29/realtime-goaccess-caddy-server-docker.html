@@ -11,8 +11,8 @@
   <meta name="image" content="/favicon-32x32.png">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://ramsay.xyz/2018/05/29/realtime-goaccess-caddy-server-docker.html">
-  <link rel="alternate" type="application/rss+xml" title="Simon Ramsay" href="https://ramsay.xyz/feed.xml">
+  <link rel="canonical" href="http://0.0.0.0:4000/2018/05/29/realtime-goaccess-caddy-server-docker.html">
+  <link rel="alternate" type="application/rss+xml" title="Simon Ramsay" href="http://0.0.0.0:4000/feed.xml">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -56,7 +56,7 @@
 <h2 id="code">Code</h2>
 
 <p>Using this <a href="https://github.com/ammobinDOTca/ammobin-compose/blob/master/goaccess/data/goaccess.conf">goaccess config</a></p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>log-format COMBINED
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>log-format COMBINED
 addr 0.0.0.0
 origin https://stats.ammobin.ca
 exclude-ip 172.16.0.0-172.31.255.255 #docker ips
@@ -64,7 +64,7 @@ exclude-ip 172.16.0.0-172.31.255.255 #docker ips
 
 <p>With the following <a href="https://github.com/ammobinDOTca/ammobin-compose/blob/master/Caddyfile">caddy snippet</a></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
 
 stats.ammobin.ca {
   tls some@email.com
@@ -153,7 +153,7 @@ stats.ammobin.ca:7890 {
   </div>
 </footer>
 
-    <!-- <img src="https://tor-hceck.herokuapp.com/98e61a80-8c71-4794-af4f-b8a7fda264ed?page=https://ramsay.xyz/2018/05/29/realtime-goaccess-caddy-server-docker.html" alt="tor-user-check"/> -->
+    <!-- <img src="https://tor-hceck.herokuapp.com/98e61a80-8c71-4794-af4f-b8a7fda264ed?page=http://0.0.0.0:4000/2018/05/29/realtime-goaccess-caddy-server-docker.html" alt="tor-user-check"/> -->
   </body>
 
 </html>
