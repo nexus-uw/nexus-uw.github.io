@@ -17,7 +17,7 @@ created a selfhostable password generator, massive pass
 
 [live version](https://massive-pass.ramsay.xyz/)
 
- TODO TOR
+[TOR](http://massiveeeati5xv7sszovagrkamzdtshv4sg4rzpbg6n2btwkv2f2lqd.onion/)
 
 ### things that make is special
 1. selfhostable (see docker container in README)

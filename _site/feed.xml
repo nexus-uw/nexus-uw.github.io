@@ -3,10 +3,10 @@
   <channel>
     <title>Simon Ramsay</title>
     <description>A personal blog about shitty infrequent random programing tips</description>
-    <link>http://0.0.0.0:4000/</link>
-    <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 17 Apr 2021 18:17:25 -0500</pubDate>
-    <lastBuildDate>Sat, 17 Apr 2021 18:17:25 -0500</lastBuildDate>
+    <link>https://ramsay.xyz/</link>
+    <atom:link href="https://ramsay.xyz/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 18 Apr 2021 00:03:41 -0500</pubDate>
+    <lastBuildDate>Sun, 18 Apr 2021 00:03:41 -0500</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
@@ -17,7 +17,7 @@
 
 &lt;p&gt;&lt;a href=&quot;https://massive-pass.ramsay.xyz/&quot;&gt;live version&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;TODO TOR&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://massiveeeati5xv7sszovagrkamzdtshv4sg4rzpbg6n2btwkv2f2lqd.onion/&quot;&gt;TOR&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;things-that-make-is-special&quot;&gt;things that make is special&lt;/h3&gt;
 &lt;ol&gt;
@@ -34,8 +34,8 @@
 &lt;/ul&gt;
 </description>
         <pubDate>Sat, 17 Apr 2021 00:00:00 -0500</pubDate>
-        <link>http://0.0.0.0:4000/2021/04/17/massive-pass.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2021/04/17/massive-pass.html</guid>
+        <link>https://ramsay.xyz/2021/04/17/massive-pass.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2021/04/17/massive-pass.html</guid>
         
         <category>massive</category>
         
@@ -56,8 +56,8 @@
 
 </description>
         <pubDate>Wed, 06 Jan 2021 00:00:00 -0600</pubDate>
-        <link>http://0.0.0.0:4000/2021/01/06/new-v3-onion-address.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2021/01/06/new-v3-onion-address.html</guid>
+        <link>https://ramsay.xyz/2021/01/06/new-v3-onion-address.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2021/01/06/new-v3-onion-address.html</guid>
         
         <category>tor</category>
         
@@ -124,8 +124,8 @@ A ~10% response time improvement was observed during the test when using a REGIO
 
 </description>
         <pubDate>Sat, 19 Sep 2020 00:00:00 -0500</pubDate>
-        <link>http://0.0.0.0:4000/2020/09/19/regional-vs-edge-aws-api-gateway-endpoint-type-comparison.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2020/09/19/regional-vs-edge-aws-api-gateway-endpoint-type-comparison.html</guid>
+        <link>https://ramsay.xyz/2020/09/19/regional-vs-edge-aws-api-gateway-endpoint-type-comparison.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2020/09/19/regional-vs-edge-aws-api-gateway-endpoint-type-comparison.html</guid>
         
         <category>api gateway</category>
         
@@ -157,8 +157,8 @@ A ~10% response time improvement was observed during the test when using a REGIO
 
 </description>
         <pubDate>Fri, 27 Mar 2020 00:00:00 -0500</pubDate>
-        <link>http://0.0.0.0:4000/2020/03/27/mokintoken-released.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2020/03/27/mokintoken-released.html</guid>
+        <link>https://ramsay.xyz/2020/03/27/mokintoken-released.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2020/03/27/mokintoken-released.html</guid>
         
         <category>php7</category>
         
@@ -297,8 +297,8 @@ did consider new spot instance for Fargate, but they are not available yet for c
 
 </description>
         <pubDate>Sun, 02 Feb 2020 00:00:00 -0600</pubDate>
-        <link>http://0.0.0.0:4000/2020/02/02/ammobin-now-runs-on-aws-withou-any-servers.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2020/02/02/ammobin-now-runs-on-aws-withou-any-servers.html</guid>
+        <link>https://ramsay.xyz/2020/02/02/ammobin-now-runs-on-aws-withou-any-servers.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2020/02/02/ammobin-now-runs-on-aws-withou-any-servers.html</guid>
         
         <category>ammobin.ca</category>
         
@@ -387,8 +387,8 @@ did consider new spot instance for Fargate, but they are not available yet for c
 &lt;p&gt;By isolating the build dependencies from the server dependencies, the final image size was reduced by 60% (64% compressed). While the old build size was not a blocking issue, the reduced size speeds up updates, reduces downtime, and saves some disk space (ammobin.ca runs on a single 20GB VPS using docker-compose).&lt;/p&gt;
 </description>
         <pubDate>Fri, 11 Oct 2019 00:00:00 -0500</pubDate>
-        <link>http://0.0.0.0:4000/2019/10/11/how-i-reduced-nuxt-container-size-by-60-percent.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2019/10/11/how-i-reduced-nuxt-container-size-by-60-percent.html</guid>
+        <link>https://ramsay.xyz/2019/10/11/how-i-reduced-nuxt-container-size-by-60-percent.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2019/10/11/how-i-reduced-nuxt-container-size-by-60-percent.html</guid>
         
         <category>nuxt</category>
         
@@ -412,8 +412,8 @@ did consider new spot instance for Fargate, but they are not available yet for c
 
 </description>
         <pubDate>Mon, 02 Sep 2019 00:00:00 -0500</pubDate>
-        <link>http://0.0.0.0:4000/2019/09/02/ramsay.xyz-new-csp.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2019/09/02/ramsay.xyz-new-csp.html</guid>
+        <link>https://ramsay.xyz/2019/09/02/ramsay.xyz-new-csp.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2019/09/02/ramsay.xyz-new-csp.html</guid>
         
         <category>javascript</category>
         
@@ -432,8 +432,8 @@ did consider new spot instance for Fargate, but they are not available yet for c
 
 </description>
         <pubDate>Sun, 25 Nov 2018 00:00:00 -0600</pubDate>
-        <link>http://0.0.0.0:4000/2018/11/25/created-set-in-typescript.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2018/11/25/created-set-in-typescript.html</guid>
+        <link>https://ramsay.xyz/2018/11/25/created-set-in-typescript.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2018/11/25/created-set-in-typescript.html</guid>
         
         <category>typescript</category>
         
@@ -502,8 +502,8 @@ Adding with_transporter_log true to your &amp;lt; match &amp;gt; section will ex
 &lt;p&gt;This setup can be pretty handy for self hosting Elasticsearch at home b/c Elasticsearch wants some heavy (for personal + seflhosted use) requirements for RAM + disk. by keeping this stuff at home, you dont have to spent ~$40 per month for an equalivent VPS.&lt;/p&gt;
 </description>
         <pubDate>Sat, 13 Oct 2018 00:00:00 -0500</pubDate>
-        <link>http://0.0.0.0:4000/2018/10/13/how-to-secure-elasticsearch-with-caddy.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2018/10/13/how-to-secure-elasticsearch-with-caddy.html</guid>
+        <link>https://ramsay.xyz/2018/10/13/how-to-secure-elasticsearch-with-caddy.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2018/10/13/how-to-secure-elasticsearch-with-caddy.html</guid>
         
         <category>elasticsearch</category>
         
@@ -535,8 +535,8 @@ When you are ready to implement something more complex to support custom kibana/
 &lt;p&gt;To fix this, you will have to re-create the index so that Elasticsearch will pick up on that the message field is a complex object rather that a string.&lt;/p&gt;
 </description>
         <pubDate>Sat, 13 Oct 2018 00:00:00 -0500</pubDate>
-        <link>http://0.0.0.0:4000/2018/10/13/elasticsearch-400-error-when-upgrading-fluent-winston-log-message-format.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000/2018/10/13/elasticsearch-400-error-when-upgrading-fluent-winston-log-message-format.html</guid>
+        <link>https://ramsay.xyz/2018/10/13/elasticsearch-400-error-when-upgrading-fluent-winston-log-message-format.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2018/10/13/elasticsearch-400-error-when-upgrading-fluent-winston-log-message-format.html</guid>
         
         <category>elasticsearch</category>
         
