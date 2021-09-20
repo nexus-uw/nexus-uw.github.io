@@ -15,4 +15,5 @@ jobs:
     - name: Build the Docker image
       run: |
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u nexusuw --password-stdin
-        docker build . --file Dockerfile --tag nexusuw/nexus-uw.github.io:latest --push
+        docker build . --file Dockerfile --tag nexusuw/nexus-uw.github.io:latest
+        docker push nexusuw/nexus-uw.github.io:latest
