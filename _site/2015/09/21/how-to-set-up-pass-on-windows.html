@@ -45,10 +45,10 @@
       <div class="wrapper">
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header class="post-header">
+  <div class="post-header">
     <h1 class="post-title" itemprop="name headline">How to Setup Pass on Windows</h1>
     <p class="post-meta"><time datetime="2015-09-21T11:51:00-05:00" itemprop="datePublished">Sep 21, 2015</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Simon</span></span></p>
-  </header>
+  </div>
 
   <div class="post-content" itemprop="articleBody">
     <h4></h4><h3 style="font-weight: normal;">Do love the Unix way of doing things? <br />Do you want to securely store your passwords?<br />Do you love&nbsp;<a href="http://www.passwordstore.org/" target="_blank">Pass</a>?</h3><div style="font-weight: normal;">But are you stuck on Windows for some reason or another, then keep reading.</div><div style="font-weight: normal;"><br /></div><div style="font-weight: normal;">Prefer a GUI, see :&nbsp;<a href="https://github.com/mbos/Pass4Win">Pass4Win</a>&nbsp;or&nbsp;<a href="http://qtpass.org/">qtpass</a>&nbsp;</div><div style="font-weight: normal;"><br /></div><h2 style="font-weight: normal;">Steps</h2><div style="font-weight: normal;"></div><ol><li><span style="font-weight: normal;">Download&nbsp;<a href="https://cygwin.com/" target="_blank">Cygwin</a>&nbsp;</span></li><li><span style="font-weight: normal;">Click through the installer</span></li><li><span style="font-weight: normal;">When prompted to select&nbsp;packages</span></li><ol><li><span style="font-weight: normal;">&nbsp;include utils -&gt; </span>gnupg</li><li><span style="font-weight: normal;">devel -&gt; </span>git</li><li><span style="font-weight: normal;">devel -&gt; </span>make</li><li>utils -&gt; tree </li></ol><li><span style="font-weight: normal;">Launch cygwin as administrator (right click program icon -&gt; run as administrator)</span></li><li><span style="font-weight: normal;">clone the pass repo &nbsp;(<i>git clone http://git.zx2c4.com/password-store</i><span style="color: #222222; font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, monospace;"><span style="background-color: white; font-size: 14px; line-height: 21px; white-space: pre;">)</span></span></span></li><li><span style="font-weight: normal;">cd to repo directory (<i>cd password-store</i>)</span></li><li><span style="font-weight: normal;">install pass (<i>make install</i>)</span></li><li><span style="font-weight: normal;">initialize pass (<i>pass init</i>)</span></li><li><span style="font-weight: normal;">pass is now ready to use</span></li></ol><br /><div style="font-weight: normal;">Recommended additional security precautions (this is very much an incomplete list)</div><div style="font-weight: normal;">- encrypt the drive where the pgp key and password files are stored</div><div style="font-weight: normal;">- make sure that your private key has a strong password</div><div style="font-weight: normal;">- restrict <i>.password-store </i>&nbsp;to only yourself and make it hidden<br /><br /><i>2015-10-02 Correction: forgot to include required tree package</i> (causes "tree: command not found")</div>
@@ -91,7 +91,15 @@
   </div>
 </footer>
 
-    <!-- <img src="https://tor-hceck.herokuapp.com/98e61a80-8c71-4794-af4f-b8a7fda264ed?page=https://ramsay.xyz/2015/09/21/how-to-set-up-pass-on-windows.html" alt="tor-user-check"/> -->
+    <p class="china_number_1">动态网自由门 天安門 天安门 法輪功 李洪志 Free Tibet 六四天安門事件 The Tiananmen Square protests of 1989 天安門大屠殺 The Tiananmen Square Massacre
+    反右派鬥爭 The Anti-Rightist Struggle 大躍進政策 The Great Leap Forward 文化大革命 The Great Proletarian Cultural Revolution 人權 Human
+    Rights 民運 Democratization 自由 Freedom 獨立 Independence 多黨制 Multi-party system 台灣 臺灣 Taiwan Formosa 中華民國 Republic of China
+    西藏 土伯特 唐古特 Tibet 達賴喇嘛 Dalai Lama 法輪功 Falun Dafa 新疆維吾爾自治區 The Xinjiang Uyghur Autonomous Region 諾貝爾和平獎 Nobel Peace Prize
+    劉暁波 Liu Xiaobo 民主 言論 思想 反共 反革命 抗議 運動 騷亂 暴亂 騷擾 擾亂 抗暴 平反 維權 示威游行 李洪志 法輪大法 大法弟子 強制斷種 強制堕胎 民族淨化 人體實驗 肅清 胡耀邦 趙紫陽 魏京生 王丹 還政於民
+    和平演變 激流中國 北京之春 大紀元時報 九評論共産黨 獨裁 專制 壓制 統一 監視 鎮壓 迫害 侵略 掠奪 破壞 拷問 屠殺 活摘器官 誘拐 買賣人口 遊進 走私 毒品 賣淫 春畫 賭博 六合彩 天安門 天安门 法輪功 李洪志
+    Winnie the Pooh 劉曉波动态网自由门
+    
+    #Literally #china #copypasta</p>
   </body>
 
 </html>
