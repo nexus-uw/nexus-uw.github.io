@@ -5,8 +5,8 @@
     <description>A personal blog about shitty infrequent random programing tips</description>
     <link>https://ramsay.xyz/</link>
     <atom:link href="https://ramsay.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 04 Oct 2021 16:07:01 -0500</pubDate>
-    <lastBuildDate>Mon, 04 Oct 2021 16:07:01 -0500</lastBuildDate>
+    <pubDate>Mon, 04 Oct 2021 16:12:26 -0500</pubDate>
+    <lastBuildDate>Mon, 04 Oct 2021 16:12:26 -0500</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
@@ -46,36 +46,6 @@
         <category>js</category>
         
         <category>sirv</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>A List of Some Tor Hidden Service Mirrors of Clearnet Sites</title>
-        <description>&lt;ul&gt;
-  &lt;li&gt;facebook.com &lt;a href=&quot;https://facebookcorewwwi.onion/&quot;&gt;https://facebookcorewwwi.onion/&lt;/a&gt; (&lt;a href=&quot;https://www.facebook.com/notes/protect-the-graph/making-connections-to-facebook-more-secure/1526085754298237&quot;&gt;src&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;duckduckgo.com &lt;a href=&quot;https://3g2upl4pq6kufc4m.onion/&quot;&gt;https://3g2upl4pq6kufc4m.onion/&lt;/a&gt; (&lt;a href=&quot;https://en.wikipedia.org/wiki/DuckDuckGo&quot;&gt;src&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;protonmail.com &lt;a href=&quot;https://protonirockerxow.onion&quot;&gt;https://protonirockerxow.onion&lt;/a&gt; (&lt;a href=&quot;https://protonmail.com/blog/tor-encrypted-email/&quot;&gt;src&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;thepiratebay.org &lt;a href=&quot;http://uj3wazyk5u4hnvtk.onion/&quot;&gt;http://uj3wazyk5u4hnvtk.onion/&lt;/a&gt; (&lt;a href=&quot;https://thepiratebay.org&quot;&gt;src&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;keybase.io &lt;a href=&quot;http://fncuwbiisyh6ak3i.onion&quot;&gt;http://fncuwbiisyh6ak3i.onion&lt;/a&gt; (&lt;a href=&quot;https://keybase.io&quot;&gt;src&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;onions.debian.org &lt;a href=&quot;http://5nca3wxl33tzlzj5.onion/&quot;&gt;http://5nca3wxl33tzlzj5.onion/&lt;/a&gt;(&lt;a href=&quot;https://onion.debian.org/&quot;&gt;src&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;ramsay.xyz &lt;a href=&quot;http://eqac56hh4ppxzy27.onion/&quot;&gt;http://eqac56hh4ppxzy27.onion/&lt;/a&gt; (&lt;a href=&quot;https://github.com/nexus-uw/nexus-uw.github.io/blob/master/_includes/footer.html#L5&quot;&gt;src&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;nytimes.com &lt;a href=&quot;https://www.nytimes3xbfgragh.onion/&quot;&gt;https://www.nytimes3xbfgragh.onion/&lt;/a&gt;(&lt;a href=&quot;https://open.nytimes.com/https-open-nytimes-com-the-new-york-times-as-a-tor-onion-service-e0d0b67b7482&quot;&gt;src&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;view history of this page at &lt;a href=&quot;https://github.com/nexus-uw/nexus-uw.github.io/blob/master/_posts/2017-01-22-list-of-tor-sites.md&quot;&gt;https://github.com/nexus-uw/nexus-uw.github.io/blob/master/_posts/2017-01-22-list-of-tor-sites.md&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Fri, 12 Feb 2021 00:00:00 -0600</pubDate>
-        <link>https://ramsay.xyz/2021/02/12/list-of-tor-sites-v3.html</link>
-        <guid isPermaLink="true">https://ramsay.xyz/2021/02/12/list-of-tor-sites-v3.html</guid>
-        
-        <category>tor</category>
-        
-        <category>hidden</category>
-        
-        <category>service</category>
-        
-        <category>onion</category>
         
         
       </item>
@@ -540,6 +510,41 @@ Adding with_transporter_log true to your &amp;lt; match &amp;gt; section will ex
         <category>caddyserver</category>
         
         <category>docker</category>
+        
+        <category>fluentd</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Elasticsearch 400 Error When Upgrading Fluent Winston Log Message Format</title>
+        <description>&lt;p&gt;Since it is now 2018, its time to upgrade nodejs logging from console logging to selfhosted&lt;/p&gt;
+
+&lt;p&gt;My current choice is Elasticsearch + fluent + &lt;a href=&quot;https://github.com/fluent/fluent-logger-node&quot;&gt;fluent-logger-node&lt;/a&gt; + &lt;a href=&quot;https://github.com/winstonjs/winston&quot;&gt;winston&lt;/a&gt;.
+When you are ready to implement something more complex to support custom kibana/grafana dashboards, you’ll need to upgrade from&lt;/p&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;currently have 1 active user&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;to&lt;/p&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;active-users&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You’ll probably see the following in your fluentd log:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;2018-10-12 02:17:57 -0400 [warn]: #0 dump an error event: error_class=Fluent::Plugin::ElasticsearchErrorHandler::ElasticsearchError error=&quot;400 - Rejected by Elasticsearch&quot; location=nil tag=&quot;memestream.club.8chan-worker&quot; time=1539325072 record={&quot;message&quot;=&amp;gt;{&quot;type&quot;=&amp;gt;&quot;active-users&quot;, &quot;count&quot;=&amp;gt;1}, &quot;level&quot;=&amp;gt;&quot;info&quot;}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;To fix this, you will have to re-create the index so that Elasticsearch will pick up on that the message field is a complex object rather that a string.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 13 Oct 2018 00:00:00 -0500</pubDate>
+        <link>https://ramsay.xyz/2018/10/13/elasticsearch-400-error-when-upgrading-fluent-winston-log-message-format.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2018/10/13/elasticsearch-400-error-when-upgrading-fluent-winston-log-message-format.html</guid>
+        
+        <category>elasticsearch</category>
+        
+        <category>caddyserver</category>
+        
+        <category>node</category>
+        
+        <category>js</category>
         
         <category>fluentd</category>
         
