@@ -1,9 +1,9 @@
 FROM jekyll/jekyll as BUILD
 
-COPY . /srv/jekyll
 VOLUME /usr/local/bundle
-RUN jekyll build .
-
+COPY . /tmp
+WORKDIR /tmp
+RUN jekyll build --destination /tmp/ASS . && ls
 
 FROM nginx:alpine
-COPY --from=BUILD /srv/jekyll/_site  /usr/share/nginx/html
+COPY --from=BUILD /tmp/ASS /usr/share/nginx/html
