@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Simon Ramsay</title>
+    <description>A personal blog about shitty infrequent random programing tips</description>
+    <link>https://ramsay.xyz/</link>
+    <atom:link href="https://ramsay.xyz/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 03 Oct 2021 21:44:45 -0500</pubDate>
+    <lastBuildDate>Sun, 03 Oct 2021 21:44:45 -0500</lastBuildDate>
+    <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>MASSIVE PASS: an unspecial password generator</title>
+        <description>&lt;p&gt;created a selfhostable password generator, massive pass&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/nexus-uw/massive-pass&quot;&gt;CODE&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://massive-pass.ramsay.xyz/&quot;&gt;live version&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://massiveeeati5xv7sszovagrkamzdtshv4sg4rzpbg6n2btwkv2f2lqd.onion/&quot;&gt;TOR&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;things-that-make-is-special&quot;&gt;things that make is special&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;selfhostable (see docker container in README)&lt;/li&gt;
+  &lt;li&gt;enforces + displays the &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity&quot;&gt;script integrity SHA&lt;/a&gt; which allows anyone to verify that script being served is the same script as committed to the github repo (note: this requires a production npm install to ensure that only the exact npm packages are installed). think of it as something of a reproducible build&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;why&quot;&gt;why&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;strong passwords are good&lt;/li&gt;
+  &lt;li&gt;simplified site is easier to audit its resources (ie no ad networks)&lt;/li&gt;
+  &lt;li&gt;selfhostable so that one can run it themselves&lt;/li&gt;
+  &lt;li&gt;OSS so that the code can be reviewed&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 17 Apr 2021 00:00:00 -0500</pubDate>
+        <link>https://ramsay.xyz/2021/04/17/massive-pass.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2021/04/17/massive-pass.html</guid>
+        
+        <category>massive</category>
+        
+        <category>pass</category>
+        
+        <category>password</category>
+        
+        <category>js</category>
+        
+        <category>sirv</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>A List of Some Tor Hidden Service Mirrors of Clearnet Sites</title>
+        <description>&lt;ul&gt;
+  &lt;li&gt;facebook.com &lt;a href=&quot;https://facebookcorewwwi.onion/&quot;&gt;https://facebookcorewwwi.onion/&lt;/a&gt; (&lt;a href=&quot;https://www.facebook.com/notes/protect-the-graph/making-connections-to-facebook-more-secure/1526085754298237&quot;&gt;src&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;duckduckgo.com &lt;a href=&quot;https://3g2upl4pq6kufc4m.onion/&quot;&gt;https://3g2upl4pq6kufc4m.onion/&lt;/a&gt; (&lt;a href=&quot;https://en.wikipedia.org/wiki/DuckDuckGo&quot;&gt;src&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;protonmail.com &lt;a href=&quot;https://protonirockerxow.onion&quot;&gt;https://protonirockerxow.onion&lt;/a&gt; (&lt;a href=&quot;https://protonmail.com/blog/tor-encrypted-email/&quot;&gt;src&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;thepiratebay.org &lt;a href=&quot;http://uj3wazyk5u4hnvtk.onion/&quot;&gt;http://uj3wazyk5u4hnvtk.onion/&lt;/a&gt; (&lt;a href=&quot;https://thepiratebay.org&quot;&gt;src&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;keybase.io &lt;a href=&quot;http://fncuwbiisyh6ak3i.onion&quot;&gt;http://fncuwbiisyh6ak3i.onion&lt;/a&gt; (&lt;a href=&quot;https://keybase.io&quot;&gt;src&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;onions.debian.org &lt;a href=&quot;http://5nca3wxl33tzlzj5.onion/&quot;&gt;http://5nca3wxl33tzlzj5.onion/&lt;/a&gt;(&lt;a href=&quot;https://onion.debian.org/&quot;&gt;src&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;ramsay.xyz &lt;a href=&quot;http://eqac56hh4ppxzy27.onion/&quot;&gt;http://eqac56hh4ppxzy27.onion/&lt;/a&gt; (&lt;a href=&quot;https://github.com/nexus-uw/nexus-uw.github.io/blob/master/_includes/footer.html#L5&quot;&gt;src&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;nytimes.com &lt;a href=&quot;https://www.nytimes3xbfgragh.onion/&quot;&gt;https://www.nytimes3xbfgragh.onion/&lt;/a&gt;(&lt;a href=&quot;https://open.nytimes.com/https-open-nytimes-com-the-new-york-times-as-a-tor-onion-service-e0d0b67b7482&quot;&gt;src&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;view history of this page at &lt;a href=&quot;https://github.com/nexus-uw/nexus-uw.github.io/blob/master/_posts/2017-01-22-list-of-tor-sites.md&quot;&gt;https://github.com/nexus-uw/nexus-uw.github.io/blob/master/_posts/2017-01-22-list-of-tor-sites.md&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 12 Feb 2021 00:00:00 -0600</pubDate>
+        <link>https://ramsay.xyz/2021/02/12/list-of-tor-sites-v3.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2021/02/12/list-of-tor-sites-v3.html</guid>
+        
+        <category>tor</category>
+        
+        <category>hidden</category>
+        
+        <category>service</category>
+        
+        <category>onion</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>new v3 onion address</title>
+        <description>&lt;p&gt;ramsay.xyz is now available at &lt;a href=&quot;http://ramsayswljlwqo7yvw3ovxhyzavllyduxkgh4rbobzkc263jyro6cjyd.onion/&quot;&gt;ramsayswljlwqo7yvw3ovxhyzavllyduxkgh4rbobzkc263jyro6cjyd.onion/&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 06 Jan 2021 00:00:00 -0600</pubDate>
+        <link>https://ramsay.xyz/2021/01/06/new-v3-onion-address.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2021/01/06/new-v3-onion-address.html</guid>
+        
+        <category>tor</category>
+        
+        <category>onion</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Comparison of AWS API Gateway Endpoint Types When Behind a CloudFront Distribution</title>
+        <description>&lt;h1 id=&quot;background&quot;&gt;background&lt;/h1&gt;
+&lt;p&gt;The &lt;a href=&quot;https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-endpoint-types.html&quot;&gt;official AWS documentation&lt;/a&gt; does not provide guidance around which endpoint type to use. This becomes relevant when once wants to run their entire website behind Cloudfront.&lt;/p&gt;
+
+&lt;p&gt;http://blog.ryangreen.ca/2017/11/03/api-gateway-regional-vs-edge-optimized-endpoints/ does suggest using a REGIONAL endpoint if you also have a Cloudfront distribution, but is lacking further detail in the area.&lt;/p&gt;
+
+&lt;h1 id=&quot;setup&quot;&gt;setup&lt;/h1&gt;
+&lt;p&gt;For this test, &lt;a href=&quot;https://aws.amazon.com/cdk/&quot;&gt;AWS CDK&lt;/a&gt; was used to setup all of the infrastructure. It makes it trivial to iterate over a list of options + regions to easy generate everything very quickly (and to update it all when there was a bug). &lt;a href=&quot;https://docs.aws.amazon.com/cdk/latest/guide/work-with-cdk-csharp.html&quot;&gt;C#&lt;/a&gt; was selected as the language only as a change of pace from the Java + Typescript used at work but to preserve static typing.&lt;/p&gt;
+
+&lt;p&gt;The all the infrastructure under test was created in us-east-1. Four identical Cloudfront distributions were created with no caching and response compression enabled. Each distribution had one origin pointing to an API Gateway. Each API Gateway was generated with a combination of EDGE/REGIONAL endpoint type and response compression enabled/disabled so as to test all the different combinations. The api had a single lambda integration pointing to the same lambda. The lambda was written in javascript using nodejs 12 and configured with 125MB of ram. The lambda would immediately respond with 256KB of random text (so as to reflect real world non-cachable responses).&lt;/p&gt;
+
+&lt;p&gt;For collecting the test data, a lambda was deployed to every AWS commercial region. The test lambda was again written in javascript, using the nodejs 12 runtime with 125MB of memory configured. For the test, it would make GET requests to the given distribution and wait for the request to finish downloading the response. The clientside measured load time was emitted to cloudwatch as a custom metric.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/edgy-regions-basic-aws-diagram.png&quot; alt=&quot;aws architecture diagram&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;execution&quot;&gt;execution&lt;/h1&gt;
+&lt;p&gt;All tests where run async’ly at the same time using the lambda cli on 2020 09 20 21:00:00 UTC. Each test lambda was run for 15mins, and no errors were reported at this time.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/nexus-uw/edgy-regions/blob/master/loadtest.bash&quot;&gt;test script used&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;results&quot;&gt;results&lt;/h1&gt;
+
+&lt;h3 id=&quot;clientside-response-time-metrics&quot;&gt;clientside response time metrics&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/edgy-regions-p50-response-time-by-region-distribution.svg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/edgy-regions-p90-response-time-by-region-distribution.svg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/nexus-uw/edgy-regions/blob/master/20200919_results/20200919%20Regional%20Edge%20Load%20Testing%20-%20Sheet1.csv&quot;&gt;source dataset csv&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;additional-cloudfront-distribution-metrics&quot;&gt;additional Cloudfront distribution metrics&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Origin latency
+The total time spent from when CloudFront receives a request to when it starts providing a response to the network (not the viewer), for requests that are served from the origin, not the CloudFront cache. This is also known as first byte latency, or time-to-first-byte. &lt;a href=&quot;https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/viewing-cloudfront-metrics.html#monitoring-console.distributions-additional&quot;&gt;src&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/edgy-regions-p50-cloudfront-origin-latency.png&quot; alt=&quot;p50 origin latency&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/edgy-regions-p90-cloudfront-origin-latency.png&quot; alt=&quot;p90 origin latency&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;conclusions&quot;&gt;conclusions&lt;/h1&gt;
+
+&lt;h3 id=&quot;regional-is-the-preferred-api-gateway-endpoint-type-when-behind-a-custom-cloudfront-distribution&quot;&gt;REGIONAL is the preferred API Gateway endpoint type when behind a custom Cloudfront distribution&lt;/h3&gt;
+
+&lt;p&gt;The response times for all regions were lower when the endpoint type was REGIONAL. This is expected because REGIONAL endpoints have one fewer ‘hops’ (no built in Cloudfront distribution) to go through to get to the lambda integration.
+A ~10% response time improvement was observed during the test when using a REGIONAL endpoint.&lt;/p&gt;
+
+&lt;h3 id=&quot;api-gateway-compression-is-only-suggested-for-far-away-users&quot;&gt;API Gateway compression is only suggested for far away users&lt;/h3&gt;
+&lt;p&gt;Nearby users will see a small performance hit, but far away users will see a larger performance gain. Ideally, one would place another API gateway closer to their faraway users if there was enough of them to justify the cost + complexity.&lt;/p&gt;
+
+&lt;p&gt;Additionally, compression only added to the response time of EDGE endpoints.&lt;/p&gt;
+
+&lt;h1 id=&quot;sources&quot;&gt;sources&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/nexus-uw/edgy-regions&quot;&gt;github repo with all related code + results dataset&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 19 Sep 2020 00:00:00 -0500</pubDate>
+        <link>https://ramsay.xyz/2020/09/19/regional-vs-edge-aws-api-gateway-endpoint-type-comparison.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2020/09/19/regional-vs-edge-aws-api-gateway-endpoint-type-comparison.html</guid>
+        
+        <category>api gateway</category>
+        
+        <category>cloudfront</category>
+        
+        <category>cdk</category>
+        
+        <category>c#</category>
+        
+        <category>lambda</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Mokintoken Released: 57 years ahead of the great normalization</title>
+        <description>&lt;h1 id=&quot;what&quot;&gt;what&lt;/h1&gt;
+&lt;p&gt;a clientside encrypted note sharing webapp. built with php7, Lumen, sqlite, rollup, and docker.&lt;/p&gt;
+
+&lt;h1 id=&quot;why&quot;&gt;why&lt;/h1&gt;
+&lt;p&gt;I wanted a selfhosted secure note sharing site for myself to send text between my computers. Existing sites either wanted too much infrastructure or did not provide a docker container. Some additional people had created docker containers for the projects, but they were not being updated with the latest application code.&lt;/p&gt;
+
+&lt;p&gt;Also i wanted something to do at this time after the big &lt;a href=&quot;https://ramsay.xyz/2020/02/02/ammobin-now-runs-on-aws-withou-any-servers.html&quot;&gt;ammobin AWS migration&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;where&quot;&gt;where&lt;/h1&gt;
+&lt;p&gt;it is currently hosted over at &lt;a href=&quot;https://mokintoken.ramsay.xyz/?ref=release_post&quot;&gt;https://mokintoken.ramsay.xyz&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;the code is available under the UNLICENSE at https://github.com/nexus-uw/mokintoken&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 27 Mar 2020 00:00:00 -0500</pubDate>
+        <link>https://ramsay.xyz/2020/03/27/mokintoken-released.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2020/03/27/mokintoken-released.html</guid>
+        
+        <category>php7</category>
+        
+        <category>docker</category>
+        
+        <category>e2e encryption</category>
+        
+        <category>selfhosted</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Ammobin now runs on AWS using only severless technology thanks to AWS-CDK</title>
+        <description>&lt;h1 id=&quot;background&quot;&gt;Background&lt;/h1&gt;
+&lt;p&gt;Since it’s launch in 2017, &lt;a href=&quot;https://ammobin.ca&quot;&gt;ammobin.ca&lt;/a&gt; has been successfully running on a single Digital Ocean machine (2 GB +	2 vCPUs) using docker compose (&lt;a href=&quot;https://github.com/ammobinDOTca/ammobin-compose&quot;&gt;ammobinDOTca/ammobin-compose&lt;/a&gt;) + crontab. It currently costs about ~$17 USD per month. There have been very few issues with this setup outside of infrequent space issues + os updates bricking the server (requiring manual restarts)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/digital ocean docker setup.png&quot; alt=&quot;digital ocean architecture as of december 2019&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;what-is-aws-cdk-and-why-should-one-migrate-to-it&quot;&gt;What is AWS CDK and why should one migrate to it?&lt;/h1&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;The AWS Cloud Development Kit (AWS CDK) is an open source software development framework to model and provision your cloud application resources using familiar programming languages.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Provisioning cloud applications can be a challenging process that requires you to perform manual actions, write custom scripts, maintain templates, or learn domain-specific languages. AWS CDK uses the familiarity and expressive power of programming languages for modeling your applications. It provides you with high-level components that preconfigure cloud resources with proven defaults, so you can build cloud applications without needing to be an expert. AWS CDK provisions your resources in a safe, repeatable manner through AWS CloudFormation. It also enables you to compose and share your own custom components that incorporate your organization’s requirements, helping you start new projects faster.
+&lt;a href=&quot;https://aws.amazon.com/cdk/&quot;&gt;src&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I chose to use CDK over plain CloudFormation because it a new and novel alternative to static YAML templates and manually zip + uploading assets. From my previous experiences with CloudFormation, I found that the templates were difficult to debug as well as discover what the structure of the documents were (especially around object references). To add to this, many of the restrictions and validations can only be checked when the stack tries to create/update resources. This can add significant time to the deploy/debug cycle especially around resources dependant on CloudFront distributions.&lt;/p&gt;
+
+&lt;p&gt;My past few months of developing with CDK have been pretty great. Using VS Code as my IDE greatly helps with auto completing, automatic imports, and clicking through to the source JSDOCs. Additionally the static type-checking is able to continuously run in the background allowing for errors to be surfaced before manually building + deploying. Even then, transpiling + running the typescript stacks will provide additional run time checks + validations before uploading the resulting CloudFormation template(s) to AWS to perform their changes.&lt;/p&gt;
+
+&lt;h1 id=&quot;repo&quot;&gt;Repo&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/ammobinDOTca/ammobin-cdk&quot;&gt;https://github.com/ammobinDOTca/ammobin-cdk&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;aws-diagram&quot;&gt;AWS diagram&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/aws ammobin.ca cdk.png&quot; alt=&quot;aws ammobin stack&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/aws regions and stages.png&quot; alt=&quot;aws ammobin pipeline&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;not pictured: &lt;a href=&quot;https://github.com/ammobinDOTca/s3-bucket/blob/master/.github/workflows/main.yml&quot;&gt;github actions re-generating the static assets every day&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;cost-numbers&quot;&gt;cost numbers&lt;/h1&gt;
+&lt;p&gt;ammobin.ca has been running on AWS since January 2020. During this time it has been able to mostly stay within the free tier. The majority of the bill is related to DynamoDB write requests (&lt;a href=&quot;https://github.com/ammobinDOTca/ammobin-api/commit/79e762dd766cb04f55b68cdf8915a35fbd27ffed&quot;&gt;did adjust refresh frequency in mid January&lt;/a&gt; ), Code Build time (partially due to figuring out Pipelines + IAM) ,and KMS for storing the elastic search password.&lt;/p&gt;
+
+&lt;p&gt;All in, January cost $15.07 USD (after taxes). February is forecasted by AWS to cost $14.82, but I expect it to come a bit under that.&lt;/p&gt;
+
+&lt;h1 id=&quot;issueschallenges-discovered&quot;&gt;issues/challenges discovered&lt;/h1&gt;
+
+&lt;h2 id=&quot;ca-central-1&quot;&gt;ca-central-1&lt;/h2&gt;
+&lt;p&gt;ca-central-1 does not appear to be a tier 1 region since a lot of the shiniest services have not been deployed there.&lt;/p&gt;
+
+&lt;p&gt;Somethings I discovered not available (at time of writing) in ca-central-1&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;http gateway (cheaper + simpler version of api gateway. have not breached the free tier yet, but still want to use it)&lt;/li&gt;
+  &lt;li&gt;CloudWatch canaries (every service needs lots of canary traffic)
+(not relevant to the current stack but would be considered for an ecs/eks alternative)&lt;/li&gt;
+  &lt;li&gt;a1 ec2 (ARM)&lt;/li&gt;
+  &lt;li&gt;spot instances for Fargate (why not, this sounds super cool)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;cloudfront-us-east-1-restrictions&quot;&gt;CloudFront us-east-1 restrictions&lt;/h2&gt;
+
+&lt;p&gt;CloudFront is a global AWS service and can be created from any region but everything it uses (ie: acm certs, lambdas) have to be us-east-1. I fail to understand why CloudFront/CloudFormation lets people create their distributions outside of us-east-1. It only serves to complicate things when developers want to extend their distribution from a stack outside of us-east-1 and they must either create static references in code or use a bunch of custom resources (with lots of custom logic) to handle the deployment.&lt;/p&gt;
+
+&lt;p&gt;I found it much easier to only create the distribution in us-east-1 so that all of its related resources can cleanly exist in the same stack. As for how to connect it back to the rest of ammobin in ca-central-1, custom (internal) CNAMES was really handy since they could be easily shared between the stacks using a common constants typescript file.&lt;/p&gt;
+
+&lt;h2 id=&quot;s3-costs&quot;&gt;s3 costs&lt;/h2&gt;
+&lt;p&gt;It was easy to blow through the PUT request free tier with a daily re-upload of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nuxt generate&lt;/code&gt; within a few days. This forced a re-archecting of the stack to make use of the free tier of github pages + actions.&lt;/p&gt;
+
+&lt;p&gt;cdk has an easy asset zip + upload process for lambda code. By not optimizing the asset packages being uploaded, the 5GB free storage limit was easily reached after a month of development. Reducing the lambda bundle size + removing old zips solved this issue.&lt;/p&gt;
+
+&lt;p&gt;A clean up lambda or a s3 bucket policy will have to be developed later to remove the old assets.&lt;/p&gt;
+
+&lt;h2 id=&quot;lambda-size-constraints&quot;&gt;lambda size constraints&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.aws.amazon.com/lambda/latest/dg/limits.html&quot;&gt;ref&lt;/a&gt;
+As easy as CDK makes it, one cannot blindly zip up an entire repo with all of its node_modules, raw typescript files,  dev dependencies, and multiple built js files.
+Webpack is the best build tool for solving this. By compressing all of the actual dependencies of a lambda into a single file (and not forgetting to exclude aws-sdk),
+the deployment package can be reduced to a single file (measured in KB). This has the additional benefit of helping with the dreaded cold boot time (was able to save 800ms on the graphql lambda&lt;/p&gt;
+
+&lt;h2 id=&quot;log-costs-and-exporting&quot;&gt;log costs and exporting&lt;/h2&gt;
+
+&lt;p&gt;I found the AWS documentation around log exporting difficult to understand and it was not directed at my use case. Kinesis is sold as the tool for analyzing + exporting logs but it does not scale low enough ammobin. As it currently stands, Kinesis has a base cost of 25$ per month (ie: does not scale to 0) which is way higher than the current digital ocean budget.&lt;/p&gt;
+
+&lt;p&gt;While lambdas could export their logs directly to my elasticsearch, I chose to forgo this option in order to let the lambda complete and respond quicker.&lt;/p&gt;
+
+&lt;p&gt;In the end I went with having a separate lambda be triggered by CloudWatch log events. It appears that AWS does not suggest this option because manually configuring this through the CloudWatch console displays a warning about run away costs
+&lt;img src=&quot;/assets/lambda subscription cost warning message.png&quot; alt=&quot;lambda subscription cost warning message&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Additionally, I was unable to find clear documentation regarding how the lambda is invoked. From the above warning, I interpreted it to mean that a lambda would be invoked &lt;strong&gt;per log line&lt;/strong&gt;. This was not the case. CloudWatch performs some sort of batching (unsure how the batch size is determined) and delivers the log lines to the lambda as an encoded string. decoding these and sending them to elasticsearch was rather easy.
+&lt;a href=&quot;https://github.com/ammobinDOTca/ammobin-cdk/blob/master/lambdas/log-exporter/elasticsearch.ts&quot;&gt;log exporter code&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;But still required (simple) custom CDK construct (&lt;a href=&quot;https://github.com/ammobinDOTca/ammobin-cdk/blob/master/lib/CloudWatchScheduleEvent.ts&quot;&gt;ref&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;(side note: I am very happy that CDK has native support for setting the log expiry of Lambda logs directly within the lambda construct)&lt;/p&gt;
+
+&lt;h2 id=&quot;ec2-or-lightsail&quot;&gt;ec2 (or lightsail)&lt;/h2&gt;
+&lt;p&gt;While this is not an issue with AWS, I chose to not use ec2 (or LightSail). Ammobin could have been &lt;em&gt;trivially&lt;/em&gt; migrated to a single host (reserved instance…), this would have skipped the more interesting world of serverless tech. Additionally Ammobin is too small to make use of auto scaling or justify the cost of a load balancer (and thus unable to use spot instances)&lt;/p&gt;
+
+&lt;h1 id=&quot;open-issues&quot;&gt;Open Issues&lt;/h1&gt;
+&lt;h2 id=&quot;cold-starts--lambda-response-times&quot;&gt;cold starts + lambda response times&lt;/h2&gt;
+&lt;p&gt;After all of the above, cold starts are still a noticeable thing. This is partially due to low traffic. Partially due to absence of caching (dex + reserved capacity is too expensive) cold starts are still a thing.&lt;/p&gt;
+
+&lt;p&gt;CloudFront is not designed to cache POST requests (aka getItemsListing).
+alternatives&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;put the lambda in a VPC + spin up a tiny Elastic Cache instance (todo cost). haven’t investigated tradeoff between vpc cold start and dynamo&lt;/li&gt;
+  &lt;li&gt;dex caching  (todo: cost)&lt;/li&gt;
+  &lt;li&gt;migrated graphql POST requests to GET -&amp;gt; implemented this in late January (&lt;a href=&quot;https://github.com/ammobinDOTca/ammobin-client/commit/70779298dfd430476b2a26960f116375ea3ac388&quot;&gt;code&lt;/a&gt;)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;serverside-rendering&quot;&gt;serverside rendering&lt;/h2&gt;
+&lt;p&gt;While nuxt is really great for local development and production servers, I have found it lacking in lambda support. following the default set up + &lt;nuxt serverless=&quot;&quot; pkg=&quot;&quot;&gt; did not scale to ammobin's use. typescript + apollo added significant bloat that blew through the 250MB code size. Creating a custom build step that pre-build the server/client and included only the required production dependencies, did get past this blocker but the performance and resource requirements was unacceptable (1GB ram and 2.5s response time).&lt;/nuxt&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nextjs.org/blog/next-8#serverless-nextjs&quot;&gt;next.js serverless build&lt;/a&gt; -&amp;gt; It would be great to see something similar to nuxt…&lt;/p&gt;
+
+&lt;h2 id=&quot;ecs-costs&quot;&gt;ecs costs&lt;/h2&gt;
+&lt;p&gt;hidden cost -&amp;gt; %25 per month for application load balancer (less for simpler load balancers). Would be nice if AWS included monthly costs on their price sheets (maybe just an estimate…)
+did consider new spot instance for Fargate, but they are not available yet for ca-central-1&lt;/p&gt;
+
+&lt;h2 id=&quot;api-gateway-vs-http-gateway&quot;&gt;API Gateway vs HTTP Gateway&lt;/h2&gt;
+&lt;p&gt;HTTP gateway still in preview and not in ca-central-1, so ammobin has to continue to use apigateway with next to no configuration (3 paths total, with the basic lambda integration). luckily they are still within the free tier so no issue&lt;/p&gt;
+
+&lt;h1 id=&quot;remaining-work&quot;&gt;remaining work&lt;/h1&gt;
+
+&lt;h2 id=&quot;user-agent&quot;&gt;User-Agent&lt;/h2&gt;
+&lt;p&gt;CloudFront will only pass client’s Headers to the origin if they are configured to be used in caching. &amp;lt;todo: ref aws doc&amp;gt;. This is ok for the GET api requests, it would be nice to include it in the POST requests. StackOverflow’s top suggestion is to configure two edge lambdas to move the headers around,&lt;/p&gt;
+
+&lt;p&gt;Might work around this by only referring to the manually inserted user-agent in sendBeacon requests as a proxy for user agent -&amp;gt; has the advantage of only caring about people who &lt;em&gt;use&lt;/em&gt; the site&lt;/p&gt;
+
+&lt;h1 id=&quot;conclusions&quot;&gt;Conclusions&lt;/h1&gt;
+&lt;p&gt;Working with aws + cdk was a great experience but Digital Ocean is still way easier and less stressful. Not having to worry about hidden and unexpected costs when there is clear upfront monthly cost (billed hourly but prices are also displayed by the month) . able to closely mirror real production env&lt;/p&gt;
+
+&lt;p&gt;All this being said, Ammobin will continue to be run on AWS for increased stability and a slight cost saving.&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 02 Feb 2020 00:00:00 -0600</pubDate>
+        <link>https://ramsay.xyz/2020/02/02/ammobin-now-runs-on-aws-withou-any-servers.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2020/02/02/ammobin-now-runs-on-aws-withou-any-servers.html</guid>
+        
+        <category>ammobin.ca</category>
+        
+        <category>aws</category>
+        
+        <category>aws-cdk</category>
+        
+        <category>serverless</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>How ammobin.ca reduced its Nuxt docker container image size by 60% using multi stage builds</title>
+        <description>&lt;h2 id=&quot;background&quot;&gt;Background&lt;/h2&gt;
+&lt;p&gt;To run a &lt;a href=&quot;&quot;&gt;nuxt.js&lt;/a&gt; server in production mode, one needs to ‘build’ it first using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nuxt build&lt;/code&gt;.  This generates a node server to host the app and serve the assets as well as generating a ‘production’ build of the clientside assets.&lt;/p&gt;
+
+&lt;p&gt;These build time dependencies are not needed for running the server in production and contribute a lot to the final docker image size.&lt;/p&gt;
+
+&lt;p&gt;In order to both build and run the nuxt server within the same Dockerfile, the below sample will make use of Docker’s &lt;a href=&quot;https://docs.docker.com/develop/develop-images/multistage-build/&quot;&gt;multi stage build feature&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;changes&quot;&gt;changes&lt;/h2&gt;
+&lt;p&gt;In the below case, the nuxt client for &lt;a href=&quot;https://ammobin.ca&quot;&gt;ammobin.ca&lt;/a&gt; will used.&lt;/p&gt;
+
+&lt;h3 id=&quot;old-dockerfile-src&quot;&gt;Old dockerfile (&lt;a href=&quot;https://github.com/ammobinDOTca/ammobin-client/blob/97a7d5b2964cf8b4760309be47d3e32657f8507d/Dockerfile&quot;&gt;src&lt;/a&gt;)&lt;/h3&gt;
+&lt;div class=&quot;language-docker highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; node:12-alpine&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;apk &lt;span class=&quot;nt&quot;&gt;--no-cache&lt;/span&gt; add wget git g++ make python
+
+&lt;span class=&quot;k&quot;&gt;WORKDIR&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; /build&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;COPY&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; package*.json /build/&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#--production&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;apk &lt;span class=&quot;nt&quot;&gt;--no-cache&lt;/span&gt; del git g++ make python
+&lt;span class=&quot;k&quot;&gt;COPY&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; . /build&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;EXPOSE&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; 3000&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;npm run build
+&lt;span class=&quot;k&quot;&gt;HEALTHCHECK&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; --interval=30s --timeout=1s CMD wget localhost:3000/ping -q  -O/dev/null || exit 1&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;CMD&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; npm start&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;build-size-732mb-304mb-compressed&quot;&gt;build size 732MB (304MB compressed)&lt;/h4&gt;
+
+&lt;h3 id=&quot;new-dockerfile-src&quot;&gt;New dockerfile (&lt;a href=&quot;https://github.com/ammobinDOTca/ammobin-client/blob/b9a0c3b0a1bf7010885f1ba32da43bbc7a05de83/Dockerfile&quot;&gt;src&lt;/a&gt;)&lt;/h3&gt;
+&lt;div class=&quot;language-docker highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;####&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# build: pull in + install everything to run nuxt build&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;####&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; node:12-alpine as build&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;apk &lt;span class=&quot;nt&quot;&gt;--no-cache&lt;/span&gt; add wget git g++ make python
+
+&lt;span class=&quot;k&quot;&gt;WORKDIR&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; /build&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;COPY&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; package*.json /build/&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;apk &lt;span class=&quot;nt&quot;&gt;--no-cache&lt;/span&gt; del git g++ make python
+&lt;span class=&quot;k&quot;&gt;COPY&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; . /build&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;npm run build
+
+
+&lt;span class=&quot;c&quot;&gt;########&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# run: do production install + copy build output of build container and run the node server&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;########&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; node:12-alpine as main&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;WORKDIR&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; /build&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;COPY&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; --from=build /build/package*.json /build/&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--production&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# copy min needed to run (built) app&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;COPY&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; --from=build /build/nuxt.config.ts /build&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;COPY&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; --from=build /build/.nuxt /build/.nuxt&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;COPY&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; --from=build /build/static /build/static&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;apk &lt;span class=&quot;nt&quot;&gt;--no-cache&lt;/span&gt; add wget
+
+&lt;span class=&quot;k&quot;&gt;EXPOSE&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; 3000&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;HEALTHCHECK&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; --interval=30s --timeout=1s CMD wget localhost:3000/ping -q  -O/dev/null || exit 1&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;USER&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; node&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;CMD&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; npm start&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;build-size-295mb-110mb-compressed&quot;&gt;build size 295MB (110MB compressed)&lt;/h4&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;conclusion&lt;/h2&gt;
+&lt;p&gt;By isolating the build dependencies from the server dependencies, the final image size was reduced by 60% (64% compressed). While the old build size was not a blocking issue, the reduced size speeds up updates, reduces downtime, and saves some disk space (ammobin.ca runs on a single 20GB VPS using docker-compose).&lt;/p&gt;
+</description>
+        <pubDate>Fri, 11 Oct 2019 00:00:00 -0500</pubDate>
+        <link>https://ramsay.xyz/2019/10/11/how-i-reduced-nuxt-container-size-by-60-percent.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2019/10/11/how-i-reduced-nuxt-container-size-by-60-percent.html</guid>
+        
+        <category>nuxt</category>
+        
+        <category>docker</category>
+        
+        <category>ammobin.ca</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>ramsay.xyz is now fully free of Javascript</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/no-more-js.jpg&quot; alt=&quot;no more js&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To further strengthen the non-javascript nature of this website, I have turned on a strict &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP&quot;&gt;content security policy&lt;/a&gt; for this site.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Content-Security-Policy &quot;default-src 'none'; img-src 'self'; style-src 'self'; report-uri https://csp.ramsay.xyz/report&quot;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;This security policy blocks all scripts on this site. ramsay.xyz has never directly used javascript (it had a ton of blogger scripts when it was hosted on Google’s blogger, and later a small Cloudflare script to protect emails when it was on github pages) and I have never wanted it to.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 02 Sep 2019 00:00:00 -0500</pubDate>
+        <link>https://ramsay.xyz/2019/09/02/ramsay.xyz-new-csp.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2019/09/02/ramsay.xyz-new-csp.html</guid>
+        
+        <category>javascript</category>
+        
+        <category>csp</category>
+        
+        <category>ramsay.xyz</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>An Implementation of Set (Card Game) in Typescript</title>
+        <description>&lt;p&gt;Published my code over at &lt;a href=&quot;https://github.com/nexus-uw/set&quot;&gt;nexus-uw/set&lt;/a&gt; with a README explaining what this is and how to run it.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/set-game-cards.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 25 Nov 2018 00:00:00 -0600</pubDate>
+        <link>https://ramsay.xyz/2018/11/25/created-set-in-typescript.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2018/11/25/created-set-in-typescript.html</guid>
+        
+        <category>typescript</category>
+        
+        <category>game</category>
+        
+        <category>set</category>
+        
+        <category>peter is way too good at this game</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>How to Secure Elasticsearch With Caddyserver</title>
+        <description>&lt;p&gt;By default, Elasticsearch does not supprot authentication since user management and such are part of the propertairy X-pack addon (gotta find some cash to cover that IPO).&lt;/p&gt;
+
+&lt;p&gt;BUT we can work around this with Caddyserver. For this exmaple, docker-compose can set up our Elasticsearch box:&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;3.2'&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;services&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;  
+  &lt;span class=&quot;na&quot;&gt;caddy&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;abiosoft/caddy&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;links&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;elasticsearch&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;./Caddyfile:/etc/Caddyfile&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;ports&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;80:80&lt;/span&gt;
+        &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;443:443&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;command&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;--agree --conf  &quot;/etc/Caddyfile&quot;&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;elasticsearch&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;docker.elastic.co/elasticsearch/elasticsearch:6.4.0&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The caddy file will provide basic HTTP Auth and HTTPS to protect our elasticsearch container with the following caddyfile&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;https://somepublicurl.com {
+  tls some@email.com
+  proxy / elasticsearch:9200
+  basicauth / the_sun_god_emporer wow_this_would_make_a_great_password_dont_tell_anyone
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then to send some data from a remote machine, the sample fluentd config file shows the config needed:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&amp;lt;match something.**&amp;gt;
+  @type elasticsearch
+  host somepublicurl.com
+  port 443
+  user the_sun_god_emporer
+  password wow_this_would_make_a_great_password_dont_tell_anyone
+  scheme https
+  ssl_version TLSv1_2
+  include_timestamp true
+  index_name some_index_name
+&amp;lt;/match&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;note: the following fluentd log message&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; [warn]: #0 Could not connect Elasticsearch. Assuming Elasticsearch 5.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;is an understatment. This should be considered a &lt;strong&gt;fatal&lt;/strong&gt;. It means your config is crap.
+Adding with_transporter_log true to your &amp;lt; match &amp;gt; section will explain why it is not working.&lt;/p&gt;
+
+&lt;p&gt;This setup can be pretty handy for self hosting Elasticsearch at home b/c Elasticsearch wants some heavy (for personal + seflhosted use) requirements for RAM + disk. by keeping this stuff at home, you dont have to spent ~$40 per month for an equalivent VPS.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 13 Oct 2018 00:00:00 -0500</pubDate>
+        <link>https://ramsay.xyz/2018/10/13/how-to-secure-elasticsearch-with-caddy.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2018/10/13/how-to-secure-elasticsearch-with-caddy.html</guid>
+        
+        <category>elasticsearch</category>
+        
+        <category>caddyserver</category>
+        
+        <category>docker</category>
+        
+        <category>fluentd</category>
+        
+        
+      </item>
+    
+  </channel>
+</rss>

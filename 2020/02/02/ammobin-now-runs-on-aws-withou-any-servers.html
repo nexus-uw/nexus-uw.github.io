@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ammobin now runs on AWS using only severless technology thanks to AWS-CDK</title>
+  <meta name="description" content="BackgroundSince it’s launch in 2017, ammobin.ca has been successfully running on a single Digital Ocean machine (2 GB +	2 vCPUs) using docker compose (ammobi...">
+  <meta name="image" content="/favicon-32x32.png">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://ramsay.xyz/2020/02/02/ammobin-now-runs-on-aws-withou-any-servers.html">
+  <link rel="alternate" type="application/rss+xml" title="Simon Ramsay" href="https://ramsay.xyz/feed.xml">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#b91d47">
+  <meta name="theme-color" content="#b91d47">
+  <meta http-equiv="onion-location" content="http://ramsayswljlwqo7yvw3ovxhyzavllyduxkgh4rbobzkc263jyro6cjyd.onion/2020/02/02/ammobin-now-runs-on-aws-withou-any-servers.html" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; manifest-src 'self';">
+</head>
+
+
+  <body>
+
+    <header class="">
+
+  <div class="header-links">
+
+    <a class="" href="/">Simon Ramsay</a>
+
+    <div class="about-link">
+      |
+      <a class="" href="/about">about</a>
+    </div>
+
+  </div>
+
+</header>
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <div class="post-header">
+    <h1 class="post-title" itemprop="name headline">Ammobin now runs on AWS using only severless technology thanks to AWS-CDK</h1>
+    <p class="post-meta"><time datetime="2020-02-02T00:00:00-06:00" itemprop="datePublished">Feb 2, 2020</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Simon</span></span></p>
+  </div>
+
+  <div class="post-content" itemprop="articleBody">
+    <h1 id="background">Background</h1>
+<p>Since it’s launch in 2017, <a href="https://ammobin.ca">ammobin.ca</a> has been successfully running on a single Digital Ocean machine (2 GB +	2 vCPUs) using docker compose (<a href="https://github.com/ammobinDOTca/ammobin-compose">ammobinDOTca/ammobin-compose</a>) + crontab. It currently costs about ~$17 USD per month. There have been very few issues with this setup outside of infrequent space issues + os updates bricking the server (requiring manual restarts)</p>
+
+<p><img src="/assets/digital ocean docker setup.png" alt="digital ocean architecture as of december 2019" /></p>
+
+<h1 id="what-is-aws-cdk-and-why-should-one-migrate-to-it">What is AWS CDK and why should one migrate to it?</h1>
+<blockquote>
+  <p>The AWS Cloud Development Kit (AWS CDK) is an open source software development framework to model and provision your cloud application resources using familiar programming languages.</p>
+</blockquote>
+
+<blockquote>
+  <p>Provisioning cloud applications can be a challenging process that requires you to perform manual actions, write custom scripts, maintain templates, or learn domain-specific languages. AWS CDK uses the familiarity and expressive power of programming languages for modeling your applications. It provides you with high-level components that preconfigure cloud resources with proven defaults, so you can build cloud applications without needing to be an expert. AWS CDK provisions your resources in a safe, repeatable manner through AWS CloudFormation. It also enables you to compose and share your own custom components that incorporate your organization’s requirements, helping you start new projects faster.
+<a href="https://aws.amazon.com/cdk/">src</a></p>
+</blockquote>
+
+<p>I chose to use CDK over plain CloudFormation because it a new and novel alternative to static YAML templates and manually zip + uploading assets. From my previous experiences with CloudFormation, I found that the templates were difficult to debug as well as discover what the structure of the documents were (especially around object references). To add to this, many of the restrictions and validations can only be checked when the stack tries to create/update resources. This can add significant time to the deploy/debug cycle especially around resources dependant on CloudFront distributions.</p>
+
+<p>My past few months of developing with CDK have been pretty great. Using VS Code as my IDE greatly helps with auto completing, automatic imports, and clicking through to the source JSDOCs. Additionally the static type-checking is able to continuously run in the background allowing for errors to be surfaced before manually building + deploying. Even then, transpiling + running the typescript stacks will provide additional run time checks + validations before uploading the resulting CloudFormation template(s) to AWS to perform their changes.</p>
+
+<h1 id="repo">Repo</h1>
+<p><a href="https://github.com/ammobinDOTca/ammobin-cdk">https://github.com/ammobinDOTca/ammobin-cdk</a></p>
+
+<h1 id="aws-diagram">AWS diagram</h1>
+<p><img src="/assets/aws ammobin.ca cdk.png" alt="aws ammobin stack" /></p>
+
+<p><img src="/assets/aws regions and stages.png" alt="aws ammobin pipeline" /></p>
+
+<p>not pictured: <a href="https://github.com/ammobinDOTca/s3-bucket/blob/master/.github/workflows/main.yml">github actions re-generating the static assets every day</a></p>
+
+<h1 id="cost-numbers">cost numbers</h1>
+<p>ammobin.ca has been running on AWS since January 2020. During this time it has been able to mostly stay within the free tier. The majority of the bill is related to DynamoDB write requests (<a href="https://github.com/ammobinDOTca/ammobin-api/commit/79e762dd766cb04f55b68cdf8915a35fbd27ffed">did adjust refresh frequency in mid January</a> ), Code Build time (partially due to figuring out Pipelines + IAM) ,and KMS for storing the elastic search password.</p>
+
+<p>All in, January cost $15.07 USD (after taxes). February is forecasted by AWS to cost $14.82, but I expect it to come a bit under that.</p>
+
+<h1 id="issueschallenges-discovered">issues/challenges discovered</h1>
+
+<h2 id="ca-central-1">ca-central-1</h2>
+<p>ca-central-1 does not appear to be a tier 1 region since a lot of the shiniest services have not been deployed there.</p>
+
+<p>Somethings I discovered not available (at time of writing) in ca-central-1</p>
+<ul>
+  <li>http gateway (cheaper + simpler version of api gateway. have not breached the free tier yet, but still want to use it)</li>
+  <li>CloudWatch canaries (every service needs lots of canary traffic)
+(not relevant to the current stack but would be considered for an ecs/eks alternative)</li>
+  <li>a1 ec2 (ARM)</li>
+  <li>spot instances for Fargate (why not, this sounds super cool)</li>
+</ul>
+
+<h2 id="cloudfront-us-east-1-restrictions">CloudFront us-east-1 restrictions</h2>
+
+<p>CloudFront is a global AWS service and can be created from any region but everything it uses (ie: acm certs, lambdas) have to be us-east-1. I fail to understand why CloudFront/CloudFormation lets people create their distributions outside of us-east-1. It only serves to complicate things when developers want to extend their distribution from a stack outside of us-east-1 and they must either create static references in code or use a bunch of custom resources (with lots of custom logic) to handle the deployment.</p>
+
+<p>I found it much easier to only create the distribution in us-east-1 so that all of its related resources can cleanly exist in the same stack. As for how to connect it back to the rest of ammobin in ca-central-1, custom (internal) CNAMES was really handy since they could be easily shared between the stacks using a common constants typescript file.</p>
+
+<h2 id="s3-costs">s3 costs</h2>
+<p>It was easy to blow through the PUT request free tier with a daily re-upload of <code class="language-plaintext highlighter-rouge">nuxt generate</code> within a few days. This forced a re-archecting of the stack to make use of the free tier of github pages + actions.</p>
+
+<p>cdk has an easy asset zip + upload process for lambda code. By not optimizing the asset packages being uploaded, the 5GB free storage limit was easily reached after a month of development. Reducing the lambda bundle size + removing old zips solved this issue.</p>
+
+<p>A clean up lambda or a s3 bucket policy will have to be developed later to remove the old assets.</p>
+
+<h2 id="lambda-size-constraints">lambda size constraints</h2>
+<p><a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">ref</a>
+As easy as CDK makes it, one cannot blindly zip up an entire repo with all of its node_modules, raw typescript files,  dev dependencies, and multiple built js files.
+Webpack is the best build tool for solving this. By compressing all of the actual dependencies of a lambda into a single file (and not forgetting to exclude aws-sdk),
+the deployment package can be reduced to a single file (measured in KB). This has the additional benefit of helping with the dreaded cold boot time (was able to save 800ms on the graphql lambda</p>
+
+<h2 id="log-costs-and-exporting">log costs and exporting</h2>
+
+<p>I found the AWS documentation around log exporting difficult to understand and it was not directed at my use case. Kinesis is sold as the tool for analyzing + exporting logs but it does not scale low enough ammobin. As it currently stands, Kinesis has a base cost of 25$ per month (ie: does not scale to 0) which is way higher than the current digital ocean budget.</p>
+
+<p>While lambdas could export their logs directly to my elasticsearch, I chose to forgo this option in order to let the lambda complete and respond quicker.</p>
+
+<p>In the end I went with having a separate lambda be triggered by CloudWatch log events. It appears that AWS does not suggest this option because manually configuring this through the CloudWatch console displays a warning about run away costs
+<img src="/assets/lambda subscription cost warning message.png" alt="lambda subscription cost warning message" /></p>
+
+<p>Additionally, I was unable to find clear documentation regarding how the lambda is invoked. From the above warning, I interpreted it to mean that a lambda would be invoked <strong>per log line</strong>. This was not the case. CloudWatch performs some sort of batching (unsure how the batch size is determined) and delivers the log lines to the lambda as an encoded string. decoding these and sending them to elasticsearch was rather easy.
+<a href="https://github.com/ammobinDOTca/ammobin-cdk/blob/master/lambdas/log-exporter/elasticsearch.ts">log exporter code</a></p>
+
+<p>But still required (simple) custom CDK construct (<a href="https://github.com/ammobinDOTca/ammobin-cdk/blob/master/lib/CloudWatchScheduleEvent.ts">ref</a>)</p>
+
+<p>(side note: I am very happy that CDK has native support for setting the log expiry of Lambda logs directly within the lambda construct)</p>
+
+<h2 id="ec2-or-lightsail">ec2 (or lightsail)</h2>
+<p>While this is not an issue with AWS, I chose to not use ec2 (or LightSail). Ammobin could have been <em>trivially</em> migrated to a single host (reserved instance…), this would have skipped the more interesting world of serverless tech. Additionally Ammobin is too small to make use of auto scaling or justify the cost of a load balancer (and thus unable to use spot instances)</p>
+
+<h1 id="open-issues">Open Issues</h1>
+<h2 id="cold-starts--lambda-response-times">cold starts + lambda response times</h2>
+<p>After all of the above, cold starts are still a noticeable thing. This is partially due to low traffic. Partially due to absence of caching (dex + reserved capacity is too expensive) cold starts are still a thing.</p>
+
+<p>CloudFront is not designed to cache POST requests (aka getItemsListing).
+alternatives</p>
+<ol>
+  <li>put the lambda in a VPC + spin up a tiny Elastic Cache instance (todo cost). haven’t investigated tradeoff between vpc cold start and dynamo</li>
+  <li>dex caching  (todo: cost)</li>
+  <li>migrated graphql POST requests to GET -&gt; implemented this in late January (<a href="https://github.com/ammobinDOTca/ammobin-client/commit/70779298dfd430476b2a26960f116375ea3ac388">code</a>)</li>
+</ol>
+
+<h2 id="serverside-rendering">serverside rendering</h2>
+<p>While nuxt is really great for local development and production servers, I have found it lacking in lambda support. following the default set up + <nuxt serverless="" pkg=""> did not scale to ammobin's use. typescript + apollo added significant bloat that blew through the 250MB code size. Creating a custom build step that pre-build the server/client and included only the required production dependencies, did get past this blocker but the performance and resource requirements was unacceptable (1GB ram and 2.5s response time).</nuxt></p>
+
+<p><a href="https://nextjs.org/blog/next-8#serverless-nextjs">next.js serverless build</a> -&gt; It would be great to see something similar to nuxt…</p>
+
+<h2 id="ecs-costs">ecs costs</h2>
+<p>hidden cost -&gt; %25 per month for application load balancer (less for simpler load balancers). Would be nice if AWS included monthly costs on their price sheets (maybe just an estimate…)
+did consider new spot instance for Fargate, but they are not available yet for ca-central-1</p>
+
+<h2 id="api-gateway-vs-http-gateway">API Gateway vs HTTP Gateway</h2>
+<p>HTTP gateway still in preview and not in ca-central-1, so ammobin has to continue to use apigateway with next to no configuration (3 paths total, with the basic lambda integration). luckily they are still within the free tier so no issue</p>
+
+<h1 id="remaining-work">remaining work</h1>
+
+<h2 id="user-agent">User-Agent</h2>
+<p>CloudFront will only pass client’s Headers to the origin if they are configured to be used in caching. &lt;todo: ref aws doc&gt;. This is ok for the GET api requests, it would be nice to include it in the POST requests. StackOverflow’s top suggestion is to configure two edge lambdas to move the headers around,</p>
+
+<p>Might work around this by only referring to the manually inserted user-agent in sendBeacon requests as a proxy for user agent -&gt; has the advantage of only caring about people who <em>use</em> the site</p>
+
+<h1 id="conclusions">Conclusions</h1>
+<p>Working with aws + cdk was a great experience but Digital Ocean is still way easier and less stressful. Not having to worry about hidden and unexpected costs when there is clear upfront monthly cost (billed hourly but prices are also displayed by the month) . able to closely mirror real production env</p>
+
+<p>All this being said, Ammobin will continue to be run on AWS for increased stability and a slight cost saving.</p>
+
+
+  </div>
+
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+    <h2 class="footer-heading">Simon Ramsay
+      <a href="http://ramsayswljlwqo7yvw3ovxhyzavllyduxkgh4rbobzkc263jyro6cjyd.onion">(TOR)</a>
+      <a href="http://ramsay.i2p/">(I2P)</a></h2>
+      <div class="footer-col-wrapper">
+        <div class="footer-col footer-col-6">
+          <ul class="contact-list">
+            <li>
+              <a href="mailto:simon@ramsay.xyz">simon@ramsay.xyz</a>
+            </li>
+            <li>
+              <a href="https://keybase.io/nexusuw/key.asc">F50F7E3612EA2B78</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col footer-col-6">
+          <ul class="social-media-list">
+            <li><a href="https://github.com/nexus-uw"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">nexus-uw</span></a>
+</li>
+            <li><a href="https://keybase.io/nexusuw"><span class="username">Keybase: nexusuw</span></a> <a href="http://fncuwbiisyh6ak3i.onion/nexusuw">(TOR)</a>
+</li>
+          </ul>
+        </div>
+        <div class="footer-col footer-col-12">
+          2013 - CURRENT YEAR <a href="http://unlicense.org">Unlicensed</a>
+        </div>
+      </div>
+  </div>
+</footer>
+
+    <p class="china_number_1">动态网自由门 天安門 天安门 法輪功 李洪志 Free Tibet 六四天安門事件 The Tiananmen Square protests of 1989 天安門大屠殺 The Tiananmen Square Massacre
+    反右派鬥爭 The Anti-Rightist Struggle 大躍進政策 The Great Leap Forward 文化大革命 The Great Proletarian Cultural Revolution 人權 Human
+    Rights 民運 Democratization 自由 Freedom 獨立 Independence 多黨制 Multi-party system 台灣 臺灣 Taiwan Formosa 中華民國 Republic of China
+    西藏 土伯特 唐古特 Tibet 達賴喇嘛 Dalai Lama 法輪功 Falun Dafa 新疆維吾爾自治區 The Xinjiang Uyghur Autonomous Region 諾貝爾和平獎 Nobel Peace Prize
+    劉暁波 Liu Xiaobo 民主 言論 思想 反共 反革命 抗議 運動 騷亂 暴亂 騷擾 擾亂 抗暴 平反 維權 示威游行 李洪志 法輪大法 大法弟子 強制斷種 強制堕胎 民族淨化 人體實驗 肅清 胡耀邦 趙紫陽 魏京生 王丹 還政於民
+    和平演變 激流中國 北京之春 大紀元時報 九評論共産黨 獨裁 專制 壓制 統一 監視 鎮壓 迫害 侵略 掠奪 破壞 拷問 屠殺 活摘器官 誘拐 買賣人口 遊進 走私 毒品 賣淫 春畫 賭博 六合彩 天安門 天安门 法輪功 李洪志
+    Winnie the Pooh 劉曉波动态网自由门
+    
+    #Literally #china #copypasta</p>
+  </body>
+
+</html>
