@@ -1,0 +1,8 @@
+https://github.com/trashhalo/reddit-rss/pull/36
+
+allows redditt-rss to serve as an improved rss feed that links to https://libredd.it/ (simple and lightweight reddit UI)
+
+why not teddit's rss support?
+1. they serve up the same limited reddit rss items
+2. i have found the teddit pages to take a while to load'
+3. i do not have any need to interact with reddit, so the js is completely unessary to me

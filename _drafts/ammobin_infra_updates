@@ -1,0 +1,16 @@
+using cloudflare workers + nuxt 3
+no more s3 static generate bucket
+todo: restore url params 
+waiting for more nuxt dev work
+ seeing rough egdes around handling 404 in worker
+
+remove aws lambda from customer traffic
+ran up large aws bill due to number of lambda invokes
+	switched to fly.io
+	considered cloudflare workers BUT not easy lift and shift (unable to run hapi in worker env)
+	first pass done with image proxy
+  have fly.io send metrics directly to selfhosted es cluster 
+
+
+todo:
+	CD cloudflare workers + fly.io
