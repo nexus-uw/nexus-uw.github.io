@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Simon Ramsay</title>
-  <meta name="description" content="A personal blog about shitty infrequent random programing tips">
+  <title>release of blue-green-static-aws-edge</title>
+  <meta name="description" content="REPO">
   <meta name="image" content="/favicon-32x32.png">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://ramsay.xyz/page2/">
+  <link rel="canonical" href="https://ramsay.xyz/2022/01/05/release-of-blue-green-static-aws-edge.html">
   <link rel="alternate" type="application/rss+xml" title="Simon Ramsay" href="https://ramsay.xyz/feed.xml">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -19,7 +19,7 @@
   <link rel="manifest" href="/manifest.json">
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#b91d47">
   <meta name="theme-color" content="#b91d47">
-  <meta http-equiv="onion-location" content="http://ramsayswljlwqo7yvw3ovxhyzavllyduxkgh4rbobzkc263jyro6cjyd.onion/page2/" />
+  <meta http-equiv="onion-location" content="http://ramsayswljlwqo7yvw3ovxhyzavllyduxkgh4rbobzkc263jyro6cjyd.onion/2022/01/05/release-of-blue-green-static-aws-edge.html" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; manifest-src 'self';">
 </head>
 
@@ -43,152 +43,42 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <div class="home">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <h1 class="page-heading">Posts</h1>
+  <div class="post-header">
+    <h1 class="post-title" itemprop="name headline">release of blue-green-static-aws-edge</h1>
+    <p class="post-meta"><time datetime="2022-01-05T00:00:00-06:00" itemprop="datePublished">Jan 5, 2022</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Simon</span></span></p>
+  </div>
 
-  <ul class="post-list">
-    
-      <li>
-        <span class="post-meta post-title">May 29, 2018</span>
+  <div class="post-content" itemprop="articleBody">
+    <p><a href="https://github.com/BASED-EDGE/blue-green-static-aws-edge">REPO</a></p>
 
-        <h2>
-          <a class="post-link" href="/2018/05/29/realtime-goaccess-caddy-server-docker.html">How I set up real-time Caddy log monitoring using GoAccess, all within docker-compose</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">May 25, 2018</span>
+<blockquote>
+  <p>This repo contains a sample reference AWS CDK stack for setting up a blue green deployed serverless distribution.</p>
+</blockquote>
 
-        <h2>
-          <a class="post-link" href="/2018/05/25/ammobin-coe.html">Correction Of Error (COE) for ammobin.ca downtime</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">May 5, 2018</span>
+<blockquote>
+  <p>A sample React javascript application is (async) chunked by webpack with a distinct buildId included in the publicPath. The cdk stack deploys the web assets to S3 (using the buildId as a the subfolder) as well as update the edge lambda to a new version with the latest buildId. AWS Code Deploy then slowly switches traffic b/w the old lambda and the new lambda. As users visit the page, they will be progressively more likely to see the new version over the old version until the deployment successfully completes. To reduce origin latency for users far away from us-east-1, a route53 latency based TXT record is used to redirect the s3Origin request to the closet s3 bucket (that contains all the same assets).</p>
+</blockquote>
 
-        <h2>
-          <a class="post-link" href="/2018/05/05/pihole-pine64-docker.html">How to (kinda) install pihole on a pine64-jessie using docker</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">Apr 14, 2018</span>
+<blockquote>
+  <p>If something were to go wrong with the latest assets, (ie: code bug), the code deployment would fail and revert to the old version. Since the javascript entry should never be cached, any users who were served the bad version will get the old version after reloading the page. The same rollback action could be manually performed if an issue was discovered after the deployment completed.</p>
+</blockquote>
 
-        <h2>
-          <a class="post-link" href="/2018/04/14/vscode-mason-syntax-highlighting.html">How to enable syntax highlighting in VSCode for Mason files</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">Apr 14, 2018</span>
+<blockquote>
+  <p>The major down side with this approach is having to invoke a lambda every time a user loads the widget. This can lead to incurring Lambda costs, depending the level of traffic the app receives. These costs can be lower (or more operationally acceptable) than running comparable server(s) 24/7.</p>
+</blockquote>
 
-        <h2>
-          <a class="post-link" href="/2018/04/14/redesigned-ramsay.xyz.html">Redesigned ramsay.xyz</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">Dec 23, 2017</span>
+<blockquote>
+  <p>Another issue is incurring addition costs from always having to fetch the index.js. This will incur a financial cost in terms of S3 GET requests as well as a performance cost of always having to fetch the asset from us-east-1 (the sample client app aggressively asynchronously loads everything in the index to minimize its size at build time and ensure that most of the app is cached at the edge by CloudFront). Using Route53 latency routing, the edge lambda was upgraded to redirect the origin request to the closest aws region + replicated bucket, to reduce distance based latency. Yet again, this introduces more (possible) line items to the AWS bill in terms of additional storage costs and DNS queries, but these should be pretty minor.</p>
+</blockquote>
 
-        <h2>
-          <a class="post-link" href="/2017/12/23/crummy-fargate-calc.html">Made a crummy aws cost calculator for Fargate using Preact</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">Dec 22, 2017</span>
+<p><img src="/assets/blue-green-static-aws-edge.drawio.png" alt="" /></p>
 
-        <h2>
-          <a class="post-link" href="/2017/12/22/unit-testing-cloudformation.html">Unit Testing CloudFormation Templates</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">Nov 8, 2017</span>
 
-        <h2>
-          <a class="post-link" href="/2017/11/08/easy-ecs-login.html">Easy ECS Login</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">Jun 1, 2017</span>
+  </div>
 
-        <h2>
-          <a class="post-link" href="/2017/06/01/im-an-elm-master.html">I Have Mastered Elm By Making Yet Another Calculator (For AWS ElasticCache), And So Can You</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">Jun 1, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/2017/06/01/ammobinca.html">just released ammobin.ca</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">Mar 28, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/2017/03/28/site-also-available-as-an-eep-site.html">ramsay.xyz Now Available as an Eepsite (I2P)</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">Mar 16, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/2017/03/16/notes-about-unearthed-toronto-2017.html">Notes About Unearthed Toronto 2017</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">Jan 22, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/2017/01/22/list-of-tor-sites.html">A List of Some Tor Hidden Service Mirrors of Clearnet Sites</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">Jan 7, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/2017/01/07/how-to-use-redux-logger-with-revue.html">How to Use Redux Logger with Revue</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">Dec 16, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/12/16/vue-compond-interest-calculator-part-1.html">Sample Compound Interest Calculator (part 1)</a>
-        </h2>
-      </li>
-    
-  </ul>
-
-<!-- Pagination links -->
-<div class="pagination">
-  
-    <a href="/" class="previous">
-      Previous
-    </a>
-  
-  <span class="page_number ">
-    Page: 2 of 3
-  </span>
-  
-    <a href="/page3" class="next">Next</a>
-  
-</div>
-
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
-<a href="https://validator.w3.org/feed/check.cgi?url=https%3A//ramsay.xyz/feed.xml"><img src="/assets/valid-rss-rogers.png" alt="[Valid RSS]" title="Validate my RSS feed" /></a>
-</div>
+</article>
 
       </div>
     </div>
