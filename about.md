@@ -32,6 +32,9 @@ _.._ :`4MM$!YYYYYYYYYii,.__.diii$$YYYYYYYYYYY
 
 ```
 
+## Work
+### see [BASED EDGE](https://basededge.dev)
+
 ## Projects
 - [ammobin.ca](https://ammobin.ca/?ref=blog_about): Meta search site for ammo prices across Canada
 - [mini-madeuce.ramsay.xyz](https://mini-madeuce.ramsay.xyz/?ref=blog_about) ([TOR](madeucev3nrsti4nthzqt22dw2n57lseca3735yjhxddevl3zhtg3mad.onion)): privacy focused selfhosted url shortner 
