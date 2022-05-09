@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>About</title>
-  <meta name="description" content="A personal blog about shitty infrequent random programing tips">
+  <title>simple upstream proxy authentication for caddy</title>
+  <meta name="description" content="A VERY Simple upstream proxy authentication for Caddy">
   <meta name="image" content="/favicon-32x32.png">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://ramsay.xyz/about/">
+  <link rel="canonical" href="https://ramsay.xyz/2022/05/09/simple-upstream-proxy-authentication-for-caddy.html">
   <link rel="alternate" type="application/rss+xml" title="Simon Ramsay" href="https://ramsay.xyz/feed.xml">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -19,7 +19,7 @@
   <link rel="manifest" href="/manifest.json">
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#b91d47">
   <meta name="theme-color" content="#b91d47">
-  <meta http-equiv="onion-location" content="http://ramsayswljlwqo7yvw3ovxhyzavllyduxkgh4rbobzkc263jyro6cjyd.onion/about/" />
+  <meta http-equiv="onion-location" content="http://ramsayswljlwqo7yvw3ovxhyzavllyduxkgh4rbobzkc263jyro6cjyd.onion/2022/05/09/simple-upstream-proxy-authentication-for-caddy.html" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; manifest-src 'self';">
 </head>
 
@@ -43,60 +43,57 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <article class="post">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <div class="post-header">
-    <h1 class="post-title">About</h1>
+    <h1 class="post-title" itemprop="name headline">simple upstream proxy authentication for caddy</h1>
+    <p class="post-meta"><time datetime="2022-05-09T00:00:00-05:00" itemprop="datePublished">May 9, 2022</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Simon</span></span></p>
   </div>
 
-  <main class="post-content">
-    <p>Fullstack web software engineer dealing with nodejs + docker + raspberry pi stuff</p>
+  <div class="post-content" itemprop="articleBody">
+    <h1 id="a-very-simple-upstream-proxy-authentication-for-caddy">A VERY Simple upstream proxy authentication for Caddy</h1>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>                Y.                      _
-                YiL                   .```.
-                Yii;                .; .;;`.
-                YY;ii._           .;`.;;;; :
-                iiYYYYYYiiiii;;;;i` ;;::;;;;
-            _.;YYYYYYiiiiiiYYYii  .;;.   ;;;
-         .YYYYYYYYYYiiYYYYYYYYYYYYii;`  ;;;;
-       .YYYYYYY$$YYiiYY$$$$iiiYYYYYY;.ii;`..
-      :YYY$!.  TYiiYY$$$$$YYYYYYYiiYYYYiYYii.
-      Y$MM$:   :YYYYYY$!"``"4YYYYYiiiYYYYiiYY.
-   `. :MM$$b.,dYY$$Yii" :'   :YYYYllYiiYYYiYY
-_.._ :`4MM$!YYYYYYYYYii,.__.diii$$YYYYYYYYYYY
-.,._ $b`P`     "4$$$$$iiiiiiii$$$$YY$$$$$$YiY;
-   `,.`$:       :$$$$$$$$$YYYYY$$$$$$$$$YYiiYYL
-    "`;$$.    .;PPb$`.,.``T$$YY$$$$YYYYYYiiiYYU:
-    ;$P$;;: ;;;;i$y$"!Y$$$b;$$$Y$YY$$YYYiiiYYiYY
-    $Fi$$ .. ``:iii.`-":YYYYY$$YY$$$$$YYYiiYiYYY
-    :Y$$rb ````  `_..;;i;YYY$YY$$$$$$$YYYYYYYiYY:
-     :$$$$$i;;iiiiidYYYYYYYYYY$$$$$$YYYYYYYiiYYYY.
-      `$$$$$$$YYYYYYYYYYYYY$$$$$$YYYYYYYYiiiYYYYYY
-      .i!$$$$$$YYYYYYYYY$$$$$$YYY$$YYiiiiiiYYYYYYY
-     :YYiii$$$$$$$YYYYYYY$$$$YY$$$$YYiiiiiYYYYYYi'
+<p>Moving selfhosted services from a VPS to a machine at home can be handy for saving on VPS resources (CPU, RAM, and disk space) but exposes the risk of leaking the home IP address. To protect ones home UP address, the VPS can be used as a downstream proxy to handle incoming traffic. Having the upstream server require a special header to be set by the downstream server, helps to make sure that only the downstream sever can connect to the upstream. This is quicker and easier to deploy than a VPN.</p>
+
+<h2 id="code">Code</h2>
+<p>(Assuming that both the upstream and downstream servers are running Caddy)</p>
+
+<p><a href="https://caddyserver.com/docs/caddyfile/matchers#header">DOC</a></p>
+<h3 id="entrypoint-caddyfile">Entrypoint Caddyfile</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://selfhostedservice.ramsay.xyz {
+  reverse_proxy https://selfhostedservice.rabaranks.duckdns.org {
+    header_up +Random some_random_string
+  }
+}
 
 </code></pre></div></div>
+<h3 id="upstream-caddyfile">Upstream Caddyfile</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://selfhostedservice.rabaranks.duckdns.org {
+  @basicauth{
+      header Random some_random_string
+  }
+  reverse_proxy @basicauth selfhostedservice:8080
+}
+</code></pre></div></div>
 
-<h2 id="work">Work</h2>
-<h3 id="see-based-edge">see <a href="https://basededge.dev">BASED EDGE</a></h3>
-
-<h2 id="projects">Projects</h2>
+<h2 id="limitations-of-this-setup">Limitations of this setup</h2>
 <ul>
-  <li><a href="https://ammobin.ca/?ref=blog_about">ammobin.ca</a>: Meta search site for ammo prices across Canada</li>
-  <li><a href="https://mini-madeuce.ramsay.xyz/?ref=blog_about">mini-madeuce.ramsay.xyz</a> (<a href="http://madeucev3nrsti4nthzqt22dw2n57lseca3735yjhxddevl3zhtg3mad.onion">TOR</a>): privacy focused selfhosted url shortner</li>
-  <li><a href="https://mokintoken.ramsay.xyz/?ref=blog_about">mokintoken.ramsay.xyz</a> (<a href="http://mokinan4qvxi4ragyzgkewrmnnqslkcdglk6v5zruknwnnuvv2lu5uad.onion">TOR</a>): selfhosted e2e encrypted note sharing site</li>
-  <li><a href="https://massive-pass.ramsay.xyz/?ref=blog_about">massive-pass.ramsay.xyz</a> (<a href="http://massiveeeati5xv7sszovagrkamzdtshv4sg4rzpbg6n2btwkv2f2lqd.onion/">TOR</a>): an unimportant selfhosted password generator</li>
-  <li><a href="https://github.com/nexus-uw/vscode-gtm">vscode-gtm</a>: gtm (git time metric) extension for Visual Studio</li>
-  <li><a href="https://nexus-uw.github.io/vue-compound-interest-calculator/">vue-compound-interest-calculator</a>: simple compound interest calculator using vue.js</li>
-  <li><a href="https://nexus-uw.github.io/elastic-cache-calculator/">elastic-cache-calculator</a>: figure out the minimal number of nodes required to have in order to build an AWS Elastic Cache Redis cluster for a given size + network using Elm</li>
-  <li><a href="https://github.com/nexus-uw/delay-server">delay-server</a>: very basic tiny mock http server in a docker container to generate some network requests of some expected response time range + failure rate</li>
-  <li><a href="https://nexus-uw.github.io/crappy-preact-fargate-calculator/">crappy-preact-fargate-calculator</a>: worst project to date. given vcpu + ram, get the hourly cost of a single service. built using preact</li>
-  <li><a href="https://github.com/nexus-uw/nqh">nqh</a>: An implementation of Angular’s $http service for node</li>
+  <li>it does not easily scale beyond single key</li>
+  <li>security by obscurity (ie: unexpected header used)</li>
+  <li>long lived credentials (api key is being passed over the wire and rotation requires manual edits on both the upstream and downstream servers)</li>
+  <li>since using non-standard http header, it could easily show up in server logs</li>
+  <li>creds are stored in plain text within caddyfile</li>
+  <li>upstream server will still accept direct requests + responds with blank response (indicating that something is running there + the domain name is valid)</li>
 </ul>
 
-<p>The source of this site is available at <a href="https://github.com/nexus-uw/nexus-uw.github.io">https://github.com/nexus-uw/nexus-uw.github.io</a>.</p>
+<h2 id="better-alternatives">(Better) Alternatives</h2>
+<ul>
+  <li><a href="https://tailscale.com/">Tailscale</a></li>
+  <li><a href="https://www.cloudflare.com/en-ca/products/tunnel/">Cloudflare Tunnels</a></li>
+  <li><a href="https://github.com/awesome-foss/awesome-sysadmin#vpn">VPN</a></li>
+</ul>
 
-  </main>
+  </div>
 
 </article>
 

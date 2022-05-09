@@ -5,9 +5,64 @@
     <description>A personal blog about shitty infrequent random programing tips</description>
     <link>https://ramsay.xyz/</link>
     <atom:link href="https://ramsay.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 05 Jan 2022 21:33:55 -0600</pubDate>
-    <lastBuildDate>Wed, 05 Jan 2022 21:33:55 -0600</lastBuildDate>
-    <generator>Jekyll v4.2.0</generator>
+    <pubDate>Mon, 09 May 2022 17:44:06 -0500</pubDate>
+    <lastBuildDate>Mon, 09 May 2022 17:44:06 -0500</lastBuildDate>
+    <generator>Jekyll v4.2.2</generator>
+    
+      <item>
+        <title>simple upstream proxy authentication for caddy</title>
+        <description>&lt;h1 id=&quot;a-very-simple-upstream-proxy-authentication-for-caddy&quot;&gt;A VERY Simple upstream proxy authentication for Caddy&lt;/h1&gt;
+
+&lt;p&gt;Moving selfhosted services from a VPS to a machine at home can be handy for saving on VPS resources (CPU, RAM, and disk space) but exposes the risk of leaking the home IP address. To protect ones home UP address, the VPS can be used as a downstream proxy to handle incoming traffic. Having the upstream server require a special header to be set by the downstream server, helps to make sure that only the downstream sever can connect to the upstream. This is quicker and easier to deploy than a VPN.&lt;/p&gt;
+
+&lt;h2 id=&quot;code&quot;&gt;Code&lt;/h2&gt;
+&lt;p&gt;(Assuming that both the upstream and downstream servers are running Caddy)&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://caddyserver.com/docs/caddyfile/matchers#header&quot;&gt;DOC&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;entrypoint-caddyfile&quot;&gt;Entrypoint Caddyfile&lt;/h3&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;https://selfhostedservice.ramsay.xyz {
+  reverse_proxy https://selfhostedservice.rabaranks.duckdns.org {
+    header_up +Random some_random_string
+  }
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;upstream-caddyfile&quot;&gt;Upstream Caddyfile&lt;/h3&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;https://selfhostedservice.rabaranks.duckdns.org {
+  @basicauth{
+      header Random some_random_string
+  }
+  reverse_proxy @basicauth selfhostedservice:8080
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;limitations-of-this-setup&quot;&gt;Limitations of this setup&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;it does not easily scale beyond single key&lt;/li&gt;
+  &lt;li&gt;security by obscurity (ie: unexpected header used)&lt;/li&gt;
+  &lt;li&gt;long lived credentials (api key is being passed over the wire and rotation requires manual edits on both the upstream and downstream servers)&lt;/li&gt;
+  &lt;li&gt;since using non-standard http header, it could easily show up in server logs&lt;/li&gt;
+  &lt;li&gt;creds are stored in plain text within caddyfile&lt;/li&gt;
+  &lt;li&gt;upstream server will still accept direct requests + responds with blank response (indicating that something is running there + the domain name is valid)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;better-alternatives&quot;&gt;(Better) Alternatives&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://tailscale.com/&quot;&gt;Tailscale&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.cloudflare.com/en-ca/products/tunnel/&quot;&gt;Cloudflare Tunnels&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/awesome-foss/awesome-sysadmin#vpn&quot;&gt;VPN&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 09 May 2022 00:00:00 -0500</pubDate>
+        <link>https://ramsay.xyz/2022/05/09/simple-upstream-proxy-authentication-for-caddy.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2022/05/09/simple-upstream-proxy-authentication-for-caddy.html</guid>
+        
+        <category>caddy</category>
+        
+        <category>security</category>
+        
+        
+      </item>
     
       <item>
         <title>release of blue-green-static-aws-edge</title>
@@ -396,7 +451,7 @@ alternatives&lt;/p&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&quot;serverside-rendering&quot;&gt;serverside rendering&lt;/h2&gt;
-&lt;p&gt;While nuxt is really great for local development and production servers, I have found it lacking in lambda support. following the default set up + &lt;nuxt serverless=&quot;&quot; pkg=&quot;&quot;&gt; did not scale to ammobin's use. typescript + apollo added significant bloat that blew through the 250MB code size. Creating a custom build step that pre-build the server/client and included only the required production dependencies, did get past this blocker but the performance and resource requirements was unacceptable (1GB ram and 2.5s response time).&lt;/nuxt&gt;&lt;/p&gt;
+&lt;p&gt;While nuxt is really great for local development and production servers, I have found it lacking in lambda support. following the default set up + &lt;nuxt serverless=&quot;&quot; pkg=&quot;&quot;&gt; did not scale to ammobin&apos;s use. typescript + apollo added significant bloat that blew through the 250MB code size. Creating a custom build step that pre-build the server/client and included only the required production dependencies, did get past this blocker but the performance and resource requirements was unacceptable (1GB ram and 2.5s response time).&lt;/nuxt&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://nextjs.org/blog/next-8#serverless-nextjs&quot;&gt;next.js serverless build&lt;/a&gt; -&amp;gt; It would be great to see something similar to nuxt…&lt;/p&gt;
 
@@ -519,31 +574,6 @@ did consider new spot instance for Fargate, but they are not available yet for c
         <category>docker</category>
         
         <category>ammobin.ca</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>ramsay.xyz is now fully free of Javascript</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/no-more-js.jpg&quot; alt=&quot;no more js&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;To further strengthen the non-javascript nature of this website, I have turned on a strict &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP&quot;&gt;content security policy&lt;/a&gt; for this site.&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Content-Security-Policy &quot;default-src 'none'; img-src 'self'; style-src 'self'; report-uri https://csp.ramsay.xyz/report&quot;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;This security policy blocks all scripts on this site. ramsay.xyz has never directly used javascript (it had a ton of blogger scripts when it was hosted on Google’s blogger, and later a small Cloudflare script to protect emails when it was on github pages) and I have never wanted it to.&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 02 Sep 2019 00:00:00 -0500</pubDate>
-        <link>https://ramsay.xyz/2019/09/02/ramsay.xyz-new-csp.html</link>
-        <guid isPermaLink="true">https://ramsay.xyz/2019/09/02/ramsay.xyz-new-csp.html</guid>
-        
-        <category>javascript</category>
-        
-        <category>csp</category>
-        
-        <category>ramsay.xyz</category>
         
         
       </item>
