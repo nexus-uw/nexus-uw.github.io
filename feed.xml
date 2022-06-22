@@ -5,8 +5,8 @@
     <description>A personal blog about shitty infrequent random programing tips</description>
     <link>https://ramsay.xyz/</link>
     <atom:link href="https://ramsay.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 09 May 2022 17:44:06 -0500</pubDate>
-    <lastBuildDate>Mon, 09 May 2022 17:44:06 -0500</lastBuildDate>
+    <pubDate>Wed, 22 Jun 2022 13:52:13 -0500</pubDate>
+    <lastBuildDate>Wed, 22 Jun 2022 13:52:13 -0500</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
     
       <item>
@@ -525,7 +525,7 @@ did consider new spot instance for Fargate, but they are not available yet for c
 &lt;span class=&quot;c&quot;&gt;# build: pull in + install everything to run nuxt build&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;####&lt;/span&gt;
 
-&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; node:12-alpine as build&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;node:12-alpine&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;as&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;build&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;apk &lt;span class=&quot;nt&quot;&gt;--no-cache&lt;/span&gt; add wget git g++ make python
 
 &lt;span class=&quot;k&quot;&gt;WORKDIR&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; /build&lt;/span&gt;
@@ -540,7 +540,7 @@ did consider new spot instance for Fargate, but they are not available yet for c
 &lt;span class=&quot;c&quot;&gt;########&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;# run: do production install + copy build output of build container and run the node server&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;########&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; node:12-alpine as main&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;node:12-alpine&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;as&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;main&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;WORKDIR&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; /build&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;COPY&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; --from=build /build/package*.json /build/&lt;/span&gt;
