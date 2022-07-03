@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+{%- include base.html -%}
 
 <div class="home">
 
@@ -12,7 +13,7 @@ layout: default
         <span class="post-meta post-title">{{ post.date | date: "%b %-d, %Y" }}</span>
 
         <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          <a class="post-link" href="{{base}}{{ post.url }}">{{ post.title }}</a>
         </h2>
       </li>
     {% endfor %}
@@ -21,7 +22,7 @@ layout: default
 <!-- Pagination links -->
 <div class="pagination">
   {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}" class="previous">
+    <a href="{{base}}{{ paginator.previous_page_path }}" class="previous">
       Previous
     </a>
   {% else %}
@@ -31,12 +32,12 @@ layout: default
     Page: {{ paginator.page }} of {{ paginator.total_pages }}
   </span>
   {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+    <a href="{{base}}{{ paginator.next_page_path }}" class="next">Next</a>
   {% else %}
     <span class="next ">Next</span>
   {% endif %}
 </div>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-<a href="https://validator.w3.org/feed/check.cgi?url=https%3A//ramsay.xyz/feed.xml"><img src="/assets/valid-rss-rogers.png" alt="[Valid RSS]" title="Validate my RSS feed" /></a>
+  <p class="rss-subscribe">subscribe <a href="{{base}}/feed.xml">via RSS</a></p>
+<a href="https://validator.w3.org/feed/check.cgi?url=https%3A//ramsay.xyz/feed.xml"><img src="{{base}}/assets/valid-rss-rogers.png" alt="[Valid RSS]" title="Validate my RSS feed" /></a>
 </div>
