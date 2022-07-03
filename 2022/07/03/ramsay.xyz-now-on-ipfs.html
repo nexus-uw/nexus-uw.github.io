@@ -7,12 +7,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>just released ammobin.ca</title>
-  <meta name="description" content="For the past month, I have been putting together ammobin.ca using nuxt.js (server-side vue.js) + natural (natural language classification).">
+  <title>ramsay.xyz now on ipfs</title>
+  <meta name="description" content="ramsay.xyz is now available on InterPlanetary File System (IPFS).">
   <meta name="image" content="/favicon-32x32.png">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://ramsay.xyz/2017/06/01/ammobinca.html">
+  <link rel="canonical" href="https://ramsay.xyz/2022/07/03/ramsay.xyz-now-on-ipfs.html">
   <link rel="alternate" type="application/rss+xml" title="Simon Ramsay" href="/feed.xml">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -20,7 +20,7 @@
   <link rel="manifest" href="/manifest.json">
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#b91d47">
   <meta name="theme-color" content="#b91d47">
-  <meta http-equiv="onion-location" content="http://ramsayswljlwqo7yvw3ovxhyzavllyduxkgh4rbobzkc263jyro6cjyd.onion/2017/06/01/ammobinca.html" />
+  <meta http-equiv="onion-location" content="http://ramsayswljlwqo7yvw3ovxhyzavllyduxkgh4rbobzkc263jyro6cjyd.onion/2022/07/03/ramsay.xyz-now-on-ipfs.html" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; manifest-src 'self';">
 </head>
 
@@ -49,17 +49,20 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <div class="post-header">
-    <h1 class="post-title" itemprop="name headline">just released ammobin.ca</h1>
-    <p class="post-meta"><time datetime="2017-06-01T00:00:00-05:00" itemprop="datePublished">Jun 1, 2017</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Simon</span></span></p>
+    <h1 class="post-title" itemprop="name headline">ramsay.xyz now on ipfs</h1>
+    <p class="post-meta"><time datetime="2022-07-03T00:00:00-05:00" itemprop="datePublished">Jul 3, 2022</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Simon</span></span></p>
   </div>
 
   <div class="post-content" itemprop="articleBody">
-    <p>For the past month, I have been putting together <a href="https://ammobin.ca/?src=ramsay.xyz">ammobin.ca</a> using <a href="https://nuxtjs.org/">nuxt.js</a> (server-side vue.js) + <a href="https://github.com/NaturalNode/natural">natural</a> (natural language classification).</p>
+    <p>ramsay.xyz is now available on <a href="https://ipfs.io">InterPlanetary File System (IPFS)</a>.</p>
 
-<p>Feel free to check it out.</p>
+<p>It can be easily accessed through its IPNS over at Cloudflare’s gateway <a href="https://cloudflare-ipfs.com/ipns/fleek.ramsay.xyz">cloudflare-ipfs.com/ipns/fleek.ramsay.xyz</a></p>
 
-<p><img src="/assets/ammobin.png" alt="" /></p>
-
+<h2 id="how">how</h2>
+<ol>
+  <li>changed the jekyll build to <a href="https://developers.cloudflare.com/web3/ipfs-gateway/reference/updating-for-ipfs/#jekyll">generate relative links instead of absolute links</a></li>
+  <li>deployed site using <a href="https://fleek.co">fleek.co</a> (including setting up a dns link)</li>
+</ol>
 
   </div>
 

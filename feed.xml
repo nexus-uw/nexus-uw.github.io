@@ -5,9 +5,30 @@
     <description>A personal blog about shitty infrequent random programing tips</description>
     <link>https://ramsay.xyz/</link>
     <atom:link href="https://ramsay.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 22 Jun 2022 13:52:13 -0500</pubDate>
-    <lastBuildDate>Wed, 22 Jun 2022 13:52:13 -0500</lastBuildDate>
+    <pubDate>Sun, 03 Jul 2022 18:17:47 -0500</pubDate>
+    <lastBuildDate>Sun, 03 Jul 2022 18:17:47 -0500</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
+    
+      <item>
+        <title>ramsay.xyz now on ipfs</title>
+        <description>&lt;p&gt;ramsay.xyz is now available on &lt;a href=&quot;https://ipfs.io&quot;&gt;InterPlanetary File System (IPFS)&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;It can be easily accessed through its IPNS over at Cloudflare’s gateway &lt;a href=&quot;https://cloudflare-ipfs.com/ipns/fleek.ramsay.xyz&quot;&gt;cloudflare-ipfs.com/ipns/fleek.ramsay.xyz&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;how&quot;&gt;how&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;changed the jekyll build to &lt;a href=&quot;https://developers.cloudflare.com/web3/ipfs-gateway/reference/updating-for-ipfs/#jekyll&quot;&gt;generate relative links instead of absolute links&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;deployed site using &lt;a href=&quot;https://fleek.co&quot;&gt;fleek.co&lt;/a&gt; (including setting up a dns link)&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Sun, 03 Jul 2022 00:00:00 -0500</pubDate>
+        <link>https://ramsay.xyz/2022/07/03/ramsay.xyz-now-on-ipfs.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2022/07/03/ramsay.xyz-now-on-ipfs.html</guid>
+        
+        <category>ipfs</category>
+        
+        
+      </item>
     
       <item>
         <title>simple upstream proxy authentication for caddy</title>
@@ -486,94 +507,6 @@ did consider new spot instance for Fargate, but they are not available yet for c
         <category>aws-cdk</category>
         
         <category>serverless</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>How ammobin.ca reduced its Nuxt docker container image size by 60% using multi stage builds</title>
-        <description>&lt;h2 id=&quot;background&quot;&gt;Background&lt;/h2&gt;
-&lt;p&gt;To run a &lt;a href=&quot;&quot;&gt;nuxt.js&lt;/a&gt; server in production mode, one needs to ‘build’ it first using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nuxt build&lt;/code&gt;.  This generates a node server to host the app and serve the assets as well as generating a ‘production’ build of the clientside assets.&lt;/p&gt;
-
-&lt;p&gt;These build time dependencies are not needed for running the server in production and contribute a lot to the final docker image size.&lt;/p&gt;
-
-&lt;p&gt;In order to both build and run the nuxt server within the same Dockerfile, the below sample will make use of Docker’s &lt;a href=&quot;https://docs.docker.com/develop/develop-images/multistage-build/&quot;&gt;multi stage build feature&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;changes&quot;&gt;changes&lt;/h2&gt;
-&lt;p&gt;In the below case, the nuxt client for &lt;a href=&quot;https://ammobin.ca&quot;&gt;ammobin.ca&lt;/a&gt; will used.&lt;/p&gt;
-
-&lt;h3 id=&quot;old-dockerfile-src&quot;&gt;Old dockerfile (&lt;a href=&quot;https://github.com/ammobinDOTca/ammobin-client/blob/97a7d5b2964cf8b4760309be47d3e32657f8507d/Dockerfile&quot;&gt;src&lt;/a&gt;)&lt;/h3&gt;
-&lt;div class=&quot;language-docker highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; node:12-alpine&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;apk &lt;span class=&quot;nt&quot;&gt;--no-cache&lt;/span&gt; add wget git g++ make python
-
-&lt;span class=&quot;k&quot;&gt;WORKDIR&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; /build&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;COPY&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; package*.json /build/&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#--production&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;apk &lt;span class=&quot;nt&quot;&gt;--no-cache&lt;/span&gt; del git g++ make python
-&lt;span class=&quot;k&quot;&gt;COPY&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; . /build&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;EXPOSE&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; 3000&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;npm run build
-&lt;span class=&quot;k&quot;&gt;HEALTHCHECK&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; --interval=30s --timeout=1s CMD wget localhost:3000/ping -q  -O/dev/null || exit 1&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;CMD&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; npm start&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h4 id=&quot;build-size-732mb-304mb-compressed&quot;&gt;build size 732MB (304MB compressed)&lt;/h4&gt;
-
-&lt;h3 id=&quot;new-dockerfile-src&quot;&gt;New dockerfile (&lt;a href=&quot;https://github.com/ammobinDOTca/ammobin-client/blob/b9a0c3b0a1bf7010885f1ba32da43bbc7a05de83/Dockerfile&quot;&gt;src&lt;/a&gt;)&lt;/h3&gt;
-&lt;div class=&quot;language-docker highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;####&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# build: pull in + install everything to run nuxt build&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;####&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;node:12-alpine&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;as&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;build&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;apk &lt;span class=&quot;nt&quot;&gt;--no-cache&lt;/span&gt; add wget git g++ make python
-
-&lt;span class=&quot;k&quot;&gt;WORKDIR&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; /build&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;COPY&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; package*.json /build/&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;apk &lt;span class=&quot;nt&quot;&gt;--no-cache&lt;/span&gt; del git g++ make python
-&lt;span class=&quot;k&quot;&gt;COPY&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; . /build&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;npm run build
-
-
-&lt;span class=&quot;c&quot;&gt;########&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# run: do production install + copy build output of build container and run the node server&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;########&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;node:12-alpine&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;as&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;main&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;WORKDIR&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; /build&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;COPY&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; --from=build /build/package*.json /build/&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--production&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# copy min needed to run (built) app&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;COPY&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; --from=build /build/nuxt.config.ts /build&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;COPY&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; --from=build /build/.nuxt /build/.nuxt&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;COPY&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; --from=build /build/static /build/static&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;apk &lt;span class=&quot;nt&quot;&gt;--no-cache&lt;/span&gt; add wget
-
-&lt;span class=&quot;k&quot;&gt;EXPOSE&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; 3000&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;HEALTHCHECK&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; --interval=30s --timeout=1s CMD wget localhost:3000/ping -q  -O/dev/null || exit 1&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;USER&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; node&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;CMD&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; npm start&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;build-size-295mb-110mb-compressed&quot;&gt;build size 295MB (110MB compressed)&lt;/h4&gt;
-
-&lt;h2 id=&quot;conclusion&quot;&gt;conclusion&lt;/h2&gt;
-&lt;p&gt;By isolating the build dependencies from the server dependencies, the final image size was reduced by 60% (64% compressed). While the old build size was not a blocking issue, the reduced size speeds up updates, reduces downtime, and saves some disk space (ammobin.ca runs on a single 20GB VPS using docker-compose).&lt;/p&gt;
-</description>
-        <pubDate>Fri, 11 Oct 2019 00:00:00 -0500</pubDate>
-        <link>https://ramsay.xyz/2019/10/11/how-i-reduced-nuxt-container-size-by-60-percent.html</link>
-        <guid isPermaLink="true">https://ramsay.xyz/2019/10/11/how-i-reduced-nuxt-container-size-by-60-percent.html</guid>
-        
-        <category>nuxt</category>
-        
-        <category>docker</category>
-        
-        <category>ammobin.ca</category>
         
         
       </item>
