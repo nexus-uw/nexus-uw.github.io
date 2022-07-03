@@ -2,9 +2,9 @@ name: Jekyll site CI
 
 on:
   push:
-    branches: [ master ]
+    branches: all
   pull_request:
-    branches: [ master ]
+    branches: all
 
 jobs:
   build:
@@ -18,8 +18,8 @@ jobs:
         docker run \
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
         jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
-    - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@4.1.5
-      with:
-          branch: gh-pages # The branch the action should deploy to.
-          folder: _site # The folder the action should deploy.
+    #- name: Deploy to GitHub Pages
+    #  uses: JamesIves/github-pages-deploy-action@4.1.5
+    #  with:
+    #      branch: gh-pages # The branch the action should deploy to.
+    #      folder: _site # The folder the action should deploy.
