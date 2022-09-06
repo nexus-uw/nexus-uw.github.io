@@ -5,5 +5,6 @@ COPY . /tmp
 WORKDIR /tmp
 RUN jekyll build --destination /tmp/ASS . && ls
 
-FROM nginx:alpine
-COPY --from=BUILD /tmp/ASS /usr/share/nginx/html
+FROM ghcr.io/nexus-uw/darkhttpd:master
+EXPOSE 80
+COPY --from=BUILD /tmp/ASS /var/www/htdocs
