@@ -1,5 +1,7 @@
 create blog post annoucing https://www.npmjs.com/package/edge-lambda-url-authorizer
 
+https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistS3AndCustomOrigins.html#concept_lambda_function_url
+
 https://aws.amazon.com/blogs/aws/announcing-aws-lambda-function-urls-built-in-https-endpoints-for-single-function-microservices/
 >Function URL Pricing
 >Function URLs are included in Lambda’s request and duration pricing. For example, let’s imagine that you deploy a single Lambda function with 128 MB of memory and an average invocation time of 50 ms. The function receives five million requests every month, so the cost will be $1.00 for the requests, and $0.53 for the duration. The grand total is $1.53 per month, in the US East (N. Virginia) Region.
