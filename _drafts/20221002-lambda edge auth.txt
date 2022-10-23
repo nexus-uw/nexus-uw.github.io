@@ -36,7 +36,14 @@ fallback origin (incase lambda in main region region goes down)
 
 https://aws.amazon.com/cloudfront/features/
 
+edge signer takes 2ms to exe (once warm)
 
 issue
 origins per distribution defaults to 25 (can be increased to ???)
 https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html#limits-web-distributions
+
+
+sucessfully deployed to ammobin.ca
+(ref implementation links)
+
+
