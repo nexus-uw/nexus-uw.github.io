@@ -1,0 +1,30 @@
+---
+layout: post
+title: released some basic Caddy Docker containers
+date: '2022-10-29'
+author: Simon
+tags:
+- caddy
+- docker
+---
+
+
+# created caddy-do and caddy-gandi
+
+both of these containers are plain caddy containers with the DigitalOcean and Gandi DNS plugins already installed.
+
+# why?
+### enabled auto build using github actions
+keeps the base image up to date (since these ones dont need be changed)
+
+### allows for SSL at home (behind ones NAT)
+I have found it handy to assign real public DNS names to my internal devices (ie: example.at.home.ramsay.xyz -> 10.0.0.2). 
+
+Enabling HSTS on ramsay.xyz (with subdomains) has then caused my browser to refuse to connect to http only servers at home.
+
+Since Caddy usually issues certs by hosting a validation file on your server, it needs to be publicly accessible. But with DNS validation, the server can be isolated on a private network (like ones NAT at home)
+
+todo
+links
+more why + how
+also why 2 containers
