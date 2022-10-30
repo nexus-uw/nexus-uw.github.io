@@ -1,7 +1,7 @@
 ---
 layout: post
 title: released some basic Caddy Docker containers
-date: '2022-10-29'
+date: '2022-10-30'
 author: Simon
 tags:
 - caddy
@@ -24,7 +24,18 @@ Enabling HSTS on ramsay.xyz (with subdomains) has then caused my browser to refu
 
 Since Caddy usually issues certs by hosting a validation file on your server, it needs to be publicly accessible. But with DNS validation, the server can be isolated on a private network (like ones NAT at home)
 
-todo
-links
-more why + how
-also why 2 containers
+# Buy why ssl home?
+1. protect against local network snooping (ie: random cheap iot device, not so friendly guest)
+2. can efforce HTTPS only CSP for self hosted site
+3. allows one to enroll their personal domain in [HSTS preload list](https://hstspreload.org/) (since it requires HSTS header to includeSudDomains)
+
+# links
+## github
+[caddy-do](https://github.com/nexus-uw/caddy-do)
+
+[caddy-gandi](https://github.com/nexus-uw/caddy-gandi)
+
+## containers
+```ghcr.io/nexus-uw/caddy-do```
+
+```ghcr.io/nexus-uw/caddy-gandi```
