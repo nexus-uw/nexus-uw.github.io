@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-Fullstack web software engineer dealing with nodejs + docker + raspberry pi stuff
+Fullstack software engineer dealing with NodeJS + Docker + AWS stuff
 
 ```
                 Y.                      _
