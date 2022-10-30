@@ -15,6 +15,8 @@ Today I am happy to announce the release of [edge-lambda-url-authorizer 0.1.0](h
 edge-lambda-url-authorizer is a NodeJS package (with Typescript types) to be deployed a Lambda@Edge handler for Cloudfront origin requests. This package will [sigv4 sign](https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html) the incomming request with the lambda's instance credentials using [aws4](https://www.npmjs.com/package/aws4) before forwarding the request to the origin. The origin is expected to be a [Lambda Function URL](https://aws.amazon.com/blogs/aws/announcing-aws-lambda-function-urls-built-in-https-endpoints-for-single-function-microservices/
 ) endpoint with IAM_AUTH enabled. 
 
+![](/assets/edge_signer.drawio.png)
+
 # Why lambda url -> removed extra (unnecessary) dependency on ApiGateway.
 ### unessarcy
 api gateway has a whole list of features and benefits for using, but for a basic 'please expose my lambda as a public endpoint' it is unnecessary
@@ -92,5 +94,7 @@ https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-li
 
 ### next steps 
 could be generalized further into a generic sigv4 proxy for aws resources (ie: call dynamoDb or s3 directly). but that is much more complicated (and risky). it would require a very good understanding of IAM policies to properly secure one's resources.
+
+![](/assets/3.jpg)
 
 
