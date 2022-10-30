@@ -7,12 +7,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Cheap VPS Hot Tip</title>
-  <meta name="description" content="While  has lots of great deals, especially if you are willing and able to pay up front (ie: $39 per year for 4cpu + 6GB RAM src compared to $5 per month for ...">
+  <title>released some basic Caddy Docker containers</title>
+  <meta name="description" content="created caddy-do and caddy-gandi">
   <meta name="image" content="/favicon-32x32.png">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://ramsay.xyz/2018/09/18/cheap-vps-hot-tip.html">
+  <link rel="canonical" href="https://ramsay.xyz/2022/10/30/released-some-basic-docker-containers.html">
   <link rel="alternate" type="application/rss+xml" title="Simon Ramsay" href="/feed.xml">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -20,7 +20,7 @@
   <link rel="manifest" href="/manifest.json">
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#b91d47">
   <meta name="theme-color" content="#b91d47">
-  <meta http-equiv="onion-location" content="http://ramsayswljlwqo7yvw3ovxhyzavllyduxkgh4rbobzkc263jyro6cjyd.onion/2018/09/18/cheap-vps-hot-tip.html" />
+  <meta http-equiv="onion-location" content="http://ramsayswljlwqo7yvw3ovxhyzavllyduxkgh4rbobzkc263jyro6cjyd.onion/2022/10/30/released-some-basic-docker-containers.html" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; manifest-src 'self';">
   <meta name="google" content="notranslate"/>
 
@@ -51,21 +51,43 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <div class="post-header">
-    <h1 class="post-title" itemprop="name headline">Cheap VPS Hot Tip</h1>
-    <p class="post-meta"><time datetime="2018-09-18T00:00:00-05:00" itemprop="datePublished">Sep 18, 2018</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Simon</span></span></p>
+    <h1 class="post-title" itemprop="name headline">released some basic Caddy Docker containers</h1>
+    <p class="post-meta"><time datetime="2022-10-30T00:00:00-05:00" itemprop="datePublished">Oct 30, 2022</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Simon</span></span></p>
   </div>
 
   <div class="post-content" itemprop="articleBody">
-    <p>While <a href="https://lowendbox.com/"></a> has lots of great deals, especially if you are willing and able to pay up front (ie: $39 per year for 4cpu + 6GB RAM <a href="https://lowendbox.com/blog/sparkvps-4-offers-pure-ssd-vps-from-1-95-month-in-dallas-new-york/">src</a> compared to $5 per month for 1cpu + 1GB of RAM with <a href="https://www.digitalocean.com/pricing/">Digital Ocean</a> )</p>
+    <h1 id="created-caddy-do-and-caddy-gandi">created caddy-do and caddy-gandi</h1>
 
-<p>It should be noted that these cheaper hosts usually use OpenVZ vps (as opposed to KVM). Docker will not run in such an environment since it requires 
-(<a href="https://stackoverflow.com/a/29221590">src</a> and <a href="https://stackoverflow.com/a/35951482">src2</a>)
-Ubuntu will allow you to install docker, but it will fail to start due to:</p>
+<p>both of these containers are plain caddy containers with the DigitalOcean and Gandi DNS plugins already installed.</p>
 
-<blockquote>
-  <p>“Your Linux kernel version 2.6.32-xxx is not supported for running docker. Please upgrade your kernel to 3.10.0 or newer.”</p>
-</blockquote>
+<h1 id="why">why?</h1>
+<h3 id="enabled-auto-build-using-github-actions">enabled auto build using github actions</h3>
+<p>keeps the base image up to date (since these ones dont need be changed)</p>
 
+<h3 id="allows-for-ssl-at-home-behind-ones-nat">allows for SSL at home (behind ones NAT)</h3>
+<p>I have found it handy to assign real public DNS names to my internal devices (ie: example.at.home.ramsay.xyz -&gt; 10.0.0.2).</p>
+
+<p>Enabling HSTS on ramsay.xyz (with subdomains) has then caused my browser to refuse to connect to http only servers at home.</p>
+
+<p>Since Caddy usually issues certs by hosting a validation file on your server, it needs to be publicly accessible. But with DNS validation, the server can be isolated on a private network (like ones NAT at home)</p>
+
+<h1 id="buy-why-ssl-home">Buy why ssl home?</h1>
+<ol>
+  <li>protect against local network snooping (ie: random cheap iot device, not so friendly guest)</li>
+  <li>can efforce HTTPS only CSP for self hosted site</li>
+  <li>allows one to enroll their personal domain in <a href="https://hstspreload.org/">HSTS preload list</a> (since it requires HSTS header to includeSudDomains)</li>
+</ol>
+
+<h1 id="links">links</h1>
+<h2 id="github">github</h2>
+<p><a href="https://github.com/nexus-uw/caddy-do">caddy-do</a></p>
+
+<p><a href="https://github.com/nexus-uw/caddy-gandi">caddy-gandi</a></p>
+
+<h2 id="containers">containers</h2>
+<p><code class="language-plaintext highlighter-rouge">ghcr.io/nexus-uw/caddy-do</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">ghcr.io/nexus-uw/caddy-gandi</code></p>
 
   </div>
 

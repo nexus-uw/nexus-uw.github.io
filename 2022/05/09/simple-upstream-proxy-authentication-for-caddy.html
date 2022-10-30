@@ -22,6 +22,8 @@
   <meta name="theme-color" content="#b91d47">
   <meta http-equiv="onion-location" content="http://ramsayswljlwqo7yvw3ovxhyzavllyduxkgh4rbobzkc263jyro6cjyd.onion/2022/05/09/simple-upstream-proxy-authentication-for-caddy.html" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; manifest-src 'self';">
+  <meta name="google" content="notranslate"/>
+
 </head>
 
 
@@ -87,6 +89,11 @@
   <li>since using non-standard http header, it could easily show up in server logs</li>
   <li>creds are stored in plain text within caddyfile</li>
   <li>upstream server will still accept direct requests + responds with blank response (indicating that something is running there + the domain name is valid)</li>
+</ul>
+
+<h2 id="improvemnets">improvemnets</h2>
+<ul>
+  <li><a href="https://www.cloudflare.com/learning/access-management/what-is-mutual-tls/">mutual TLS</a> (ref <a href="https://caddyserver.com/docs/caddyfile/directives/tls#client_auth">Caddyfile config</a>)</li>
 </ul>
 
 <h2 id="better-alternatives">(Better) Alternatives</h2>
