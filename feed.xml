@@ -5,8 +5,8 @@
     <description>A personal blog about shitty infrequent random programing tips</description>
     <link>https://ramsay.xyz/</link>
     <atom:link href="https://ramsay.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 30 Oct 2022 11:57:59 -0500</pubDate>
-    <lastBuildDate>Sun, 30 Oct 2022 11:57:59 -0500</lastBuildDate>
+    <pubDate>Sun, 30 Oct 2022 12:49:56 -0500</pubDate>
+    <lastBuildDate>Sun, 30 Oct 2022 12:49:56 -0500</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
     
       <item>
@@ -51,6 +51,114 @@
         <category>caddy</category>
         
         <category>docker</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>0.1.0 edge-lambda-url-authorizer is now ready for use</title>
+        <description>&lt;p&gt;Today I am happy to announce the release of &lt;a href=&quot;https://www.npmjs.com/package/edge-lambda-url-authorizer&quot;&gt;edge-lambda-url-authorizer 0.1.0&lt;/a&gt; (ready for actual use)&lt;/p&gt;
+
+&lt;h1 id=&quot;what&quot;&gt;What&lt;/h1&gt;
+&lt;p&gt;edge-lambda-url-authorizer is a NodeJS package (with Typescript types) to be deployed a Lambda@Edge handler for Cloudfront origin requests. This package will &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html&quot;&gt;sigv4 sign&lt;/a&gt; the incomming request with the lambda’s instance credentials using &lt;a href=&quot;https://www.npmjs.com/package/aws4&quot;&gt;aws4&lt;/a&gt; before forwarding the request to the origin. The origin is expected to be a &lt;a href=&quot;https://aws.amazon.com/blogs/aws/announcing-aws-lambda-function-urls-built-in-https-endpoints-for-single-function-microservices/&quot;&gt;Lambda Function URL&lt;/a&gt; endpoint with IAM_AUTH enabled.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/edge_signer.drawio.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;why-lambda-url---removed-extra-unnecessary-dependency-on-apigateway&quot;&gt;Why lambda url -&amp;gt; removed extra (unnecessary) dependency on ApiGateway.&lt;/h1&gt;
+&lt;h3 id=&quot;unessarcy&quot;&gt;unessarcy&lt;/h3&gt;
+&lt;p&gt;api gateway has a whole list of features and benefits for using, but for a basic ‘please expose my lambda as a public endpoint’ it is unnecessary&lt;/p&gt;
+
+&lt;p&gt;apigateway is a separate service from lambda (so your chance of something killing your service is higher) us-west-2 had a large apigateway outage earlier this month&lt;/p&gt;
+
+&lt;h3 id=&quot;save-a-few-pennies&quot;&gt;save a few pennies&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Function URL Pricing
+Function URLs are included in Lambda’s request and duration pricing. For example, let’s imagine that you deploy a single Lambda function with 128 MB of memory and an average invocation time of 50 ms. The function receives five million requests every month, so the cost will be $1.00 for the requests, and $0.53 for the duration. The grand total is $1.53 per month, in the US East (N. Virginia) Region.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;function url does not cost extra&lt;/p&gt;
+
+&lt;p&gt;api gateway costs $ per million requests (after the free tier) https://aws.amazon.com/api-gateway/pricing/
+-&amp;gt; this tends to be a larger expense than the underlying lambda&lt;/p&gt;
+
+&lt;p&gt;(for ammobin.ca, this line item represented almost 10% of the monthly AWS spend)&lt;/p&gt;
+
+&lt;h1 id=&quot;challenges-with-plain-function-url&quot;&gt;challenges with plain function url&lt;/h1&gt;
+&lt;h2 id=&quot;cors&quot;&gt;CORS&lt;/h2&gt;
+&lt;p&gt;browsers will make CORS requests (which are supported) b/c the function url is on a different domain from one’s website. This creates an extra round trip for each actual request. (question: do OPTIONS requests add to your aws bill?)&lt;/p&gt;
+
+&lt;h2 id=&quot;csp&quot;&gt;CSP&lt;/h2&gt;
+&lt;p&gt;need to add lambda url to an Content-Security-Policy&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;different for each stage/region -&amp;gt; more work to generate/maintain&lt;/li&gt;
+  &lt;li&gt;one more thing to worry about&lt;/li&gt;
+  &lt;li&gt;multiple function urls require multiple domains to add to the policy&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;randomauto-generated-domain&quot;&gt;random/auto generated domain&lt;/h2&gt;
+&lt;p&gt;migrating function urls now requires server updates (instead of pointing to custom domain)&lt;/p&gt;
+
+&lt;p&gt;ppl might ask why requests are going off to some random auto generated domain?&lt;/p&gt;
+
+&lt;p&gt;if the lambda function were to be deleted + recreated (intentionally or not), unable to get old url back -&amp;gt; risk someone might snag it or have to update a bunch of references to it
+(could be very hard if hard coded in client sdks or the like)&lt;/p&gt;
+
+&lt;h2 id=&quot;lacks-security-features-auto-scan-tools-can-complain&quot;&gt;lacks security features (auto scan tools can complain)&lt;/h2&gt;
+&lt;p&gt;aws to their credit, launched with excellent iam policy support for (make sure that account is ‘secure’)
+see https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html#urls-governance&lt;/p&gt;
+
+&lt;p&gt;auto scan tools can flag ‘endpoint without authentication enabled’, enable IAM_AUTH keeps the bots off your back&lt;/p&gt;
+
+&lt;h2 id=&quot;bot-protection&quot;&gt;bot protection&lt;/h2&gt;
+&lt;p&gt;cant apply aws waf (but can use lambda throttling)&lt;/p&gt;
+
+&lt;h2 id=&quot;caching&quot;&gt;caching&lt;/h2&gt;
+&lt;p&gt;req could/should be cached. could be cached by browser, but not by cdn&lt;/p&gt;
+
+&lt;p&gt;if one site receives enough traffic, all of these extraneous lambda invocations can start to add up&lt;/p&gt;
+
+&lt;h1 id=&quot;solution-enable-iam_auth--cloudfront&quot;&gt;solution enable IAM_AUTH + cloudfront&lt;/h1&gt;
+&lt;p&gt;have lambda@edge sign incoming origin request&lt;/p&gt;
+
+&lt;h2 id=&quot;cloudfront-features&quot;&gt;cloudfront features&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;custom domain&lt;/li&gt;
+  &lt;li&gt;caching policy&lt;/li&gt;
+  &lt;li&gt;AWS Shield + WAF protection&lt;/li&gt;
+  &lt;li&gt;edge routing (could also do something like https://ramsay.xyz/2022/01/05/release-of-blue-green-static-aws-edge.html to internall route to the closest aws region for backing lambda execution)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;iam-auth&quot;&gt;iam auth&lt;/h2&gt;
+&lt;p&gt;apply an iam resource policy (handy for cross account access)&lt;/p&gt;
+
+&lt;p&gt;prevents people from calling your api directly (to by pass your cloudfront config)&lt;/p&gt;
+
+&lt;p&gt;no more ‘api without authentication’ security scan issues&lt;/p&gt;
+
+&lt;h3 id=&quot;alt&quot;&gt;alt&lt;/h3&gt;
+&lt;p&gt;custom header auth -&amp;gt; brittle, not great, does not let people get creative (but current suggested solution on https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistS3AndCustomOrigins.html#concept_lambda_function_url)&lt;/p&gt;
+
+&lt;p&gt;sigv4 lambda is ~2ms execution time for p90 so it doesn’t cost too much (and execute on origin req, so cache reqs need no exe)&lt;/p&gt;
+
+&lt;h3 id=&quot;issue&quot;&gt;issue&lt;/h3&gt;
+&lt;p&gt;origins per distribution defaults to 25 (can be increased to ???)
+https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html#limits-web-distributions&lt;/p&gt;
+
+&lt;h3 id=&quot;next-steps&quot;&gt;next steps&lt;/h3&gt;
+&lt;p&gt;could be generalized further into a generic sigv4 proxy for aws resources (ie: call dynamoDb or s3 directly). but that is much more complicated (and risky). it would require a very good understanding of IAM policies to properly secure one’s resources.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/3.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 30 Oct 2022 00:00:00 -0500</pubDate>
+        <link>https://ramsay.xyz/2022/10/30/lambda-edge-auth.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2022/10/30/lambda-edge-auth.html</guid>
+        
+        <category>lambda@edge</category>
+        
+        <category>typescript</category>
+        
+        <category>aws</category>
         
         
       </item>
@@ -387,37 +495,6 @@ A ~10% response time improvement was observed during the test when using a REGIO
         <category>c#</category>
         
         <category>lambda</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Mokintoken Released: 57 years ahead of the great normalization</title>
-        <description>&lt;h1 id=&quot;what&quot;&gt;what&lt;/h1&gt;
-&lt;p&gt;a clientside encrypted note sharing webapp. built with php7, Lumen, sqlite, rollup, and docker.&lt;/p&gt;
-
-&lt;h1 id=&quot;why&quot;&gt;why&lt;/h1&gt;
-&lt;p&gt;I wanted a selfhosted secure note sharing site for myself to send text between my computers. Existing sites either wanted too much infrastructure or did not provide a docker container. Some additional people had created docker containers for the projects, but they were not being updated with the latest application code.&lt;/p&gt;
-
-&lt;p&gt;Also i wanted something to do at this time after the big &lt;a href=&quot;https://ramsay.xyz/2020/02/02/ammobin-now-runs-on-aws-withou-any-servers.html&quot;&gt;ammobin AWS migration&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;where&quot;&gt;where&lt;/h1&gt;
-&lt;p&gt;it is currently hosted over at &lt;a href=&quot;https://mokintoken.ramsay.xyz/?ref=release_post&quot;&gt;https://mokintoken.ramsay.xyz&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;the code is available under the UNLICENSE at https://github.com/nexus-uw/mokintoken&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 27 Mar 2020 00:00:00 -0500</pubDate>
-        <link>https://ramsay.xyz/2020/03/27/mokintoken-released.html</link>
-        <guid isPermaLink="true">https://ramsay.xyz/2020/03/27/mokintoken-released.html</guid>
-        
-        <category>php7</category>
-        
-        <category>docker</category>
-        
-        <category>e2e encryption</category>
-        
-        <category>selfhosted</category>
         
         
       </item>
