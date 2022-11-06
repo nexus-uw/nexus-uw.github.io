@@ -5,14 +5,13 @@
     <description>A personal blog about shitty infrequent random programing tips</description>
     <link>https://ramsay.xyz/</link>
     <atom:link href="https://ramsay.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 06 Nov 2022 12:20:18 -0600</pubDate>
-    <lastBuildDate>Sun, 06 Nov 2022 12:20:18 -0600</lastBuildDate>
+    <pubDate>Sun, 06 Nov 2022 12:24:52 -0600</pubDate>
+    <lastBuildDate>Sun, 06 Nov 2022 12:24:52 -0600</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
     
       <item>
         <title>Cross Aws Region Latency</title>
-        <description>&lt;p&gt;repo https://github.com/BASED-EDGE/cross-region-latency&lt;/p&gt;
-
+        <description>
 &lt;h1 id=&quot;question&quot;&gt;question&lt;/h1&gt;
 &lt;p&gt;If a service’s DynamoDb (DDB) is in a region from some users, is it better to call DDB from a lambda close to the end user OR close to the DDB?&lt;/p&gt;
 
@@ -93,7 +92,10 @@ http.response_time:
 &lt;p&gt;Best to just call out to far away region directly (it had the closest latencies to the base line for all the stats)&lt;/p&gt;
 
 &lt;h3 id=&quot;notes&quot;&gt;notes&lt;/h3&gt;
-&lt;p&gt;this only covers a limited use case, best to investigate for yourself&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;repo with infra + lambda + test config is available at https://github.com/BASED-EDGE/cross-region-latency&lt;/li&gt;
+  &lt;li&gt;this only covers a limited use case, best to investigate for yourself&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h2 id=&quot;further-questions&quot;&gt;further questions&lt;/h2&gt;
 &lt;ul&gt;

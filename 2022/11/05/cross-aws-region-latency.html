@@ -1,4 +1,3 @@
-<p>repo https://github.com/BASED-EDGE/cross-region-latency</p>
 
 <h1 id="question">question</h1>
 <p>If a service’s DynamoDb (DDB) is in a region from some users, is it better to call DDB from a lambda close to the end user OR close to the DDB?</p>
@@ -80,7 +79,10 @@ http.response_time:
 <p>Best to just call out to far away region directly (it had the closest latencies to the base line for all the stats)</p>
 
 <h3 id="notes">notes</h3>
-<p>this only covers a limited use case, best to investigate for yourself</p>
+<ol>
+  <li>repo with infra + lambda + test config is available at https://github.com/BASED-EDGE/cross-region-latency</li>
+  <li>this only covers a limited use case, best to investigate for yourself</li>
+</ol>
 
 <h2 id="further-questions">further questions</h2>
 <ul>
