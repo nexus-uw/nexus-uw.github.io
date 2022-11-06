@@ -59,12 +59,12 @@
     <p>Today I am happy to announce the release of <a href="https://www.npmjs.com/package/edge-lambda-url-authorizer">edge-lambda-url-authorizer 0.1.0</a> (ready for actual use)</p>
 
 <h1 id="what">What</h1>
-<p>edge-lambda-url-authorizer is a NodeJS package (with Typescript types) to be deployed a Lambda@Edge handler for Cloudfront origin requests. This package will <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">sigv4 sign</a> the incomming request with the lambda’s instance credentials using <a href="https://www.npmjs.com/package/aws4">aws4</a> before forwarding the request to the origin. The origin is expected to be a <a href="https://aws.amazon.com/blogs/aws/announcing-aws-lambda-function-urls-built-in-https-endpoints-for-single-function-microservices/">Lambda Function URL</a> endpoint with IAM_AUTH enabled.</p>
+<p>edge-lambda-url-authorizer is a NodeJS package (with Typescript types) to be deployed a Lambda@Edge handler for Cloudfront origin requests. This package will <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">sigv4 sign</a> the incoming request with the lambda’s instance credentials using <a href="https://www.npmjs.com/package/aws4">aws4</a> before forwarding the request to the origin. The origin is expected to be a <a href="https://aws.amazon.com/blogs/aws/announcing-aws-lambda-function-urls-built-in-https-endpoints-for-single-function-microservices/">Lambda Function URL</a> endpoint with IAM_AUTH enabled.</p>
 
 <p><img src="/assets/edge_signer.drawio.png" alt="" /></p>
 
 <h1 id="why-lambda-url---removed-extra-unnecessary-dependency-on-apigateway">Why lambda url -&gt; removed extra (unnecessary) dependency on ApiGateway.</h1>
-<h3 id="unessarcy">unessarcy</h3>
+<h3 id="unnecessary">unnecessary</h3>
 <p>api gateway has a whole list of features and benefits for using, but for a basic ‘please expose my lambda as a public endpoint’ it is unnecessary</p>
 
 <p>apigateway is a separate service from lambda (so your chance of something killing your service is higher) us-west-2 had a large apigateway outage earlier this month</p>
