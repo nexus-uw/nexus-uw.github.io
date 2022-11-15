@@ -5,14 +5,13 @@
     <description>A personal blog about shitty infrequent random programing tips</description>
     <link>https://ramsay.xyz/</link>
     <atom:link href="https://ramsay.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 06 Nov 2022 12:24:52 -0600</pubDate>
-    <lastBuildDate>Sun, 06 Nov 2022 12:24:52 -0600</lastBuildDate>
+    <pubDate>Tue, 15 Nov 2022 17:01:34 -0600</pubDate>
+    <lastBuildDate>Tue, 15 Nov 2022 17:01:34 -0600</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
     
       <item>
-        <title>Cross Aws Region Latency</title>
-        <description>
-&lt;h1 id=&quot;question&quot;&gt;question&lt;/h1&gt;
+        <title>effects nearest of Lambda to Dynamodb Table</title>
+        <description>&lt;h1 id=&quot;question&quot;&gt;question&lt;/h1&gt;
 &lt;p&gt;If a service’s DynamoDb (DDB) is in a region from some users, is it better to call DDB from a lambda close to the end user OR close to the DDB?&lt;/p&gt;
 
 &lt;p&gt;(ie: if DDB is in us-east-1, but some users are in us-west-2, does it make sense to deploy a lambda in us-west-2 OR should they just call back to us-east-1)&lt;/p&gt;
@@ -100,15 +99,17 @@ http.response_time:
 &lt;h2 id=&quot;further-questions&quot;&gt;further questions&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;What about different services from just than just DDB (ie: RDS, S3, SNS)?&lt;/li&gt;
-  &lt;li&gt;Does the same thing apply to DDB write requests?&lt;/li&gt;
+  &lt;li&gt;Does the same thing apply to DDB write requests? YES&lt;/li&gt;
   &lt;li&gt;What effect does using different regions have on the above results (ie: ca-central-1 to ap-southeast-2)&lt;/li&gt;
   &lt;li&gt;Why does remote DDB perform so much worse than remote lambda? the lambda is not transforming the data (apart from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;JSON.stringify()&lt;/code&gt;) so the network latency would be assumed to be very similar.&lt;/li&gt;
   &lt;li&gt;How would a cross region AWS PrivateLink endpoint change the results?&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Sat, 05 Nov 2022 00:00:00 -0500</pubDate>
-        <link>https://ramsay.xyz/2022/11/05/cross-aws-region-latency.html</link>
-        <guid isPermaLink="true">https://ramsay.xyz/2022/11/05/cross-aws-region-latency.html</guid>
+        <pubDate>Tue, 15 Nov 2022 00:00:00 -0600</pubDate>
+        <link>https://ramsay.xyz/2022/11/15/cross-aws-region-latency.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2022/11/15/cross-aws-region-latency.html</guid>
+        
+        <category>aws</category>
         
         
       </item>
