@@ -93,7 +93,7 @@ Best to just call out to far away region directly (it had the closest latencies 
 
 ## further questions
 - What about different services from just than just DDB (ie: RDS, S3, SNS)?
-- Does the same thing apply to DDB write requests? YES
+- Does the same thing apply to DDB write requests? [YES](https://github.com/BASED-EDGE/cross-region-latency/blob/master/results_POST_1KB.txt)
 - What effect does using different regions have on the above results (ie: ca-central-1 to ap-southeast-2)
 - Why does remote DDB perform so much worse than remote lambda? the lambda is not transforming the data (apart from ```JSON.stringify()```) so the network latency would be assumed to be very similar.
 - How would a cross region AWS PrivateLink endpoint change the results?
