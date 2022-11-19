@@ -5,8 +5,8 @@
     <description>A personal blog about shitty infrequent random programing tips</description>
     <link>https://ramsay.xyz/</link>
     <atom:link href="https://ramsay.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 15 Nov 2022 17:01:34 -0600</pubDate>
-    <lastBuildDate>Tue, 15 Nov 2022 17:01:34 -0600</lastBuildDate>
+    <pubDate>Fri, 18 Nov 2022 18:29:54 -0600</pubDate>
+    <lastBuildDate>Fri, 18 Nov 2022 18:29:54 -0600</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
     
       <item>
@@ -105,9 +105,9 @@ http.response_time:
   &lt;li&gt;How would a cross region AWS PrivateLink endpoint change the results?&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Tue, 15 Nov 2022 00:00:00 -0600</pubDate>
-        <link>https://ramsay.xyz/2022/11/15/cross-aws-region-latency.html</link>
-        <guid isPermaLink="true">https://ramsay.xyz/2022/11/15/cross-aws-region-latency.html</guid>
+        <pubDate>Fri, 18 Nov 2022 00:00:00 -0600</pubDate>
+        <link>https://ramsay.xyz/2022/11/18/cross-aws-region-latency.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2022/11/18/cross-aws-region-latency.html</guid>
         
         <category>aws</category>
         
