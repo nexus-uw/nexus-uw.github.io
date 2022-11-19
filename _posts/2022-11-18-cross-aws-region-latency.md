@@ -1,7 +1,7 @@
 ---
 layout: post
 title: effects nearest of Lambda to Dynamodb Table
-date: '2022-11-15'
+date: '2022-11-18'
 author: Simon
 tags:
 - aws
