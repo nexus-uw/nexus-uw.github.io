@@ -1,6 +1,6 @@
 ---
 layout: post
-title: effects nearest of Lambda to Dynamodb Table
+title: latency impact of distance between client to lambda VS lambda to dynamodb table
 date: '2022-11-18'
 author: Simon
 tags:
