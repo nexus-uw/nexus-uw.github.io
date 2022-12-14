@@ -7,12 +7,12 @@ tags:
 - aws
 ---
 
-# question
+# Question
 If a service's DynamoDb (DDB) is in a region from some users, is it better to call DDB from a lambda close to the end user OR close to the DDB?
 
 (ie: if DDB is in us-east-1, but some users are in us-west-2, does it make sense to deploy a lambda in us-west-2 OR should they just call back to us-east-1)
 
-### note
+### Note
 This assumes that DDB Global Tables are not viable (ie: already have a global table in us-west-2, it probably would not make sense to replicate it into us-west-1).
 
 ## Test
@@ -51,7 +51,7 @@ http.response_time:
   median: ...................................................................... 1652.8
   p95: ......................................................................... 1978.7
   p99: ......................................................................... 2186.8
-  
+
 CROSS REGION LAMBDA
 http.codes.200: ................................................................ 914
 http.request_rate: ............................................................. 3/sec
@@ -62,7 +62,7 @@ http.response_time:
   median: ...................................................................... 262.5
   p95: ......................................................................... 596
   p99: ......................................................................... 645.6
-  
+
 CLOUDFRONT INFRONT OF CROSS REGION LAMBDA
 http.codes.200: ................................................................ 882
 http.request_rate: ............................................................. 3/sec
@@ -79,7 +79,7 @@ http.response_time:
 ![](/assets/from_ec2.png)
 
 
-### ran the same test from my home computer to see if starting outside of the AWS network would have any affect
+### Did running the same test from my home computer to see if starting outside of the AWS network would have any affect?
 it did not
 ![](/assets/from_home.png)
 
@@ -87,11 +87,11 @@ it did not
 Best to just call out to far away region directly (it had the closest latencies to the base line for all the stats)
 
 
-### notes
+### Notes
 1. repo with infra + lambda + test config is available at https://github.com/BASED-EDGE/cross-region-latency
 2. this only covers a limited use case, best to investigate for yourself
 
-## further questions
+## Further questions
 - What about different services from just than just DDB (ie: RDS, S3, SNS)?
 - Does the same thing apply to DDB write requests? [YES](https://github.com/BASED-EDGE/cross-region-latency/blob/master/results_POST_1KB.txt)
 - What effect does using different regions have on the above results (ie: ca-central-1 to ap-southeast-2)

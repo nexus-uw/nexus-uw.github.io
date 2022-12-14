@@ -8,7 +8,7 @@
 # Site settings
 title: Simon Ramsay
 email: simon@ramsay.xyz
-description: "A personal blog about shitty infrequent random programing tips"
+description: "A personal tech blog focused on AWS and Docker"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://ramsay.xyz" # the base hostname & protocol for your site
 github_username:  "nexus-uw"
