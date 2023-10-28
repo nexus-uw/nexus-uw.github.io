@@ -7,8 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>effects nearest of Lambda to Dynamodb Table</title>
-  <meta name="description" content="questionIf a service’s DynamoDb (DDB) is in a region from some users, is it better to call DDB from a lambda close to the end user OR close to the DDB?">
+  <title>latency impact of distance between client to lambda VS lambda to dynamodb table</title>
+  <meta name="description" content="QuestionIf a service’s DynamoDb (DDB) is in a region from some users, is it better to call DDB from a lambda close to the end user OR close to the DDB?">
   <meta name="image" content="/favicon-32x32.png">
 
   <link rel="stylesheet" href="/css/main.css">
@@ -51,17 +51,17 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <div class="post-header">
-    <h1 class="post-title" itemprop="name headline">effects nearest of Lambda to Dynamodb Table</h1>
+    <h1 class="post-title" itemprop="name headline">latency impact of distance between client to lambda VS lambda to dynamodb table</h1>
     <p class="post-meta"><time datetime="2022-11-18T00:00:00-06:00" itemprop="datePublished">Nov 18, 2022</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Simon</span></span></p>
   </div>
 
   <div class="post-content" itemprop="articleBody">
-    <h1 id="question">question</h1>
+    <h1 id="question">Question</h1>
 <p>If a service’s DynamoDb (DDB) is in a region from some users, is it better to call DDB from a lambda close to the end user OR close to the DDB?</p>
 
 <p>(ie: if DDB is in us-east-1, but some users are in us-west-2, does it make sense to deploy a lambda in us-west-2 OR should they just call back to us-east-1)</p>
 
-<h3 id="note">note</h3>
+<h3 id="note">Note</h3>
 <p>This assumes that DDB Global Tables are not viable (ie: already have a global table in us-west-2, it probably would not make sense to replicate it into us-west-1).</p>
 
 <h2 id="test">Test</h2>
@@ -101,7 +101,7 @@ http.response_time:
   median: ...................................................................... 1652.8
   p95: ......................................................................... 1978.7
   p99: ......................................................................... 2186.8
-  
+
 CROSS REGION LAMBDA
 http.codes.200: ................................................................ 914
 http.request_rate: ............................................................. 3/sec
@@ -112,7 +112,7 @@ http.response_time:
   median: ...................................................................... 262.5
   p95: ......................................................................... 596
   p99: ......................................................................... 645.6
-  
+
 CLOUDFRONT INFRONT OF CROSS REGION LAMBDA
 http.codes.200: ................................................................ 882
 http.request_rate: ............................................................. 3/sec
@@ -128,23 +128,23 @@ http.response_time:
 
 <p><img src="/assets/from_ec2.png" alt="" /></p>
 
-<h3 id="ran-the-same-test-from-my-home-computer-to-see-if-starting-outside-of-the-aws-network-would-have-any-affect">ran the same test from my home computer to see if starting outside of the AWS network would have any affect</h3>
+<h3 id="did-running-the-same-test-from-my-home-computer-to-see-if-starting-outside-of-the-aws-network-would-have-any-affect">Did running the same test from my home computer to see if starting outside of the AWS network would have any affect?</h3>
 <p>it did not
 <img src="/assets/from_home.png" alt="" /></p>
 
 <h1 id="conclusion">Conclusion</h1>
 <p>Best to just call out to far away region directly (it had the closest latencies to the base line for all the stats)</p>
 
-<h3 id="notes">notes</h3>
+<h3 id="notes">Notes</h3>
 <ol>
   <li>repo with infra + lambda + test config is available at https://github.com/BASED-EDGE/cross-region-latency</li>
   <li>this only covers a limited use case, best to investigate for yourself</li>
 </ol>
 
-<h2 id="further-questions">further questions</h2>
+<h2 id="further-questions">Further questions</h2>
 <ul>
   <li>What about different services from just than just DDB (ie: RDS, S3, SNS)?</li>
-  <li>Does the same thing apply to DDB write requests? YES</li>
+  <li>Does the same thing apply to DDB write requests? <a href="https://github.com/BASED-EDGE/cross-region-latency/blob/master/results_POST_1KB.txt">YES</a></li>
   <li>What effect does using different regions have on the above results (ie: ca-central-1 to ap-southeast-2)</li>
   <li>Why does remote DDB perform so much worse than remote lambda? the lambda is not transforming the data (apart from <code class="language-plaintext highlighter-rouge">JSON.stringify()</code>) so the network latency would be assumed to be very similar.</li>
   <li>How would a cross region AWS PrivateLink endpoint change the results?</li>

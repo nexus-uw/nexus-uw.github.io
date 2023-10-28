@@ -119,11 +119,11 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 /** Posts */
 .post-header { margin-bottom: 30px; }
 
-.post-title { font-size: 42px; letter-spacing: -1px; line-height: 1; }
+.post-title { font-size: 23px; letter-spacing: -1px; line-height: 1; }
 
-@media screen and (max-width: 800px) { .post-title { font-size: 36px; } }
+@media screen and (max-width: 800px) { .post-title { font-size: 23px; } }
 
-.post-content { margin-bottom: 30px; font-size: initial; line-height: 120%; }
+.post-content { margin-bottom: 30px; font-size: initial; }
 
 .post-content h2 { font-size: 32px; }
 
@@ -260,7 +260,7 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 
 .highlight .il { color: #099; }
 
-body { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-size: calc(2.5em + 4.2vmin); line-height: 103.5645645646464%; color: #f6f6f699; font-weight: 700; background-color: #000c; }
+body { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-size: calc(2.5em + 4.2vmin); color: #f6f6f699; font-weight: 700; background-color: #000c; }
 
 code { line-height: 100%; color: black; font-weight: normal; }
 

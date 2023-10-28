@@ -2,21 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Simon Ramsay</title>
-    <description>A personal blog about shitty infrequent random programing tips</description>
+    <description>A personal tech blog focused on AWS and Docker</description>
     <link>https://ramsay.xyz/</link>
     <atom:link href="https://ramsay.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 18 Nov 2022 18:29:54 -0600</pubDate>
-    <lastBuildDate>Fri, 18 Nov 2022 18:29:54 -0600</lastBuildDate>
+    <pubDate>Sat, 28 Oct 2023 17:04:12 -0500</pubDate>
+    <lastBuildDate>Sat, 28 Oct 2023 17:04:12 -0500</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
     
       <item>
-        <title>effects nearest of Lambda to Dynamodb Table</title>
-        <description>&lt;h1 id=&quot;question&quot;&gt;question&lt;/h1&gt;
+        <title>Wrapping Up ammobin.ca</title>
+        <description>&lt;p&gt;Todo. Why shut down ammo in
+6yrs?
+https://github.com/ammobinDOTca/ammobin-client/commit/5b67ce6f4d71a36d2362b94927b2973c27da6153
+started back in 2017&lt;/p&gt;
+
+&lt;p&gt;9ish bucks a month on AWS but it would fluctuate if doing a lot of deployments. Could have fixed this with GitHub actions
+Nuxtv3 migration. 2&amp;gt; 3 was very involved. Lots of pkgs died. Or haven’tigrated. Couldn’t migrate existing setup. So tried moving code into new starter. Just didn’t work. Got caught up on something weird.
+Just not worth it&lt;/p&gt;
+
+&lt;p&gt;Scrapes break. Don’t want to fix it&lt;/p&gt;
+
+&lt;p&gt;Code is still around here https://github.com/ammobinDOTca/ammobin-client/releases/tag/LAST_LIVE_VERSION_OF_SITE&lt;/p&gt;
+
+&lt;p&gt;Some photos
+started with single host + docker&lt;/p&gt;
+
+&lt;p&gt;ended up with https://github.com/ammobinDOTca/ammobin-cdk (issh)&lt;/p&gt;
+
+&lt;p&gt;User data. Deleted (unless AWS/cf has secrets logs)&lt;/p&gt;
+
+&lt;p&gt;Learnings
+Nobody cares about tech. Open source code, never received any take up
+AWS random costs. Lot more involved. Free beta account
+Better than docker on droplet. Easier to deploy. Don’t have to sign ine every so often to clean up machine and restart stuff&lt;/p&gt;
+
+&lt;p&gt;Pull some traffic numbers before deleting es&lt;/p&gt;
+
+&lt;p&gt;Also. Got me to self host at home
+es -&amp;gt; https://ramsay.xyz/2022/05/09/simple-upstream-proxy-authentication-for-caddy.html&lt;/p&gt;
+
+&lt;p&gt;learned about seo
+learned about challenges of selfhosted email&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 28 Oct 2023 00:00:00 -0500</pubDate>
+        <link>https://ramsay.xyz/2023/10/28/wrapping-up-ammobin.ca.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2023/10/28/wrapping-up-ammobin.ca.html</guid>
+        
+        <category>ammobin.ca</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>latency impact of distance between client to lambda VS lambda to dynamodb table</title>
+        <description>&lt;h1 id=&quot;question&quot;&gt;Question&lt;/h1&gt;
 &lt;p&gt;If a service’s DynamoDb (DDB) is in a region from some users, is it better to call DDB from a lambda close to the end user OR close to the DDB?&lt;/p&gt;
 
 &lt;p&gt;(ie: if DDB is in us-east-1, but some users are in us-west-2, does it make sense to deploy a lambda in us-west-2 OR should they just call back to us-east-1)&lt;/p&gt;
 
-&lt;h3 id=&quot;note&quot;&gt;note&lt;/h3&gt;
+&lt;h3 id=&quot;note&quot;&gt;Note&lt;/h3&gt;
 &lt;p&gt;This assumes that DDB Global Tables are not viable (ie: already have a global table in us-west-2, it probably would not make sense to replicate it into us-west-1).&lt;/p&gt;
 
 &lt;h2 id=&quot;test&quot;&gt;Test&lt;/h2&gt;
@@ -56,7 +101,7 @@ http.response_time:
   median: ...................................................................... 1652.8
   p95: ......................................................................... 1978.7
   p99: ......................................................................... 2186.8
-  
+
 CROSS REGION LAMBDA
 http.codes.200: ................................................................ 914
 http.request_rate: ............................................................. 3/sec
@@ -67,7 +112,7 @@ http.response_time:
   median: ...................................................................... 262.5
   p95: ......................................................................... 596
   p99: ......................................................................... 645.6
-  
+
 CLOUDFRONT INFRONT OF CROSS REGION LAMBDA
 http.codes.200: ................................................................ 882
 http.request_rate: ............................................................. 3/sec
@@ -83,23 +128,23 @@ http.response_time:
 
 &lt;p&gt;&lt;img src=&quot;/assets/from_ec2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;ran-the-same-test-from-my-home-computer-to-see-if-starting-outside-of-the-aws-network-would-have-any-affect&quot;&gt;ran the same test from my home computer to see if starting outside of the AWS network would have any affect&lt;/h3&gt;
+&lt;h3 id=&quot;did-running-the-same-test-from-my-home-computer-to-see-if-starting-outside-of-the-aws-network-would-have-any-affect&quot;&gt;Did running the same test from my home computer to see if starting outside of the AWS network would have any affect?&lt;/h3&gt;
 &lt;p&gt;it did not
 &lt;img src=&quot;/assets/from_home.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
 &lt;p&gt;Best to just call out to far away region directly (it had the closest latencies to the base line for all the stats)&lt;/p&gt;
 
-&lt;h3 id=&quot;notes&quot;&gt;notes&lt;/h3&gt;
+&lt;h3 id=&quot;notes&quot;&gt;Notes&lt;/h3&gt;
 &lt;ol&gt;
   &lt;li&gt;repo with infra + lambda + test config is available at https://github.com/BASED-EDGE/cross-region-latency&lt;/li&gt;
   &lt;li&gt;this only covers a limited use case, best to investigate for yourself&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&quot;further-questions&quot;&gt;further questions&lt;/h2&gt;
+&lt;h2 id=&quot;further-questions&quot;&gt;Further questions&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;What about different services from just than just DDB (ie: RDS, S3, SNS)?&lt;/li&gt;
-  &lt;li&gt;Does the same thing apply to DDB write requests? YES&lt;/li&gt;
+  &lt;li&gt;Does the same thing apply to DDB write requests? &lt;a href=&quot;https://github.com/BASED-EDGE/cross-region-latency/blob/master/results_POST_1KB.txt&quot;&gt;YES&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;What effect does using different regions have on the above results (ie: ca-central-1 to ap-southeast-2)&lt;/li&gt;
   &lt;li&gt;Why does remote DDB perform so much worse than remote lambda? the lambda is not transforming the data (apart from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;JSON.stringify()&lt;/code&gt;) so the network latency would be assumed to be very similar.&lt;/li&gt;
   &lt;li&gt;How would a cross region AWS PrivateLink endpoint change the results?&lt;/li&gt;
@@ -510,22 +555,6 @@ https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-li
         <category>js</category>
         
         <category>sirv</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>new v3 onion address</title>
-        <description>&lt;p&gt;ramsay.xyz is now available at &lt;a href=&quot;http://ramsayswljlwqo7yvw3ovxhyzavllyduxkgh4rbobzkc263jyro6cjyd.onion/&quot;&gt;ramsayswljlwqo7yvw3ovxhyzavllyduxkgh4rbobzkc263jyro6cjyd.onion/&lt;/a&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 06 Jan 2021 00:00:00 -0600</pubDate>
-        <link>https://ramsay.xyz/2021/01/06/new-v3-onion-address.html</link>
-        <guid isPermaLink="true">https://ramsay.xyz/2021/01/06/new-v3-onion-address.html</guid>
-        
-        <category>tor</category>
-        
-        <category>onion</category>
         
         
       </item>
