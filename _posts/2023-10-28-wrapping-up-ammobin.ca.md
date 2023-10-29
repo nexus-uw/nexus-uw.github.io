@@ -8,40 +8,33 @@ tags:
 ---
 
 
-Todo. Why shut down ammo in
-6yrs?
-https://github.com/ammobinDOTca/ammobin-client/commit/5b67ce6f4d71a36d2362b94927b2973c27da6153
-started back in 2017
+At the beging of October 2023, I chose to shutdown ammobin.ca after 6 years.
 
+## Why
+It costs me about $9USD a month and a bunch of maintaince time. The number of broken scrapes have been pilling up and I lack the interest in fixing them. 
 
-9ish bucks a month on AWS but it would fluctuate if doing a lot of deployments. Could have fixed this with GitHub actions
-Nuxtv3 migration. 2> 3 was very involved. Lots of pkgs died. Or haven'tigrated. Couldn't migrate existing setup. So tried moving code into new starter. Just didn't work. Got caught up on something weird.
-Just not worth it
+Additionally, the Nuxt 2->3 migration has gotten stuck in the mud (with the code remaining on the bridge migration package). A bunch of plugins/middleware  is stuck on v2 without a clear migration plan (note: npm packages moving to scoped packages is a great way to make it very hard to know about version bumps). An attempt was made to re-write the front end in v3, but I lack the time or interest these days to take on that chunck of work
 
-Scrapes break. Don't want to fix it
+## How
+frontend was switched out with a basic nuxt v3 app that redirects users to arsenalforce.ca ([src](https://github.com/ammobinDOTca/ammobin-client/commit/d37c12b3fd50dc3f4c38790f2b185ae2163b5444))
 
-Code is still around here https://github.com/ammobinDOTca/ammobin-client/releases/tag/LAST_LIVE_VERSION_OF_SITE
+## What is happening with the old code + data
 
-Some photos
-started with single host + docker
+The client code is still around [here](https://github.com/ammobinDOTca/ammobin-client/releases/tag/LAST_LIVE_VERSION_OF_SITE). The backend code is still up on github, and the domain is valid for a few more years.
 
-ended up with https://github.com/ammobinDOTca/ammobin-cdk (issh)
+Any user data has been deleted from my datastore. Cloudflare + AWS may have their own user request logs that I cant access.
 
 
 
-User data. Deleted (unless AWS/cf has secrets logs)
 
-Learnings
-Nobody cares about tech. Open source code, never received any take up
-AWS random costs. Lot more involved. Free beta account
-Better than docker on droplet. Easier to deploy. Don't have to sign ine every so often to clean up machine and restart stuff
+## History
+Ammobin started with [single host + docker containers](https://github.com/ammobinDOTca/ammobin-compose) and ended up with a [AWS CDK Serverless setup](https://github.com/ammobinDOTca/ammobin-cdk) + Cloudflare Workers handling SSR for the frontend code.
 
-
-Pull some traffic numbers before deleting es
-
-Also. Got me to self host at home
-es -> https://ramsay.xyz/2022/05/09/simple-upstream-proxy-authentication-for-caddy.html
-
-learned about seo
-learned about challenges of selfhosted email
-
+## Learnings
+- Nobody cares about tech. Open source code, never received any take up.
+- AWS is a random costs. Costs flutuatch based on customer and dev usuage.
+- AWS also lets you have a beta setup easily with serverless tech (since it can easily exist within the free tier)
+- AWS is better than docker on DigitalOcean droplet. Easier to deploy. Don't have to ssh in every so often to clean up machine and restart stuff
+- learned about seo (ammobin.ca was the top 1-2 results for ammo related searches for Canada)
+- learned about challenges of selfhosted email (microsoft just refused to accept emails from my domain
+  
