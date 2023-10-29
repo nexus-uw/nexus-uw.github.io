@@ -5,44 +5,40 @@
     <description>A personal tech blog focused on AWS and Docker</description>
     <link>https://ramsay.xyz/</link>
     <atom:link href="https://ramsay.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 28 Oct 2023 17:04:12 -0500</pubDate>
-    <lastBuildDate>Sat, 28 Oct 2023 17:04:12 -0500</lastBuildDate>
+    <pubDate>Sun, 29 Oct 2023 18:04:56 -0500</pubDate>
+    <lastBuildDate>Sun, 29 Oct 2023 18:04:56 -0500</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
     
       <item>
         <title>Wrapping Up ammobin.ca</title>
-        <description>&lt;p&gt;Todo. Why shut down ammo in
-6yrs?
-https://github.com/ammobinDOTca/ammobin-client/commit/5b67ce6f4d71a36d2362b94927b2973c27da6153
-started back in 2017&lt;/p&gt;
+        <description>&lt;p&gt;At the beging of October 2023, I chose to shutdown ammobin.ca after 6 years.&lt;/p&gt;
 
-&lt;p&gt;9ish bucks a month on AWS but it would fluctuate if doing a lot of deployments. Could have fixed this with GitHub actions
-Nuxtv3 migration. 2&amp;gt; 3 was very involved. Lots of pkgs died. Or haven’tigrated. Couldn’t migrate existing setup. So tried moving code into new starter. Just didn’t work. Got caught up on something weird.
-Just not worth it&lt;/p&gt;
+&lt;h2 id=&quot;why&quot;&gt;Why&lt;/h2&gt;
+&lt;p&gt;It costs me about $9USD a month and a bunch of maintaince time. The number of broken scrapes have been pilling up and I lack the interest in fixing them.&lt;/p&gt;
 
-&lt;p&gt;Scrapes break. Don’t want to fix it&lt;/p&gt;
+&lt;p&gt;Additionally, the Nuxt 2-&amp;gt;3 migration has gotten stuck in the mud (with the code remaining on the bridge migration package). A bunch of plugins/middleware  is stuck on v2 without a clear migration plan (note: npm packages moving to scoped packages is a great way to make it very hard to know about version bumps). An attempt was made to re-write the front end in v3, but I lack the time or interest these days to take on that chunck of work&lt;/p&gt;
 
-&lt;p&gt;Code is still around here https://github.com/ammobinDOTca/ammobin-client/releases/tag/LAST_LIVE_VERSION_OF_SITE&lt;/p&gt;
+&lt;h2 id=&quot;how&quot;&gt;How&lt;/h2&gt;
+&lt;p&gt;frontend was switched out with a basic nuxt v3 app that redirects users to arsenalforce.ca (&lt;a href=&quot;https://github.com/ammobinDOTca/ammobin-client/commit/d37c12b3fd50dc3f4c38790f2b185ae2163b5444&quot;&gt;src&lt;/a&gt;)&lt;/p&gt;
 
-&lt;p&gt;Some photos
-started with single host + docker&lt;/p&gt;
+&lt;h2 id=&quot;what-is-happening-with-the-old-code--data&quot;&gt;What is happening with the old code + data&lt;/h2&gt;
 
-&lt;p&gt;ended up with https://github.com/ammobinDOTca/ammobin-cdk (issh)&lt;/p&gt;
+&lt;p&gt;The client code is still around &lt;a href=&quot;https://github.com/ammobinDOTca/ammobin-client/releases/tag/LAST_LIVE_VERSION_OF_SITE&quot;&gt;here&lt;/a&gt;. The backend code is still up on github, and the domain is valid for a few more years.&lt;/p&gt;
 
-&lt;p&gt;User data. Deleted (unless AWS/cf has secrets logs)&lt;/p&gt;
+&lt;p&gt;Any user data has been deleted from my datastore. Cloudflare + AWS may have their own user request logs that I cant access.&lt;/p&gt;
 
-&lt;p&gt;Learnings
-Nobody cares about tech. Open source code, never received any take up
-AWS random costs. Lot more involved. Free beta account
-Better than docker on droplet. Easier to deploy. Don’t have to sign ine every so often to clean up machine and restart stuff&lt;/p&gt;
+&lt;h2 id=&quot;history&quot;&gt;History&lt;/h2&gt;
+&lt;p&gt;Ammobin started with &lt;a href=&quot;https://github.com/ammobinDOTca/ammobin-compose&quot;&gt;single host + docker containers&lt;/a&gt; and ended up with a &lt;a href=&quot;https://github.com/ammobinDOTca/ammobin-cdk&quot;&gt;AWS CDK Serverless setup&lt;/a&gt; + Cloudflare Workers handling SSR for the frontend code.&lt;/p&gt;
 
-&lt;p&gt;Pull some traffic numbers before deleting es&lt;/p&gt;
-
-&lt;p&gt;Also. Got me to self host at home
-es -&amp;gt; https://ramsay.xyz/2022/05/09/simple-upstream-proxy-authentication-for-caddy.html&lt;/p&gt;
-
-&lt;p&gt;learned about seo
-learned about challenges of selfhosted email&lt;/p&gt;
+&lt;h2 id=&quot;learnings&quot;&gt;Learnings&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Nobody cares about tech. Open source code, never received any take up.&lt;/li&gt;
+  &lt;li&gt;AWS is a random costs. Costs flutuatch based on customer and dev usuage.&lt;/li&gt;
+  &lt;li&gt;AWS also lets you have a beta setup easily with serverless tech (since it can easily exist within the free tier)&lt;/li&gt;
+  &lt;li&gt;AWS is better than docker on DigitalOcean droplet. Easier to deploy. Don’t have to ssh in every so often to clean up machine and restart stuff&lt;/li&gt;
+  &lt;li&gt;learned about seo (ammobin.ca was the top 1-2 results for ammo related searches for Canada)&lt;/li&gt;
+  &lt;li&gt;learned about challenges of selfhosted email (microsoft just refused to accept emails from my domain&lt;/li&gt;
+&lt;/ul&gt;
 
 </description>
         <pubDate>Sat, 28 Oct 2023 00:00:00 -0500</pubDate>
