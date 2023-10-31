@@ -1,0 +1,6 @@
+how to run docker-transmission-openvpn on docker rootless
+
+- init conifg
+- include all those errors msgs
+- final config
+- chmod command before running
