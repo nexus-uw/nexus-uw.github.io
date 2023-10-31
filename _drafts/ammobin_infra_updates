@@ -14,3 +14,12 @@ ran up large aws bill due to number of lambda invokes
 
 todo:
 	CD cloudflare workers + fly.io
+
+
+2 years later
+
+lol
+
+fly.io shut down without warning. claimed malicious. trying to verify account + migrate to paid plan did nothing. get boned
+
+moved to cloudflare workers. nuxt3 had native-ish support for this. worked great
