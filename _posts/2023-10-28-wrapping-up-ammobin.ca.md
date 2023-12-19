@@ -37,4 +37,12 @@ Ammobin started with [single host + docker containers](https://github.com/ammobi
 - AWS is better than docker on DigitalOcean droplet. Easier to deploy. Don't have to ssh in every so often to clean up machine and restart stuff
 - learned about seo (ammobin.ca was the top 1-2 results for ammo related searches for Canada)
 - learned about challenges of selfhosted email (microsoft just refused to accept emails from my domain
+
+# December update
+
+ammobin.ca has been successfully transitioned to new ownership and I am no longer involved with it.
+
+![rm-nexusuw](/assets/Screenshot_20231213-134408.png)
+
+
   
