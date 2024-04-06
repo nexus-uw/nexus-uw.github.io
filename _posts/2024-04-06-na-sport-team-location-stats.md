@@ -12,7 +12,7 @@ tags:
 Today I saught to answer the question, "Which sports league has the most solo team locations (Only professional team in town)?". Instead of trying to Duck this, I chose to use Google Sheets to answer this for me.
 In order to avoid inconsistent location naming between teams in the same location (ie: New England Patriots and Boston Red Socks both play in Boston), the team locations were 'normailized' enought to be useful. 
 
-My data sheet used to generate the answer
+My data sheet used to generate the answer -> [ODS](/assets/NA_professional_major_league_team_location_stats.ods) [PDF](/assets/NA_professional_major_league_team_location_stats.pdf)
 
 # Answer(s) (as of time of writting)
 The NHL has the most solo team cities with 10 (Calgary, Columbus, Edmonton, Montreal, Newark, Ottawa, Raleigh, San Jose, Vancouver, Winnipeg). It should be noted that 6 of them are in Canada.
