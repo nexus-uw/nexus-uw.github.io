@@ -5,9 +5,63 @@
     <description>A personal tech blog focused on AWS and Docker</description>
     <link>https://ramsay.xyz/</link>
     <atom:link href="https://ramsay.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 29 Oct 2023 18:04:56 -0500</pubDate>
-    <lastBuildDate>Sun, 29 Oct 2023 18:04:56 -0500</lastBuildDate>
+    <pubDate>Sat, 06 Apr 2024 16:10:16 -0500</pubDate>
+    <lastBuildDate>Sat, 06 Apr 2024 16:10:16 -0500</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
+    
+      <item>
+        <title>Which Major NA Sports League Has The Most Solo Team Locations?</title>
+        <description>&lt;h1 id=&quot;question&quot;&gt;Question&lt;/h1&gt;
+
+&lt;p&gt;Today I saught to answer the question, “Which sports league has the most solo team locations (Only professional team in town)?”. Instead of trying to Duck this, I chose to use Google Sheets to answer this for me.
+In order to avoid inconsistent location naming between teams in the same location (ie: New England Patriots and Boston Red Socks both play in Boston), the team locations were ‘normailized’ enought to be useful.&lt;/p&gt;
+
+&lt;p&gt;My data sheet used to generate the answer -&amp;gt; &lt;a href=&quot;/assets/NA_professional_major_league_team_location_stats.ods&quot;&gt;ODS&lt;/a&gt; &lt;a href=&quot;/assets/NA_professional_major_league_team_location_stats.pdf&quot;&gt;PDF&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;answers-as-of-time-of-writting&quot;&gt;Answer(s) (as of time of writting)&lt;/h1&gt;
+&lt;p&gt;The NHL has the most solo team cities with 10 (Calgary, Columbus, Edmonton, Montreal, Newark, Ottawa, Raleigh, San Jose, Vancouver, Winnipeg). It should be noted that 6 of them are in Canada.&lt;/p&gt;
+
+&lt;h3 id=&quot;if-we-exclude-canadian-cities-for-being-located-in-a-silly-place&quot;&gt;If we exclude Canadian cities (for being located in a silly place)&lt;/h3&gt;
+&lt;p&gt;The NBA has the most solo team American cities with 7 (Memphis, Olkahoma City, Orlando, Portland, Sacramento, Salt Lake City, San Antonio)&lt;/p&gt;
+
+&lt;h1 id=&quot;future-work-&quot;&gt;future work (?)&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;what if the MLS is included?&lt;/li&gt;
+  &lt;li&gt;NCAA ? (how would that be normalized?)&lt;/li&gt;
+  &lt;li&gt;market size w.r.t. number of teams present&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 06 Apr 2024 00:00:00 -0500</pubDate>
+        <link>https://ramsay.xyz/2024/04/06/na-sport-team-location-stats.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2024/04/06/na-sport-team-location-stats.html</guid>
+        
+        <category>sports ball</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>mokintoken is now go</title>
+        <description>&lt;p&gt;Over Christmas, I converted mokintoken from &lt;a href=&quot;https://github.com/nexus-uw/mokintoken/pull/21&quot;&gt;PHP to Go&lt;/a&gt;. This migration did not require any front end work (nice).&lt;/p&gt;
+
+&lt;h1 id=&quot;why&quot;&gt;why&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;I knew little of PHP and the docker container was 700MB+ and filled with dependencies I knew little of&lt;/li&gt;
+  &lt;li&gt;Go is kinda hot today&lt;/li&gt;
+  &lt;li&gt;While I dont know much about Go, I was able to code the server in a single file with only 2 basic depdencies (uuid + sqlite)&lt;/li&gt;
+  &lt;li&gt;Docker container is down to 14mb&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Mon, 19 Feb 2024 00:00:00 -0600</pubDate>
+        <link>https://ramsay.xyz/2024/02/19/mokintoken-is-now-go.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2024/02/19/mokintoken-is-now-go.html</guid>
+        
+        <category>go</category>
+        
+        <category>mokintoken</category>
+        
+        
+      </item>
     
       <item>
         <title>Wrapping Up ammobin.ca</title>
@@ -39,6 +93,12 @@
   &lt;li&gt;learned about seo (ammobin.ca was the top 1-2 results for ammo related searches for Canada)&lt;/li&gt;
   &lt;li&gt;learned about challenges of selfhosted email (microsoft just refused to accept emails from my domain&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h1 id=&quot;december-update&quot;&gt;December update&lt;/h1&gt;
+
+&lt;p&gt;ammobin.ca has been successfully transitioned to new ownership and I am no longer involved with it.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/Screenshot_20231213-134408.png&quot; alt=&quot;rm-nexusuw&quot; /&gt;&lt;/p&gt;
 
 </description>
         <pubDate>Sat, 28 Oct 2023 00:00:00 -0500</pubDate>
@@ -454,103 +514,6 @@ https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-li
         <category>reddit</category>
         
         <category>libredd</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Mini Madeuce - a selfhosted url shortener that does not take 14 months to replace and does not smell like brake cleaner</title>
-        <description>&lt;h1 id=&quot;mini-madeuce&quot;&gt;mini-madeuce&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/mini-madeuce.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;what&quot;&gt;what&lt;/h2&gt;
-&lt;p&gt;mini madeuce is a selfhosted privacy focused url shortener&lt;/p&gt;
-
-&lt;p&gt;url &lt;a href=&quot;https://mini-madeuce.ramsay.xyz/?ref=blog&quot;&gt;mini-madeuce.ramsay.xyz&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;onion &lt;a href=&quot;http://madeucev3nrsti4nthzqt22dw2n57lseca3735yjhxddevl3zhtg3mad.onion&quot;&gt;madeucev3nrsti4nthzqt22dw2n57lseca3735yjhxddevl3zhtg3mad.onion&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;github &lt;a href=&quot;https://github.com/nexus-uw/mini-madeuce&quot;&gt;nexus-uw/mini-madeuce&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;why&quot;&gt;why&lt;/h2&gt;
-&lt;p&gt;sharing mokin token notes is a real pain if one has to manually type in the url (~150 characters long).&lt;/p&gt;
-
-&lt;h2 id=&quot;how-or-things-that-make-is-special-to-the-end-user&quot;&gt;how or things that make is special to the end user&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;selfhostable (opensource + verifiable)&lt;/li&gt;
-  &lt;li&gt;no js (and strict csp) greatly reduces the attack vector and ability to sneak in something else&lt;/li&gt;
-  &lt;li&gt;link expiry (both time and usage). ensures that shorted url will go away&lt;/li&gt;
-  &lt;li&gt;no logs or tracking (since not a business)&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;sample-work-flow&quot;&gt;sample work flow&lt;/h3&gt;
-&lt;p&gt;Create password with massive-pass, store it using mokintoken, take the encrypted url and shorten it using mini-madeuce. Then manually enter the shorten url on the separate computer so that the password can be copy pasted&lt;/p&gt;
-
-&lt;h3 id=&quot;threats-mini-madeuce-protects-against&quot;&gt;threats mini-madeuce protects against&lt;/h3&gt;
-&lt;ol&gt;
-  &lt;li&gt;Shorted url is discovered in a data leak (ie: email hacked, droped usb stick).
-  if after usage limit (default 1, max 10) or expiry (default 1, max 720 hours)
-  shortened url will already been deleted from the service’s db, service does not indicate if the url ever even existed.&lt;/li&gt;
-  &lt;li&gt;Shorted url is intercepted before it expires/used up. If created with the 1 use count, when the intended user of the url visits the short url, it will not work for them. If they are smart, they will know that the url has been intercepted and whatever they were using for it has been compromised. ideally they would switch communication channels.&lt;/li&gt;
-  &lt;li&gt;Prevents writting down passwords in order to manually copy over to a new machine. If combined with mokin-token, long passwords can be shared with a new computer/smart phone by first encrypting with mokin-token, and then the long url is shortened by mini-madeuce. The user can then manually entered on the new machine, the full password can copypasted.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/1563630852404.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sun, 03 Oct 2021 00:00:00 -0500</pubDate>
-        <link>https://ramsay.xyz/2021/10/03/mini-madeuce.html</link>
-        <guid isPermaLink="true">https://ramsay.xyz/2021/10/03/mini-madeuce.html</guid>
-        
-        <category>selfhosted</category>
-        
-        <category>golang</category>
-        
-        <category>docker</category>
-        
-        <category>privacy</category>
-        
-        <category>dont have to worry about chemicals coming out</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>MASSIVE PASS: an unspecial password generator</title>
-        <description>&lt;p&gt;created a selfhostable password generator, massive pass&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/nexus-uw/massive-pass&quot;&gt;CODE&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://massive-pass.ramsay.xyz/&quot;&gt;live version&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://massiveeeati5xv7sszovagrkamzdtshv4sg4rzpbg6n2btwkv2f2lqd.onion/&quot;&gt;TOR&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;things-that-make-is-special&quot;&gt;things that make is special&lt;/h3&gt;
-&lt;ol&gt;
-  &lt;li&gt;selfhostable (see docker container in README)&lt;/li&gt;
-  &lt;li&gt;enforces + displays the &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity&quot;&gt;script integrity SHA&lt;/a&gt; which allows anyone to verify that script being served is the same script as committed to the github repo (note: this requires a production npm install to ensure that only the exact npm packages are installed). think of it as something of a reproducible build&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;why&quot;&gt;why&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;strong passwords are good&lt;/li&gt;
-  &lt;li&gt;simplified site is easier to audit its resources (ie no ad networks)&lt;/li&gt;
-  &lt;li&gt;selfhostable so that one can run it themselves&lt;/li&gt;
-  &lt;li&gt;OSS so that the code can be reviewed&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sat, 17 Apr 2021 00:00:00 -0500</pubDate>
-        <link>https://ramsay.xyz/2021/04/17/massive-pass.html</link>
-        <guid isPermaLink="true">https://ramsay.xyz/2021/04/17/massive-pass.html</guid>
-        
-        <category>massive</category>
-        
-        <category>pass</category>
-        
-        <category>password</category>
-        
-        <category>js</category>
-        
-        <category>sirv</category>
         
         
       </item>

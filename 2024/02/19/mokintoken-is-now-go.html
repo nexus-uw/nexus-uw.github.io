@@ -7,12 +7,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Simon Ramsay</title>
-  <meta name="description" content="A personal tech blog focused on AWS and Docker">
+  <title>mokintoken is now go</title>
+  <meta name="description" content="Over Christmas, I converted mokintoken from PHP to Go. This migration did not require any front end work (nice).">
   <meta name="image" content="/favicon-32x32.png">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://ramsay.xyz/page2/">
+  <link rel="canonical" href="https://ramsay.xyz/2024/02/19/mokintoken-is-now-go.html">
   <link rel="alternate" type="application/rss+xml" title="Simon Ramsay" href="/feed.xml">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -20,7 +20,7 @@
   <link rel="manifest" href="/manifest.json">
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#b91d47">
   <meta name="theme-color" content="#b91d47">
-  <meta http-equiv="onion-location" content="http://ramsayswljlwqo7yvw3ovxhyzavllyduxkgh4rbobzkc263jyro6cjyd.onion/page2/" />
+  <meta http-equiv="onion-location" content="http://ramsayswljlwqo7yvw3ovxhyzavllyduxkgh4rbobzkc263jyro6cjyd.onion/2024/02/19/mokintoken-is-now-go.html" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; manifest-src 'self';">
   <meta name="google" content="notranslate"/>
 
@@ -48,151 +48,27 @@
 
     <div class="page-content">
       <div class="wrapper">
-        
-<div class="home">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <ul class="post-list">
-    
-      <li>
-        <span class="post-meta post-title">Feb 2, 2020</span>
+  <div class="post-header">
+    <h1 class="post-title" itemprop="name headline">mokintoken is now go</h1>
+    <p class="post-meta"><time datetime="2024-02-19T00:00:00-06:00" itemprop="datePublished">Feb 19, 2024</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Simon</span></span></p>
+  </div>
 
-        <h2>
-          <a class="post-link" href="/2020/02/02/ammobin-now-runs-on-aws-withou-any-servers.html">Ammobin now runs on AWS using only severless technology thanks to AWS-CDK</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">Oct 11, 2019</span>
+  <div class="post-content" itemprop="articleBody">
+    <p>Over Christmas, I converted mokintoken from <a href="https://github.com/nexus-uw/mokintoken/pull/21">PHP to Go</a>. This migration did not require any front end work (nice).</p>
 
-        <h2>
-          <a class="post-link" href="/2019/10/11/how-i-reduced-nuxt-container-size-by-60-percent.html">How ammobin.ca reduced its Nuxt docker container image size by 60% using multi stage builds</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">Sep 2, 2019</span>
+<h1 id="why">why</h1>
+<ol>
+  <li>I knew little of PHP and the docker container was 700MB+ and filled with dependencies I knew little of</li>
+  <li>Go is kinda hot today</li>
+  <li>While I dont know much about Go, I was able to code the server in a single file with only 2 basic depdencies (uuid + sqlite)</li>
+  <li>Docker container is down to 14mb</li>
+</ol>
 
-        <h2>
-          <a class="post-link" href="/2019/09/02/ramsay.xyz-new-csp.html">ramsay.xyz is now fully free of Javascript</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">Nov 25, 2018</span>
+  </div>
 
-        <h2>
-          <a class="post-link" href="/2018/11/25/created-set-in-typescript.html">An Implementation of Set (Card Game) in Typescript</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">Oct 13, 2018</span>
-
-        <h2>
-          <a class="post-link" href="/2018/10/13/how-to-secure-elasticsearch-with-caddy.html">How to Secure Elasticsearch With Caddyserver</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">Oct 13, 2018</span>
-
-        <h2>
-          <a class="post-link" href="/2018/10/13/elasticsearch-400-error-when-upgrading-fluent-winston-log-message-format.html">Elasticsearch 400 Error When Upgrading Fluent Winston Log Message Format</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">Sep 18, 2018</span>
-
-        <h2>
-          <a class="post-link" href="/2018/09/18/cheap-vps-hot-tip.html">Cheap VPS Hot Tip</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">Jul 9, 2018</span>
-
-        <h2>
-          <a class="post-link" href="/2018/07/09/multi-chromeos-terminal-windows.html">How to open multi instances of secure shell app in Chrome OS</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">May 29, 2018</span>
-
-        <h2>
-          <a class="post-link" href="/2018/05/29/realtime-goaccess-caddy-server-docker.html">How I set up real-time Caddy log monitoring using GoAccess, all within docker-compose</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">May 25, 2018</span>
-
-        <h2>
-          <a class="post-link" href="/2018/05/25/ammobin-coe.html">Correction Of Error (COE) for ammobin.ca downtime</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">May 5, 2018</span>
-
-        <h2>
-          <a class="post-link" href="/2018/05/05/pihole-pine64-docker.html">How to (kinda) install pihole on a pine64-jessie using docker</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">Apr 14, 2018</span>
-
-        <h2>
-          <a class="post-link" href="/2018/04/14/vscode-mason-syntax-highlighting.html">How to enable syntax highlighting in VSCode for Mason files</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">Apr 14, 2018</span>
-
-        <h2>
-          <a class="post-link" href="/2018/04/14/redesigned-ramsay.xyz.html">Redesigned ramsay.xyz</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">Dec 23, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/2017/12/23/crummy-fargate-calc.html">Made a crummy aws cost calculator for Fargate using Preact</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">Dec 22, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/2017/12/22/unit-testing-cloudformation.html">Unit Testing CloudFormation Templates</a>
-        </h2>
-      </li>
-    
-  </ul>
-
-<!-- Pagination links -->
-<div class="pagination">
-  
-    <a href="/" class="previous">
-      Previous
-    </a>
-  
-  <span class="page_number ">
-    Page: 2 of 4
-  </span>
-  
-    <a href="/page3" class="next">Next</a>
-  
-</div>
-
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
-<a href="https://validator.w3.org/feed/check.cgi?url=https%3A//ramsay.xyz/feed.xml"><img src="/assets/valid-rss-rogers.png" alt="[Valid RSS]" title="Validate my RSS feed" /></a>
-</div>
+</article>
 
       </div>
     </div>

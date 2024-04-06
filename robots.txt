@@ -1,3 +1,9 @@
-User-agent: *
-Disallow:
-
+User-agent: Omgilibot
+User-agent: FacebookBot
+User-agent: GPTBot
+User-agent: Amazonbot
+User-agent: WellKnownBot
+User-agent: Google-Extended
+User-agent: CCBot
+User-agent: ChatGPT-User
+Disallow: /
