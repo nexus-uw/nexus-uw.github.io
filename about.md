@@ -5,9 +5,11 @@ permalink: /about/
 ---
 
 ## Work
-### see [BASED EDGE](https://basededge.dev)
+### see [BASED EDGE](https://basededge.dev) 
 
 ## Projects
+- [onion.monster](https://onion.monster/?ref=blog_about): tor2web style proxy for ActivityPub servers
+- [random collection of AWS CDK archeticure samples](https://www.basededge.dev/projects?ref=blog_about): a failed attempt to draw attention to BASED EDGE by providing code samples of neat things to do with AWS (and implemented in CDK so that it can be easily deployed). as of 2024, this has yet to produce fruit.
 - ~~[ammobin.ca](https://ammobin.ca/?ref=blog_about): Meta search site for ammo prices across Canada~~ successfully transfered to new ownership after 7yrs
 - [edge-lambda-url-authorizer](https://github.com/nexus-uw/edge-lambda-url-authorizer): simple node js package to use in Lambda@Edge to sigv4 sign origin requests to a lambda url endpoint (with iam auth enabled)
 - [mini-madeuce.ramsay.xyz](https://mini-madeuce.ramsay.xyz/?ref=blog_about) ([TOR](http://madeucev3nrsti4nthzqt22dw2n57lseca3735yjhxddevl3zhtg3mad.onion)): privacy focused selfhosted url shortner
@@ -19,7 +21,6 @@ permalink: /about/
 - [delay-server](https://github.com/nexus-uw/delay-server): very basic tiny mock http server in a docker container to generate some network requests of some expected response time range + failure rate
 - [crappy-preact-fargate-calculator](https://nexus-uw.github.io/crappy-preact-fargate-calculator/): worst project to date. given vcpu + ram, get the hourly cost of a single service. built using preact
 - [nqh](https://github.com/nexus-uw/nqh): An implementation of Angular's $http service for node
-
 
 
 ![](/assets/Screenshot 2022-12-13 21.03.17.png)
