@@ -5,110 +5,24 @@
     <description>A personal tech blog focused on AWS and Docker</description>
     <link>https://ramsay.xyz/</link>
     <atom:link href="https://ramsay.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 23 Jun 2024 00:12:35 -0500</pubDate>
-    <lastBuildDate>Sun, 23 Jun 2024 00:12:35 -0500</lastBuildDate>
+    <pubDate>Sun, 23 Jun 2024 23:06:40 -0500</pubDate>
+    <lastBuildDate>Sun, 23 Jun 2024 23:06:40 -0500</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
-    
-      <item>
-        <title>https://onion.monster</title>
-        <description>&lt;hr /&gt;
-&lt;h1 id=&quot;disclaimer&quot;&gt;disclaimer&lt;/h1&gt;
-
-&lt;p&gt;this may all be silly and a waste of time&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://onion.monster&quot;&gt;SITE&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/nexus-uw/cosburn-is-lost&quot;&gt;CODE&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;what&quot;&gt;what&lt;/h2&gt;
-&lt;p&gt;onion.monster is a &lt;a href=&quot;https://en.wikipedia.org/wiki/Tor2web&quot;&gt;tor2web&lt;/a&gt; style proxy but only intended to expose hidden services as activity pub servers. 
- This allows them to federate with &lt;em&gt;all&lt;/em&gt; other servers without them having to set up their own tor proxy + routing AND it allows for https requests to be made to the hidden service. The ability to receive incoming HTTPS requests if very important because a lot fo ActivtyPub implementations are HTTPS only.&lt;/p&gt;
-
-&lt;h2 id=&quot;how&quot;&gt;how&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/onion.monster.drawio.png&quot; alt=&quot;onion.monster arch&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;why&quot;&gt;why&lt;/h2&gt;
-&lt;p&gt;This lets people spin up their own ActivtyPub server without having to disclose their server location or have knowlegde of where their clients are connecting from.
-Edgy Boys/Girls can use this to (kinda) improve the opsec of their little larps.&lt;/p&gt;
-
-&lt;p&gt;Additonally, as a project, it is also something fun + limited to implement in my spare time.&lt;/p&gt;
-
-&lt;h2 id=&quot;security-problems&quot;&gt;security problems&lt;/h2&gt;
-&lt;h3 id=&quot;ealry-https-termination&quot;&gt;ealry HTTPS termination&lt;/h3&gt;
-&lt;p&gt;HTTPS is terminated at proxy level, and a HTTP request is made to the hidden service. while the http connection is safe to move through the tor network (due to onion routing), it is exposed to the proxy.
-the proxy could inspect the contents of the request (severity of this depends if the message is intended to be private or public and how the server is intended to be operated)&lt;/p&gt;
-
-&lt;p&gt;As a publisher/user, connecting to the server through onion.monster is riskier since there is no mechanism to guarantee that the request has not been modified by the server. Even more concerning, the user passwords are exposed to the proxy (where they could be logged) and not all servers &lt;a href=&quot;https://github.com/superseriousbusiness/gotosocial/issues/395&quot;&gt;support 2fa&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;At the end of the day, the proxy does not need to inspect the contents of the request, only hostname. Ideally, it would be best if the proxy could not access the contents of the request.&lt;/p&gt;
-
-&lt;h3 id=&quot;cookie-attacks&quot;&gt;cookie attacks&lt;/h3&gt;
-&lt;p&gt;Since all servers are running under same root domain, they have the ability to muck around with cookies on the root domain.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://aszx87410.github.io/beyond-xss/en/ch4/cookie-bomb/&quot;&gt;attack details&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;things-that-work-fine-otherwise&quot;&gt;things that work fine otherwise&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;incoming federation requests - http signature ensures that they have not been tamper with by the proxy&lt;/li&gt;
-  &lt;li&gt;outgoing federation requests - they do not go back out through the proxy (but ideally their own tor)&lt;/li&gt;
-  &lt;li&gt;very limitted amount of code - reduces attack surfaces + easy to audi&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;TODO - confirm publishers should connect to their server either locally OR directly through their onion domain&lt;/p&gt;
-
-&lt;h3 id=&quot;federation-problemrisk&quot;&gt;federation problem/risk&lt;/h3&gt;
-&lt;p&gt;Randos are operating under the same root domain, if someone finds a problem with a single server, they may just blacklist the entire root domain. If this blacklisting grows to be included in the shared blacklists, then all servers (including future ones) will never been seen by a good chunk of the “fedi verse”&lt;/p&gt;
-
-&lt;p&gt;This is why running a server using one of the existing tor2web services, would not be a good idea (since they are &lt;em&gt;mostly&lt;/em&gt; unmoderated). onion.monster operates on a whitelist model, where only known servers are allowed to be served through it. Ideally, if someone starts to cause trouble, only they will be removed
--&amp;gt; this does still have the ‘someone else’ can kick me off a fedi server if they dont like me BUT said bad actor would still pocess  their data, and they could move their server elsewhere.&lt;/p&gt;
-
-&lt;h2 id=&quot;next-steps&quot;&gt;next steps&lt;/h2&gt;
-&lt;p&gt;would be really cool if the proxy did not have to know about the contents of the request. There are possible 2 ways of achiving this:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;HTTPS onion domains, &lt;a href=&quot;https://community.torproject.org/onion-services/advanced/https/&quot;&gt;as of 2024 they are expensive, rare, and difficult to get&lt;/a&gt;. MAYBE this will change in the future.&lt;/li&gt;
-  &lt;li&gt;e2e encryption on the publisher messages to the server BUT that requires a custom client + server. this does not exist today AND it would require a custom implementation. since I see this as a very small niche (and kinda against the intent of activity pub with servers + server administration being very important) I dont see anyone implementing  this
-this does start sounding more like nostr….&lt;/li&gt;
-  &lt;li&gt;ActivityPub relay? If this could be more easily exposed through a relay, do let me know.&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Sat, 22 Jun 2024 00:00:00 -0500</pubDate>
-        <link>https://ramsay.xyz/2024/06/22/onion.monster.html</link>
-        <guid isPermaLink="true">https://ramsay.xyz/2024/06/22/onion.monster.html</guid>
-        
-        <category>nodejs</category>
-        
-        <category>docker</category>
-        
-        <category>ActivityPub</category>
-        
-        <category>fedi</category>
-        
-        <category>tor</category>
-        
-        <category>hidden service</category>
-        
-        <category>onion routing</category>
-        
-        
-      </item>
     
       <item>
         <title>Which Major NA Sports League Has The Most Solo Team Locations?</title>
         <description>&lt;h1 id=&quot;question&quot;&gt;Question&lt;/h1&gt;
 
-&lt;p&gt;Today I saught to answer the question, “Which sports league has the most solo team locations (Only professional team in town)?”. Instead of trying to Duck this, I chose to use Google Sheets to answer this for me.
-In order to avoid inconsistent location naming between teams in the same location (ie: New England Patriots and Boston Red Socks both play in Boston), the team locations were ‘normailized’ enought to be useful.&lt;/p&gt;
+&lt;p&gt;Today I sought to answer the question, “Which sports league has the most solo team locations (Only professional team in town)?”. Instead of trying to Duck this, I chose to use Google Sheets to answer this for me.
+In order to avoid inconsistent location naming between teams in the same location (ie: New England Patriots and Boston Red Socks both play in Boston), the team locations were ‘normalized’ enough to be useful.&lt;/p&gt;
 
 &lt;p&gt;My data sheet used to generate the answer -&amp;gt; &lt;a href=&quot;/assets/NA_professional_major_league_team_location_stats.ods&quot;&gt;ODS&lt;/a&gt; &lt;a href=&quot;/assets/NA_professional_major_league_team_location_stats.pdf&quot;&gt;PDF&lt;/a&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;answers-as-of-time-of-writting&quot;&gt;Answer(s) (as of time of writting)&lt;/h1&gt;
+&lt;h1 id=&quot;answers-as-of-time-of-writing&quot;&gt;Answer(s) (as of time of writing)&lt;/h1&gt;
 &lt;p&gt;The NHL has the most solo team cities with 10 (Calgary, Columbus, Edmonton, Montreal, Newark, Ottawa, Raleigh, San Jose, Vancouver, Winnipeg). It should be noted that 6 of them are in Canada.&lt;/p&gt;
 
 &lt;h3 id=&quot;if-we-exclude-canadian-cities-for-being-located-in-a-silly-place&quot;&gt;If we exclude Canadian cities (for being located in a silly place)&lt;/h3&gt;
-&lt;p&gt;The NBA has the most solo team American cities with 7 (Memphis, Olkahoma City, Orlando, Portland, Sacramento, Salt Lake City, San Antonio)&lt;/p&gt;
+&lt;p&gt;The NBA has the most solo team American cities with 7 (Memphis, Oklahoma City, Orlando, Portland, Sacramento, Salt Lake City, San Antonio)&lt;/p&gt;
 
 &lt;h1 id=&quot;future-work-&quot;&gt;future work (?)&lt;/h1&gt;
 &lt;ul&gt;
@@ -134,7 +48,7 @@ In order to avoid inconsistent location naming between teams in the same locatio
 &lt;ol&gt;
   &lt;li&gt;I knew little of PHP and the docker container was 700MB+ and filled with dependencies I knew little of&lt;/li&gt;
   &lt;li&gt;Go is kinda hot today&lt;/li&gt;
-  &lt;li&gt;While I dont know much about Go, I was able to code the server in a single file with only 2 basic depdencies (uuid + sqlite)&lt;/li&gt;
+  &lt;li&gt;While I dont know much about Go, I was able to code the server in a single file with only 2 basic dependencies (uuid + sqlite)&lt;/li&gt;
   &lt;li&gt;Docker container is down to 14mb&lt;/li&gt;
 &lt;/ol&gt;
 </description>
@@ -151,12 +65,12 @@ In order to avoid inconsistent location naming between teams in the same locatio
     
       <item>
         <title>Wrapping Up ammobin.ca</title>
-        <description>&lt;p&gt;At the beging of October 2023, I chose to shutdown ammobin.ca after 6 years.&lt;/p&gt;
+        <description>&lt;p&gt;At the beginning of October 2023, I chose to shutdown ammobin.ca after 6 years.&lt;/p&gt;
 
 &lt;h2 id=&quot;why&quot;&gt;Why&lt;/h2&gt;
-&lt;p&gt;It costs me about $9USD a month and a bunch of maintaince time. The number of broken scrapes have been pilling up and I lack the interest in fixing them.&lt;/p&gt;
+&lt;p&gt;It costs me about $9USD a month and a bunch of maintenance time. The number of broken scrapes have been pilling up and I lack the interest in fixing them.&lt;/p&gt;
 
-&lt;p&gt;Additionally, the Nuxt 2-&amp;gt;3 migration has gotten stuck in the mud (with the code remaining on the bridge migration package). A bunch of plugins/middleware  is stuck on v2 without a clear migration plan (note: npm packages moving to scoped packages is a great way to make it very hard to know about version bumps). An attempt was made to re-write the front end in v3, but I lack the time or interest these days to take on that chunck of work&lt;/p&gt;
+&lt;p&gt;Additionally, the Nuxt 2-&amp;gt;3 migration has gotten stuck in the mud (with the code remaining on the bridge migration package). A bunch of plugins/middleware  is stuck on v2 without a clear migration plan (note: npm packages moving to scoped packages is a great way to make it very hard to know about version bumps). An attempt was made to re-write the front end in v3, but I lack the time or interest these days to take on that chunk of work&lt;/p&gt;
 
 &lt;h2 id=&quot;how&quot;&gt;How&lt;/h2&gt;
 &lt;p&gt;frontend was switched out with a basic nuxt v3 app that redirects users to arsenalforce.ca (&lt;a href=&quot;https://github.com/ammobinDOTca/ammobin-client/commit/d37c12b3fd50dc3f4c38790f2b185ae2163b5444&quot;&gt;src&lt;/a&gt;)&lt;/p&gt;
@@ -173,7 +87,7 @@ In order to avoid inconsistent location naming between teams in the same locatio
 &lt;h2 id=&quot;learnings&quot;&gt;Learnings&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;Nobody cares about tech. Open source code, never received any take up.&lt;/li&gt;
-  &lt;li&gt;AWS is a random costs. Costs flutuatch based on customer and dev usuage.&lt;/li&gt;
+  &lt;li&gt;AWS is a random costs. Costs fluctuate based on customer and dev usage.&lt;/li&gt;
   &lt;li&gt;AWS also lets you have a beta setup easily with serverless tech (since it can easily exist within the free tier)&lt;/li&gt;
   &lt;li&gt;AWS is better than docker on DigitalOcean droplet. Easier to deploy. Don’t have to ssh in every so often to clean up machine and restart stuff&lt;/li&gt;
   &lt;li&gt;learned about seo (ammobin.ca was the top 1-2 results for ammo related searches for Canada)&lt;/li&gt;
@@ -211,7 +125,7 @@ In order to avoid inconsistent location naming between teams in the same locatio
 &lt;ol&gt;
   &lt;li&gt;Lambda in us-west-2&lt;/li&gt;
   &lt;li&gt;Lambda in us-east-1&lt;/li&gt;
-  &lt;li&gt;Cloudfront infront of us-east-1 Lambda (for edge routing)&lt;/li&gt;
+  &lt;li&gt;Cloudfront in front of us-east-1 Lambda (for edge routing)&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;Additionally a base line was generated by running the same test against a us-west-2 Lambda talking to a us-west-2 DDB.&lt;/p&gt;
@@ -255,7 +169,7 @@ http.response_time:
   p95: ......................................................................... 596
   p99: ......................................................................... 645.6
 
-CLOUDFRONT INFRONT OF CROSS REGION LAMBDA
+CLOUDFRONT IN FRONT OF CROSS REGION LAMBDA
 http.codes.200: ................................................................ 882
 http.request_rate: ............................................................. 3/sec
 http.requests: ................................................................. 882
@@ -321,7 +235,7 @@ http.response_time:
 &lt;h1 id=&quot;buy-why-ssl-home&quot;&gt;Buy why ssl home?&lt;/h1&gt;
 &lt;ol&gt;
   &lt;li&gt;protect against local network snooping (ie: random cheap iot device, not so friendly guest)&lt;/li&gt;
-  &lt;li&gt;can efforce HTTPS only CSP for self hosted site&lt;/li&gt;
+  &lt;li&gt;can enforce HTTPS only CSP for self hosted site&lt;/li&gt;
   &lt;li&gt;allows one to enroll their personal domain in &lt;a href=&quot;https://hstspreload.org/&quot;&gt;HSTS preload list&lt;/a&gt; (since it requires HSTS header to includeSudDomains)&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -417,7 +331,7 @@ see https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html#urls-governance&
   &lt;li&gt;custom domain&lt;/li&gt;
   &lt;li&gt;caching policy&lt;/li&gt;
   &lt;li&gt;AWS Shield + WAF protection&lt;/li&gt;
-  &lt;li&gt;edge routing (could also do something like https://ramsay.xyz/2022/01/05/release-of-blue-green-static-aws-edge.html to internall route to the closest aws region for backing lambda execution)&lt;/li&gt;
+  &lt;li&gt;edge routing (could also do something like https://ramsay.xyz/2022/01/05/release-of-blue-green-static-aws-edge.html to internal route to the closest aws region for backing lambda execution)&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;iam-auth&quot;&gt;iam auth&lt;/h2&gt;
@@ -513,7 +427,7 @@ https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-li
   &lt;li&gt;upstream server will still accept direct requests + responds with blank response (indicating that something is running there + the domain name is valid)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;improvemnets&quot;&gt;improvemnets&lt;/h2&gt;
+&lt;h2 id=&quot;improvements&quot;&gt;improvements&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.cloudflare.com/learning/access-management/what-is-mutual-tls/&quot;&gt;mutual TLS&lt;/a&gt; (ref &lt;a href=&quot;https://caddyserver.com/docs/caddyfile/directives/tls#client_auth&quot;&gt;Caddyfile config&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
@@ -574,6 +488,32 @@ https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-li
         <category>serverless</category>
         
         <category>basededge.dev</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>trashhalo/reddit-rss now support custom reddit alternative UIs</title>
+        <description>&lt;p&gt;My &lt;a href=&quot;https://github.com/trashhalo/reddit-rss/pull/36&quot;&gt;PR&lt;/a&gt; was merged back in November 2021.&lt;/p&gt;
+
+&lt;p&gt;It allows redditt-rss to serve as an improved rss feed that links to &lt;a href=&quot;https://libredd.it/&quot;&gt;libredd.it&lt;/a&gt; (simple and lightweight reddit UI) or a selfhosted version.&lt;/p&gt;
+
+&lt;p&gt;Why not just use &lt;a href=&quot;https://teddit.net/&quot;&gt;teddit.net&lt;/a&gt; rss support?&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;They serve up the same limited reddit rss item (tinny thumbnail and no further content). trashhalo/reddit-rss will attempt to pull the actual content into the rss item.&lt;/li&gt;
+  &lt;li&gt;I have found the teddit pages to take a while to load. libredd.it is much faster since it contains no JS and it does not attempt to save assets to disk.&lt;/li&gt;
+  &lt;li&gt;I do not have any need to interact with reddit, so the js is completely unnecessary to me&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Wed, 05 Jan 2022 00:00:00 -0600</pubDate>
+        <link>https://ramsay.xyz/2022/01/05/reddit-rss.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2022/01/05/reddit-rss.html</guid>
+        
+        <category>rss</category>
+        
+        <category>reddit</category>
+        
+        <category>libredd</category>
         
         
       </item>

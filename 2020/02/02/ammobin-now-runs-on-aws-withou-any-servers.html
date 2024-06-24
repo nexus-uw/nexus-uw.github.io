@@ -111,7 +111,7 @@
 <p>I found it much easier to only create the distribution in us-east-1 so that all of its related resources can cleanly exist in the same stack. As for how to connect it back to the rest of ammobin in ca-central-1, custom (internal) CNAMES was really handy since they could be easily shared between the stacks using a common constants typescript file.</p>
 
 <h2 id="s3-costs">s3 costs</h2>
-<p>It was easy to blow through the PUT request free tier with a daily re-upload of <code class="language-plaintext highlighter-rouge">nuxt generate</code> within a few days. This forced a re-archecting of the stack to make use of the free tier of github pages + actions.</p>
+<p>It was easy to blow through the PUT request free tier with a daily re-upload of <code class="language-plaintext highlighter-rouge">nuxt generate</code> within a few days. This forced a re-architecting of the stack to make use of the free tier of github pages + actions.</p>
 
 <p>cdk has an easy asset zip + upload process for lambda code. By not optimizing the asset packages being uploaded, the 5GB free storage limit was easily reached after a month of development. Reducing the lambda bundle size + removing old zips solved this issue.</p>
 

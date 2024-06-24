@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>How to Secure Elasticsearch With Caddyserver</title>
-  <meta name="description" content="By default, Elasticsearch does not supprot authentication since user management and such are part of the propertairy X-pack addon (gotta find some cash to co...">
+  <meta name="description" content="By default, Elasticsearch does not support authentication since user management and such are part of the proprietary X-pack addon (gotta find some cash to co...">
   <meta name="image" content="/favicon-32x32.png">
 
   <link rel="stylesheet" href="/css/main.css">
@@ -56,9 +56,9 @@
   </div>
 
   <div class="post-content" itemprop="articleBody">
-    <p>By default, Elasticsearch does not supprot authentication since user management and such are part of the propertairy X-pack addon (gotta find some cash to cover that IPO).</p>
+    <p>By default, Elasticsearch does not support authentication since user management and such are part of the proprietary X-pack addon (gotta find some cash to cover that IPO).</p>
 
-<p>BUT we can work around this with Caddyserver. For this exmaple, docker-compose can set up our Elasticsearch box:</p>
+<p>BUT we can work around this with Caddyserver. For this example, docker-compose can set up our Elasticsearch box:</p>
 
 <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3.2'</span>
 <span class="na">services</span><span class="pi">:</span>  
@@ -81,7 +81,7 @@
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://somepublicurl.com {
   tls some@email.com
   proxy / elasticsearch:9200
-  basicauth / the_sun_god_emporer wow_this_would_make_a_great_password_dont_tell_anyone
+  basicauth / the_sun_god_emperor wow_this_would_make_a_great_password_dont_tell_anyone
 }
 </code></pre></div></div>
 
@@ -91,7 +91,7 @@
   @type elasticsearch
   host somepublicurl.com
   port 443
-  user the_sun_god_emporer
+  user the_sun_god_emperor
   password wow_this_would_make_a_great_password_dont_tell_anyone
   scheme https
   ssl_version TLSv1_2
@@ -104,10 +104,10 @@
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> [warn]: #0 Could not connect Elasticsearch. Assuming Elasticsearch 5.
 </code></pre></div></div>
 
-<p>is an understatment. This should be considered a <strong>fatal</strong>. It means your config is crap.
+<p>is an understatement. This should be considered a <strong>fatal</strong>. It means your config is crap.
 Adding with_transporter_log true to your &lt; match &gt; section will explain why it is not working.</p>
 
-<p>This setup can be pretty handy for self hosting Elasticsearch at home b/c Elasticsearch wants some heavy (for personal + seflhosted use) requirements for RAM + disk. by keeping this stuff at home, you dont have to spent ~$40 per month for an equalivent VPS.</p>
+<p>This setup can be pretty handy for self hosting Elasticsearch at home b/c Elasticsearch wants some heavy (for personal + seflhosted use) requirements for RAM + disk. by keeping this stuff at home, you don’t have to spent ~$40 per month for an equivalent VPS.</p>
 
   </div>
 
