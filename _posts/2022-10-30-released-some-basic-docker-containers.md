@@ -26,7 +26,7 @@ Since Caddy usually issues certs by hosting a validation file on your server, it
 
 # Buy why ssl home?
 1. protect against local network snooping (ie: random cheap iot device, not so friendly guest)
-2. can efforce HTTPS only CSP for self hosted site
+2. can enforce HTTPS only CSP for self hosted site
 3. allows one to enroll their personal domain in [HSTS preload list](https://hstspreload.org/) (since it requires HSTS header to includeSudDomains)
 
 # links

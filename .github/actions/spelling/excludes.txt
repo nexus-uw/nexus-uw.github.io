@@ -1,0 +1,14 @@
+(?:^|/)\.DS_Store$
+.gitignore
+\.html$
+\.png$
+\.scss$
+\.svg$
+\.yml$
+^\Q.github/actions/spelling/expect.txt\E$
+^\Qfavicon.ico\E$
+^_drafts/
+^assets/
+Dockerfile
+Gemfile
+keybase.txt

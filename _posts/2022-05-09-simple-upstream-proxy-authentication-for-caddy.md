@@ -43,7 +43,7 @@ https://selfhostedservice.rabaranks.duckdns.org {
 - creds are stored in plain text within caddyfile
 - upstream server will still accept direct requests + responds with blank response (indicating that something is running there + the domain name is valid)
 
-## improvemnets
+## improvements
 - [mutual TLS](https://www.cloudflare.com/learning/access-management/what-is-mutual-tls/) (ref [Caddyfile config](https://caddyserver.com/docs/caddyfile/directives/tls#client_auth)) 
 
 ## (Better) Alternatives

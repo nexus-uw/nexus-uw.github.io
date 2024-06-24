@@ -9,6 +9,8 @@ tags:
   onion
 ---
 
+# 2024 update: none of these v2 addresses are supported anymore
+
 - facebook.com [https://facebookcorewwwi.onion/](https://facebookcorewwwi.onion/) ([src](https://www.facebook.com/notes/protect-the-graph/making-connections-to-facebook-more-secure/1526085754298237))
 - duckduckgo.com [https://3g2upl4pq6kufc4m.onion/](https://3g2upl4pq6kufc4m.onion/) ([src](https://en.wikipedia.org/wiki/DuckDuckGo))
 - protonmail.com [https://protonirockerxow.onion](https://protonirockerxow.onion) ([src](https://protonmail.com/blog/tor-encrypted-email/))
