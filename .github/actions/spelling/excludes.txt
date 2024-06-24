@@ -6,3 +6,5 @@ keybase.txt
 \.scss$
 .gitignore
 Gemfile
+^_drafts/
+\.svg$
