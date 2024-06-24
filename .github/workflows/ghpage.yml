@@ -11,6 +11,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Check Spelling
+      uses: check-spelling/check-spelling@v0.0.22
+            
     - name: Build the site in the jekyll/builder container
       run: |
         docker run \
