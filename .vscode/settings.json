@@ -1,3 +1,7 @@
 {
-  "editor.formatOnSave": false
+  "editor.formatOnSave": false,
+  "cSpell.words": [
+    "Caddyfile",
+    "selfhosted"
+  ]
 }

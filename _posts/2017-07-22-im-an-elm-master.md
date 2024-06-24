@@ -16,7 +16,7 @@ As a *fun* task, I relearned first year pure functional programming using [Elm](
 
 Take Aways
 - Its amazing how much one can forget from 1st year CS
-- Even coming from writing functional-ish all day at work, pure functional programing is hard (really wished for an optional index param when iterating through a list)
+- Even coming from writing functional-ish all day at work, pure functional programming is hard (really wished for an optional index param when iterating through a list)
 - Elm's documentation code really be fleshed out to cover more than how to get things started and how the language compares to JS
 - Elm's compilation errors were really clear and useful (especially in VS Code)
 

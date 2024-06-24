@@ -74,7 +74,7 @@ have lambda@edge sign incoming origin request
 - custom domain
 - caching policy
 - AWS Shield + WAF protection
-- edge routing (could also do something like https://ramsay.xyz/2022/01/05/release-of-blue-green-static-aws-edge.html to internall route to the closest aws region for backing lambda execution)
+- edge routing (could also do something like https://ramsay.xyz/2022/01/05/release-of-blue-green-static-aws-edge.html to internal route to the closest aws region for backing lambda execution)
 
 ## iam auth
 apply an iam resource policy (handy for cross account access)

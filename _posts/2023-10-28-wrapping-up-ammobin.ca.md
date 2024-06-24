@@ -8,12 +8,12 @@ tags:
 ---
 
 
-At the beging of October 2023, I chose to shutdown ammobin.ca after 6 years.
+At the beginning of October 2023, I chose to shutdown ammobin.ca after 6 years.
 
 ## Why
-It costs me about $9USD a month and a bunch of maintaince time. The number of broken scrapes have been pilling up and I lack the interest in fixing them. 
+It costs me about $9USD a month and a bunch of maintenance time. The number of broken scrapes have been pilling up and I lack the interest in fixing them. 
 
-Additionally, the Nuxt 2->3 migration has gotten stuck in the mud (with the code remaining on the bridge migration package). A bunch of plugins/middleware  is stuck on v2 without a clear migration plan (note: npm packages moving to scoped packages is a great way to make it very hard to know about version bumps). An attempt was made to re-write the front end in v3, but I lack the time or interest these days to take on that chunck of work
+Additionally, the Nuxt 2->3 migration has gotten stuck in the mud (with the code remaining on the bridge migration package). A bunch of plugins/middleware  is stuck on v2 without a clear migration plan (note: npm packages moving to scoped packages is a great way to make it very hard to know about version bumps). An attempt was made to re-write the front end in v3, but I lack the time or interest these days to take on that chunk of work
 
 ## How
 frontend was switched out with a basic nuxt v3 app that redirects users to arsenalforce.ca ([src](https://github.com/ammobinDOTca/ammobin-client/commit/d37c12b3fd50dc3f4c38790f2b185ae2163b5444))
@@ -32,7 +32,7 @@ Ammobin started with [single host + docker containers](https://github.com/ammobi
 
 ## Learnings
 - Nobody cares about tech. Open source code, never received any take up.
-- AWS is a random costs. Costs flutuatch based on customer and dev usuage.
+- AWS is a random costs. Costs fluctuate based on customer and dev usage.
 - AWS also lets you have a beta setup easily with serverless tech (since it can easily exist within the free tier)
 - AWS is better than docker on DigitalOcean droplet. Easier to deploy. Don't have to ssh in every so often to clean up machine and restart stuff
 - learned about seo (ammobin.ca was the top 1-2 results for ammo related searches for Canada)

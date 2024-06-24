@@ -63,7 +63,7 @@ CloudFront is a global AWS service and can be created from any region but everyt
 I found it much easier to only create the distribution in us-east-1 so that all of its related resources can cleanly exist in the same stack. As for how to connect it back to the rest of ammobin in ca-central-1, custom (internal) CNAMES was really handy since they could be easily shared between the stacks using a common constants typescript file.
 
 ## s3 costs
-It was easy to blow through the PUT request free tier with a daily re-upload of ```nuxt generate``` within a few days. This forced a re-archecting of the stack to make use of the free tier of github pages + actions.
+It was easy to blow through the PUT request free tier with a daily re-upload of ```nuxt generate``` within a few days. This forced a re-architecting of the stack to make use of the free tier of github pages + actions.
 
 cdk has an easy asset zip + upload process for lambda code. By not optimizing the asset packages being uploaded, the 5GB free storage limit was easily reached after a month of development. Reducing the lambda bundle size + removing old zips solved this issue.
 
