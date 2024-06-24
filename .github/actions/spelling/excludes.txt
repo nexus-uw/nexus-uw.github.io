@@ -1,8 +1,8 @@
-*.html
-*.yml
+\.html$
+\.yml$
 Dockerfile
-*.png
+\.png$
 keybase.txt
-*.scss
+\.scss$
 .gitignore
 Gemfile
