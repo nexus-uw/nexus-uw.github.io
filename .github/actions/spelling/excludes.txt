@@ -1,0 +1,8 @@
+*.html
+*.yml
+Dockerfile
+*.png
+keybase.txt
+*.scss
+.gitignore
+Gemfile
