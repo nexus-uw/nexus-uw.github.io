@@ -36,7 +36,7 @@ By running this on ec2, one can have an offsite backup incase multiple devices a
 # problems
 1. AWS charges for outbound traffic, so one wants to avoid having other servers sync updates from this one
 2. AWS has variable usage costs, which are hard to estimate up front
-3. could this be handled cheaper by DigitalOcean ($4per month for 10GB disk + 500GB of traffic + 0.5GB ram)
+3. this could be handled cheaper by DigitalOcean ($4per month for 10GB disk + 500GB of traffic + 0.5GB ram)
 4. AWS charges for EBS storage regardless of the status of the server
-5. CDK (and cloudformation) can very easily destroy the instance and create a new one, if some parameters are changed after the intial deployment. note this is a great way to assert that your backups work
+5. CDK (and cloudformation) can very easily destroy the instance and create a new one, if some parameters are changed after the initial  deployment. note this is a great way to assert that your backups work
 
