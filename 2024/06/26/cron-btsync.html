@@ -7,12 +7,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Simon Ramsay</title>
-  <meta name="description" content="A personal tech blog focused on AWS and Docker">
+  <title>cron-btsync (sample cdk arch)</title>
+  <meta name="description" content="CODE">
   <meta name="image" content="/favicon-32x32.png">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://ramsay.xyz/page3/">
+  <link rel="canonical" href="https://ramsay.xyz/2024/06/26/cron-btsync.html">
   <link rel="alternate" type="application/rss+xml" title="Simon Ramsay" href="/feed.xml">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -20,7 +20,7 @@
   <link rel="manifest" href="/manifest.json">
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#b91d47">
   <meta name="theme-color" content="#b91d47">
-  <meta http-equiv="onion-location" content="http://ramsayswljlwqo7yvw3ovxhyzavllyduxkgh4rbobzkc263jyro6cjyd.onion/page3/" />
+  <meta http-equiv="onion-location" content="http://ramsayswljlwqo7yvw3ovxhyzavllyduxkgh4rbobzkc263jyro6cjyd.onion/2024/06/26/cron-btsync.html" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; manifest-src 'self';">
   <meta name="google" content="notranslate"/>
 
@@ -48,151 +48,53 @@
 
     <div class="page-content">
       <div class="wrapper">
-        
-<div class="home">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <ul class="post-list">
-    
-      <li>
-        <span class="post-meta post-title">Dec 23, 2017</span>
+  <div class="post-header">
+    <h1 class="post-title" itemprop="name headline">cron-btsync (sample cdk arch)</h1>
+    <p class="post-meta"><time datetime="2024-06-26T00:00:00-05:00" itemprop="datePublished">Jun 26, 2024</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Simon</span></span></p>
+  </div>
 
-        <h2>
-          <a class="post-link" href="/2017/12/23/crummy-fargate-calc.html">Made a crummy aws cost calculator for Fargate using Preact</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">Dec 22, 2017</span>
+  <div class="post-content" itemprop="articleBody">
+    <p><a href="https://github.com/BASED-EDGE/cron-btsync">CODE</a></p>
 
-        <h2>
-          <a class="post-link" href="/2017/12/22/unit-testing-cloudformation.html">Unit Testing CloudFormation Templates</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">Nov 8, 2017</span>
+<p><img src="/assets/cron-sync-arch.drawio.png" alt="arch" /></p>
 
-        <h2>
-          <a class="post-link" href="/2017/11/08/easy-ecs-login.html">Easy ECS Login</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">Jun 1, 2017</span>
+<h1 id="what">what</h1>
+<p>cron-btsync is an AWS CDK sample arch for setting up <a href="https://www.resilio.com/">resilio</a> on an ec2 that is not directly exposed to the internet. Access to the webui for is only accessible by using SSM to set up a socks5 proxy to access the machine’s localhost.</p>
 
-        <h2>
-          <a class="post-link" href="/2017/06/01/im-an-elm-master.html">I Have Mastered Elm By Making Yet Another Calculator (For AWS ElasticCache), And So Can You</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">Jun 1, 2017</span>
+<p>In order to save costs, the ec2 is only online for a few hours each week (controlled by a lambda invoking the ec2 api on a cloudwatch scheduled event)</p>
 
-        <h2>
-          <a class="post-link" href="/2017/06/01/ammobinca.html">just released ammobin.ca</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">Mar 28, 2017</span>
+<h1 id="why">why</h1>
 
-        <h2>
-          <a class="post-link" href="/2017/03/28/site-also-available-as-an-eep-site.html">ramsay.xyz Now Available as an Eepsite (I2P)</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">Mar 16, 2017</span>
+<p>It is important to have backups of ones important files. Resoilio makes it very easy to keep a folder in sync across multiple devices (linux, windows, android, etc) while retaining ownership + control of the files. 
+By running this on ec2, one can have an offsite backup incase multiple devices are taken out all at once.</p>
 
-        <h2>
-          <a class="post-link" href="/2017/03/16/notes-about-unearthed-toronto-2017.html">Notes About Unearthed Toronto 2017</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">Jan 22, 2017</span>
+<h1 id="security-features">security features</h1>
+<ol>
+  <li>no ssh access</li>
+  <li>no inbound connections allowed through the security group</li>
+  <li>no assigned elastic ip (every time the ec2 boots up, a new ip is assigned)</li>
+  <li>web ui is only accessible through localhost</li>
+  <li>access to the machine is only available through SSM (combined with proper AWS cred management, this is will expire any store creds automatically)</li>
+  <li>EBS is encrypted at rest using KMS</li>
+  <li>resilio is run in a docker container (isolating it from the host system….)</li>
+  <li>infrastructure is modeled in CDK, preventing the need for <em>click ops</em> and makes it a lot easier to deploy into its own AWS account. it also puts a lot of security outside of the control of the server itself and onto other AWS services.</li>
+</ol>
 
-        <h2>
-          <a class="post-link" href="/2017/01/22/list-of-tor-sites.html">A List of Some Tor Hidden Service Mirrors of Clearnet Sites</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">Jan 7, 2017</span>
+<h1 id="problems">problems</h1>
+<ol>
+  <li>AWS charges for outbound traffic, so one wants to avoid having other servers sync updates from this one</li>
+  <li>AWS has variable usage costs, which are hard to estimate up front</li>
+  <li>this could be handled cheaper by DigitalOcean ($4per month for 10GB disk + 500GB of traffic + 0.5GB ram)</li>
+  <li>AWS charges for EBS storage regardless of the status of the server</li>
+  <li>CDK (and cloudformation) can very easily destroy the instance and create a new one, if some parameters are changed after the initial  deployment. note this is a great way to assert that your backups work</li>
+</ol>
 
-        <h2>
-          <a class="post-link" href="/2017/01/07/how-to-use-redux-logger-with-revue.html">How to Use Redux Logger with Revue</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">Dec 16, 2016</span>
 
-        <h2>
-          <a class="post-link" href="/2016/12/16/vue-compond-interest-calculator-part-1.html">Sample Compound Interest Calculator (part 1)</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">Oct 5, 2016</span>
+  </div>
 
-        <h2>
-          <a class="post-link" href="/2016/10/05/realprogramming.html">Site of Real Programming</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">Sep 5, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/09/05/something-about-parsing-json-using-golang.html">Something About Parsing JSON Using Go</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">Sep 5, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/09/05/opbeat-angular-2-integration.html">How to Integrate Opbeat Into an Angular 2 App</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">Jul 23, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/07/23/i-create-a-vs-extension.html">Created a VSCode extension</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta post-title">Jul 14, 2016</span>
-
-        <h2>
-          <a class="post-link" href="/2016/07/14/picture-element-pollyfill.html">How to support <picture> elements created by Angular (or other similar JS Frameworks) in IE11 or Safari browsers from before March 2016</a>
-        </h2>
-      </li>
-    
-  </ul>
-
-<!-- Pagination links -->
-<div class="pagination">
-  
-    <a href="/page2" class="previous">
-      Previous
-    </a>
-  
-  <span class="page_number ">
-    Page: 3 of 4
-  </span>
-  
-    <a href="/page4" class="next">Next</a>
-  
-</div>
-
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
-<a href="https://validator.w3.org/feed/check.cgi?url=https%3A//ramsay.xyz/feed.xml"><img src="/assets/valid-rss-rogers.png" alt="[Valid RSS]" title="Validate my RSS feed" /></a>
-</div>
+</article>
 
       </div>
     </div>
