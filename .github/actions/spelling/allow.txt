@@ -201,3 +201,8 @@ yml
 yvw
 zhtg
 zruknwnnuvv
+btsync
+offsite
+resilio
+Resoilio
+webui

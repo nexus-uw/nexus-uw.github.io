@@ -4,6 +4,9 @@ title: About
 permalink: /about/
 ---
 
+# ___
+ This blog mostly serves as a dumping ground for my personal projects. The text committed here is fast and loose brain dumps, and should not be taken fully seriously. If something works for you, great.
+
 ## Work
 ### see [BASED EDGE](https://basededge.dev) 
 
