@@ -27,7 +27,7 @@ By running this on ec2, one can have an offsite backup incase multiple devices a
 1. no ssh access
 2. no inbound connections allowed through the security group
 3. no assigned elastic ip (every time the ec2 boots up, a new ip is assigned)
-4. web ui is only accesible through localhost
+4. web ui is only accessible through localhost
 5. access to the machine is only available through SSM (combined with proper AWS cred management, this is will expire any store creds automatically)
 6. EBS is encrypted at rest using KMS
 7. resilio is run in a docker container (isolating it from the host system....)
