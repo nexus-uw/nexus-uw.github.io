@@ -11,6 +11,7 @@ permalink: /about/
 ### see [BASED EDGE](https://basededge.dev) 
 
 ## Projects
+- [is-meme](https://is-meme.pages.dev/): memesharing site built on cloudflare workers. submitted memes are uploaded to a new branch, and a PR created on github. if/when the pr is merged, the meme is added to site. coding skills were on overdrive for this
 - [onion.monster](https://onion.monster/?ref=blog_about): tor2web style proxy for ActivityPub servers
 - [random collection of AWS CDK archeticure samples](https://www.basededge.dev/projects?ref=blog_about): a failed attempt to draw attention to BASED EDGE by providing code samples of neat things to do with AWS (and implemented in CDK so that it can be easily deployed). as of 2024, this has yet to produce fruit.
 - ~~[ammobin.ca](https://ammobin.ca/?ref=blog_about): Meta search site for ammo prices across Canada~~ successfully transfered to new ownership after 7yrs
