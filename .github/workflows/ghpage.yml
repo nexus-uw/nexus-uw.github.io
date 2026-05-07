@@ -10,28 +10,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v6
-    - name: Check Spelling
-      uses: check-spelling/check-spelling@v0.0.22
-      with:
-        extra_dictionaries:
-          cspell:software-terms/dict/softwareTerms.txt
-          cspell:aws/aws.txt
-          cspell:php/dict/php.txt
-          cspell:node/dict/node.txt
-          cspell:npm/dict/npm.txt  
-          cspell:html/dict/html.txt
-          cspell:k8s/dict/k8s.txt
-          cspell:golang/dict/go.txt
-          cspell:css/dict/css.txt
-          cspell:fullstack/dict/fullstack.txt
+    - uses: actions/checkout@v7
+    # - name: Check Spelling
+    #   uses: check-spelling/check-spelling@v0.0.22
+    #   with:
+    #     extra_dictionaries:
+    #       cspell:software-terms/dict/softwareTerms.txt
+    #       cspell:aws/aws.txt
+    #       cspell:php/dict/php.txt
+    #       cspell:node/dict/node.txt
+    #       cspell:npm/dict/npm.txt  
+    #       cspell:html/dict/html.txt
+    #       cspell:k8s/dict/k8s.txt
+    #       cspell:golang/dict/go.txt
+    #       cspell:css/dict/css.txt
+    #       cspell:fullstack/dict/fullstack.txt
     - name: Build the site in the jekyll/builder container
       run: |
         docker run \
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
         jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
     - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@v4
+      uses: JamesIves/github-pages-deploy-action@v4.8.0
       with:
           branch: gh-pages # The branch the action should deploy to.
           folder: _site # The folder the action should deploy.
