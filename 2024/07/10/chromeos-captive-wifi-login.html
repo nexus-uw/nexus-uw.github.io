@@ -7,12 +7,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Created a VSCode extension</title>
-  <meta name="description" content="I just created a VSCode extension, vscode-gtm, that integrates Git Time Tracking (aka gtm) with VSCode.">
+  <title>working around wifi captive portal issues with chromeOS</title>
+  <meta name="description" content="Today I was unable to connect to the Starbucks wifi using my Chromebook. Whenever the browser would try to load the connectivitycheck to trigger the redirect...">
   <meta name="image" content="/favicon-32x32.png">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://ramsay.xyz/2016/07/23/i-create-a-vs-extension.html">
+  <link rel="canonical" href="https://ramsay.xyz/2024/07/10/chromeos-captive-wifi-login.html">
   <link rel="alternate" type="application/rss+xml" title="Simon Ramsay" href="/feed.xml">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -20,7 +20,7 @@
   <link rel="manifest" href="/manifest.json">
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#b91d47">
   <meta name="theme-color" content="#b91d47">
-  <meta http-equiv="onion-location" content="http://ramsayswljlwqo7yvw3ovxhyzavllyduxkgh4rbobzkc263jyro6cjyd.onion/2016/07/23/i-create-a-vs-extension.html" />
+  <meta http-equiv="onion-location" content="http://ramsayswljlwqo7yvw3ovxhyzavllyduxkgh4rbobzkc263jyro6cjyd.onion/2024/07/10/chromeos-captive-wifi-login.html" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; manifest-src 'self';">
   <meta name="google" content="notranslate"/>
     <meta name="test" content="test"/>
@@ -53,28 +53,25 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <div class="post-header">
-    <h1 class="post-title" itemprop="name headline">Created a VSCode extension</h1>
-    <p class="post-meta"><time datetime="2016-07-23T00:00:00-05:00" itemprop="datePublished">Jul 23, 2016</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Simon</span></span></p>
+    <h1 class="post-title" itemprop="name headline">working around wifi captive portal issues with chromeOS</h1>
+    <p class="post-meta"><time datetime="2024-07-10T00:00:00-05:00" itemprop="datePublished">Jul 10, 2024</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Simon</span></span></p>
   </div>
 
   <div class="post-content" itemprop="articleBody">
-    <p>I just created a VSCode extension, <em>vscode-gtm</em>, that integrates Git Time Tracking (aka gtm) with VSCode.</p>
+    <p>Today I was unable to connect to the Starbucks wifi using my Chromebook. Whenever the browser would try to load the <a href="https://connectivitycheck.gstatic.com/generate_204">connectivitycheck</a> to trigger the redirection to the login page, it would fail to connect. 
+This has to happen over http or else you will get SSL cert issues because the wifi network is unable to cleanly interupt HTTPS request.</p>
 
-<p>Feel free to try it out (<a href="https://marketplace.visualstudio.com/items?itemName=s3ramsay.vscode-gtm">vs market place link</a>)</p>
+<p>Looking at my browser settings I noticed, I had turned on “Always use secure connections”. This setting causes the browser to only make HTTPS requests (and it was upgrading the connectivty check to HTTPS before it was sent over the wire).</p>
 
-<p>(from <a href="https://github.com/git-time-metric/gtm">git-time-metric/gtm</a>)</p>
+<p><img src="/assets/Screenshot 2024-07-10 10.57.02.png" alt="chrome https only flag" /></p>
 
-<blockquote>
-  <p>Git Time Metrics (GTM) is a tool to automatically track time spent reading and working on code that you store in a Git repository. By installing GTM and using supported plug-ins for your favorite editors, you can immediately realize better insight into how you are spending your time and on what files.</p>
-</blockquote>
+<p>Turning this off, allowed Starbucks to redirect me to their login. Once the login was completed, flipping it back on did not affect my browsing.</p>
 
-<blockquote>
-  <p>GTM is automatic, seamless and lightweight. There is no need to remember to start and stop timers. It’s a process that only runs on occasion to capture edit events triggered by the editor. It does not require a background process or any file system monitoring.</p>
-</blockquote>
-
-<blockquote>
-  <p>Your time metrics are stored locally with the repository as Git notes. If you want to share your data, it can be pushed and fetched to and from the remote repository. Other GTM users on your team can do the same. This provides you the ability to see time metrics for the entire team.</p>
-</blockquote>
+<h2 id="note">note</h2>
+<ul>
+  <li>I wonder if Chrome should whitelist connectivitycheck.gstatic.com from their HTTPS only mode? They do own both ends of this flow.</li>
+  <li>the same approach should also work for other open wifi networks (ie: Airports, Hotels)</li>
+</ul>
 
   </div>
 

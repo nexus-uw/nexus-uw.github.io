@@ -7,12 +7,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Created a VSCode extension</title>
-  <meta name="description" content="I just created a VSCode extension, vscode-gtm, that integrates Git Time Tracking (aka gtm) with VSCode.">
+  <title>MokinToken is now available as a PWA</title>
+  <meta name="description" content="https://mokintoken.ramsay.xyz is now available as a PWA. The main feature that one enables by installing the PWA is that it adds mokintoken as a share_target...">
   <meta name="image" content="/favicon-32x32.png">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://ramsay.xyz/2016/07/23/i-create-a-vs-extension.html">
+  <link rel="canonical" href="https://ramsay.xyz/2025/05/09/mokintoken-is-now-a-pwa.html">
   <link rel="alternate" type="application/rss+xml" title="Simon Ramsay" href="/feed.xml">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -20,7 +20,7 @@
   <link rel="manifest" href="/manifest.json">
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#b91d47">
   <meta name="theme-color" content="#b91d47">
-  <meta http-equiv="onion-location" content="http://ramsayswljlwqo7yvw3ovxhyzavllyduxkgh4rbobzkc263jyro6cjyd.onion/2016/07/23/i-create-a-vs-extension.html" />
+  <meta http-equiv="onion-location" content="http://ramsayswljlwqo7yvw3ovxhyzavllyduxkgh4rbobzkc263jyro6cjyd.onion/2025/05/09/mokintoken-is-now-a-pwa.html" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; manifest-src 'self';">
   <meta name="google" content="notranslate"/>
     <meta name="test" content="test"/>
@@ -53,28 +53,20 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <div class="post-header">
-    <h1 class="post-title" itemprop="name headline">Created a VSCode extension</h1>
-    <p class="post-meta"><time datetime="2016-07-23T00:00:00-05:00" itemprop="datePublished">Jul 23, 2016</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Simon</span></span></p>
+    <h1 class="post-title" itemprop="name headline">MokinToken is now available as a PWA</h1>
+    <p class="post-meta"><time datetime="2025-05-09T00:00:00-05:00" itemprop="datePublished">May 9, 2025</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Simon</span></span></p>
   </div>
 
   <div class="post-content" itemprop="articleBody">
-    <p>I just created a VSCode extension, <em>vscode-gtm</em>, that integrates Git Time Tracking (aka gtm) with VSCode.</p>
+    <p>https://mokintoken.ramsay.xyz is now available as a PWA. The main feature that one enables by installing the PWA is that it adds mokintoken as a share_target. Users can use the Android share functionality to send text directly to the app and have it uploaded as an encrypted note.
+Currently, the note is configured allow 1 viewing and a 4hr TTL.</p>
 
-<p>Feel free to try it out (<a href="https://marketplace.visualstudio.com/items?itemName=s3ramsay.vscode-gtm">vs market place link</a>)</p>
+<p>Internally, a service worker is installed to intercept the POST share request, encrypt it locally, send the encrypted blob to the server, and then redirect the user to resulting ‘note saved’ page with the url + QR code.
+<a href="https://github.com/nexus-uw/mokintoken/blob/master/resources/js/service-worker.js">CODE</a></p>
 
-<p>(from <a href="https://github.com/git-time-metric/gtm">git-time-metric/gtm</a>)</p>
+<p><img src="/assets/1721474985945.jpeg" alt="pwa icon" /></p>
 
-<blockquote>
-  <p>Git Time Metrics (GTM) is a tool to automatically track time spent reading and working on code that you store in a Git repository. By installing GTM and using supported plug-ins for your favorite editors, you can immediately realize better insight into how you are spending your time and on what files.</p>
-</blockquote>
-
-<blockquote>
-  <p>GTM is automatic, seamless and lightweight. There is no need to remember to start and stop timers. It’s a process that only runs on occasion to capture edit events triggered by the editor. It does not require a background process or any file system monitoring.</p>
-</blockquote>
-
-<blockquote>
-  <p>Your time metrics are stored locally with the repository as Git notes. If you want to share your data, it can be pushed and fetched to and from the remote repository. Other GTM users on your team can do the same. This provides you the ability to see time metrics for the entire team.</p>
-</blockquote>
+<p>Aside, this feature informed me of 2 things. First, to intercept any fetch requests, the service worker needs to be installed at the root scope (ie ‘/’). Second, enabling docker cache is pretty important for building Go applications inside docker containers on GitHub Actions (<a href="https://github.com/nexus-uw/mokintoken/blob/master/.github/workflows/image.yml#L24-L42">ref</a>)</p>
 
   </div>
 

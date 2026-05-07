@@ -5,9 +5,74 @@
     <description>A personal tech blog focused on AWS and Docker</description>
     <link>https://ramsay.xyz/</link>
     <atom:link href="https://ramsay.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 10 Jul 2024 13:03:15 -0500</pubDate>
-    <lastBuildDate>Wed, 10 Jul 2024 13:03:15 -0500</lastBuildDate>
+    <pubDate>Thu, 07 May 2026 00:54:40 -0500</pubDate>
+    <lastBuildDate>Thu, 07 May 2026 00:54:40 -0500</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
+    
+      <item>
+        <title>Some financial things of note for moving from Canada to USA</title>
+        <description>&lt;ol&gt;
+  &lt;li&gt;401ks are similar to RSPs but the money has to be taken off your paycheck by your employer (you can not go down to your bank and open your own account).&lt;/li&gt;
+  &lt;li&gt;Traditional IRAs are similar to TFSAs but there is a max income threshold after which you are not (normally) allowed to contribute.&lt;/li&gt;
+  &lt;li&gt;It is best to get your Canadian accounts in order before moving, because after you update your address your Canadian bank will treat you very differently (ie: cant open new credit cards, cant purchase anything more complicated that a basic GIC, cant contribute or rebalance RSPs)&lt;/li&gt;
+  &lt;li&gt;closing out your TFSA before you move will avoid taxation concerns from IRS&lt;/li&gt;
+  &lt;li&gt;reducing the number of Canadian bank accounts will make filling out your annual FBAR form a lot easier. being able to go a physical branch makes this process easier.&lt;/li&gt;
+  &lt;li&gt;updating your online accounts to be American based risks them being locked due to suspicious activity, so consider creating new (parrallel) accounts.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;note: none of the above is legal or finanical advice. Im not a professional in either. Talk to someone better (but use the above as starting point)&lt;/p&gt;
+
+&lt;p&gt;note: this might all be outdated at this point&lt;/p&gt;
+</description>
+        <pubDate>Tue, 27 Jan 2026 00:00:00 -0600</pubDate>
+        <link>https://ramsay.xyz/2026/01/27/canada-to-usa-move-things-of-note.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2026/01/27/canada-to-usa-move-things-of-note.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>MokinToken is now available as a PWA</title>
+        <description>&lt;p&gt;https://mokintoken.ramsay.xyz is now available as a PWA. The main feature that one enables by installing the PWA is that it adds mokintoken as a share_target. Users can use the Android share functionality to send text directly to the app and have it uploaded as an encrypted note.
+Currently, the note is configured allow 1 viewing and a 4hr TTL.&lt;/p&gt;
+
+&lt;p&gt;Internally, a service worker is installed to intercept the POST share request, encrypt it locally, send the encrypted blob to the server, and then redirect the user to resulting ‘note saved’ page with the url + QR code.
+&lt;a href=&quot;https://github.com/nexus-uw/mokintoken/blob/master/resources/js/service-worker.js&quot;&gt;CODE&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/1721474985945.jpeg&quot; alt=&quot;pwa icon&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Aside, this feature informed me of 2 things. First, to intercept any fetch requests, the service worker needs to be installed at the root scope (ie ‘/’). Second, enabling docker cache is pretty important for building Go applications inside docker containers on GitHub Actions (&lt;a href=&quot;https://github.com/nexus-uw/mokintoken/blob/master/.github/workflows/image.yml#L24-L42&quot;&gt;ref&lt;/a&gt;)&lt;/p&gt;
+</description>
+        <pubDate>Fri, 09 May 2025 00:00:00 -0500</pubDate>
+        <link>https://ramsay.xyz/2025/05/09/mokintoken-is-now-a-pwa.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2025/05/09/mokintoken-is-now-a-pwa.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>working around wifi captive portal issues with chromeOS</title>
+        <description>&lt;p&gt;Today I was unable to connect to the Starbucks wifi using my Chromebook. Whenever the browser would try to load the &lt;a href=&quot;https://connectivitycheck.gstatic.com/generate_204&quot;&gt;connectivitycheck&lt;/a&gt; to trigger the redirection to the login page, it would fail to connect. 
+This has to happen over http or else you will get SSL cert issues because the wifi network is unable to cleanly interupt HTTPS request.&lt;/p&gt;
+
+&lt;p&gt;Looking at my browser settings I noticed, I had turned on “Always use secure connections”. This setting causes the browser to only make HTTPS requests (and it was upgrading the connectivty check to HTTPS before it was sent over the wire).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/Screenshot 2024-07-10 10.57.02.png&quot; alt=&quot;chrome https only flag&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Turning this off, allowed Starbucks to redirect me to their login. Once the login was completed, flipping it back on did not affect my browsing.&lt;/p&gt;
+
+&lt;h2 id=&quot;note&quot;&gt;note&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;I wonder if Chrome should whitelist connectivitycheck.gstatic.com from their HTTPS only mode? They do own both ends of this flow.&lt;/li&gt;
+  &lt;li&gt;the same approach should also work for other open wifi networks (ie: Airports, Hotels)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 10 Jul 2024 00:00:00 -0500</pubDate>
+        <link>https://ramsay.xyz/2024/07/10/chromeos-captive-wifi-login.html</link>
+        <guid isPermaLink="true">https://ramsay.xyz/2024/07/10/chromeos-captive-wifi-login.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>cron-btsync (sample cdk arch)</title>
@@ -394,195 +459,6 @@ http.response_time:
         <category>caddy</category>
         
         <category>docker</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>0.1.0 edge-lambda-url-authorizer is now ready for use</title>
-        <description>&lt;p&gt;Today I am happy to announce the release of &lt;a href=&quot;https://www.npmjs.com/package/edge-lambda-url-authorizer&quot;&gt;edge-lambda-url-authorizer 0.1.0&lt;/a&gt; (ready for actual use)&lt;/p&gt;
-
-&lt;h1 id=&quot;what&quot;&gt;What&lt;/h1&gt;
-&lt;p&gt;edge-lambda-url-authorizer is a NodeJS package (with Typescript types) to be deployed a Lambda@Edge handler for Cloudfront origin requests. This package will &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html&quot;&gt;sigv4 sign&lt;/a&gt; the incoming request with the lambda’s instance credentials using &lt;a href=&quot;https://www.npmjs.com/package/aws4&quot;&gt;aws4&lt;/a&gt; before forwarding the request to the origin. The origin is expected to be a &lt;a href=&quot;https://aws.amazon.com/blogs/aws/announcing-aws-lambda-function-urls-built-in-https-endpoints-for-single-function-microservices/&quot;&gt;Lambda Function URL&lt;/a&gt; endpoint with IAM_AUTH enabled.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/edge_signer.drawio.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;why-lambda-url---removed-extra-unnecessary-dependency-on-apigateway&quot;&gt;Why lambda url -&amp;gt; removed extra (unnecessary) dependency on ApiGateway.&lt;/h1&gt;
-&lt;h3 id=&quot;unnecessary&quot;&gt;unnecessary&lt;/h3&gt;
-&lt;p&gt;api gateway has a whole list of features and benefits for using, but for a basic ‘please expose my lambda as a public endpoint’ it is unnecessary&lt;/p&gt;
-
-&lt;p&gt;apigateway is a separate service from lambda (so your chance of something killing your service is higher) us-west-2 had a large apigateway outage earlier this month&lt;/p&gt;
-
-&lt;h3 id=&quot;save-a-few-pennies&quot;&gt;save a few pennies&lt;/h3&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Function URL Pricing
-Function URLs are included in Lambda’s request and duration pricing. For example, let’s imagine that you deploy a single Lambda function with 128 MB of memory and an average invocation time of 50 ms. The function receives five million requests every month, so the cost will be $1.00 for the requests, and $0.53 for the duration. The grand total is $1.53 per month, in the US East (N. Virginia) Region.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;function url does not cost extra&lt;/p&gt;
-
-&lt;p&gt;api gateway costs $ per million requests (after the free tier) https://aws.amazon.com/api-gateway/pricing/
--&amp;gt; this tends to be a larger expense than the underlying lambda&lt;/p&gt;
-
-&lt;p&gt;(for ammobin.ca, this line item represented almost 10% of the monthly AWS spend)&lt;/p&gt;
-
-&lt;h1 id=&quot;challenges-with-plain-function-url&quot;&gt;challenges with plain function url&lt;/h1&gt;
-&lt;h2 id=&quot;cors&quot;&gt;CORS&lt;/h2&gt;
-&lt;p&gt;browsers will make CORS requests (which are supported) b/c the function url is on a different domain from one’s website. This creates an extra round trip for each actual request. (question: do OPTIONS requests add to your aws bill?)&lt;/p&gt;
-
-&lt;h2 id=&quot;csp&quot;&gt;CSP&lt;/h2&gt;
-&lt;p&gt;need to add lambda url to an Content-Security-Policy&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;different for each stage/region -&amp;gt; more work to generate/maintain&lt;/li&gt;
-  &lt;li&gt;one more thing to worry about&lt;/li&gt;
-  &lt;li&gt;multiple function urls require multiple domains to add to the policy&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;randomauto-generated-domain&quot;&gt;random/auto generated domain&lt;/h2&gt;
-&lt;p&gt;migrating function urls now requires server updates (instead of pointing to custom domain)&lt;/p&gt;
-
-&lt;p&gt;ppl might ask why requests are going off to some random auto generated domain?&lt;/p&gt;
-
-&lt;p&gt;if the lambda function were to be deleted + recreated (intentionally or not), unable to get old url back -&amp;gt; risk someone might snag it or have to update a bunch of references to it
-(could be very hard if hard coded in client sdks or the like)&lt;/p&gt;
-
-&lt;h2 id=&quot;lacks-security-features-auto-scan-tools-can-complain&quot;&gt;lacks security features (auto scan tools can complain)&lt;/h2&gt;
-&lt;p&gt;aws to their credit, launched with excellent iam policy support for (make sure that account is ‘secure’)
-see https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html#urls-governance&lt;/p&gt;
-
-&lt;p&gt;auto scan tools can flag ‘endpoint without authentication enabled’, enable IAM_AUTH keeps the bots off your back&lt;/p&gt;
-
-&lt;h2 id=&quot;bot-protection&quot;&gt;bot protection&lt;/h2&gt;
-&lt;p&gt;cant apply aws waf (but can use lambda throttling)&lt;/p&gt;
-
-&lt;h2 id=&quot;caching&quot;&gt;caching&lt;/h2&gt;
-&lt;p&gt;req could/should be cached. could be cached by browser, but not by cdn&lt;/p&gt;
-
-&lt;p&gt;if one site receives enough traffic, all of these extraneous lambda invocations can start to add up&lt;/p&gt;
-
-&lt;h1 id=&quot;solution-enable-iam_auth--cloudfront&quot;&gt;solution enable IAM_AUTH + cloudfront&lt;/h1&gt;
-&lt;p&gt;have lambda@edge sign incoming origin request&lt;/p&gt;
-
-&lt;h2 id=&quot;cloudfront-features&quot;&gt;cloudfront features&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;custom domain&lt;/li&gt;
-  &lt;li&gt;caching policy&lt;/li&gt;
-  &lt;li&gt;AWS Shield + WAF protection&lt;/li&gt;
-  &lt;li&gt;edge routing (could also do something like https://ramsay.xyz/2022/01/05/release-of-blue-green-static-aws-edge.html to internal route to the closest aws region for backing lambda execution)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;iam-auth&quot;&gt;iam auth&lt;/h2&gt;
-&lt;p&gt;apply an iam resource policy (handy for cross account access)&lt;/p&gt;
-
-&lt;p&gt;prevents people from calling your api directly (to by pass your cloudfront config)&lt;/p&gt;
-
-&lt;p&gt;no more ‘api without authentication’ security scan issues&lt;/p&gt;
-
-&lt;h3 id=&quot;alt&quot;&gt;alt&lt;/h3&gt;
-&lt;p&gt;custom header auth -&amp;gt; brittle, not great, does not let people get creative (but current suggested solution on https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistS3AndCustomOrigins.html#concept_lambda_function_url)&lt;/p&gt;
-
-&lt;p&gt;sigv4 lambda is ~2ms execution time for p90 so it doesn’t cost too much (and execute on origin req, so cache reqs need no exe)&lt;/p&gt;
-
-&lt;h3 id=&quot;issue&quot;&gt;issue&lt;/h3&gt;
-&lt;p&gt;origins per distribution defaults to 25 (can be increased to ???)
-https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html#limits-web-distributions&lt;/p&gt;
-
-&lt;h3 id=&quot;next-steps&quot;&gt;next steps&lt;/h3&gt;
-&lt;p&gt;could be generalized further into a generic sigv4 proxy for aws resources (ie: call dynamoDb or s3 directly). but that is much more complicated (and risky). it would require a very good understanding of IAM policies to properly secure one’s resources.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/3.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Sun, 30 Oct 2022 00:00:00 -0500</pubDate>
-        <link>https://ramsay.xyz/2022/10/30/lambda-edge-auth.html</link>
-        <guid isPermaLink="true">https://ramsay.xyz/2022/10/30/lambda-edge-auth.html</guid>
-        
-        <category>lambda@edge</category>
-        
-        <category>typescript</category>
-        
-        <category>aws</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>ramsay.xyz now on ipfs</title>
-        <description>&lt;p&gt;ramsay.xyz is now available on &lt;a href=&quot;https://ipfs.io&quot;&gt;InterPlanetary File System (IPFS)&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;It can be easily accessed through its IPNS over at Cloudflare’s gateway &lt;a href=&quot;https://cloudflare-ipfs.com/ipns/fleek.ramsay.xyz&quot;&gt;cloudflare-ipfs.com/ipns/fleek.ramsay.xyz&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;how&quot;&gt;how&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;changed the jekyll build to &lt;a href=&quot;https://developers.cloudflare.com/web3/ipfs-gateway/reference/updating-for-ipfs/#jekyll&quot;&gt;generate relative links instead of absolute links&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;deployed site using &lt;a href=&quot;https://fleek.co&quot;&gt;fleek.co&lt;/a&gt; (including setting up a dns link)&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Sun, 03 Jul 2022 00:00:00 -0500</pubDate>
-        <link>https://ramsay.xyz/2022/07/03/ramsay.xyz-now-on-ipfs.html</link>
-        <guid isPermaLink="true">https://ramsay.xyz/2022/07/03/ramsay.xyz-now-on-ipfs.html</guid>
-        
-        <category>ipfs</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>simple upstream proxy authentication for caddy</title>
-        <description>&lt;h1 id=&quot;a-very-simple-upstream-proxy-authentication-for-caddy&quot;&gt;A VERY Simple upstream proxy authentication for Caddy&lt;/h1&gt;
-
-&lt;p&gt;Moving selfhosted services from a VPS to a machine at home can be handy for saving on VPS resources (CPU, RAM, and disk space) but exposes the risk of leaking the home IP address. To protect ones home UP address, the VPS can be used as a downstream proxy to handle incoming traffic. Having the upstream server require a special header to be set by the downstream server, helps to make sure that only the downstream sever can connect to the upstream. This is quicker and easier to deploy than a VPN.&lt;/p&gt;
-
-&lt;h2 id=&quot;code&quot;&gt;Code&lt;/h2&gt;
-&lt;p&gt;(Assuming that both the upstream and downstream servers are running Caddy)&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://caddyserver.com/docs/caddyfile/matchers#header&quot;&gt;DOC&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;entrypoint-caddyfile&quot;&gt;Entrypoint Caddyfile&lt;/h3&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;https://selfhostedservice.ramsay.xyz {
-  reverse_proxy https://selfhostedservice.rabaranks.duckdns.org {
-    header_up +Random some_random_string
-  }
-}
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h3 id=&quot;upstream-caddyfile&quot;&gt;Upstream Caddyfile&lt;/h3&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;https://selfhostedservice.rabaranks.duckdns.org {
-  @basicauth{
-      header Random some_random_string
-  }
-  reverse_proxy @basicauth selfhostedservice:8080
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;limitations-of-this-setup&quot;&gt;Limitations of this setup&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;it does not easily scale beyond single key&lt;/li&gt;
-  &lt;li&gt;security by obscurity (ie: unexpected header used)&lt;/li&gt;
-  &lt;li&gt;long lived credentials (api key is being passed over the wire and rotation requires manual edits on both the upstream and downstream servers)&lt;/li&gt;
-  &lt;li&gt;since using non-standard http header, it could easily show up in server logs&lt;/li&gt;
-  &lt;li&gt;creds are stored in plain text within caddyfile&lt;/li&gt;
-  &lt;li&gt;upstream server will still accept direct requests + responds with blank response (indicating that something is running there + the domain name is valid)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;improvements&quot;&gt;improvements&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.cloudflare.com/learning/access-management/what-is-mutual-tls/&quot;&gt;mutual TLS&lt;/a&gt; (ref &lt;a href=&quot;https://caddyserver.com/docs/caddyfile/directives/tls#client_auth&quot;&gt;Caddyfile config&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;better-alternatives&quot;&gt;(Better) Alternatives&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://tailscale.com/&quot;&gt;Tailscale&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.cloudflare.com/en-ca/products/tunnel/&quot;&gt;Cloudflare Tunnels&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/awesome-foss/awesome-sysadmin#vpn&quot;&gt;VPN&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Mon, 09 May 2022 00:00:00 -0500</pubDate>
-        <link>https://ramsay.xyz/2022/05/09/simple-upstream-proxy-authentication-for-caddy.html</link>
-        <guid isPermaLink="true">https://ramsay.xyz/2022/05/09/simple-upstream-proxy-authentication-for-caddy.html</guid>
-        
-        <category>caddy</category>
-        
-        <category>security</category>
         
         
       </item>
